@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&family=Vina+Sans&family=Mina");
+
+#title-then {
+    font-family: 'Titan One', sans-serif;
+    color: red;
+}
+
+#title-now {
+    font-family: 'Vina Sans', sans-serif;
+    color: green;
+}
