@@ -39,10 +39,11 @@ body {
 }
 
 #splash {
-    background: url('../media/6301-1.jpg') center;
+    background: url('../media/splash.png') center;
     background-size: contain;
     background-repeat: no-repeat;
-    height: 40rem;
+    height: calc(100vw * 0.3);
+    max-height: 38.8rem;
     display: flex;
     justify-content: center;
     align-items: normal;
