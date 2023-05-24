@@ -14,7 +14,7 @@ body {
 }
 
 #super-container {
-    min-height: calc(100vh - 13rem);
+    min-height: calc(100vh - 15rem);
 }
 
 #title-then {
