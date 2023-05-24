@@ -14,7 +14,7 @@ body {
 }
 
 #super-container {
-    min-height: calc(100vh - 13rem);
+    min-height: calc(100vh - 15rem);
 }
 
 #title-then {
@@ -39,11 +39,30 @@ body {
 }
 
 #splash {
-    /*background: url('https://res.cloudinary.com/di9x4jslg/image/upload/v1680184012/static/images/splash.68d2ec5facf0.jpg') center;  */
-    background-color: lightgrey;  
-    background-size: cover;
-    height: 20rem;
+    background: url('../media/6301-1.jpg') center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 40rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: normal;
+}
+
+#carousel-first {
+    background: url('../media/car-1.png');
+    height: 12rem;
+}
+
+#carousel-second {
+    background: url('../media/car-2.png');
+    height: 12rem;
+}
+
+#carousel-third {
+    background: url('../media/car-3.png');
+    height: 12rem;
+}
+
+footer {
+    background-color: #f8f9fa;
 }
