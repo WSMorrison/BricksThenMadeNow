@@ -1,11 +1,49 @@
-@import url("https://fonts.googleapis.com/css2?family=Titan+One&family=Vina+Sans&family=Mina");
+@import url("https://fonts.googleapis.com/css2?family=Mina&family=Vina+Sans&family=Staatliches");
+
+html {
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Mina', sans-serif;
+    font-size: 1.6rem; 
+    margin: 0;
+    padding: 0;
+}
+
+#super-container {
+    min-height: calc(100vh - 13rem);
+}
 
 #title-then {
-    font-family: 'Titan One', sans-serif;
-    color: red;
+    font-family: 'Vina Sans', sans-serif;
+    font-size: 3rem;
+    color: #ff0000;
+    display: inline;
+}
+
+#title-mid {
+    font-family: 'Mina', sans-serif;
+    font-size: 3rem;
+    color: #ffe600;
+    display: inline;
 }
 
 #title-now {
-    font-family: 'Vina Sans', sans-serif;
-    color: green;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 3rem;
+    color: #0000ff;
+    display: inline;
+}
+
+#splash {
+    /*background: url('https://res.cloudinary.com/di9x4jslg/image/upload/v1680184012/static/images/splash.68d2ec5facf0.jpg') center;  */
+    background-color: lightgrey;  
+    background-size: cover;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

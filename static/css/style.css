@@ -1,9 +1,68 @@
-@import url("https://fonts.googleapis.com/css2?family=Titan+One&family=Vina+Sans&family=Mina");
+@import url("https://fonts.googleapis.com/css2?family=Mina&family=Vina+Sans&family=Staatliches");
+
+html {
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Mina', sans-serif;
+    font-size: 1.6rem; 
+    margin: 0;
+    padding: 0;
+}
+
+#super-container {
+    min-height: calc(100vh - 13rem);
+}
 
 #title-then {
-    font-family: 'Titan One', sans-serif;
+    font-family: 'Vina Sans', sans-serif;
+    font-size: 3rem;
+    color: #ff0000;
+    display: inline;
+}
+
+#title-mid {
+    font-family: 'Mina', sans-serif;
+    font-size: 3rem;
+    color: #ffe600;
+    display: inline;
 }
 
 #title-now {
-    font-family: 'Vina Sans', sans-serif;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 3rem;
+    color: #0000ff;
+    display: inline;
+}
+
+#splash {
+    background: url('../media/6301-1.jpg') center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: normal;
+}
+
+#carousel-first {
+    background: url('../media/car-1.jpg');
+    height: 10rem;
+}
+
+#carousel-second {
+    background: url('../media/car-2.jpg');
+    height: 10rem;
+}
+
+#carousel-third {
+    background: url('../media/car-3.jpg');
+    height: 10rem;
+}
+
+footer {
+    background-color: #f8f9fa;
 }

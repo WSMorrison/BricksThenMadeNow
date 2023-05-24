@@ -494,6 +494,7 @@ This project uses HTML, CSS, [Python](https://www.python.org/) and Javascript pr
 ### Frameworks, Libraries & Programs Used
 
 - [Balsamiq](https://balsamiq.cloud/)
+- [Bootstrap](https://getbootstrap.com/)
 - [Bulk Resize Photos](https://bulkresizephotos.com/en)
 - Code Institute Gitpod Full Template - Available on request.
 - [Django](https://www.djangoproject.com/)
@@ -503,6 +504,7 @@ This project uses HTML, CSS, [Python](https://www.python.org/) and Javascript pr
 - [GitHub Issues](https://github.com/features/issues)
 - [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
 - [GitPod](https://gitpod.io/)
+- [Google Fonts](https://fonts.google.com/)
 - [LucidChart](https://lucid.app/lucidchart/) 
 - [MiniWebtool Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/)
 - [SQLite](https://sqlite.org/index.html)
@@ -513,30 +515,17 @@ This project uses HTML, CSS, [Python](https://www.python.org/) and Javascript pr
 <!--Frameworks unused so far (Copy Past above as used)
 
 - [AmIResponsive](https://ui.dev/amiresponsive)
-
-- [Bootstrap](https://getbootstrap.com/)
 - [Bootswatch](https://bootswatch.com/)
-
 - [Cloudinary](https://cloudinary.com/)
-
 - [Code Institute Python linter](https://pep8ci.herokuapp.com/)
-
   - [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
-
 - [Elephant SQL](https://www.elephantsql.com/)
-
-
 - [Gnu Image Manipulation Program](https://www.gimp.org/)
-- [Google Fonts](https://fonts.google.com/)
 - [Google Maps](https://www.google.com/maps/@53.281599,-6.2396888,14z)
 - [Heroku](https://www.heroku.com)
 - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/)
-
 - [Markup, the native Android photo editing tool](https://www.android.com/)
-
 - [PostgreSQL](https://www.postgresql.org/)
-
-
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 - [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input)
 
@@ -596,6 +585,7 @@ Information on testing can be found in [the testing ReadMe](/TEST.md)
 ### Media
 
 - Favicon is "Four Brick, Lego, Blue, Toy, Four" as provided by [ClipArtMax.](https://www.clipartmax.com/middle/m2i8d3Z5H7i8G6i8_four-brick-lego-blue-toy-four-api-icon/)
+- Fonts are [Vina Sans](https://fonts.google.com/specimen/Vina+Sans) and [Staatliches](https://fonts.google.com/specimen/Staatliches) for the Bricks Then Made Now logo and [Mina](https://fonts.google.com/specimen/Mina) for the text, the code provided by [Google Fonts](https://fonts.google.com)
 
 <br>
 <hr>
