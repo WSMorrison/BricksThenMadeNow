@@ -504,10 +504,12 @@ This project uses HTML, CSS, [Python](https://www.python.org/) and Javascript pr
 - [GitHub Issues](https://github.com/features/issues)
 - [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
 - [GitPod](https://gitpod.io/)
+- [Gnu Image Manipulation Program](https://www.gimp.org/)
 - [Google Fonts](https://fonts.google.com/)
 - [LucidChart](https://lucid.app/lucidchart/) 
 - [MiniWebtool Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/)
 - [SQLite](https://sqlite.org/index.html)
+- [Stud.io](https://www.bricklink.com/v3/studio/download.page)
 - [Tables Generator - Markdown](https://www.tablesgenerator.com/markdown_tables)
 - [TinyPNG](https://tinypng.com/)
 
@@ -520,7 +522,6 @@ This project uses HTML, CSS, [Python](https://www.python.org/) and Javascript pr
 - [Code Institute Python linter](https://pep8ci.herokuapp.com/)
   - [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
 - [Elephant SQL](https://www.elephantsql.com/)
-- [Gnu Image Manipulation Program](https://www.gimp.org/)
 - [Google Maps](https://www.google.com/maps/@53.281599,-6.2396888,14z)
 - [Heroku](https://www.heroku.com)
 - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/)
@@ -572,11 +573,16 @@ Information on testing can be found in [the testing ReadMe](/TEST.md)
 <hr>
 <br>
 
+### Help and Support
+
 - Code Institute Full Stack lessons for the bulk of the understanding about Django, Bootstrap, and other frameworks. [Code Institute](https://codeinstitute.net/ie/)
 - Code Institute instructor Simen Daehlin for almost everything else. [Simen Daehlin Github](https://github.com/Eventyret)
 - Code Institute mentor Jubrile Akolade provided guidance on where to focus time building the project and an almost infinite amount of other support.
 - All of my Code Institute UCD July 2022 cohort, who have been available to answer questions through Slack.
 - Code Institute tutors accessed through the Code Institute LMS have been helpful with understanding various concepts during instruction. 
+- The Code Institute assessment team; I can't imagine what kind of patience and knowledge it would take to look over these projects without losing it.
+- Big thanks to [Lego](https://www.lego.com/en-ie) for having a toy that allows a tremendous amount of aftermarket and web based support, and for just being pretty rad.
+- A tremendous amount of Lego research was done on [Bricklink](https://www.bricklink.com/v2/main.page) and [Brickset.](https://brickset.com/sets/6301-1/Town-Mini-Figures)
 
 ### Code Used
 
@@ -586,6 +592,10 @@ Information on testing can be found in [the testing ReadMe](/TEST.md)
 
 - Favicon is "Four Brick, Lego, Blue, Toy, Four" as provided by [ClipArtMax.](https://www.clipartmax.com/middle/m2i8d3Z5H7i8G6i8_four-brick-lego-blue-toy-four-api-icon/)
 - Fonts are [Vina Sans](https://fonts.google.com/specimen/Vina+Sans) and [Staatliches](https://fonts.google.com/specimen/Staatliches) for the Bricks Then Made Now logo and [Mina](https://fonts.google.com/specimen/Mina) for the text, the code provided by [Google Fonts](https://fonts.google.com)
+- The original image used as the basis for the splash image is from [Brickset.](https://brickset.com/sets/6301-1/Town-Mini-Figures)
+- All computer generated renders are done in [Stud.io.](https://www.bricklink.com/v3/studio/download.page)
+
+- Finally, heartfelt appreciaton to my partner, Stevie, for infinite patience and encouragement. Also, no thanks to Lemon and Beckett for all their non-contributions throughout all five projects, though being fuzzy is it's own moral support.
 
 <br>
 <hr>
