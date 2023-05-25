@@ -49,21 +49,6 @@ body {
     align-items: normal;
 }
 
-#carousel-first {
-    background: url('../media/car-1.png');
-    height: 12rem;
-}
-
-#carousel-second {
-    background: url('../media/car-2.png');
-    height: 12rem;
-}
-
-#carousel-third {
-    background: url('../media/car-3.png');
-    height: 12rem;
-}
-
 footer {
     background-color: #f8f9fa;
 }
