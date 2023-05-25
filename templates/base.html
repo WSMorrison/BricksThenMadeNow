@@ -46,23 +46,9 @@
       <!--Header-->
       <header>
         <!--Title bar with search and cart-->
-        <div class="container">
-          <div class="row">
-              <div class="col-md">
-                <p id="title-then">Bricks Then</p><p id="title-mid">/</p><p id="title-now">Made Now</p>
-              </div>
-              <div class="col-md">
-                <p>search form</p>
-              </div>
-              <div class="col-md">
-                <i class="fa-solid fa-cart-shopping d-inline"></i>
-                <p class="d-inline">$0.00</p>
-              </div>
-          </div>
-        </div>
+        {% include 'includes/title-bar.html' %}
         <!--Navbar-->
         {% include 'includes/nav-bar.html' %}
-        <!--Splash image and specials carousel-->
       </header>
 
       <!--User messages-->
@@ -81,31 +67,7 @@
     <!--End Supercontainer-->  
 
     <!--Footer-->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h4>Sign Up!</h4>
-            <p>Sign up and recieve emails about specials, news, and fun!</p>
-            <input class="" type="text" name="" placeholder="Email">
-            <button class="" type="submit">Sign Up!</button>
-          </div>
-          <div class="col-md-4">
-            <h4>Find BTMN</h4>
-            <a class="socials-links" href="https://www.instagram.com/bricksthenmadenow/" target="_blank" rel="noopener" aria-label="Link to Instagram, opens in new tab."><i class="fa-brands fa-instagram"></i></a>
-            <a class="socials-links" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Link to Facebook, opens in new tab."><i class="fa-brands fa-facebook"></i></a>
-            <a class="socials-links" href="#" target="_blank" rel="noopener" aria-label="Link to email"><i class="fa-regular fa-envelope"></i></a>
-          </div>
-          <div class="col-md-4">
-            <h4>Support</h4>
-            <a class="nav-link" href="#">Shipping</a>
-            <a class="nav-link" href="#">FAQ</a>
-            <a class="nav-link" href="#">T&Cs</a>
-            <a class="nav-link" href="#">TOS</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    {% include 'includes/footer.html' %}
 
     <!--JS scripts-->
     {% block postloadjs %}
