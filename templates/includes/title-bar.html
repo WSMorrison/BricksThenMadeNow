@@ -1,17 +1,23 @@
 <!--Title bar including search form and cart-->
 <div class="container">
-    <div class="row">
-        <div class="col-md">
-          <p id="title-then">Bricks Then</p><p id="title-mid">/</p><p id="title-now">Made Now</p>
+    <div class="row no-gutters">
+        <div id="title-container" class="col-12 col-lg-6">
+          <div>
+            <p id="title-then">Bricks Then</p><p id="title-mid">/</p><p id="title-now">Made Now</p>
+          </div>
         </div>
-        <div class="col-md">
+        <div id="search-area" class="col-8 col-lg-5 my-auto">
           <form method="GET" action="">
-            <input class="" type="text" name="q" placeholder="What are you looking for?">
-            <button class="form-control btn" type="submit">Search!</button>
+            <span>
+              <input class="search" type="text" name="q" size="25" placeholder="What do you want to build?">
+            </span>
+            <span class="">
+              <button class="" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </span>
           </form>
         </div>
-        <div class="col-md">
-          <i class="fa-solid fa-cart-shopping d-inline"></i>
+        <div class="col-2 col-lg-1 my-auto">
+          <i id="cart-icon" class="fa-solid fa-cart-shopping d-inline"></i>
           <p class="d-inline">$0.00</p>
         </div>
     </div>

@@ -17,6 +17,11 @@ body {
     min-height: calc(100vh - 15rem);
 }
 
+#title-container {
+    display: flex;
+    justify-content: center;
+}
+
 #title-then {
     font-family: 'Vina Sans', sans-serif;
     font-size: 4rem;
@@ -38,6 +43,22 @@ body {
     display: inline;
 }
 
+#search-area {
+    font-size: 2rem;
+}
+
+#inline {
+    display: inline;
+}
+
+#cart-icon {
+    font-size: 5rem;
+}
+
+#nav-container {
+    position: relative;
+}
+
 #splash {
     background: url('../media/splash.png') center;
     background-size: contain;
@@ -51,4 +72,24 @@ body {
 
 footer {
     background-color: #f8f9fa;
+}
+
+@media only screen and (min-width: 992px) {
+    
+}
+
+@media only screen and (min-width: 540px) {
+
+    #title-then {
+        font-size: 5.5rem;
+    }
+    
+    #title-mid {
+        font-size: 5rem;
+    }
+    
+    #title-now {
+        font-size: 5.5rem;
+    }
+
 }
