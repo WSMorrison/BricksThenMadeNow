@@ -19,7 +19,7 @@ body {
 
 #title-then {
     font-family: 'Vina Sans', sans-serif;
-    font-size: 3rem;
+    font-size: 4rem;
     color: #ff0000;
     display: inline;
 }
@@ -33,7 +33,7 @@ body {
 
 #title-now {
     font-family: 'Staatliches', sans-serif;
-    font-size: 3rem;
+    font-size: 4rem;
     color: #0000ff;
     display: inline;
 }
@@ -43,7 +43,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     height: calc(100vw * 0.3);
-    max-height: 38.8rem;
+    max-height: 34.8rem;
     display: flex;
     justify-content: center;
     align-items: normal;
