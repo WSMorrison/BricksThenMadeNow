@@ -30,19 +30,16 @@ class Item(models.Model):
 
 
 class Sku(models.Model):
-    instructions = "inst"
-    modernset = "mdst"
-    fullset = "flst"
     sku_type_choices = [
-        ('instructions', 'Instructions Only'),
-        ('modernset', 'Modern Set with Bricks'),
-        ('fullset', 'Full Set with Modern Set and Vintage Set Bricks'),
+        ('inst', 'Instructions Only'),
+        ('mdst', 'Modern Set with Bricks'),
+        ('flst', 'Full Set with Modern Set and Vintage Set Bricks'),
     ]
     sku_item = models.ForeignKey(Item, on_delete=models.CASCADE)
     sku_number = models.CharField(max_length=5)
     sku_type = models.CharField(max_length=4,
                                 choices=sku_type_choices,
-                                default=instructions)
+                                default='inst')
     sku_price = models.DecimalField(max_digits=6, decimal_places=2)
     sku_physical = models.BooleanField(default=False)
     sku_inventory = models.IntegerField(validators=[validate_inventory])
