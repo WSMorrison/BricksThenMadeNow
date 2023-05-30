@@ -1,0 +1,48 @@
+from django.db import models
+from django.core.exceptions import ValidationError
+
+
+def validate_inventory(value):
+    if value >= 0:
+        return value
+    else:
+        raise ValidationError('Inventory must be 0, or a positive number.')
+
+
+class Theme(models.Model):
+    name = models.CharField(max_length=10)
+
+
+class Item(models.Model):
+    item_number = models.CharField(max_length=7, unique=True)
+    item_name = models.CharField(max_length=40)
+    item_theme = models.ForeignKey('Theme')
+    item_description = models.TextField(max_length=250)
+    item_old = models.ImageField(null=True, blank=True)
+    item_old_url = models.URLField(max_length=1024, null=True, blank=True)
+    item_render = models.ImageField(null=True, blank=True)
+    item_render_url = models.URLField(max_length=1024, null=True, blank=True)
+    item_modern = models.ImageField(null=True, blank=True)
+    item_modern_url = models.URLField(max_length=1024, null=True, blank=True)
+    item_detail = models.ImageField(null=True, blank=True)
+    item_detail_url = models.URLField(max_length=1024, null=True, blank=True)
+    item_part_count = models.Integerfield()
+
+
+class Sku(models.Model):
+    instructions = "inst"
+    modernset = "mdst"
+    fullset = "flst"
+    sku_type_choices = [
+        (instructions, 'Instructions Only')
+        (modernset, 'Modern Set with Bricks')
+        (fullset, 'Full Set with Modern Set and Vintage Set Bricks')
+    ]
+    sku_item = models.ForeignKey('Item')
+    sku_number = models.CharField(max_length=5)
+    sku_type = models.CharField(max_length=4,
+                                choices=sku_type_choices,
+                                default=instructions)
+    sku_price = models.DecimalField(max_digits=6, decimal_places=2)
+    sku_physical = models.BooleanField(default=False)
+    sku_inventory = models.Integerfield(validators=[validate_inventory])
