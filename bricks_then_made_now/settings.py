@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG')
 
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-eu98.gitpod.io']
 
 
 # Application definition
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount', # Will not use this!!!!!
     'home',
-    'products',
+    'product',
 ]
 
 MIDDLEWARE = [

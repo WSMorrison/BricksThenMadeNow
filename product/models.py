@@ -12,12 +12,15 @@ def validate_inventory(value):
 class Theme(models.Model):
     name = models.CharField(max_length=10)
 
+    def __str__(self):
+        return self.name
+
 
 class Item(models.Model):
     item_number = models.CharField(max_length=7, unique=True)
     item_name = models.CharField(max_length=40)
-    item_theme = models.ForeignKey(Theme, on_delete=models.SET_DEFAULT, default='MOC')
-    item_description = models.TextField(max_length=250)
+    item_theme = models.ForeignKey(Theme, on_delete=models.SET_DEFAULT, default=1)
+    item_description = models.TextField(max_length=1000)
     item_old = models.ImageField(null=True, blank=True)
     item_old_url = models.URLField(max_length=1024, null=True, blank=True)
     item_render = models.ImageField(null=True, blank=True)
@@ -27,6 +30,9 @@ class Item(models.Model):
     item_detail = models.ImageField(null=True, blank=True)
     item_detail_url = models.URLField(max_length=1024, null=True, blank=True)
     item_part_count = models.IntegerField()
+
+    def __str__(self):
+        return self.item_name
 
 
 class Sku(models.Model):
@@ -43,3 +49,7 @@ class Sku(models.Model):
     sku_price = models.DecimalField(max_digits=6, decimal_places=2)
     sku_physical = models.BooleanField(default=False)
     sku_inventory = models.IntegerField(validators=[validate_inventory])
+
+    def __str__(self):
+        sku_name = '{0.sku_item} {0.sku_type}'
+        return sku_name.format(self)

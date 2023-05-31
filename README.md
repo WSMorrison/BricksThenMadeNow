@@ -508,6 +508,7 @@ This project uses HTML, CSS, [Python](https://www.python.org/) and Javascript pr
 - [Google Fonts](https://fonts.google.com/)
 - [LucidChart](https://lucid.app/lucidchart/) 
 - [MiniWebtool Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/)
+- [Pillow]https://pillow.readthedocs.io/en/stable/index.html
 - [SQLite](https://sqlite.org/index.html)
 - [Stud.io](https://www.bricklink.com/v3/studio/download.page)
 - [Tables Generator - Markdown](https://www.tablesgenerator.com/markdown_tables)

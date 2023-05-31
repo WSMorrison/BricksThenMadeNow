@@ -17,9 +17,14 @@ body {
     min-height: calc(100vh - 15rem);
 }
 
+#title-container {
+    display: flex;
+    justify-content: center;
+}
+
 #title-then {
     font-family: 'Vina Sans', sans-serif;
-    font-size: 3rem;
+    font-size: 4rem;
     color: #ff0000;
     display: inline;
 }
@@ -33,36 +38,58 @@ body {
 
 #title-now {
     font-family: 'Staatliches', sans-serif;
-    font-size: 3rem;
+    font-size: 4rem;
     color: #0000ff;
     display: inline;
 }
 
+#search-area {
+    font-size: 2rem;
+}
+
+#inline {
+    display: inline;
+}
+
+#cart-icon {
+    font-size: 5rem;
+}
+
+#nav-container {
+    position: relative;
+}
+
 #splash {
-    background: url('../media/6301-1.jpg') center;
+    background: url('../media/splash.png') center;
     background-size: contain;
     background-repeat: no-repeat;
-    height: 40rem;
+    height: calc(100vw * 0.3);
+    max-height: 34.8rem;
     display: flex;
     justify-content: center;
     align-items: normal;
 }
 
-#carousel-first {
-    background: url('../media/car-1.png');
-    height: 12rem;
-}
-
-#carousel-second {
-    background: url('../media/car-2.png');
-    height: 12rem;
-}
-
-#carousel-third {
-    background: url('../media/car-3.png');
-    height: 12rem;
-}
-
 footer {
     background-color: #f8f9fa;
+}
+
+@media only screen and (min-width: 992px) {
+    
+}
+
+@media only screen and (min-width: 540px) {
+
+    #title-then {
+        font-size: 5.5rem;
+    }
+    
+    #title-mid {
+        font-size: 5rem;
+    }
+    
+    #title-now {
+        font-size: 5.5rem;
+    }
+
 }
