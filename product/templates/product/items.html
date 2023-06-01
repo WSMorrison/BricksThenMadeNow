@@ -15,14 +15,18 @@
 
 {% block content %}
 
-<!--Splash image and specials carousel-->
-{% include 'includes/splash.html' %}
-        
 <div class="container">
     <div class="row">
         <div class="col">
-            <p>Index</p>
-            {{ items }}
+            <p>Items</p>
+            {% for item in items %}
+            <div class="card" >
+                <div class="card-body">
+                    <h3>{{ item.item_name }}</h3>
+                    <p> Parts count: {{ item.item_part_count }}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
