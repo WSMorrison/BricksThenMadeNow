@@ -580,8 +580,9 @@ Information on testing can be found in [the testing ReadMe](/TEST.md)
 - Code Institute instructor Simen Daehlin for almost everything else. [Simen Daehlin Github](https://github.com/Eventyret)
 - Code Institute mentor Jubrile Akolade provided guidance on where to focus time building the project and an almost infinite amount of other support.
 - All of my Code Institute UCD July 2022 cohort, who have been available to answer questions through Slack.
-- Code Institute tutors accessed through the Code Institute LMS have been helpful with understanding various concepts during instruction. 
-- The Code Institute assessment team; I can't imagine what kind of patience and knowledge it would take to look over these projects without losing it.
+- Code Institute tutors accessed through the Code Institute LMS have been helpful with understanding various concepts during instruction.
+- An explanation about how to have Django/Pillow upladed image files go to a specific folder was found [here.](https://youtu.be/O5YkEFLXcRg) The [Django documentation](https://docs.djangoproject.com/en/4.2/topics/files/) could have been a lot clearer about WHERE the example code goes, which is a frustrating aspect throughout working with Django.
+
 - Big thanks to [Lego](https://www.lego.com/en-ie) for having a toy that allows a tremendous amount of aftermarket and web based support, and for just being pretty rad.
 - A tremendous amount of Lego research was done on [Bricklink](https://www.bricklink.com/v2/main.page) and [Brickset.](https://brickset.com/sets/6301-1/Town-Mini-Figures)
 
@@ -596,6 +597,9 @@ Information on testing can be found in [the testing ReadMe](/TEST.md)
 - The original image used as the basis for the splash image is from [Brickset.](https://brickset.com/sets/6301-1/Town-Mini-Figures)
 - All computer generated renders are done in [Stud.io.](https://www.bricklink.com/v3/studio/download.page)
 
+### Other Thanks
+
+- The Code Institute assessment team; I can't imagine what kind of patience and knowledge it would take to look over these projects without losing it.
 - Finally, heartfelt appreciaton to my partner, Stevie, for infinite patience and encouragement. Also, no thanks to Lemon and Beckett for all their non-contributions throughout all five projects, though being fuzzy is it's own moral support.
 
 <br>
