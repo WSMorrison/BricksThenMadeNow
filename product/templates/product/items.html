@@ -8,7 +8,26 @@
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
-            <div class="col"></div>
+            <div class="col">
+                <div class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <span class="navbar-nav mr-auto">
+                            {{ current_theme }}
+                        </span>
+                        <span class="navbar-text">
+                            <div class="dropdown">
+                                <a class="logo-font font-weight-bold nav-link text-black" href="#" id="all-items-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    All Items
+                                </a>
+                                <div class="dropdown-menu border-0" aria-labelledby="all-items-link">
+                                    <a href="{% url 'items' %}" class="dropdown-item">All</a>
+                                    <a href="{% url 'items' %}?sort=item_part_count&direction=asc" class="dropdown-item">By Part Count</a>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
@@ -18,7 +37,6 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <p>Items</p>
             {% for item in items %}
             <div class="card" >
                 <div class="card-body">
