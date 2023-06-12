@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.db.models import Q
 
 
-# Index page with all items.
+# Operates the index page with all items.
 def all_items(request):
     items = Item.objects.all()
     query = None
@@ -37,6 +37,18 @@ def all_items(request):
 
     current_sort = f'{sort}_{direction}'
 
-    context = {'items': items, 'current_theme': themes, 'current_sort': current_sort}
+    context = {'items': items, 
+               'current_theme': themes, 
+               # 'current_sort': current_sort
+               }
 
     return render(request,'product/items.html', context)
+
+
+# Operates page that views details about a specific item.
+def item_detail(request, item_id):
+    item = get_object_or_404(Item, pk=item_id)
+
+    context = {'item': item,}
+
+    return render(request, 'product/item_detail.html', context)

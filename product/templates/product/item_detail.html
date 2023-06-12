@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load i18n %}
+{% block head_title %}{% trans "Bricks Then Made Now" %}{% endblock %}
+
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>{{ item.item_name }}</h3>
+            {{ item.item_number }}
+            {{ item.item_theme }}
+            {{ item.item_description }}
+            {{ item.item_part_count }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+
+{% endblock %}
