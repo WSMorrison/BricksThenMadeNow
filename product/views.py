@@ -41,9 +41,20 @@ def all_items(request):
 
     current_sort = f'{sort}_{direction}'
 
+    if current_sort == "item_part_count_asc":
+        current_sort = "Part Count Low to High"
+    elif current_sort == "item_part_count_desc":
+        current_sort = "Part Count High to Low"
+    elif current_sort == "item_price_asc":
+        current_sort = "Starting Price Low to High"
+    elif current_sort == "item_price_desc":
+        current_sort = "Starting Price High to Low"
+    else:
+        current_sort = "Sort by:"
+
     context = {'items': items, 
                'current_theme': current_theme, 
-               # 'current_sort': current_sort
+               'current_sort': current_sort
                }
 
     return render(request,'product/items.html', context)
@@ -52,6 +63,9 @@ def all_items(request):
 # Operates page that views details about a specific item.
 def item_detail(request, item_id):
     skus = Sku.objects.all()
+    sku_inst = None
+    sku_mdst = None
+    Sku_flst = None
     item = get_object_or_404(Item, pk=item_id)
 
     inst = skus.filter(sku_item__in=item_id, sku_type='inst')
@@ -59,11 +73,13 @@ def item_detail(request, item_id):
         sku_inst = get_object_or_404(inst)
     except:
         sku_inst = None
+
     mdst = skus.filter(sku_item__in=item_id, sku_type='mdst')
     try:
         sku_mdst = get_object_or_404(mdst)
     except:
         sku_mdst = None
+
     flst = skus.filter(sku_item__in=item_id, sku_type='flst')
     try:
         sku_flst = get_object_or_404(flst)
