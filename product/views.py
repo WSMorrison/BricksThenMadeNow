@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Item, Theme, Sku
+from .forms import ItemForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
 
@@ -93,3 +95,27 @@ def item_detail(request, item_id):
                }
 
     return render(request, 'product/item_detail.html', context)
+
+
+# Operates page that staff users can use to add new items to the database.
+@login_required
+def new_item(request):
+    if not request.user.is_superuser:
+        messages.error(request, 'You\'re not allowed to be here.')
+        return redirect(reverse('index'))
+
+    if request.method == 'POST':
+        form = ItemForm(request.POST, request.FILES)
+        if form.is_valid():
+            item = form.save()
+            messages.success(request, 'Item added, thank you.')
+            return redirect(reverse('item_detail', args=[item.id]))
+        else:
+            messages.error(request, 'Something went wrong, please check the form fields.')
+    else:
+        form = ItemForm()
+    
+    template = 'product/new_item.html'
+    context = {'form': form,}
+
+    return render(request, template, context)
