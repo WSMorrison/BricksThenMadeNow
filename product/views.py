@@ -50,9 +50,12 @@ def item_detail(request, item_id):
     skus = Sku.objects.all()
     item = get_object_or_404(Item, pk=item_id)
 
-    sku_inst = skus.filter(sku_item__in=item_id, sku_type='inst').values()
-    sku_mdst = skus.filter(sku_item__in=item_id, sku_type='mdst').values()
-    sku_flst = skus.filter(sku_item__in=item_id, sku_type='flst').values()
+    inst = skus.filter(sku_item__in=item_id, sku_type='inst')
+    sku_inst = get_object_or_404(inst)
+    mdst= skus.filter(sku_item__in=item_id, sku_type='mdst')
+    sku_mdst = get_object_or_404(mdst)
+    flst = skus.filter(sku_item__in=item_id, sku_type='flst')
+    sku_flst = get_object_or_404(flst)
 
     context = {'item': item,
                'sku_inst': sku_inst,
