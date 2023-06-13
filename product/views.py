@@ -11,19 +11,23 @@ def all_items(request):
     themes = None
     sort = None
     direction = None
+    current_theme = None
 
     if request.GET:
         if 'theme' in request.GET:
             themes = request.GET['theme'].split(',')
             items = items.filter(item_theme__name__in=themes)
-            themes = Theme.objects.filter(name__in=themes)
+            theme = Theme.objects.filter(name__in=themes)
+            current_theme = get_object_or_404(theme)
+        else:
+            current_theme = None
 
-        if 'q' in request.GET:
-            query = request.GET['q']
+        if 'searchterm' in request.GET:
+            query = request.GET['searchterm']
             if not query:
                 messages.error(request,'Please enter a search term.')
                 return redirect(reverse('items'))
-            queries = Q(item_name__icontains=query) | Q(item_description__icontains=query)
+            queries = Q(item_name__icontains=query) | Q(item_description__icontains=query) | Q(item_number__icontains=query)
             items = items.filter(queries)
 
         if 'sort' in request.GET:
@@ -38,7 +42,7 @@ def all_items(request):
     current_sort = f'{sort}_{direction}'
 
     context = {'items': items, 
-               'current_theme': themes, 
+               'current_theme': current_theme, 
                # 'current_sort': current_sort
                }
 
@@ -51,11 +55,20 @@ def item_detail(request, item_id):
     item = get_object_or_404(Item, pk=item_id)
 
     inst = skus.filter(sku_item__in=item_id, sku_type='inst')
-    sku_inst = get_object_or_404(inst)
-    mdst= skus.filter(sku_item__in=item_id, sku_type='mdst')
-    sku_mdst = get_object_or_404(mdst)
+    try:
+        sku_inst = get_object_or_404(inst)
+    except:
+        sku_inst = None
+    mdst = skus.filter(sku_item__in=item_id, sku_type='mdst')
+    try:
+        sku_mdst = get_object_or_404(mdst)
+    except:
+        sku_mdst = None
     flst = skus.filter(sku_item__in=item_id, sku_type='flst')
-    sku_flst = get_object_or_404(flst)
+    try:
+        sku_flst = get_object_or_404(flst)
+    except:
+        sku_flst = None
 
     context = {'item': item,
                'sku_inst': sku_inst,

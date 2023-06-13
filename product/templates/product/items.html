@@ -12,7 +12,11 @@
                 <div class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="collapse navbar-collapse" id="navbarText">
                         <span class="navbar-nav mr-auto">
-                            {{ current_theme }}
+                            {% if current_theme %}
+                                {{ current_theme }}
+                            {% else %}
+                                All
+                            {% endif %}
                         </span>
                         <span class="navbar-text">
                             <div class="dropdown">

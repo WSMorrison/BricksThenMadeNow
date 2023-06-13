@@ -28,10 +28,21 @@
             <p>{{ item.item_number }}</p>
             <p>{{ item.item_description }}</p>
             <p>{{ item.item_part_count }}</p>
-            <p>Test area</p>
-            <p>Buy the instructions for {{ sku_inst.sku_price }}</p>
-            <p>Buy the instructions and all the bricks for {{ sku_mdst.sku_price }}</p>
-            <p>Buy the instructions, the bricks, and the vintage set it's based on for {{ sku_flst.sku_price }}</p>
+            {% if sku_inst %}
+                <p>Buy the instructions for {{ sku_inst.sku_price }}</p>
+            {% else %}
+                <p>Instructions coming soon!</p>
+            {% endif %}
+            {% if sku_inst %}
+                <p>Buy the instructions and all the bricks for {{ sku_mdst.sku_price }}</p>
+            {% else %}
+                <p>Modern set coming soon!</p>
+            {% endif %}
+            {% if sku_inst %}
+                <p>Buy the instructions, the bricks, and the vintage set it's based on for {{ sku_flst.sku_price }}</p>
+            {% else %}
+                <p>Full set coming soon!</p>
+            {% endif %}
         </div>
     </div>
 </div>
