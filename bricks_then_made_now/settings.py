@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites', # Will not use this!!!!!
-    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount', # Will not use this!!!!!

@@ -1,10 +1,6 @@
 from django import forms
 from .models import Item, Sku, Theme
 
-from crispy_forms.helper import FormHelper, Layout
-from crispy_forms.layout import Layout, Field, MultiField, Div, Fieldset
-from crispy_forms.bootstrap import InlineField
-
 class ItemForm(forms.ModelForm):
 
     class Meta:
