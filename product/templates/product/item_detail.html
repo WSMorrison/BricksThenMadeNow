@@ -7,6 +7,16 @@
 
 {% block page_header %}
 
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+            <div class="navbar navbar-expand-lg navbar-light bg-light">
+                {{ item.item_theme }} > {{ item.item_name }}
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
 
 {% block content %}
@@ -15,10 +25,13 @@
     <div class="row">
         <div class="col">
             <h3>{{ item.item_name }}</h3>
-            {{ item.item_number }}
-            {{ item.item_theme }}
-            {{ item.item_description }}
-            {{ item.item_part_count }}
+            <p>{{ item.item_number }}</p>
+            <p>{{ item.item_description }}</p>
+            <p>{{ item.item_part_count }}</p>
+            <p>Test area</p>
+            <p>{{ sku_inst }}</p>
+            <p>{{ sku_mdst }}</p>
+            <p>{{ sku_flst }}</p>
         </div>
     </div>
 </div>

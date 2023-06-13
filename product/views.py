@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .models import Item, Theme
+from .models import Item, Theme, Sku
 from django.contrib import messages
 from django.db.models import Q
 
@@ -47,8 +47,17 @@ def all_items(request):
 
 # Operates page that views details about a specific item.
 def item_detail(request, item_id):
+    skus = Sku.objects.all()
     item = get_object_or_404(Item, pk=item_id)
 
-    context = {'item': item,}
+    sku_inst = skus.filter(sku_item__in=item_id, sku_type='inst').values()
+    sku_mdst = skus.filter(sku_item__in=item_id, sku_type='mdst').values()
+    sku_flst = skus.filter(sku_item__in=item_id, sku_type='flst').values()
+
+    context = {'item': item,
+               'sku_inst': sku_inst,
+               'sku_mdst': sku_mdst,
+               'sku_flst': sku_flst,
+               }
 
     return render(request, 'product/item_detail.html', context)
