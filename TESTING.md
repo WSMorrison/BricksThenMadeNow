@@ -21,7 +21,9 @@ Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to ot
   - [Accessibility](#accessibility)
   - [Code Validation](#code-validation)
   - [Systematic Manual Testing](#systematic-manual-testing)
-    - [Testing](#)
+    - [Testing tables](#)
+    ...
+    - [Testing tables](#)
   - [Representative User Manual Testing](#representative-user-manual-testing)
   - [Bugs](#bugs)
       - [Fixed bugs](#fixed-bugs)
@@ -92,17 +94,9 @@ The following features were tested as an unlogged-in user:
 |-------------------------|----------|------------------------------------------------------------------------|---------|
 | Splash Image            | Hover    | Indicate link                                                          | Pass    |
 | Splash Image            | Click    | Navigate to home tab                                                   | Pass    |
-| Nav Bar                 | Display  | Show All, Log In, Sign Up tabs                                         | Pass    |
-| Nav Bar                 | Display  | Indicate navigated tab                                                 | Pass    |
-| Footer                  | Display  | Display social meda links                                              | Pass    |
+...
 
-
-| Delete event               | Pass    |
-| Filter events by date      | Pass    |
-| Filter events by organizer | Pass    |
-| Filter events by attendee  | Pass    |
-| Add user to event          | Pass    |
-| Remove user from event     | Pass    |
+...
 | Promote user to organizer  | Pass    |
 | Demote organizer to user   | Pass    |
 
@@ -113,28 +107,12 @@ The following features were tested as an unlogged-in user:
 
 <hr>
 
-In addition to formal manual testing, the site was shown to friends who would be representative as users for this website. Most of these testers are active in the car community, or at least adjacent enough to the car community to provide relevant, valuable feedback.
+In addition to formal manual testing, the site was shown to friends who would be representative as users for this website. Most of these testers are active in the Lego community, or at least Lego community adjacent. Regardless, even non-Lego testers understand how to use the internet and e-commerce and were therefore able to give relevant and valuable feedback. The following testing was completed by representative testers.
 
-- Despite the Code Institute instruction suggesting the website is too visually plain, representative User testers appreciated the simple and clear design.
 - Representative User testers were able to visit the site, view event lists and event details.
 - Navigation was clear and easy to follow.
 - Users were able to sign up for user accounts.
-- Users were able to register for events they liked.
-- Users were able to view a list of events they were registered for.
-- Users were able to unregister for events they decided they didn't like.
-- Users given the permissions were able to create events easily.
-    - Feedback was given and addressed about certain special characters causing errors.
-    - Feedback was given and addressed about form validation error copy being vague.
-- Users given the permissions were able to edit events easily.
-    - Feedback was given and addressed about an error regarding form validation in the edit view.
-- Users were able to input event location URLs without issue.
-    - Feedback was given and addressed about URL examples and behavior nudging.
-    - Feedback was given and considered, but ultimately rejected, about having the URL be optional or allowing non-Google Maps sources. 
-        - The feature is considered too important to the purpose of the site.
-        - Non-Google Maps sources are considered non-standard and potentially unreliable, and would conflict with the simplicity and consistency the HardParkers intends to provide.
-        - The maps link is considered an MVP for future feature implementations.
-    - Feedback was given and addressed about URLs being different from different Google Maps sources, particularly mobile app sources which the HardParkers intends to directly target.
-- The printable attendee list printed without any formatting adjustments for a straightforward print. It was also tested for printing to a .pdf, which it did directly and without issue.
+- 
 
 <br>
 <hr>
