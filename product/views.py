@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Item, Theme, Sku
-from .forms import ItemForm
+from .forms import ItemForm, SkuForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -70,24 +70,19 @@ def item_detail(request, item_id):
     skus = Sku.objects.all()
     sku_inst = None
     sku_mdst = None
-    Sku_flst = None
+    sku_flst = None
     item = get_object_or_404(Item, pk=item_id)
 
-    inst = skus.filter(sku_item__in=item_id, sku_type='inst')
     try:
-        sku_inst = get_object_or_404(inst)
+        sku_inst = skus.get(sku_item=item, sku_type='inst')
     except:
         sku_inst = None
-
-    mdst = skus.filter(sku_item__in=item_id, sku_type='mdst')
     try:
-        sku_mdst = get_object_or_404(mdst)
+        sku_mdst = skus.get(sku_item=item, sku_type='mdst')
     except:
         sku_mdst = None
-
-    flst = skus.filter(sku_item__in=item_id, sku_type='flst')
     try:
-        sku_flst = get_object_or_404(flst)
+        sku_flst = skus.get(sku_item=item, sku_type='flst')
     except:
         sku_flst = None
 
@@ -119,6 +114,30 @@ def new_item(request):
         form = ItemForm()
 
     template = 'product/new_item.html'
+    context = {'form': form,}
+
+    return render(request, template, context)
+
+# Operates page that staff users can use to add new items to the database.
+@login_required
+def new_sku(request):
+    if not request.user.is_superuser:
+        messages.error(request, 'You\'re not allowed to be here.')
+        return redirect(reverse('index'))
+
+    if request.method == 'POST':
+        form = SkuForm(request.POST, request.FILES)
+        if form.is_valid():
+            sku = form.save()
+            messages.success(request, 'Sku added, thank you.')
+            print(sku.sku_type)
+            return redirect(reverse('items'))
+        else:
+            messages.error(request, 'Something went wrong, please check the form fields.')
+    else:
+        form = SkuForm()
+
+    template = 'product/new_sku.html'
     context = {'form': form,}
 
     return render(request, template, context)

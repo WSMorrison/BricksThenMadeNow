@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+                Add Sku
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <hr>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form method="POST" action="{% url 'new_sku' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <p>{{ field.label }}</p>
+                        {{ field }}
+                    {% endfor %}
+                    <div class="text-right">
+                        <a class="btn" href="{% url 'items' %}">Cancel</a>
+                        <button class="btn" type="submit">Add New Sku</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+
+{% endblock %}

@@ -18,8 +18,7 @@ class ItemForm(forms.ModelForm):
     class Meta:
         model = Item
         fields = '__all__'
-        labels = {'item_number': 'Item number XX0YYYY:',
-                  'item_name': 'Item name; use the original Lego set name:',
+        labels = {'item_name': 'Item name; use the original Lego set name:',
                   'item_theme': 'Choose theme:',
                   'item_description': 'Brief item description; remember SEO keywords:',
                   'item_old_url': 'Image hosted link:',
@@ -28,13 +27,11 @@ class ItemForm(forms.ModelForm):
                   'item_detail_url': 'Detail image hosted link:',
                   'item_part_count': 'How many Lego bricks and elements are used? Exclude minifigs:'
                   }
-    '''
-    image_old = forms.ImageField(label='Image of the reference set:', required=False)
-    image_render = forms.ImageField(label='Render of BTMN version:', required=False)
-    image_modern = forms.ImageField(label='Image of BTMN version in plastic:', required=False)
-    image_detail = forms.ImageField(label='Optional detail image:', required=False)
-    '''
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        theme = Theme.objects.all()
+
+# New Sku form
+class SkuForm(forms.ModelForm):
+
+    class Meta:
+        model = Sku
+        fields = '__all__'
