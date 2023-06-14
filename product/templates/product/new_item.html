@@ -16,7 +16,6 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <hr>
-                    Add an Item here.
                 <hr>
             </div>
         </div>
@@ -26,10 +25,10 @@
                 <form method="POST" action="{% url 'new_item' %}" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
-                        {% if field.name != 'image' %}
-                            {{ field }}
-                        {% else %}
-                            {{ field }}
+                        <p>{{ field.label }}</p>
+                        {{ field }}
+                        {% if field.name == 'item_number' %}
+                            <p>XX as the year created, 0 as the reference Lego set number (Use the 0 if five digits)</p>
                         {% endif %}
                     {% endfor %}
                     <div class="text-right">

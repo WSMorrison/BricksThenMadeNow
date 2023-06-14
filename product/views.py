@@ -29,7 +29,10 @@ def all_items(request):
             if not query:
                 messages.error(request,'Please enter a search term.')
                 return redirect(reverse('items'))
-            queries = Q(item_name__icontains=query) | Q(item_description__icontains=query) | Q(item_number__icontains=query)
+            queries = Q(item_name__icontains=query
+                        ) | Q(item_description__icontains=query
+                        ) | Q(item_number__icontains=query
+                        )
             items = items.filter(queries)
 
         if 'sort' in request.GET:
@@ -54,7 +57,7 @@ def all_items(request):
     else:
         current_sort = "Sort by:"
 
-    context = {'items': items, 
+    context = {'items': items,
                'current_theme': current_theme, 
                'current_sort': current_sort
                }
@@ -114,7 +117,7 @@ def new_item(request):
             messages.error(request, 'Something went wrong, please check the form fields.')
     else:
         form = ItemForm()
-    
+
     template = 'product/new_item.html'
     context = {'form': form,}
 
