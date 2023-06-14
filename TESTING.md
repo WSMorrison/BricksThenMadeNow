@@ -1,14 +1,13 @@
-# The Hardparkers
+# Bricks Then Made Now
 
-The HardParkers website is is a simple, streamlined, and mobile focused resource for automotive enthusiasts to find meets and shows they would like to attend in their area. It allows event organizers to publish their event details and for participants to register to attend, making it simple for organizers to get the word out and easy for enthusiasts to find events that match their interests.
+Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to other Lego fans. The site will appeal to adult followers of Lego (AFOL), by reimagining vintage Lego from the 1970s, '80s, and '90s with modern elements and contemporary design techniques.
 
-This ReadMe will discuss the testing of the app. Some of the information can also be found on the main ReadMe, but this Testing ReadMe will go into greater detail about the systematic manual testing.
+![Front page of Bricks Then Made Now as input to AmIResponsive.](#)
 
-The site was tested as an unlogged-in visitor, as a logged-in basic user (User), as a logged-in event promoter and organizer (Organizer), and as a logged in the site owner or admin (Owner). Much of the functionality was the same or similar, but permissions were different and there were different aspects of the project that required different aspects of testing.
+[AmIResponsive](https://ui.dev/amiresponsive)
 
-The main ReadMe can be found [here.](/README.md)
-
-### The deployed site can be found here: [The HardParkers](https://hardparkers.herokuapp.com/)
+### The side, deployed to Heroku, can be found here: [Bricks Then Made Now](#)
+#### The repository in GitHub can be found here: [WSMorrison/bricksthenmadenow](#)
 
 <br>
 <hr>
@@ -22,48 +21,7 @@ The main ReadMe can be found [here.](/README.md)
   - [Accessibility](#accessibility)
   - [Code Validation](#code-validation)
   - [Systematic Manual Testing](#systematic-manual-testing)
-    - [Unlogged-in user](#unlogged-in-user)
-      - [Index page](#index-page-unlogged-in-user)
-      - [Log In page](#log-in-page-unlogged-in-user)
-      - [Sign Up page](#sign-up-page-unlogged-in-user)
-      - [Details page](#details-page-unlogged-in-user)
-    - [Basic Site User](#basic-site-user)
-      - [Index page](#index-page-user)
-      - [Attending Events page](#attending-events-page-user)
-      - [Log Out page](#log-out-page-organizer)
-      - [Details page](#details-page-user)
-      - [Thank you for registering page](#thank-you-for-registering-page-user)
-      - [Thank you for unregistering page](#thank-you-for-unregistering-page-user)
-    - [Event Organizer](#event-organizer)
-      - [Index page](#index-page-organizer)
-      - [Attending Events page](#attending-events-page-organizer)
-      - [Organized Events page](#organized-events-page-organizer)
-      - [LogOut page](#log-out-page-organizer)
-      - [Details page](#details-page-organizer)
-      - [Thank you for registering page](#thank-you-for-registering-page-organizer)
-      - [Thank you for unregistering page](#thank-you-for-unregistering-page-organizer)
-      - [Create Event page](#create-event-page-organizer)
-      - [Attendee page](#attendee-page-organizer)
-      - [Edit Event page](#edit-event-page-organizer)
-      - [Delete Event confirmation page](#delete-event-confirmation-page-organizer)
-      - [Thank you for creating your event page](#thank-you-for-creating-your-event-page-organizer)
-      - [Thank you for deleting your event page](#thank-you-for-deleting-your-event-page-organizer)
-    - [Site Owner](#site-owner)
-      - [Index page](#index-page-owner)
-      - [Attending Events page](#attending-events-page-owner)
-      - [Organized Events page](#organized-events-page-owner)
-      - [Owner Control Panel page](#owner-control-panel-page-owner)
-      - [LogOut page](#log-out-page-owner)
-      - [Details page](#details-page-owner)
-      - [Thank you for registering page](#thank-you-for-registering-page-owner)
-      - [Thank you for unregistering page](#thank-you-for-unregistering-page-owner)
-      - [Create Event page](#create-event-page-owner)
-      - [Attendee page](#attendee-page-owner)
-      - [Edit Event page](#edit-event-page-owner)
-      - [Delete Event confirmation page](#delete-event-confirmation-page-owner)
-      - [Thank you for creating your event page](#thank-you-for-creating-your-event-page-owner)
-      - [Thank you for deleting your event page](#thank-you-for-deleting-your-event-page-owner)
-      - [Admin Panel](#admin-panel-owner)
+    - [Testing](#)
   - [Representative User Manual Testing](#representative-user-manual-testing)
   - [Bugs](#bugs)
       - [Fixed bugs](#fixed-bugs)
@@ -80,7 +38,7 @@ The main ReadMe can be found [here.](/README.md)
 
 The page was checked for responsiveness by using [AmIResponsive.](https://ui.dev/amiresponsive)
 
-![Front page of The HardParkers as input to AmIResponsive.](/assets/readme-images/Responsive.png)
+![Front page of Bricks Then Made Now as input to AmIResponsive.](#)
 
 ## Accessibility
 
@@ -93,23 +51,23 @@ Care was taken to make sure the website was accessible.
 
 Accessibility was checked by using Google Chrome [Lighthouse.](https://chrome.google.com/webstore/detail/lighthouse/)
 
-![Lighthouse score for page](/assets/readme-images/Lighthouse.png)
+![Lighthouse score for page](#)
 
-The accessibility score is less than 100% because the "Background and foreground colors do not have a sufficient contrast ratio," however, changing the colors did not seem to make any difference in the score.
+The accessibility score is less than 100% because
 
 ## Code Validation
 
 The HTML for the website was put through the [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input). Each page of the site was tested by opening the page, viewing page source, and copying and pasting the source code into the validator. This avoided any issues with the template tags upsetting the validator to the point that it did not check the rest of the code. Any errors found were fixed. As credit to Django's automated page generation through template tags, the only errors were in the hand written code of the base.html; a stray closing italic tag in the footer, and an attempt at a responsive break in the blockquote to try to influence the line break that did not have any effect. Both were fixed, and each page was returned without errors.
 
-![W3C Markup validator representative return](/assets/readme-images/W3CHTMLValidator.png)
+![W3C Markup validator representative return](#)
 
-The CSS was put through the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). The short, hand written CSS file checked without errors.
+The CSS was put through the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/).
 
-![W3C CSS validator representative return](/assets/readme-images/W3CCSSValidator.png)
+![W3C CSS validator representative return](#)
 
-The Python code was checked with the [Code Institute Python linter](https://pep8ci.herokuapp.com/). Each hand written python file was checked with the linter; forms.py, models.py, urls.py, and views.py. Each was returned without errors.
+The Python code was checked with the [Code Institute Python linter](https://pep8ci.herokuapp.com/).py, and views.py. Each was returned without errors.
 
-![CI Python linter representative return](/assets/readme-images/CIPythonLinter.png)
+![CI Python linter representative return](#)
 
 <br>
 <hr>

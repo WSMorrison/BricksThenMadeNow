@@ -563,7 +563,7 @@ Information on how to fork or clone the repository can be found in [the developm
 <hr>
 <br>
 
-Information on testing can be found in [the testing ReadMe](/TEST.md)
+Information on testing can be found in [the testing ReadMe](/TESTING.md)
 
 <br>
 <hr>

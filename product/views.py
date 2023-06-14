@@ -92,7 +92,7 @@ def item_detail(request, item_id):
                'sku_flst': sku_flst,
                }
 
-    return render(request, 'product/item_detail.html', context)
+    return render(request, 'product/item-detail.html', context)
 
 
 # Operates page that staff users can use to add new items to the database.
@@ -113,7 +113,7 @@ def new_item(request):
     else:
         form = ItemForm()
 
-    template = 'product/new_item.html'
+    template = 'product/new-item.html'
     context = {'form': form,}
 
     return render(request, template, context)
@@ -137,7 +137,7 @@ def new_sku(request):
     else:
         form = SkuForm()
 
-    template = 'product/new_sku.html'
+    template = 'product/new-sku.html'
     context = {'form': form,}
 
     return render(request, template, context)
