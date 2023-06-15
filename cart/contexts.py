@@ -11,7 +11,7 @@ def cart_contents(request):
     item_count = 0
     cart = request.session.get('cart', {})
 
-    for sku_id, quantity in bag.items():
+    for sku_id, quantity in cart.items():
         added_sku = get_object_or_404(Sku, pk=sku_id)
         total += quantity * added_sku.price
         product_count += quantity
