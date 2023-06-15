@@ -1,5 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
+from django.shortcuts import get_object_or_404
+from product.models import Sku
 
 # Context that generates the dictionary holding bag contents.
 def cart_contents(request):
@@ -7,6 +9,17 @@ def cart_contents(request):
     cart_items = []
     total = 0
     item_count = 0
+    cart = request.session.get('cart', {})
+
+    for sku_id, quantity in bag.items():
+        added_sku = get_object_or_404(Sku, pk=sku_id)
+        total += quantity * added_sku.price
+        product_count += quantity
+        cart_items.append({
+            'sku_id': sku_id,
+            'quantity': quantity,
+            'added_sku': added_sku,
+        })
 
     if total < settings.FREE_SHIPPING:
         shipping = total * Decimal(settings.SHIPPING_RATE)
