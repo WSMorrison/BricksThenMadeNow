@@ -19,8 +19,10 @@
           </form>
         </div>
         <div class="col-2 col-lg-1 my-auto">
-          <i id="cart-icon" class="fa-solid fa-cart-shopping d-inline"></i>
-          <p class="d-inline">$0.00</p>
+          <a class="nav-link" href="{% url 'view_cart' %}">
+            <i id="cart-icon" class="fa-solid fa-cart-shopping d-inline"></i>
+            <p class="d-inline">$0.00</p>
+          </a>
         </div>
     </div>
   </div>

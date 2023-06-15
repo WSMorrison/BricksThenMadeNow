@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load i18n %}
+{% block head_title %}{% trans "Bricks Then Made Now" %}{% endblock %}
+
+{% block page_header %}
+
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+                Shopping Cart
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+            {% if cart_items %}
+                {% for item in items %}
+                {% endfor %}
+            {% else %}
+                <p>Cart is empty! Check out all our cool stuff!</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
