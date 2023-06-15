@@ -15,12 +15,12 @@ def cart_contents(request):
         shipping = 0
         to_get_free_shipping = 0
 
-    grand_total = total + delivery
+    grand_total = total + shipping
 
     context = {
         'cart_items': cart_items,
         'item_count': item_count,
-        'free_shipping': FREE_SHIPPING,
+        'free_shipping': settings.FREE_SHIPPING,
         'shipping': shipping,
         'to_get_free_shipping':to_get_free_shipping,
         'total': total,
