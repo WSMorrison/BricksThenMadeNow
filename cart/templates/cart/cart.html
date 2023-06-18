@@ -24,6 +24,7 @@
         <div class="col">
             {% if cart_items %}
                 {% for item in cart_items %}
+                    {{ item.added_item }}
                     {{ item.added_sku.sku_number }}
                     {{ item.added_sku.sku_price }}
                     {{ item.quantity }}
