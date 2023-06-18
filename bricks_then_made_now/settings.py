@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG')
 
 
-ALLOWED_HOSTS = ['localhost', '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-eu99.gitpod.io']
+ALLOWED_HOSTS = ['localhost', '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-us100.gitpod.io']
 
 
 # Application definition

@@ -13,8 +13,8 @@ def cart_contents(request):
 
     for sku_id, quantity in cart.items():
         added_sku = get_object_or_404(Sku, pk=sku_id)
-        total += quantity * added_sku.price
-        product_count += quantity
+        total += quantity * added_sku.sku_price
+        item_count += quantity
         cart_items.append({
             'sku_id': sku_id,
             'quantity': quantity,
