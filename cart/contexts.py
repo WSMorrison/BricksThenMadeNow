@@ -16,8 +16,10 @@ def cart_contents(request):
     for sku_id, quantity in cart.items():
         added_sku = get_object_or_404(Sku, pk=sku_id)
         added_item = added_sku.sku_item
+        added_number = added_item.item_number
         total += quantity * added_sku.sku_price
         item_count += quantity
+        extended_price = quantity * added_sku.sku_price
         if added_sku.sku_physical:
             shipping_total += quantity
         cart_items.append({
@@ -25,6 +27,8 @@ def cart_contents(request):
             'quantity': quantity,
             'added_sku': added_sku,
             'added_item': added_item,
+            'added_number': added_number,
+            'extended_price': extended_price,
         })
 
     if total < settings.FREE_SHIPPING:
@@ -48,6 +52,7 @@ def cart_contents(request):
         'free_shipping': settings.FREE_SHIPPING,
         'shipping': shipping,
         'to_get_free_shipping':to_get_free_shipping,
+        'shipping_total': shipping_total,
         'total': total,
         'grand_total':grand_total,
     }

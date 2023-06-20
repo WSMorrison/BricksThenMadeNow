@@ -25,16 +25,18 @@
             {% if cart_items %}
                 {% for item in cart_items %}
                     <div>
-                        {{ item.added_item }}
-                        {{ item.added_sku.sku_number }}
-                        {{ item.added_sku.sku_price }}
-                        {{ item.quantity }}
+                        <p>{{ item.added_item }} {{ item.added_number }}{{ item.added_sku.sku_number }}</p>
+                        <p>Price: {{ item.added_sku.sku_price }} Qty: {{ item.quantity }} Extended Price: {{ item.extended_price }}</p>
                     </div>
                 {% endfor %}
                 <div>
                     <p>Total items to ship: {{ shipping_total }}</p>
-                    <p>Shipping cost: {{ shipping }}</p>
-                    <p>Grand total: {{ grand_total }}</p>
+                    {% if shipping == 0 %}
+                        <p>Shipping cost: $0.00</p>
+                    {% else %}
+                        <p>Shipping cost: ${{ shipping }}</p>
+                    {% endif %}
+                    <p>Grand total: ${{ grand_total }}</p>
                 </div>
             {% else %}
                 <p>Cart is empty! Check out all our cool stuff!</p>
