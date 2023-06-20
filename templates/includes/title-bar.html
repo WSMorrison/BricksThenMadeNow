@@ -20,8 +20,18 @@
         </div>
         <div class="col-2 col-lg-1 my-auto">
           <a class="nav-link" href="{% url 'view_cart' %}">
+            {% if total %}
+            <i id="cart-icon" class="fa-solid fa-cart-arrow-down"></i>
+            {% else %}
             <i id="cart-icon" class="fa-solid fa-cart-shopping d-inline"></i>
-            <p class="d-inline">$0.00</p>
+            {% endif %}
+            <p class="d-inline">
+              {% if total %}
+                ${{ total|floatformat:2 }}
+              {% else %}
+                $0.00
+              {% endif %}
+            </p>
           </a>
         </div>
     </div>
