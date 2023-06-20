@@ -173,4 +173,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 FREE_SHIPPING = 50
-SHIPPING_RATE = 15
+SMALL_PACKAGE = 8.55
+LARGE_PACKAGE = 14.75
