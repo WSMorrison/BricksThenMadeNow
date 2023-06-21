@@ -57,18 +57,16 @@ body {
 }
 
 #search-area {
-    font-size: 2rem;
-}
-
-#search-form {
-    margin: auto;
+    font-size: 3rem;
+    width: 90%;
 }
 
 #search-box {
-    width: 80%;
+    width: 90%;
+    margin: auto;
 }
 
-#inline {
+.inline {
     display: inline;
 }
 
