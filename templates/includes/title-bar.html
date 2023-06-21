@@ -1,6 +1,7 @@
 <!--Title bar including search form and cart-->
 <div class="container">
     <div class="row no-gutters">
+
         <div id="title-container" class="col-12 col-lg-6">
           <div>
             <a href="{% url 'home' %}">
@@ -8,31 +9,43 @@
             </a>
           </div>
         </div>
-        <div id="search-area" class="col-8 col-lg-5 my-auto">
+
+        <div id="search-area" class="col-12 col-lg-5 my-auto">
           <form method="GET" action="{% url 'items' %}">
-            <span>
-              <input class="search" type="text" name="searchterm" size="25" placeholder="What do you want to build?">
-            </span>
-            <span class="">
-              <button class="" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </span>
+            <div id="search-form" class="input-group">
+              <div id="search-box" class="form-outline">
+                <input class="form-control" type="text" name="searchterm" placeholder="What do you want to build?">
+              </div>
+              <button class="btn" type="submit"><i class="fa-solid fa-search"></i></button>
+            </div>
           </form>
         </div>
-        <div class="col-2 col-lg-1 my-auto">
+
+        <div class="col-12 col-lg-1 my-auto">
           <a class="nav-link" href="{% url 'view_cart' %}">
-            {% if total %}
-            <i id="cart-icon" class="fa-solid fa-cart-arrow-down"></i>
-            {% else %}
-            <i id="cart-icon" class="fa-solid fa-cart-shopping d-inline"></i>
-            {% endif %}
-            <p class="d-inline">
-              {% if total %}
-                ${{ total|floatformat:2 }}
-              {% else %}
-                $0.00
-              {% endif %}
-            </p>
+            <div class="container">
+              <div class="row no-gutters">
+                <div class="col-10"></div>
+                <div class="col-1">
+                  {% if total %}
+                  <i id="cart-icon" class="fa-solid fa-cart-arrow-down"></i>
+                  {% else %}
+                  <i id="cart-icon" class="fa-solid fa-cart-shopping d-inline"></i>
+                  {% endif %}
+                </div>
+                <div class="col-1">
+                  <p id="cart-total" class="d-inline">
+                    {% if total %}
+                      ${{ total|floatformat:2 }}
+                    {% else %}
+                      $0.00
+                    {% endif %}
+                  </p>
+                </div>
+              </div>
+            </div>
           </a>
         </div>
+
     </div>
   </div>

@@ -25,23 +25,24 @@ body {
 #title-then {
     font-family: 'Vina Sans', sans-serif;
     font-size: 4rem;
-    color: #ff0000;
+    color: #da1c91;
     display: inline;
 }
 
 #title-mid {
     font-family: 'Mina', sans-serif;
     font-size: 3rem;
-    color: #ffe600;
+    color: #ffcf00;
     display: inline;
 }
 
 #title-now {
     font-family: 'Staatliches', sans-serif;
     font-size: 4rem;
-    color: #0000ff;
+    color: #0067b2;
     display: inline;
 }
+
 
 #search-area {
     font-size: 2rem;

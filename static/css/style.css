@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Mina&family=Vina+Sans&family=Staatliches");
 
+:root {
+    --text-color: 0, 103, 178;
+    --text-contrast: 218, 41, 28;
+    --text-very-contrast: 255, 207, 0;
+
+    --background-color: 250, 250, 255;
+    --window-color: 238, 240, 242;
+    --header-footer-color: 219, 222, 217;
+    --division-color: 236, 235, 238;
+    --text-border-color: 28, 28, 28;
+    --text-border-color-disabled: 82,82,82;
+}
+
 html {
     font-size: 62.5%;
     margin: 0;
@@ -25,26 +38,34 @@ body {
 #title-then {
     font-family: 'Vina Sans', sans-serif;
     font-size: 4rem;
-    color: #DA291C;
+    color: rgb(var(--text-contrast));
     display: inline;
 }
 
 #title-mid {
     font-family: 'Mina', sans-serif;
     font-size: 3rem;
-    color: #ffcf00;
+    color: rgb(var(--text-very-contrast));
     display: inline;
 }
 
 #title-now {
     font-family: 'Staatliches', sans-serif;
     font-size: 4rem;
-    color: #0067b2;
+    color: rgb(var(--text-color));
     display: inline;
 }
 
 #search-area {
     font-size: 2rem;
+}
+
+#search-form {
+    margin: auto;
+}
+
+#search-box {
+    width: 80%;
 }
 
 #inline {
@@ -53,6 +74,12 @@ body {
 
 #cart-icon {
     font-size: 3rem;
+    color: rgb(var(--text-color));
+}
+
+#cart-total {
+    font-size: 1.5rem;
+    color: rgb(var(--text-color));
 }
 
 #nav-container {
