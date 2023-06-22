@@ -2,6 +2,7 @@
 
 :root {
     --text-color: 33, 37, 41;
+    --text-color-muted: 124, 127, 129;
     --title-color: 0, 103, 178;
     --title-contrast: 218, 41, 28;
     --title-very-contrast: 255, 207, 0;
@@ -19,6 +20,7 @@
 
 .test-area{
     text-color: #212529;
+    text-color-muted: #7c7f81;
     title-color: #0067b2;
     title-contrast: #da291c;
     title-very-contrast: #ffcf00;
@@ -137,6 +139,36 @@ body {
 
 footer {
     background-color: rgb(var(--background-color-dark));
+}
+
+.footer-box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+#signup-box {
+    width: 75%;
+}
+
+#footer-signup-input {
+    font-size: 1.5rem;
+}
+
+#footer-signup-submit {
+    font-size: 1.5rem;
+    margin-left: 0;
+}
+
+.nav-link {
+    color: rgb(var(--text-color));
+}
+
+.educational-purposes {
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgb(var(--text-color-muted))
 }
 
 @media only screen and (min-width: 992px) {
