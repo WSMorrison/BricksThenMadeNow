@@ -81,6 +81,8 @@ User Stories example
 
 Color scheme example
 
+The Color scheme was developed with help from [Color Shades Online Generator](https://gradients.app/en/shades)
+
 ![Example Bootswatch Spacelab colorscheme](/assets/readme-images/BootswatchSpacelab.png)
 
 [Bootswatch Spacelab](https://bootswatch.com/spacelab/)
@@ -476,6 +478,8 @@ Future implementations example
 
 ### Accessibility
 
+Colors were checked for contrast during development using Coolers' [Color Contrast Checker](https://coolors.co/contrast-checker/0067b2-d2d5da)
+
 Accessibility examples
 
 <br>
@@ -497,6 +501,8 @@ This project uses HTML, CSS, [Python](https://www.python.org/) and Javascript pr
 - [Bootstrap](https://getbootstrap.com/)
 - [Bulk Resize Photos](https://bulkresizephotos.com/en)
 - Code Institute Gitpod Full Template - Available on request.
+- [Color Contrast Checker](https://coolors.co/contrast-checker/)
+- [Color Shates Online Generator](https://gradients.app/en/shades/)
 - [Django](https://www.djangoproject.com/)
   - [Allauth](https://django-allauth.readthedocs.io/en/latest/)
 - [Favicon.io](https://favicon.io/)

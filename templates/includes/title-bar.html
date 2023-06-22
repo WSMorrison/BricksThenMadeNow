@@ -1,8 +1,8 @@
 <!--Title bar including search form and cart-->
-<div class="container">
+<div id="title-bar-container" class="container">
     <div class="row no-gutters">
 
-        <div id="title-container" class="col-12 col-lg-6">
+        <div id="title" class="col-12 col-lg-6">
           <div>
             <a href="{% url 'home' %}">
               <p id="title-then">Bricks Then</p><p id="title-mid">/</p><p id="title-now">Made Now</p>
@@ -23,7 +23,7 @@
 
         <div class="col-12 col-lg-1 my-auto">
           <a class="nav-link" href="{% url 'view_cart' %}">
-            <div class="container">
+            <div class="container mt-2">
               <div class="row no-gutters">
                 <div class="col-10"></div>
                 <div class="col-1">
@@ -33,6 +33,7 @@
                   <i id="cart-icon" class="fa-solid fa-cart-shopping d-inline"></i>
                   {% endif %}
                 </div>
+
                 <div class="col-1">
                   <p id="cart-total" class="d-inline">
                     {% if total %}
