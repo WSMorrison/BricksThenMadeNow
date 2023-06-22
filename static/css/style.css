@@ -126,18 +126,22 @@ body {
     background-color: rgb(var(--background-color-med));
 }
 
+#splash-container {
+    background-color: rgb(var(--title-very-contrast));
+}
+
 #splash {
-    background: url('../media/splash.png') center;
+    background: url('../media/splash-sm.jpg') center;
     background-size: contain;
     background-repeat: no-repeat;
-    height: calc(100vw * 0.3);
+    height: calc(100vw * .55);
     max-height: 34.8rem;
     display: flex;
     justify-content: center;
     align-items: normal;
 }
 
-footer {
+#footer-container {
     background-color: rgb(var(--background-color-dark));
 }
 
@@ -168,7 +172,7 @@ footer {
 .educational-purposes {
     text-align: center;
     font-size: 1.5rem;
-    color: rgb(var(--text-color-muted))
+    color: rgb(var(--text-color-muted));
 }
 
 @media only screen and (min-width: 992px) {
@@ -179,6 +183,21 @@ footer {
     
     #cart-icon {
         font-size: 3rem;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    #splash {
+        background: url('../media/splash.png') center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: calc(100vw * 0.3);
+        max-height: 34.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: normal;
     }
 
 }
