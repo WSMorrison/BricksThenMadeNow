@@ -6,10 +6,10 @@
 {% block head_title %}{% trans "Bricks Then Made Now" %}{% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
+    <div class="container p-0">
         <div class="row">
             <div class="col">
-                <div class="navbar navbar-expand-lg navbar-light bg-light">
+                <div id="items-bar" class="navbar navbar-expand navbar-light">
                     <div class="collapse navbar-collapse" id="navbarText">
                         <span class="navbar-nav mr-auto">
                             {% if current_theme %}
@@ -48,9 +48,34 @@
 
 <div class="container">
     <div class="row">
-        <div class="col">
             {% for item in items %}
-            <div class="card" >
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card m-2">
+                        <div class="item-card row">
+                            <div class="card col-6">
+                                {% if item.item_render %}
+                                    <img src="{{ item.item_render }}" alt="{{ item.item_name }}">
+                                {% else %}
+                                    <img src="{% static '/media/no-image.png' }">
+                                {% endif %}
+                            </div>
+                            <div class="col-6">
+                                <div class="item-card">
+                                    <h3>{{ item.item_name }}</h3>
+                                    <p> {{ item.item_number }}</p>
+                                    <p> Parts count: {{ item.item_part_count }}</p>
+                                    <a href="{% url 'item_detail' item.id %}">Click here to see the thing</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+
+            <!--{% for item in items %}
+            <div class="card m-2" >
                 <div class="card-body">
                     <h3>{{ item.item_name }}</h3>
                     <p> {{ item.item_number }}</p>
@@ -58,8 +83,8 @@
                     <a href="{% url 'item_detail' item.id %}">Click here to see the thing</a>
                 </div>
             </div>
-            {% endfor %}
-        </div>
+            {% endfor %}-->
+
     </div>
 </div>
 
