@@ -78,14 +78,31 @@ body {
 }
 
 #search-area {
-    font-size: 3rem;
-    width: 90%;
+    width: 80%;
+}
+
+#search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #search-box {
-    width: 90%;
-    margin: auto;
+    width: 80%;
 }
+
+#search-input {
+    font-size: 1.5rem;
+}
+
+#search-submit {
+    font-size: 2rem;
+    margin-left: 0;
+}
+
+/*#search-input::placeholder{
+    font-weight: 800;
+}*/
 
 .inline {
     display: inline;
@@ -94,11 +111,13 @@ body {
 #cart-icon {
     font-size: 2rem;
     color: rgb(var(--title-color));
+    text-align: center;
 }
 
 #cart-total {
     font-size: 1.5rem;
     color: rgb(var(--title-color));
+    text-align: center;
 }
 
 #nav-container {
@@ -121,7 +140,15 @@ footer {
 }
 
 @media only screen and (min-width: 992px) {
+
+    #search-area {
+        padding-top: 2.8rem;
+    }
     
+    #cart-icon {
+        font-size: 3rem;
+    }
+
 }
 
 @media only screen and (min-width: 540px) {

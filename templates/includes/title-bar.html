@@ -1,7 +1,6 @@
 <!--Title bar including search form and cart-->
 <div id="title-bar-container" class="container">
     <div class="row no-gutters">
-
         <div id="title" class="col-12 col-lg-6">
           <div>
             <a href="{% url 'home' %}">
@@ -9,32 +8,29 @@
             </a>
           </div>
         </div>
-
         <div id="search-area" class="col-12 col-lg-5">
           <form method="GET" action="{% url 'items' %}">
             <div id="search-form" class="input-group">
               <div id="search-box" class="form-outline">
-                <input class="form-control" type="text" name="searchterm" placeholder="What do you want to build?">
+                <input id="search-input" class="form-control" type="text" name="searchterm" placeholder="What do you want to build?">
               </div>
-              <button class="btn" type="submit"><i class="fa-solid fa-search"></i></button>
+              <button id="search-submit" class="btn" type="submit"><i class="fa-solid fa-search"></i></button>
             </div>
           </form>
         </div>
-
         <div class="col-12 col-lg-1 my-auto">
           <a class="nav-link" href="{% url 'view_cart' %}">
             <div class="container mt-2">
               <div class="row no-gutters">
-                <div class="col-10"></div>
-                <div class="col-1">
+                <div class="col-10 col-lg-1"></div>
+                <div class="col-1 col-lg-6">
                   {% if total %}
                   <i id="cart-icon" class="fa-solid fa-cart-arrow-down"></i>
                   {% else %}
                   <i id="cart-icon" class="fa-solid fa-cart-shopping d-inline"></i>
                   {% endif %}
                 </div>
-
-                <div class="col-1">
+                <div class="col-1 col-lg-6">
                   <p id="cart-total" class="d-inline">
                     {% if total %}
                       ${{ total|floatformat:2 }}
