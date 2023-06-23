@@ -48,43 +48,31 @@
 
 <div class="container">
     <div class="row">
-            {% for item in items %}
-                <div class="col-12 col-lg-6">
-                    <div class="card m-2">
-                        <div class="item-card row">
-                            <div class="card col-6">
+        {% for item in items %}
+            <div class="col-12 col-lg-6">
+                <div class="card m-3 shadow">
+                    <div class="item-card row">
+                        <div class="col-12 col-sm-6">
+                            <div class="h-100">
                                 {% if item.item_render %}
-                                    <img src="{{ item.item_render.url }}" alt="{{ item.item_name }}">
+                                    <img class="img-fluid" src="{{ item.item_render.url }}" alt="{{ item.item_name }}">
                                 {% else %}
-                                    <img src="{% static 'media/no-image.png' %}">
+                                    <img class="img-fluid" src="{% static 'media/no-image.png' %}">
                                 {% endif %}
                             </div>
-                            <div class="col-6">
-                                <div>
-                                    <h3>{{ item.item_name }}</h3>
-                                    <p> {{ item.item_number }}</p>
-                                    <p> Parts count: {{ item.item_part_count }}</p>
-                                    <a href="{% url 'item_detail' item.id %}">Click here to see the thing</a>
-                                </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="description-box">
+                                <h3 class="item-name">{{ item.item_name }}</h3>
+                                <p class="item-copy">Item number: {{ item.item_number }}</p>
+                                <p class="item-copy">Parts count: {{ item.item_part_count }}</p>
+                                <a class="ml-5  mt-3 button-13 item-button" href="{% url 'item_detail' item.id %}">View</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            {% endfor %}
-
-
-
-            <!--{% for item in items %}
-            <div class="card m-2" >
-                <div class="card-body">
-                    <h3>{{ item.item_name }}</h3>
-                    <p> {{ item.item_number }}</p>
-                    <p> Parts count: {{ item.item_part_count }}</p>
-                    <a href="{% url 'item_detail' item.id %}">Click here to see the thing</a>
-                </div>
             </div>
-            {% endfor %}-->
-
+        {% endfor %}
     </div>
 </div>
 

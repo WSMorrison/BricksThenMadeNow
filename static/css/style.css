@@ -179,6 +179,58 @@ body {
     background-color: rgb(var(--title-very-contrast));
 }
 
+.description-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.item-name {
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.item-copy {
+    margin: 0;
+}
+
+
+
+.button-13 {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.button-13:hover {
+  background-color: #f7fafa;
+}
+
+.button-13:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}
+
 @media only screen and (min-width: 992px) {
 
     #search-area {
@@ -202,6 +254,19 @@ body {
         display: flex;
         justify-content: center;
         align-items: normal;
+    }
+
+}
+
+@media only screen and (min-width: 576) {
+
+    .description-box {
+        padding: 2rem;
+        display: inherit;
+    }
+
+    .item-button {
+        margin-bottom: 0;
     }
 
 }
