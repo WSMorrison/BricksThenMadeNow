@@ -54,9 +54,9 @@
                         <div class="item-card row">
                             <div class="card col-6">
                                 {% if item.item_render %}
-                                    <img src="{{ item.item_render }}" alt="{{ item.item_name }}">
+                                    <img src="{{ item.item_render.url }}" alt="{{ item.item_name }}">
                                 {% else %}
-                                    <img src="{% static '/media/no-image.png' }">
+                                    <img src="{% static 'media/no-image.png' %}">
                                 {% endif %}
                             </div>
                             <div class="col-6">
