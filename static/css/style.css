@@ -204,7 +204,7 @@ footer {
 .wide {
     padding-left: 0;
     padding-right: 0;
-    margin-left: -1.5rem;
+    margin-left: 0rem;
 }
 
 .item-button {
@@ -271,11 +271,15 @@ footer {
 
 }
 
-@media only screen and (min-width: 576) {
+@media only screen and (min-width: 576px) {
 
     .description-box {
-        padding: 2rem;
-        display: inherit;
+        padding-top: 1rem;
+        padding-bottom: 0;
+    }
+
+    .item-name {
+        margin-top: 1rem;
     }
 
     .item-button {
