@@ -102,10 +102,6 @@ body {
     margin-left: 0;
 }
 
-/*#search-input::placeholder{
-    font-weight: 800;
-}*/
-
 .inline {
     display: inline;
 }
@@ -139,6 +135,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: normal;
+}
+
+.info-bar {
+    margin-bottom: 1.5rem;
+}
+
+footer {
+    margin-top: 1.5rem;
 }
 
 #footer-container {
@@ -183,12 +187,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .item-name {
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -196,7 +201,15 @@ body {
     margin: 0;
 }
 
+.wide {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: -1.5rem;
+}
 
+.item-button {
+    margin-top: 1rem;
+}
 
 .button-13 {
   background-color: #fff;
@@ -267,6 +280,10 @@ body {
 
     .item-button {
         margin-bottom: 0;
+    }
+
+    .wide {
+        margin-left: -1.5rem;
     }
 
 }

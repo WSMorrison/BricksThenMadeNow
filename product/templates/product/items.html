@@ -6,7 +6,8 @@
 {% block head_title %}{% trans "Bricks Then Made Now" %}{% endblock %}
 
 {% block page_header %}
-    <div class="container p-0">
+
+    <div class="container p-0 info-bar shadow">
         <div class="row">
             <div class="col">
                 <div id="items-bar" class="navbar navbar-expand navbar-light">
@@ -42,39 +43,40 @@
             </div>
         </div>
     </div>
+
 {% endblock %}
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        {% for item in items %}
-            <div class="col-12 col-lg-6">
-                <div class="card m-3 shadow">
-                    <div class="item-card row">
-                        <div class="col-12 col-sm-6">
-                            <div class="h-100">
-                                {% if item.item_render %}
-                                    <img class="img-fluid" src="{{ item.item_render.url }}" alt="{{ item.item_name }}">
-                                {% else %}
-                                    <img class="img-fluid" src="{% static 'media/no-image.png' %}">
-                                {% endif %}
+    <div class="container">
+        <div class="row">
+            {% for item in items %}
+                <div class="col-12 col-lg-6">
+                    <div class="card m-3 shadow">
+                        <div class="item-card row">
+                            <div class="col-12 col-sm-6">
+                                <div class="h-100">
+                                    {% if item.item_render %}
+                                        <img class="img-fluid" src="{{ item.item_render.url }}" alt="{{ item.item_name }}">
+                                    {% else %}
+                                        <img class="img-fluid" src="{% static 'media/no-image.png' %}">
+                                    {% endif %}
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                            <div class="description-box">
-                                <h3 class="item-name">{{ item.item_name }}</h3>
-                                <p class="item-copy">Item number: {{ item.item_number }}</p>
-                                <p class="item-copy">Parts count: {{ item.item_part_count }}</p>
-                                <a class="ml-5  mt-3 button-13 item-button" href="{% url 'item_detail' item.id %}">View</a>
+                            <div class="col-12 col-sm-6 wide">
+                                <div class="description-box">
+                                    <h3 class="item-name">{{ item.item_name }}</h3>
+                                    <p class="item-copy">Item number: {{ item.item_number }}</p>
+                                    <p class="item-copy">Parts count: {{ item.item_part_count }}</p>
+                                    <a class="button-13 item-button" href="{% url 'item_detail' item.id %}">View</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
-</div>
 
 {% endblock %}
 
