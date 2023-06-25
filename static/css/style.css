@@ -181,7 +181,7 @@ footer {
     color: rgb(var(--text-color-muted));
 }
 
-#items-bar {
+.items-bar {
     background-color: rgb(var(--title-very-contrast));
 }
 

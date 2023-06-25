@@ -10,14 +10,16 @@
     <div class="container p-0 info-bar shadow">
         <div class="row">
             <div class="col">
-                <div id="items-bar" class="navbar navbar-expand navbar-light">
-                    <div class="collapse navbar-collapse" id="navbarText">
+                <div class="navbar navbar-expand navbar-light items-bar">
+                    <div class="collapse navbar-collapse">
                         <span class="navbar-nav mr-auto">
+                            <div class="ml-4">
                             {% if current_theme %}
-                                {{ current_theme }}
+                                <p class="m-2">{{ current_theme }}</p>
                             {% else %}
-                                All
+                                <p class="m-2">All</p>
                             {% endif %}
+                            </div>
                         </span>
                         <span class="navbar-text">
                             <div class="dropdown">
@@ -68,7 +70,7 @@
                                     <h3 class="item-name">{{ item.item_name }}</h3>
                                     <p class="item-copy">Item number: {{ item.item_number }}</p>
                                     <p class="item-copy">Parts count: {{ item.item_part_count }}</p>
-                                    <a class="button-13 item-button" href="{% url 'item_detail' item.id %}">View</a>
+                                    <a class="button-13 item-buttons" href="{% url 'item_detail' item.id %}">View</a>
                                 </div>
                             </div>
                         </div>
