@@ -213,6 +213,10 @@ footer {
     margin-top: 1rem;
 }
 
+#item-detail {
+    width: 100%;
+}
+
 /* .button-13 code is slightly modified but borrowed from Amazon via CSS Scan, see readme for details.  */
 .button-13 {
   background-color: rgb(var(--button-color));
