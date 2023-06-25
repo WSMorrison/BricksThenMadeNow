@@ -594,7 +594,7 @@ Information on testing can be found in [the testing ReadMe](/TESTING.md)
 
 ### Code Used
 
-- Code used examples
+- The button used throughout is a modified version of Button 13 from CSS Scan's [page of example buttons](https://getcssscan.com/css-buttons-examples), which is in turn attributed to Amazon.
 
 ### Media
 

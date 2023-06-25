@@ -9,6 +9,7 @@
     --background-color-light: 252, 253, 255;
     --background-color-med: 237, 241, 248;
     --background-color-dark: 224, 227, 233;
+    --button-color: 254, 255, 255;
 
 
     --window-color: 238, 240, 242;
@@ -27,6 +28,7 @@
     background-color-light: #fcfdff;
     background-color-med: #edf1f8;
     background-color-dark: #e0e3e9;
+    button-color: #feffff;
 }
 
 html {
@@ -211,19 +213,19 @@ footer {
     margin-top: 1rem;
 }
 
+/* .button-13 code is slightly modified but borrowed from Amazon via CSS Scan, see readme for details.  */
 .button-13 {
-  background-color: #fff;
+  background-color: rgb(var(--button-color));
   border: 1px solid #d5d9d9;
   border-radius: 8px;
   box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
   box-sizing: border-box;
-  color: #0f1111;
+  color: rgb(var(--text-color));
   cursor: pointer;
   display: inline-block;
-  font-family: "Amazon Ember",sans-serif;
-  font-size: 13px;
-  line-height: 29px;
-  padding: 0 10px 0 11px;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  padding: 0 1rem 0 1rem;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -231,17 +233,20 @@ footer {
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
-  width: 100px;
+  width: 10rem;
 }
 
 .button-13:hover {
-  background-color: #f7fafa;
+  background-color: rgb(var(--background-color-med));
+  color: rgb(var(--text-color));
+  text-decoration: none;
 }
 
 .button-13:focus {
-  border-color: #008296;
+  border-color: rgb(var(--background-color-dark));
   box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
   outline: 0;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 992px) {
