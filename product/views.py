@@ -86,13 +86,10 @@ def item_detail(request, item_id):
     except:
         sku_flst = None
 
-    cart = request.session.get('cart')
-
     context = {'item': item,
                'sku_inst': sku_inst,
                'sku_mdst': sku_mdst,
                'sku_flst': sku_flst,
-               'cart': cart,
                }
 
     return render(request, 'product/item-detail.html', context)
