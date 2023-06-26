@@ -64,7 +64,7 @@
                                         </div>
                                     </form>
                                     <a class="update-link">Update</a>
-                                    <a class="remove-item" id="remove_{{ item.added_sku}}">Remove</a>
+                                    <a class="remove-item" id="remove_{{ item.sku_id }}">Remove</a>
                                     <p class="cart-total">Extended Price: ${{ item.extended_price }}</p>
                                 </div>
                                 <hr>
@@ -110,7 +110,7 @@
         $('.remove-item').click(function(e) {
             var csrfToken = "{{ csrf_token }}";
             var itemId = $(this).attr('id').split('remove_')[1];
-            var url = `/bag/remove/${itemId}`;
+            var url = `/cart/remove/${itemId}/`;
             var data = {'csrfmiddlewaretoken': csrfToken};
     
             $.post(url, data)
