@@ -217,6 +217,34 @@ footer {
     width: 100%;
 }
 
+.buy-box {
+    margin-top: 2rem;
+}
+
+.buy-button-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding-left: 2rem;
+}
+
+.buy-qty-box {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    width: 6rem;
+}
+
+.buy-copy {
+    margin-bottom: 0.1rem;
+}
+
+.item-sku-number {
+    font-size: 1.5rem;
+    color: rgb(var(--text-color-muted));
+}
+
 /* .button-13 code is slightly modified but borrowed from Amazon via CSS Scan, see readme for details.  */
 .button-13 {
   background-color: rgb(var(--button-color));

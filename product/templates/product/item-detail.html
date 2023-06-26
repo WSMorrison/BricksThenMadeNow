@@ -23,92 +23,120 @@
 
 {% block content %}
 
-<div id="item-detail" class="card">
-    {% if item.item_render %}
-        <img class="card-img-top" src="{{ item.item_render.url }}" alt="{{ item.item_name }}">
-    {% else %}
-        <img class="card-img-top" src="{% static 'media/no-image.png' %}" alt="No item image.">
-    {% endif %}
-    <div class="card-body">
-        <h3>{{ item.item_name }}</h3>
-        <h4>{{ item.item_number }}</h4>
-        <p class="card-text">{{ item.item_description }}</p>
-        <p>Part count: {{ item.item_part_count }}</p>
-        
-        {% if sku_inst %}
-            <p>Buy the instructions for {{ sku_inst.sku_price }}</p>
-            <form class="form" action="{% url 'add_to_cart' sku_inst.id %}" method="POST">
-            {% csrf_token %}
-                <div class="form-row">
-                    <div class="col-12">
-                        <p class="mt-3"><strong>Quantity:</strong></p>
-                        <div class="form-group w-50">
-                            <div class="input-group">
-                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="1" data-item_id="{{ sku_inst.id }}" id="id_qty_{{ sku_inst.id }}">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <input type="submit" class="button-13 item-buttons"  value="Add to Bag">
-                    </div>
-                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                </div>
-            </form>
-            {% else %}
-                <p>Coming Soon!</p>
-            {% endif %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div id="item-detail" class="card shadow">
+                    {% if item.item_render %}
+                        <img class="card-img-top" src="{{ item.item_render.url }}" alt="{{ item.item_name }}">
+                    {% else %}
+                        <img class="card-img-top" src="{% static 'media/no-image.png' %}" alt="No item image.">
+                    {% endif %}
+                    <div class="card-body">
+                        <h3 class="item-name">{{ item.item_name }}</h3>
+                        <h4>Item: {{ item.item_number }}</h4>
+                        <p class="card-text mt-3">{{ item.item_description }}</p>
+                        <p>Part count: {{ item.item_part_count }}</p>
+                        <hr>
 
-            {% if sku_mdst %}
-                <p>Buy the instructions and all the bricks {{ sku_mdst.sku_price }}</p>
-                <form class="form" action="{% url 'add_to_cart' sku_mdst.id %}" method="POST">
-                {% csrf_token %}
-                    <div class="form-row">
-                        <div class="col-12">
-                            <p class="mt-3"><strong>Quantity:</strong></p>
-                            <div class="form-group w-50">
-                                <div class="input-group">
-                                    <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ sku_mdst.id }}" id="id_qty_{{ sku_mdst.id }}">
-                                </div>
+                        {% if sku_inst %}
+                            <div class="buy-box">
+                                <form class="form" action="{% url 'add_to_cart' sku_inst.id %}" method="POST">
+                                {% csrf_token %}
+                                    <div class="form-row">
+                                        <div class="row">
+                                            <div class="col-12 m-2">
+                                                <p class="buy-copy">Buy the instructions only: </p>
+                                                <p class="item-sku-number">{{item.item_number}}:{{sku_inst.sku_number}}</p>
+                                            </div>
+                                            <div class="col-12 buy-button-box">
+                                                <div class="form-outline buy-qty-box input-group-lg">
+                                                    <input class="form-control qty-input" type="hidden" name="quantity" value="1" data-item_id="{{ sku_inst.id }}" id="id_qty_{{ sku_inst.id }}">
+                                                </div>
+                                                <input type="submit" class="button-13 item-buttons"  value="${{ sku_inst.sku_price}}">
+                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <hr>
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <input type="submit" class="button-13 item-buttons"  value="Add to Bag">
-                        </div>
-                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                    </div>
-                </form>
-            {% else %}
-                <p>Coming Soon!</p>
-            {% endif %}
+                        {% else %}
+                            <div class="buy-box">
+                                <p>Instructions Coming Soon!</p>
+                                <hr>
+                            </div>
+                        {% endif %}
+                        
 
-            {% if sku_flst %}
-            <p>Buy the set, plus the vintage set it was based on for {{ sku_flst.sku_price }}</p>
-            <form class="form" action="{% url 'add_to_cart' sku_flst.id %}" method="POST">
-            {% csrf_token %}
-                <div class="form-row">
-                    <div class="col-12">
-                        <p class="mt-3"><strong>Quantity:</strong></p>
-                        <div class="form-group w-50">
-                            <div class="input-group">
-                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ sku_flst.id }}" id="id_qty_{{ sku_flst.id }}">
+                        {% if sku_mdst %}
+                            <div class="buy-box">
+                                <form class="form" action="{% url 'add_to_cart' sku_mdst.id %}" method="POST">
+                                {% csrf_token %}
+                                    <div class="form-row">                 
+                                        <div class="row">
+                                            <div class="col-12 m-2">
+                                                <p class="buy-copy">Buy all the bricks! Includes instructions:</p>
+                                                <p class="item-sku-number">{{item.item_number}}:{{sku_mdst.sku_number}}</p>
+                                            </div>
+                                            <div class="col-12 buy-button-box">
+                                                <p class="form-label mb-0">Qty: </p>
+                                                <div class="form-outline buy-qty-box input-group-lg">
+                                                    <input class="form-control quantity-input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ sku_mdst.id }}" id="id_qty_{{ sku_mdst.id }}"/>
+                                                </div>
+                                                <input type="submit" class="button-13 item-buttons"  value="${{ sku_mdst.sku_price}}">
+                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <hr>
                             </div>
-                        </div>
+                        {% else %}
+                            <div class="buy-box">
+                                <p>Set Coming Soon!</p>
+                                <hr>
+                            </div>
+                        {% endif %}
+                
+                        {% if sku_flst %}
+                            <div class="buy-box">
+                                <form class="form" action="{% url 'add_to_cart' sku_flst.id %}" method="POST">
+                                {% csrf_token %}
+                                    <div class="form-row">                 
+                                        <div class="row">
+                                            <div class="col-12 m-2">
+                                                <p class="buy-copy">But the vintage set this set is based on, all the bricks for the modern set, and instructions!</p>
+                                                <p class="item-sku-number">{{item.item_number}}:{{sku_flst.sku_number}}</p>
+                                            </div>
+                                            <div class="col-12 buy-button-box">
+                                                <p class="form-label mb-0">Qty: </p>
+                                                <div class="form-outline buy-qty-box input-group-lg">
+                                                    <input class="form-control quantity-input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ sku_flst.id }}" id="id_qty_{{ sku_flst.id }}"/>
+                                                </div>
+                                                <input type="submit" class="button-13 item-buttons"  value="${{ sku_flst.sku_price}}">
+                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <hr>
+                            </div>
+                        {% endif %}
+
+                        <a class="button-13 item-buttons"  href="{% url 'items' %}">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Back</span>
+                        </a>
                     </div>
-                    <div class="col-12">
-                        <input type="submit" class="button-13 item-buttons"  value="Add to Bag">
-                    </div>
-                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </div>
-            </form>
-            {% endif %}
+            </div>
         </div>
     </div>
-    <a class="button-13 item-buttons"  href="{% url 'items' %}">
-        <span class="icon">
-            <i class="fas fa-chevron-left"></i>
-        </span>
-        <span class="text-uppercase">Keep Shopping</span>
-    </a>
+
+
 
 {% endblock %}
 
