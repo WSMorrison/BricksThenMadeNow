@@ -209,10 +209,6 @@ footer {
     margin-left: 0rem;
 }
 
-.item-button {
-    margin-top: 1rem;
-}
-
 #item-detail {
     width: 100%;
 }
@@ -236,6 +232,24 @@ footer {
 
 .buy-copy {
     margin-bottom: 0.1rem;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.input-quantity {
+    border: 1px solid #d5d9d9;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: rgb(var(--text-color));
+    display: inline-block;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    padding: 0 1rem 0 1rem;
+    vertical-align: middle;
+    max-width: 4rem;
+    text-align: right;
 }
 
 .item-sku-number {
