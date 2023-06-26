@@ -85,8 +85,26 @@
                                             </div>
                                             <div class="col-12 buy-button-box">
                                                 <p class="form-label mb-0">Qty: </p>
-                                                <div class="form-outline buy-qty-box input-group-lg">
-                                                    <input class="form-control quantity-input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ sku_mdst.id }}" id="id_qty_{{ sku_mdst.id }}"/>
+                                                <div class="form-group w-50">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <button class="decrement-qty left-button-13" 
+                                                                data-item_id="{{ sku_mdst.id }}" id="decrement-qty_{{ sku_mdst.id }}">
+                                                                <span class="icon">
+                                                                    <i class="fas fa-minus"></i>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                        <input class="form-control-lg m-0" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ sku_mdst.id }}" id="id_qty_{{ sku_mdst.id }}">
+                                                        <div class="input-group-append">
+                                                            <button class="increment-qty right-button-13"
+                                                                data-item_id="{{ sku_mdst.id }}" id="increment-qty_{{ sku_mdst.id }}">
+                                                                <span class="icon">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <input type="submit" class="button-13 item-buttons"  value="${{ sku_mdst.sku_price}}">
                                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -115,8 +133,26 @@
                                             </div>
                                             <div class="col-12 buy-button-box">
                                                 <p class="form-label mb-0">Qty: </p>
-                                                <div class="form-outline buy-qty-box input-group-lg">
-                                                    <input class="form-control quantity-input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ sku_flst.id }}" id="id_qty_{{ sku_flst.id }}"/>
+                                                <div class="form-group w-50">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <button class="decrement-qty left-button-13" 
+                                                                data-item_id="{{ sku_flst.id }}" id="decrement-qty_{{ sku_flst.id }}">
+                                                                <span class="icon">
+                                                                    <i class="fas fa-minus"></i>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                        <input class="form-control-lg m-0" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ sku_flst.id }}" id="id_qty_{{ sku_flst.id }}">
+                                                        <div class="input-group-append">
+                                                            <button class="increment-qty right-button-13"
+                                                                data-item_id="{{ sku_flst.id }}" id="increment-qty_{{ sku_flst.id }}">
+                                                                <span class="icon">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <input type="submit" class="button-13 item-buttons"  value="${{ sku_flst.sku_price}}">
                                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -140,10 +176,11 @@
         </div>
     </div>
 
-
-
 {% endblock %}
 
 {% block postloadjs %}
+    {{ block.super }}
+
+    {% include 'product/includes/quantities-js.html' %}
 
 {% endblock %}

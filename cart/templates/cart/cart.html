@@ -34,15 +34,15 @@
                     <div class="card-body">
                         {% if cart_items %}
                             {% for item in cart_items %}
-                                <div class="col-8">
+                                <div class="col-12 p-2">
                                     <h3 class="item-name">{{ item.added_item }}</h3>
                                     <p class="item-sku-number">{{item.added_number}}:{{item.added_sku.sku_number}}</p>
-                                    <p>Price: {{ item.added_sku.sku_price }}  Qty: {{ item.quantity }}</p>
-                                    <p class="cart-total">Extended Price: {{ item.extended_price }}</p>
+                                    <p>Price: ${{ item.added_sku.sku_price }}  Qty: {{ item.quantity }}</p>
+                                    <p class="cart-total">Extended Price: ${{ item.extended_price }}</p>
                                 </div>
                                 <hr>
                             {% endfor %}
-                            <div class="cart-totals-box">
+                            <div class="cart-totals-box p-2">
                                 <p>Total items to ship: {{ shipping_total }}</p>
                                 {% if shipping == 0 %}
                                     <p class="cart-total">Shipping cost: $0.00</p>
