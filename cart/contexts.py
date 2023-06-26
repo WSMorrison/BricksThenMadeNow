@@ -12,6 +12,7 @@ def cart_contents(request):
     shipping_total = 0
     item_count = 0
     cart = request.session.get('cart', {})
+    item_instructions = []
 
     for sku_id, quantity in cart.items():
         added_sku = get_object_or_404(Sku, pk=sku_id)
@@ -30,6 +31,7 @@ def cart_contents(request):
             'added_number': added_number,
             'extended_price': extended_price,
         })
+        item_instructions.append(added_number)
 
     if total < settings.FREE_SHIPPING:
         if shipping_total == 0:
@@ -54,7 +56,8 @@ def cart_contents(request):
         'to_get_free_shipping':to_get_free_shipping,
         'shipping_total': shipping_total,
         'total': total,
-        'grand_total':grand_total,
+        'grand_total': grand_total,
+        'item_instructions': item_instructions,
     }
 
     return context

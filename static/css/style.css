@@ -245,6 +245,10 @@ footer {
     color: rgb(var(--text-color-muted));
 }
 
+.cart-total {
+    text-align: right;
+}
+
 /* .button-13 code is slightly modified but borrowed from Amazon via CSS Scan, see readme for details.  */
 .button-13 {
   background-color: rgb(var(--button-color));
@@ -279,6 +283,11 @@ footer {
   box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
   outline: 0;
   text-decoration: none;
+}
+
+.button-13:disabled {
+    background-color: rgb(var(--background-color-dark));
+    color: rgb(var(--text-color-muted));
 }
 
 @media only screen and (min-width: 992px) {

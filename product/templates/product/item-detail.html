@@ -7,17 +7,17 @@
 
 {% block page_header %}
 
-    <div class="container p-0 info-bar shadow">
-        <div class="row">
-            <div class="col">
-                <div class="navbar navbar-expand items-bar">
-                    <div class="collapse navbar-collapse">
-                        <p class="ml-4 mt-3 mb-3">{{ item.item_theme }} > {{ item.item_name }}</p>
-                    </div>
+<div class="container p-0 info-bar shadow">
+    <div class="row">
+        <div class="col">
+            <div class="navbar navbar-expand items-bar">
+                <div class="collapse navbar-collapse">
+                    <p class="ml-4 mt-3 mb-3">{{ item.item_theme }} > {{ item.item_name }}</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 {% endblock %}
 
@@ -53,7 +53,11 @@
                                                 <div class="form-outline buy-qty-box input-group-lg">
                                                     <input class="form-control qty-input" type="hidden" name="quantity" value="1" data-item_id="{{ sku_inst.id }}" id="id_qty_{{ sku_inst.id }}">
                                                 </div>
-                                                <input type="submit" class="button-13 item-buttons"  value="${{ sku_inst.sku_price}}">
+                                                {% if item.item_number in item_instructions %}
+                                                    <input type="submit" class="button-13 item-buttons" disabled value="In Cart">
+                                                {% else %}
+                                                    <input type="submit" class="button-13 item-buttons" value="${{ sku_inst.sku_price}}">
+                                                {% endif %}
                                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                             </div>
                                         </div>

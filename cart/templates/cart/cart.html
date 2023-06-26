@@ -7,10 +7,14 @@
 
 {% block page_header %}
 
-    <div class="container header-container">
+    <div class="container p-0 info-bar shadow">
         <div class="row">
             <div class="col">
-                Shopping Cart
+                <div class="navbar navbar-expand items-bar">
+                    <div class="collapse navbar-collapse">
+                        <p class="ml-4 mt-3 mb-3">Shopping Cart</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -19,31 +23,48 @@
 
 {% block content %}
 
-<div class="container header-container">
-    <div class="row">
-        <div class="col">
-            {% if cart_items %}
-                {% for item in cart_items %}
-                    <div>
-                        <p>{{ item.added_item }} {{ item.added_number }}{{ item.added_sku.sku_number }}</p>
-                        <p>Price: {{ item.added_sku.sku_price }} Qty: {{ item.quantity }} Extended Price: {{ item.extended_price }}</p>
+    <!--div>
+        {{ cart_items }}
+    </div-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div id="item-detail" class="card shadow">
+                    <div class="card-body">
+                        {% if cart_items %}
+                            {% for item in cart_items %}
+                                <div class="col-8">
+                                    <h3 class="item-name">{{ item.added_item }}</h3>
+                                    <p class="item-sku-number">{{item.added_number}}:{{item.added_sku.sku_number}}</p>
+                                    <p>Price: {{ item.added_sku.sku_price }}  Qty: {{ item.quantity }}</p>
+                                    <p class="cart-total">Extended Price: {{ item.extended_price }}</p>
+                                </div>
+                                <hr>
+                            {% endfor %}
+                            <div class="cart-totals-box">
+                                <p>Total items to ship: {{ shipping_total }}</p>
+                                {% if shipping == 0 %}
+                                    <p class="cart-total">Shipping cost: $0.00</p>
+                                {% else %}
+                                    <p class="cart-total">Shipping cost: ${{ shipping }}</p>
+                                {% endif %}
+                                <p class="cart-total">Grand total: ${{ grand_total }}</p>
+                            </div>
+                        {% else %}
+                            <p>Cart is empty! Check out all our cool stuff.</p>
+                            <a class="button-13 item-buttons"  href="{% url 'items' %}">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Back</span>
+                            </a>
+                        {% endif %}
                     </div>
-                {% endfor %}
-                <div>
-                    <p>Total items to ship: {{ shipping_total }}</p>
-                    {% if shipping == 0 %}
-                        <p>Shipping cost: $0.00</p>
-                    {% else %}
-                        <p>Shipping cost: ${{ shipping }}</p>
-                    {% endif %}
-                    <p>Grand total: ${{ grand_total }}</p>
                 </div>
-            {% else %}
-                <p>Cart is empty! Check out all our cool stuff!</p>
-            {% endif %}
+            </div>
         </div>
     </div>
-</div>
 
 {% endblock %}
 
