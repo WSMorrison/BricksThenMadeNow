@@ -26,19 +26,20 @@ class Order(models.Model):
 
     def update_total(self):
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total_sum']
-        for LineItem in self.lineitems:
-            if LineItem.sku.sku_physical:
-                shipping_total =+ LineItem.quantity
-        if self.order_total < settings.FREE_SHIPPING:
-            if shipping_total == 0:
-                shipping_cost = 0
-            elif 0 < shipping_total <= 3:
-                shipping_cost = float("{:.2f}".format(settings.SMALL_PACKAGE))
-            else:
-                shipping_cost = float("{:.2f}".format(settings.LARGE_PACKAGE))
-        else:
-            shipping_cost = 0
-        self.shipping_cost = shipping_cost
+        # for LineItem in self.lineitems:
+            # if LineItem.sku.sku_physical:
+                # shipping_total =+ LineItem.quantity
+        # if self.order_total < settings.FREE_SHIPPING:
+            # if shipping_total == 0:
+                # shipping_cost = 0
+            # elif 0 < shipping_total <= 3:
+                # shipping_cost = float("{:.2f}".format(settings.SMALL_PACKAGE))
+            # else:
+                # shipping_cost = float("{:.2f}".format(settings.LARGE_PACKAGE))
+        # else:
+           #  shipping_cost = 0
+        # self.shipping_cost = shipping_cost
+        self.shipping_cost = 2
         self.grand_total = self.order_total + self.shipping_cost
         self.save()
 
