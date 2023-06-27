@@ -23,10 +23,6 @@
 
 {% block content %}
 
-    <!--div>
-        {{ cart_items }}
-    </div-->
-
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -78,6 +74,19 @@
                                 {% endif %}
                                 <p class="cart-total">Grand total: ${{ grand_total }}</p>
                             </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-6 d-flex justify-content-center"> 
+                                    <a class="button-13"  href="{% url 'items' %}">
+                                        <p class="m-auto">Shop</p>
+                                    </a>
+                                </div>
+                                <div class="col-6 d-flex justify-content-center">
+                                    <a class="button-13 urgent-button"  href="{% url 'checkout' %}">
+                                        <p class="m-auto">Checkout</p>
+                                    </a>
+                                </div>
+                            </div>
                         {% else %}
                             <p>Cart is empty! Check out all our cool stuff.</p>
                             <a class="button-13"  href="{% url 'items' %}">
@@ -92,6 +101,7 @@
             </div>
         </div>
     </div>
+    
 {% endblock %}
 
 {% block postloadjs %}

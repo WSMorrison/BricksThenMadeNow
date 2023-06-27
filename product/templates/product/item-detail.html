@@ -56,7 +56,7 @@
                                                 {% if item.item_number in item_instructions %}
                                                     <input type="submit" class="button-13" disabled value="In Cart">
                                                 {% else %}
-                                                    <input type="submit" class="button-13" value="${{ sku_inst.sku_price}}">
+                                                    <input type="submit" class="button-13 urgent-button" value="${{ sku_inst.sku_price}}">
                                                 {% endif %}
                                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                             </div>
@@ -106,7 +106,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <input type="submit" class="button-13"  value="${{ sku_mdst.sku_price}}">
+                                                <input type="submit" class="button-13 urgent-button"  value="${{ sku_mdst.sku_price}}">
                                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                             </div>
                                         </div>
@@ -154,7 +154,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <input type="submit" class="button-13"  value="${{ sku_flst.sku_price}}">
+                                                <input type="submit" class="button-13 urgent-button"  value="${{ sku_flst.sku_price}}">
                                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                             </div>
                                         </div>
@@ -165,10 +165,7 @@
                         {% endif %}
 
                         <a class="button-13" href="{% url 'items' %}">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="text-uppercase">Back</span>
+                            <p class="text-uppercase">Back</p>
                         </a>
                     </div>
                 </div>

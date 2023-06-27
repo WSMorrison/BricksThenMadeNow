@@ -265,6 +265,18 @@ footer {
     text-align: right;
 }
 
+.checkout-form-heading {
+    color: rgb(var(--text-color));
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.no-dec:hover {
+    text-decoration: none;
+}
+
+
 /* Service area */
 /* .button-13 code is slightly modified but borrowed from Amazon via CSS Scan, see readme for details.  */
 .button-13 {
@@ -351,6 +363,10 @@ footer {
     touch-action: manipulation;
     vertical-align: middle;
     width: 3rem;
+}
+
+.urgent-button {
+    background-color: rgb(var(--title-very-contrast));
 }
 
 /* Disable native number input arrows in Chrome, Safari, Edge and Opera */
