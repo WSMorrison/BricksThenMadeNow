@@ -143,6 +143,10 @@ body {
     margin-bottom: 1.5rem;
 }
 
+#admin-bar {
+    background-color: rgb(var(--background-color-dark));
+}
+
 footer {
     margin-top: 1.5rem;
 }
@@ -261,6 +265,7 @@ footer {
     text-align: right;
 }
 
+/* Service area */
 /* .button-13 code is slightly modified but borrowed from Amazon via CSS Scan, see readme for details.  */
 .button-13 {
   background-color: rgb(var(--button-color));
@@ -348,6 +353,20 @@ footer {
     width: 3rem;
 }
 
+/* Disable native number input arrows in Chrome, Safari, Edge and Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Disable native number input arrows in Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* ----- */
+/* Media queries */
 @media only screen and (min-width: 992px) {
 
     #search-area {
