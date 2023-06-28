@@ -385,10 +385,11 @@ input[type=number] {
 /* ----- */
 /* Stripe CSS */
 /* Variables */
-* {
+
+/* {
     box-sizing: border-box;
   }
-  
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 16px;
@@ -426,7 +427,7 @@ input[type=number] {
     margin-bottom: 24px;
   }
   
-  /* Buttons and links */
+
   button {
     background: #5469d4;
     font-family: Arial, sans-serif;
@@ -450,7 +451,7 @@ input[type=number] {
     cursor: default;
   }
   
-  /* spinner/processing state, errors */
+
   .spinner,
   .spinner:before,
   .spinner:after {
@@ -525,7 +526,7 @@ input[type=number] {
       width: 80vw;
       min-width: initial;
     }
-  }
+  }*/
 
 
 /* ----- */
