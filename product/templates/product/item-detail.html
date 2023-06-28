@@ -44,9 +44,13 @@
                                 <form class="form" action="{% url 'add_to_cart' sku_inst.id %}" method="POST">
                                 {% csrf_token %}
                                     <div class="row">
-                                        <div class="col-12 m-2">
-                                            <p class="buy-copy">Buy the instructions download: </p>
+                                        <div class="col-12 mb-4">
+                                            <p class="buy-copy">Buy the instructions download!</p>
                                             <p class="item-sku-number">{{item.item_number}}:{{sku_inst.sku_number}}</p>
+                                            <div class="includes-box">
+                                                <p class="buy-copy-sm">Includes:</p>
+                                                <p class="buy-copy-sm">Instructions download</p>
+                                            </div>
                                         </div>
                                         <div class="col-12 col-lg-8 buy-button-box d-flex justify-content-end">
                                             <div class="form-outline buy-qty-box input-group-lg">
@@ -76,13 +80,15 @@
                                 <form class="form" action="{% url 'add_to_cart' sku_mdst.id %}" method="POST">
                                 {% csrf_token %}
                                     <div class="row">
-                                        <div class="col-12 m-2">
-                                            <p class="buy-copy">Buy the BTMN modern set!</p>
-                                            <p class="buy-copy-sm">Includes:</p>
-                                            <p class="buy-copy-sm">Printed instructions</p>
-                                            <p class="buy-copy-sm">{{ item.item_part_count }} Lego bricks and elements</p>
-                                            <p class="buy-copy-sm">Instructions download</p>
+                                        <div class="col-12 mb-4">
+                                            <p class="buy-copy">Buy the BTMN ModernSet!</p>
                                             <p class="item-sku-number">{{item.item_number}}:{{sku_mdst.sku_number}}</p>
+                                            <div class="includes-box">
+                                                <p class="buy-copy-sm">Includes:</p>
+                                                <p class="buy-copy-sm">Instructions download</p>
+                                                <p class="buy-copy-sm">Printed instructions</p>
+                                                <p class="buy-copy-sm">{{ item.item_part_count }} Lego bricks and elements</p>
+                                            </div>
                                         </div>
                                         <div class="col-12 col-lg-8 buy-button-box">
                                             <p class="form-label mb-0 mr-2">Qty: </p>
@@ -116,7 +122,7 @@
                             </div>
                         {% else %}
                             <div class="buy-box">
-                                <p>Set Coming Soon!</p>
+                                <p>ModernSet Coming Soon!</p>
                                 <hr>
                             </div>
                         {% endif %}
@@ -126,11 +132,18 @@
                                 <form class="form" action="{% url 'add_to_cart' sku_flst.id %}" method="POST">
                                 {% csrf_token %}
                                     <div class="row">
-                                        <div class="col-12 m-2">
-                                            <p class="buy-copy font-italic">Limited</p>
-                                            <p class="buy-copy">Buy the vintage Lego set it's based on!</p>
-                                            <p class="buy-copy">Includes BTMN instructions download:</p>
+                                        <div class="col-12 mb-4 flst-urgent">
+                                            <p class="buy-copy font-italic ml-2"><i class="fa-solid fa-star-half"></i>Limited</p>
+                                            <p class="buy-copy">Buy the BTMN FullSet!</p>
                                             <p class="item-sku-number">{{item.item_number}}:{{sku_flst.sku_number}}</p>
+                                            <div class="includes-box">
+                                                <p class="buy-copy-sm">Includes:</p>
+                                                <p class="buy-copy-sm">Instructions download</p>
+                                                <p class="buy-copy-sm">Printed instructions</p>
+                                                <p class="buy-copy-sm">{{ item.item_part_count }} Lego bricks and elements</p>
+                                                <p class="buy-copy-sm">PLUS!</p>
+                                                <p class="buy-copy-sm">The vintage Lego set that inspired it</p>
+                                            </div>
                                         </div>
                                         <div class="col-12 col-lg-8 buy-button-box">
                                             <p class="form-label mb-0 mr-2">Qty: </p>
@@ -144,7 +157,7 @@
                                                             </span>
                                                         </button>
                                                     </div>
-                                                    <input class="qty_input form-control input-quantity" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ sku_flst.id }}" id="id_qty_{{ sku_flst.id }}">
+                                                    <input class="qty_input form-control input-quantity" type="number" name="quantity" value="1" min="1" max="2" data-item_id="{{ sku_flst.id }}" id="id_qty_{{ sku_flst.id }}">
                                                     <div class="input-group-append">
                                                         <button class="increment-qty right-button-13"
                                                             data-item_id="{{ sku_flst.id }}" id="increment-qty_{{ sku_flst.id }}">

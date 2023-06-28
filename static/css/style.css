@@ -217,6 +217,10 @@ footer {
     width: 100%;
 }
 
+.flst-urgent i {
+    color: rgb(var(--title-very-contrast));
+}
+
 .buy-box {
     margin-top: 2rem;
 }
@@ -234,8 +238,25 @@ footer {
     width: 3rem;
 }
 
+.item-sku-number {
+    font-size: 1.5rem;
+    color: rgb(var(--text-color-muted));
+    margin-bottom: 0;
+}
+
+.includes-box {
+    margin-left: 1rem;
+    margin-top: 0.2rem;
+}
+
 .buy-copy {
     margin-bottom: 0.1rem;
+}
+
+.buy-copy-sm {
+    font-size: 1.5rem;
+    color: rgb(var(--text-color-muted));
+    margin: 0;
 }
 
 .form-group {
@@ -254,11 +275,6 @@ footer {
     vertical-align: middle;
     max-width: 4rem;
     text-align: right;
-}
-
-.item-sku-number {
-    font-size: 1.5rem;
-    color: rgb(var(--text-color-muted));
 }
 
 .cart-total {
