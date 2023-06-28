@@ -77,8 +77,11 @@
                                 {% csrf_token %}
                                     <div class="row">
                                         <div class="col-12 m-2">
-                                            <p class="buy-copy">Buy all the bricks for the modern build!</p>
-                                            <p class="buy-copy">Includes BTMN instructions download:</p>
+                                            <p class="buy-copy">Buy the BTMN modern set!</p>
+                                            <p class="buy-copy-sm">Includes:</p>
+                                            <p class="buy-copy-sm">Printed instructions</p>
+                                            <p class="buy-copy-sm">{{ item.item_part_count }} Lego bricks and elements</p>
+                                            <p class="buy-copy-sm">Instructions download</p>
                                             <p class="item-sku-number">{{item.item_number}}:{{sku_mdst.sku_number}}</p>
                                         </div>
                                         <div class="col-12 col-lg-8 buy-button-box">
