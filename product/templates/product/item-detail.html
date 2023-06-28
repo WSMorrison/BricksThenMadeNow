@@ -43,23 +43,21 @@
                             <div class="buy-box">
                                 <form class="form" action="{% url 'add_to_cart' sku_inst.id %}" method="POST">
                                 {% csrf_token %}
-                                    <div class="form-row">
-                                        <div class="row">
-                                            <div class="col-12 m-2">
-                                                <p class="buy-copy">Buy the instructions only: </p>
-                                                <p class="item-sku-number">{{item.item_number}}:{{sku_inst.sku_number}}</p>
+                                    <div class="row">
+                                        <div class="col-12 m-2">
+                                            <p class="buy-copy">Buy the instructions download: </p>
+                                            <p class="item-sku-number">{{item.item_number}}:{{sku_inst.sku_number}}</p>
+                                        </div>
+                                        <div class="col-12 col-lg-8 buy-button-box d-flex justify-content-end">
+                                            <div class="form-outline buy-qty-box input-group-lg">
+                                                <input class="form-control qty-input" type="hidden" name="quantity" value="1" data-item_id="{{ sku_inst.id }}" id="id_qty_{{ sku_inst.id }}">
                                             </div>
-                                            <div class="col-12 buy-button-box">
-                                                <div class="form-outline buy-qty-box input-group-lg">
-                                                    <input class="form-control qty-input" type="hidden" name="quantity" value="1" data-item_id="{{ sku_inst.id }}" id="id_qty_{{ sku_inst.id }}">
-                                                </div>
-                                                {% if item.item_number in item_instructions %}
-                                                    <input type="submit" class="button-13" disabled value="In Cart">
-                                                {% else %}
-                                                    <input type="submit" class="button-13 urgent-button" value="${{ sku_inst.sku_price}}">
-                                                {% endif %}
-                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                            </div>
+                                            {% if item.item_number in item_instructions %}
+                                                <input type="submit" class="button-13" disabled value="In Cart">
+                                            {% else %}
+                                                <input type="submit" class="button-13 urgent-button" value="${{ sku_inst.sku_price}}">
+                                            {% endif %}
+                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                         </div>
                                     </div>
                                 </form>
@@ -77,38 +75,37 @@
                             <div class="buy-box">
                                 <form class="form" action="{% url 'add_to_cart' sku_mdst.id %}" method="POST">
                                 {% csrf_token %}
-                                    <div class="form-row">                 
-                                        <div class="row">
-                                            <div class="col-12 m-2">
-                                                <p class="buy-copy">Buy all the bricks! Includes instructions:</p>
-                                                <p class="item-sku-number">{{item.item_number}}:{{sku_mdst.sku_number}}</p>
-                                            </div>
-                                            <div class="col-12 buy-button-box">
-                                                <p class="form-label mb-0 mr-2">Qty: </p>
-                                                <div class="form-group w-50">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <button class="decrement-qty left-button-13" 
-                                                                data-item_id="{{ sku_mdst.id }}" id="decrement-qty_{{ sku_mdst.id }}">
-                                                                <span class="icon">
-                                                                    <i class="fas fa-minus"></i>
-                                                                </span>
-                                                            </button>
-                                                        </div>
-                                                        <input class="qty_input form-control input-quantity" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ sku_mdst.id }}" id="id_qty_{{ sku_mdst.id }}">
-                                                        <div class="input-group-append">
-                                                            <button class="increment-qty right-button-13"
-                                                                data-item_id="{{ sku_mdst.id }}" id="increment-qty_{{ sku_mdst.id }}">
-                                                                <span class="icon">
-                                                                    <i class="fas fa-plus"></i>
-                                                                </span>
-                                                            </button>
-                                                        </div>
+                                    <div class="row">
+                                        <div class="col-12 m-2">
+                                            <p class="buy-copy">Buy all the bricks for the modern build!</p>
+                                            <p class="buy-copy">Includes BTMN instructions download:</p>
+                                            <p class="item-sku-number">{{item.item_number}}:{{sku_mdst.sku_number}}</p>
+                                        </div>
+                                        <div class="col-12 col-lg-8 buy-button-box">
+                                            <p class="form-label mb-0 mr-2">Qty: </p>
+                                            <div class="form-group w-50">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <button class="decrement-qty left-button-13" 
+                                                            data-item_id="{{ sku_mdst.id }}" id="decrement-qty_{{ sku_mdst.id }}">
+                                                            <span class="icon">
+                                                                <i class="fas fa-minus"></i>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                    <input class="qty_input form-control input-quantity" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ sku_mdst.id }}" id="id_qty_{{ sku_mdst.id }}">
+                                                    <div class="input-group-append">
+                                                        <button class="increment-qty right-button-13"
+                                                            data-item_id="{{ sku_mdst.id }}" id="increment-qty_{{ sku_mdst.id }}">
+                                                            <span class="icon">
+                                                                <i class="fas fa-plus"></i>
+                                                            </span>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <input type="submit" class="button-13 urgent-button"  value="${{ sku_mdst.sku_price}}">
-                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                             </div>
+                                            <input type="submit" class="button-13 urgent-button"  value="${{ sku_mdst.sku_price}}">
+                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                         </div>
                                     </div>
                                 </form>
@@ -125,38 +122,38 @@
                             <div class="buy-box">
                                 <form class="form" action="{% url 'add_to_cart' sku_flst.id %}" method="POST">
                                 {% csrf_token %}
-                                    <div class="form-row">                 
-                                        <div class="row">
-                                            <div class="col-12 m-2">
-                                                <p class="buy-copy">But the vintage set this set is based on, all the bricks for the modern set, and instructions!</p>
-                                                <p class="item-sku-number">{{item.item_number}}:{{sku_flst.sku_number}}</p>
-                                            </div>
-                                            <div class="col-12 buy-button-box">
-                                                <p class="form-label mb-0 mr-2">Qty: </p>
-                                                <div class="form-group w-50">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <button class="decrement-qty left-button-13" 
-                                                                data-item_id="{{ sku_flst.id }}" id="decrement-qty_{{ sku_flst.id }}">
-                                                                <span class="icon">
-                                                                    <i class="fas fa-minus"></i>
-                                                                </span>
-                                                            </button>
-                                                        </div>
-                                                        <input class="qty_input form-control input-quantity" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ sku_flst.id }}" id="id_qty_{{ sku_flst.id }}">
-                                                        <div class="input-group-append">
-                                                            <button class="increment-qty right-button-13"
-                                                                data-item_id="{{ sku_flst.id }}" id="increment-qty_{{ sku_flst.id }}">
-                                                                <span class="icon">
-                                                                    <i class="fas fa-plus"></i>
-                                                                </span>
-                                                            </button>
-                                                        </div>
+                                    <div class="row">
+                                        <div class="col-12 m-2">
+                                            <p class="buy-copy font-italic">Limited</p>
+                                            <p class="buy-copy">Buy the vintage Lego set it's based on!</p>
+                                            <p class="buy-copy">Includes BTMN instructions download:</p>
+                                            <p class="item-sku-number">{{item.item_number}}:{{sku_flst.sku_number}}</p>
+                                        </div>
+                                        <div class="col-12 col-lg-8 buy-button-box">
+                                            <p class="form-label mb-0 mr-2">Qty: </p>
+                                            <div class="form-group w-50">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <button class="decrement-qty left-button-13" 
+                                                            data-item_id="{{ sku_flst.id }}" id="decrement-qty_{{ sku_flst.id }}">
+                                                            <span class="icon">
+                                                                <i class="fas fa-minus"></i>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                    <input class="qty_input form-control input-quantity" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ sku_flst.id }}" id="id_qty_{{ sku_flst.id }}">
+                                                    <div class="input-group-append">
+                                                        <button class="increment-qty right-button-13"
+                                                            data-item_id="{{ sku_flst.id }}" id="increment-qty_{{ sku_flst.id }}">
+                                                            <span class="icon">
+                                                                <i class="fas fa-plus"></i>
+                                                            </span>
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <input type="submit" class="button-13 urgent-button"  value="${{ sku_flst.sku_price}}">
-                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                             </div>
+                                            <input type="submit" class="button-13 urgent-button"  value="${{ sku_flst.sku_price}}">
+                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                         </div>
                                     </div>
                                 </form>

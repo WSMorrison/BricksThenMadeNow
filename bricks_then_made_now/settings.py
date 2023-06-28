@@ -28,7 +28,8 @@ DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = ['localhost',
                  '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-eu100.gitpod.io',
-                 '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-us100.gitpod.io']
+                 '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-us100.gitpod.io',
+                 '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-eu101.gitpod.io',]
 
 
 
