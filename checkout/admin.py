@@ -29,7 +29,8 @@ class OrderAdmin(admin.ModelAdmin):
               'state',
               'shipping_cost',
               'order_total',
-              'grand_total',)
+              'grand_total',
+              )
 
     list_display = ('order_number',
                     'date',

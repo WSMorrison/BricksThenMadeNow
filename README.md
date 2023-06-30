@@ -604,7 +604,7 @@ Information on testing can be found in [the testing ReadMe](/TESTING.md)
 - Fonts are [Vina Sans](https://fonts.google.com/specimen/Vina+Sans) and [Staatliches](https://fonts.google.com/specimen/Staatliches) for the Bricks Then Made Now logo and [Mina](https://fonts.google.com/specimen/Mina) for the text, the code provided by [Google Fonts](https://fonts.google.com)
 - The original image used as the basis for the splash image is from [Brickset.](https://brickset.com/sets/6301-1/Town-Mini-Figures)
 - All computer generated renders are done in [Stud.io.](https://www.bricklink.com/v3/studio/download.page)
-- "Scooty Puff Jr" model is named for a [Futurama](https://www.imdb.com/title/tt0149460/) gag, and is based on a simple design lost to Instagram forever, most likely [danishspaceprogram](https://www.instagram.com/danishspaceprogram/).
+- "Scooty Puff Jr" model is named for a [Futurama](https://www.imdb.com/title/tt0149460/) gag, and is based on a simple design by [troublesbricking](https://www.instagram.com/troublesbricking/).
 
 ### Other Thanks
 
