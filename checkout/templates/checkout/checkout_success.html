@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_header %}
+
+    <div class="container p-0 info-bar shadow">
+        <div class="row">
+            <div class="col">
+                <div class="navbar navbar-expand items-bar">
+                    <div class="collapse navbar-collapse">
+                        <p class="ml-4 mt-3 mb-3">Checkout Success!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                    <h3>Thanks!</h3>
+                    <p>Your order {{ order_number }} was successful.</p>
+                    <p>All included digital downloads are ready for download.</p>
+                    <p>Any shipped items will be on their way soon.</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+
+{% endblock %}

@@ -292,6 +292,53 @@ footer {
     text-decoration: none;
 }
 
+/* Checkout form */
+.form-box{
+    width: 45rem;
+}
+
+#id_full_name {
+    width: 100%
+}
+
+.form-input {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+#id_email {
+    width: 100%;
+}
+
+#id_phone_number {
+    width: 14rem;
+}
+
+#id_street_address1 {
+    width: 100%;
+}
+
+#id_street_address2 {
+    width: 100%;
+}
+
+#id_town_or_city {
+    width: 50%;
+}
+
+#id_state {
+    width: 15%;
+    margin-left: 1rem;
+}
+
+#id_zipcode {
+    width: 28%;
+    margin-left: 1rem;
+}
+
+#id_country {
+    width: 50%;
+}
 
 /* Service area */
 /* .button-13 code is slightly modified but borrowed from Amazon via CSS Scan, see readme for details.  */
