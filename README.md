@@ -505,6 +505,7 @@ This project uses HTML, CSS, [Python](https://www.python.org/) and Javascript pr
 - [Color Shates Online Generator](https://gradients.app/en/shades/)
 - [Django](https://www.djangoproject.com/)
   - [Allauth](https://django-allauth.readthedocs.io/en/latest/)
+- [Django Countries](https://github.com/SmileyChris/django-countries)
 - [Favicon.io](https://favicon.io/)
 - [GitHub](https://github.com/)
 - [GitHub Issues](https://github.com/features/issues)
@@ -595,6 +596,7 @@ Information on testing can be found in [the testing ReadMe](/TESTING.md)
 ### Code Used
 
 - The button used throughout is a modified version of Button 13 from CSS Scan's [page of example buttons](https://getcssscan.com/css-buttons-examples), which is in turn attributed to Amazon.
+- The countries dropdown menu in the checkout form is by Chris Beaven and can be found [here.](https://github.com/SmileyChris/django-countries)
 
 ### Media
 
