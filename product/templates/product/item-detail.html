@@ -57,7 +57,7 @@
                                                 <input class="form-control qty-input" type="hidden" name="quantity" value="1" data-item_id="{{ sku_inst.id }}" id="id_qty_{{ sku_inst.id }}">
                                             </div>
                                                 {% if user in item.item_user_owned.all %}
-                                                    {% if item.item_instructions_url  %}
+                                                    {% if item.item_instructions_url %}
                                                         <a class="button-13" href="{{ item.item_instructions_url }}" target="_blank" rel="noopener" aria-label="Link to download instructions">Download</a>
                                                     {% else %}
                                                         <a class="button-13" href="#" target="_blank" rel="noopener" aria-label="Link to download instructions">Download</a>
