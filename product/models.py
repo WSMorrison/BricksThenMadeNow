@@ -30,6 +30,7 @@ class Item(models.Model):
     item_modern_url = models.URLField(max_length=1024, null=True, blank=True)
     item_detail = models.ImageField(null=True, blank=True, upload_to='images/')
     item_detail_url = models.URLField(max_length=1024, null=True, blank=True)
+    item_instructions_url = models.URLField(max_length=1024, null=True, blank=False)
     item_part_count = models.IntegerField()
     item_user_owned = models.ManyToManyField(User, blank=True)
 

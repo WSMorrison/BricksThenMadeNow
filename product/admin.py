@@ -23,6 +23,7 @@ class ItemAdmin(admin.ModelAdmin):
         'item_detail',
         'item_detail_url',
         'item_part_count',
+        'item_instructions_url',
     )
 
 
