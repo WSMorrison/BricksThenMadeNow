@@ -56,11 +56,15 @@
                                             <div class="form-outline buy-qty-box input-group-lg">
                                                 <input class="form-control qty-input" type="hidden" name="quantity" value="1" data-item_id="{{ sku_inst.id }}" id="id_qty_{{ sku_inst.id }}">
                                             </div>
-                                            {% if item.item_number in item_instructions %}
-                                                <input type="submit" class="button-13" disabled value="In Cart">
-                                            {% else %}
-                                                <input type="submit" class="button-13 urgent-button" value="${{ sku_inst.sku_price}}">
-                                            {% endif %}
+                                                {% if user in item.item_user_owned.all %}
+                                                    <a class="button-13" href="https://www.bricklink.com/v2/main.page" target="_blank" rel="noopener" aria-label="Link to download instructions">Download</a>
+                                                {% else %}
+                                                    {% if item.item_number in item_instructions %}
+                                                        <input type="submit" class="button-13" disabled value="In Cart">
+                                                    {% else %}
+                                                        <input type="submit" class="button-13 urgent-button" value="${{ sku_inst.sku_price}}">
+                                                    {% endif %}
+                                                {% endif %}
                                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                         </div>
                                     </div>

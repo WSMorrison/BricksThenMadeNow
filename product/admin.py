@@ -9,6 +9,7 @@ class ThemeAdmin(admin.ModelAdmin):
 
 class ItemAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
         'item_number',
         'item_name',
         'item_theme',

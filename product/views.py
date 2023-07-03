@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .models import Item, Theme, Sku
-from .forms import ItemForm, SkuForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from .models import Item, Theme, Sku
+from .forms import ItemForm, SkuForm
 
 
 # Operates the index page with all items.

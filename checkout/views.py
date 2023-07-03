@@ -5,7 +5,8 @@ from django.conf import settings
 import stripe
 import json
 from cart.contexts import cart_contents
-from product.models import Sku
+from django.contrib.auth.models import User
+from product.models import Sku, Item
 from .forms import Orderform
 from .models import Order, LineItem
 
@@ -114,6 +115,17 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Thanks for your order #{order_number}. Get ready to build!')
+
+    # This is where the logic goes to add the user_id to the sku.sku_item.item_user_owned !!!!!
+    cart = request.session.get('cart', {})
+    print('Hey the cart works')
+    print(cart)
+    user = request.user.id
+    for item_id, item_data in cart.items():
+        print('itemid', item_id)
+        print('user', user)
+        # item = Item.objects.get(id=item_id)
+        # item.item_user_owned.add(user)
 
     if 'cart' in request.session:
         del request.session['cart']
