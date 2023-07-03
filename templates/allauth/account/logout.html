@@ -3,24 +3,41 @@
 {% load i18n %}
 {% block head_title %}{% trans "BTMN - Logout" %}{% endblock %}
 
+{% block page_header %}
+
+    <div class="container p-0 info-bar shadow">
+        <div class="row">
+            <div class="col">
+                <div class="navbar navbar-expand items-bar">
+                    <div class="collapse navbar-collapse">
+                        <p class="ml-4 mt-3 mb-3">Logout</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
 {% block content %}
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>{% trans "Logout" %}</h1>
-
-      <p>{% trans 'Are you sure you want to log out?' %}</p>
-      
-      <form method="post" action="{% url 'account_logout' %}">
-        {% csrf_token %}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-        {% endif %}
-        <button type="submit">{% trans 'Logout' %}</button>
-      </form>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 mx-auto">
+        <div id="item-detail" class="card shadow">
+          <div class="card-body">
+            <p>{% trans 'Are you sure you want to log out?' %}</p>
+            <form method="post" action="{% url 'account_logout' %}">
+              {% csrf_token %}
+              {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+              {% endif %}
+              <button class="button-13" type="submit">{% trans 'Logout' %}</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
 {% endblock %}

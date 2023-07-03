@@ -605,6 +605,7 @@ Information on testing can be found in [the testing ReadMe](/TESTING.md)
 - The original image used as the basis for the splash image is from [Brickset.](https://brickset.com/sets/6301-1/Town-Mini-Figures)
 - All computer generated renders are done in [Stud.io.](https://www.bricklink.com/v3/studio/download.page)
 - "Scooty Puff Jr" model is named for a [Futurama](https://www.imdb.com/title/tt0149460/) gag, and is based on a simple design by [troublesbricking](https://www.instagram.com/troublesbricking/).
+- Terms of service is sampled from [www.websitepolicies.com](https://www.websitepolicies.com/blog/sample-terms-service-template).
 
 ### Other Thanks
 

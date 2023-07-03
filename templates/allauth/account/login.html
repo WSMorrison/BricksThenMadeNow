@@ -3,26 +3,46 @@
 {% load i18n %}
 {% block head_title %}{% trans "BTMN - Login" %}{% endblock %}
 
+{% block page_header %}
+
+    <div class="container p-0 info-bar shadow">
+        <div class="row">
+            <div class="col">
+                <div class="navbar navbar-expand items-bar">
+                    <div class="collapse navbar-collapse">
+                        <p class="ml-4 mt-3 mb-3">Login</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
 {% block content %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-      <form class="login" method="POST" action="{% url 'account_login' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-        <button class="primaryAction" type="submit">{% trans "Login" %}</button>
-      </form>
-    </div>
-    <div class="col-6">
-      <p>If you have not created an account yet, then please
-      <a href="{{ signup_url }}">sign up</a> first.</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 mx-auto">
+        <div id="item-detail" class="card shadow">
+          <div class="card-body">
+            <form class="login" method="POST" action="{% url 'account_login' %}">
+              {% csrf_token %}
+              {{ form.as_p }}
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+              {% endif %}
+              <button class="button-13" type="submit">{% trans "Login" %}</button>
+              <a href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+            </form>
+          </div>
+          <div class="col-6">
+            <p>If you have not created an account yet, then please
+            <a href="{{ signup_url }}">sign up</a> first.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
 {% endblock %}
