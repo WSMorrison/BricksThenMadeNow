@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpR
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 import stripe
 import json
 from cart.contexts import cart_contents
@@ -27,7 +28,7 @@ def cache_checkout_data(request):
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
 
-
+@login_required
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -93,7 +94,7 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-        print('the intent is', intent)
+        #print('the intent is', intent)
 
         order_form = Orderform()
 
@@ -117,15 +118,17 @@ def checkout_success(request, order_number):
     messages.success(request, f'Thanks for your order #{order_number}. Get ready to build!')
 
     # This is where the logic goes to add the user_id to the sku.sku_item.item_user_owned !!!!!
-    cart = request.session.get('cart', {})
+    cart = request.session.get('cart')
     print('Hey the cart works')
     print(cart)
     user = request.user.id
     for item_id, item_data in cart.items():
         print('itemid', item_id)
         print('user', user)
-        # item = Item.objects.get(id=item_id)
-        # item.item_user_owned.add(user)
+        sku_id = Sku.objects.get(id=item_id)
+        item_bought = sku_id.sku_item
+        print('item', item_bought)
+        item_bought.item_user_owned.add(user)
 
     if 'cart' in request.session:
         del request.session['cart']
