@@ -1,10 +1,10 @@
+import json
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 import stripe
-import json
 from cart.contexts import cart_contents
 from django.contrib.auth.models import User
 from product.models import Sku, Item
@@ -34,9 +34,7 @@ def checkout(request):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
-        print('checkout POST')
         cart = request.session.get('cart', {})
-
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -49,16 +47,16 @@ def checkout(request):
             'country': request.POST['country'],
         }
         order_form = Orderform(form_data)
-        print(cart)
+
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_cart = json.dumps(cart)
             order.save()
+
             for item_id, item_data in cart.items():
                 try:
-                    print(item_id)
                     sku = Sku.objects.get(id=item_id)
                     item = sku.sku_item
                     order_line_item = LineItem(
@@ -68,7 +66,6 @@ def checkout(request):
                         quantity=item_data,
                     )
                     order_line_item.save()
-
                 except Sku.DoesNotExist:
                     messages.error(request, ('An error has occured.'))
                     order.delete()
@@ -81,11 +78,9 @@ def checkout(request):
 
     else:
         cart = request.session.get('cart', {})
-        print('checkout GET')
         if not cart:
             messages.error(request, "Your cart is empty!")
             return redirect(reverse('items'))
-
         current_cart = cart_contents(request)
         total = current_cart['grand_total']
         stripe_total = round(total * 100)
@@ -94,8 +89,6 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-        #print('the intent is', intent)
-
         order_form = Orderform()
 
     if not stripe_public_key:
@@ -116,18 +109,12 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Thanks for your order #{order_number}. Get ready to build!')
-
-    # This is where the logic goes to add the user_id to the sku.sku_item.item_user_owned !!!!!
     cart = request.session.get('cart')
-    print('Hey the cart works')
-    print(cart)
     user = request.user.id
+
     for item_id, item_data in cart.items():
-        print('itemid', item_id)
-        print('user', user)
         sku_id = Sku.objects.get(id=item_id)
         item_bought = sku_id.sku_item
-        print('item', item_bought)
         item_bought.item_user_owned.add(user)
 
     if 'cart' in request.session:
