@@ -115,6 +115,14 @@ A project of even such a small scope as this requires careful planning before an
 <hr>
 <br>
 
+<br>
+<hr>
+<br>
+
+### Wireframes
+<hr>
+<br>
+
 ### Models
 <hr>
 <br>
@@ -129,17 +137,19 @@ This model contains information about the items listed for sale on the site. The
 |----------------------------|--------------|----------------------|
 | item_number                | Integerfield | Integer              |
 | item_name                  | Charfield    | Text                 |
-| item_theme                 | Foreignkey   | Many to many         |
-| item_desc                  | Textfield    | Text                 |
-| item_image_vintage         | Imagefield   | Image                |
-| item_image_vintage_url     | URLfield     | URL                  |
-| item_image_render          | Imagefield   | Image                |
-| item_image_render_url      | URLfield     | URL                  |
-| item_image_modern          | Imagefield   | Image                |
-| item_image_modern_url      | URLfield     | URL                  |
-| item_image_detail          | Imagefield   | Image                |
-| item_image_detail_url      | URLfield     | URL                  |
+| item_theme                 | Foreignkey   | Foreignkey           |
+| item_description           | Textfield    | Text                 |
+| item_old                   | Imagefield   | Image                |
+| item_old_url               | URLfield     | URL                  |
+| item_render                | Imagefield   | Image                |
+| item_render_url            | URLfield     | URL                  |
+| item_modern                | Imagefield   | Image                |
+| item_modern_url            | URLfield     | URL                  |
+| item_detail                | Imagefield   | Image                |
+| item_detail_url            | URLfield     | URL                  |
+| item_intructions_url       | URLfield     | URL                  |
 | item_partcount             | Integerfield | Integer              |
+| item_user_owned            | ManyToMany   | Many to many         |
 
 **SKU model**
 
@@ -147,12 +157,12 @@ The SKU model containst he rest of the information about what the customer can b
 
 | Key                        | Field        | Form                  |
 |----------------------------|--------------|-----------------------|
-| sku_item_no                | Foreignkey   | One to many with item |
-| Sku_sku                    | Integerfield | Integer               |
+| sku_item                   | Foreignkey   | One to many with item |
+| sku_number                 | Integerfield | Integer               |
+| sku_type                   | Charfield    | Text, choices         |
 | sku_price                  | Decimalfield | Decimal to two places |
 | sku_physical               | Boolean      | Checkbox              |
 | sku_inventory              | Integerfield | Integer               |
-| sku_included_instructions  | Foreignkey   | Many to one with sku  |
 
 **Order model**
 
@@ -487,6 +497,17 @@ Accessibility examples
 <br>
 <br>
 
+## Search Engine Optmization
+<hr>
+<br>
+
+Search Engine Optimization was planned for and implemented when the site was deployed. The first set of 
+
+<br>
+<hr>
+<br>
+<br>
+
 ## Technologies Used
 <hr>
 <br>
@@ -500,6 +521,7 @@ This project uses HTML, CSS, [Python](https://www.python.org/) and Javascript pr
 - [Balsamiq](https://balsamiq.cloud/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Bulk Resize Photos](https://bulkresizephotos.com/en)
+- [Cloudinary](https://cloudinary.com/)
 - Code Institute Gitpod Full Template - Available on request.
 - [Color Contrast Checker](https://coolors.co/contrast-checker/)
 - [Color Shates Online Generator](https://gradients.app/en/shades/)
@@ -526,7 +548,6 @@ This project uses HTML, CSS, [Python](https://www.python.org/) and Javascript pr
 
 - [AmIResponsive](https://ui.dev/amiresponsive)
 - [Bootswatch](https://bootswatch.com/)
-- [Cloudinary](https://cloudinary.com/)
 - [Code Institute Python linter](https://pep8ci.herokuapp.com/)
   - [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
 - [Elephant SQL](https://www.elephantsql.com/)

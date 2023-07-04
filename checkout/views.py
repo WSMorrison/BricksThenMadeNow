@@ -117,6 +117,10 @@ def checkout_success(request, order_number):
         item_bought = sku_id.sku_item
         item_bought.item_user_owned.add(user)
 
+        sku_id.sku_inventory -= item_data
+        sku_id.save()
+
+
     if 'cart' in request.session:
         del request.session['cart']
 

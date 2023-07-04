@@ -60,7 +60,13 @@
                                                     {% if item.item_instructions_url %}
                                                         <a class="button-13" href="{{ item.item_instructions_url }}" target="_blank" rel="noopener" aria-label="Link to download instructions">Download</a>
                                                     {% else %}
-                                                        <a class="button-13" href="#" target="_blank" rel="noopener" aria-label="Link to download instructions">Download</a>
+                                                        <a class="button-13" href="{% url 'errorpage' %}" target="_blank" rel="noopener" aria-label="Link to download instructions">Download</a>
+                                                    {% endif %}
+                                                {% elif user.is_authenticated and item.item_number == '2201489' %}
+                                                    {% if item.item_instructions_url %}
+                                                        <a class="button-13" href="{{ item.item_instructions_url }}" target="_blank" rel="noopener" aria-label="Link to download instructions">Free!</a>
+                                                    {% else %}
+                                                        <a class="button-13" href="{% url 'errorpage' %}" target="_blank" rel="noopener" aria-label="Link to download instructions">Download</a>
                                                     {% endif %}
                                                 {% else %}
                                                     {% if item.item_number in item_instructions %}
@@ -82,7 +88,6 @@
                             </div>
                         {% endif %}
                         
-
                         {% if sku_mdst %}
                             <div class="buy-box">
                                 <form class="form" action="{% url 'add_to_cart' sku_mdst.id %}" method="POST">
@@ -96,6 +101,7 @@
                                                 <p class="buy-copy-sm">Instructions download</p>
                                                 <p class="buy-copy-sm">Printed instructions</p>
                                                 <p class="buy-copy-sm">{{ item.item_part_count }} Lego bricks and elements</p>
+                                                <P class="buy-copy-sm font-italic">Inventory: {{ sku_mdst.sku_inventory }}</P>
                                             </div>
                                         </div>
                                         <div class="col-12 col-lg-8 buy-button-box">
@@ -110,7 +116,7 @@
                                                             </span>
                                                         </button>
                                                     </div>
-                                                    <input class="qty_input form-control input-quantity" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ sku_mdst.id }}" id="id_qty_{{ sku_mdst.id }}">
+                                                    <input class="qty_input form-control input-quantity" type="number" name="quantity" value="1" min="1" max="{{ sku_mdst.sku_inventory }}" data-item_id="{{ sku_mdst.id }}" id="id_qty_{{ sku_mdst.id }}">
                                                     <div class="input-group-append">
                                                         <button class="increment-qty right-button-13"
                                                             data-item_id="{{ sku_mdst.id }}" id="increment-qty_{{ sku_mdst.id }}">
@@ -121,7 +127,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="submit" class="button-13 urgent-button"  value="${{ sku_mdst.sku_price}}">
+                                            {% if sku_mdst.sku_inventory > 0 %}
+                                                <input type="submit" class="button-13 urgent-button" value="${{ sku_mdst.sku_price}}">
+                                            {% else %}
+                                                <input type="submit" class="button-13 urgent-button" disabled value="Sold Out!">
+                                            {% endif %}
                                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                         </div>
                                     </div>
@@ -151,6 +161,7 @@
                                                 <p class="buy-copy-sm">{{ item.item_part_count }} Lego bricks and elements</p>
                                                 <p class="buy-copy-sm">PLUS!</p>
                                                 <p class="buy-copy-sm">The vintage Lego set that inspired it</p>
+                                                <P class="buy-copy-sm font-italic">Inventory: {{ sku_flst.sku_inventory }}</P>
                                             </div>
                                         </div>
                                         <div class="col-12 col-lg-8 buy-button-box">
@@ -176,7 +187,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="submit" class="button-13 urgent-button"  value="${{ sku_flst.sku_price}}">
+                                            {% if sku_flst.sku_inventory > 0 %}
+                                                <input type="submit" class="button-13 urgent-button" value="${{ sku_flst.sku_price}}">
+                                            {% else %}
+                                                <input type="submit" class="button-13 urgent-button" disabled value="Sold Out!">
+                                            {% endif %}
                                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                         </div>
                                     </div>
