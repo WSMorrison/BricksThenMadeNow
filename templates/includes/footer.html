@@ -5,12 +5,17 @@
         <div class="col-12 col-md-4">
           <div class="footer-box">
             <div id="signup-box input-group form-horizontal">
-              <h4>Sign Up!</h4>
-              <hr>
-              <p>Sign up and recieve emails about specials, news, and fun!</p>
-              <input id="footer-signup-input" class="form-control" type="text" name="" placeholder="Your Email">
-              <a id="footer-signup-submit" class="btn" href="#">Sign Up!</a>
-              <hr class="d-md-none">
+              {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'siteuser_profile' %}">My Account</a>
+                <a class="nav-link" href="{% url 'siteuser_order_history' %}">My Order History</a>
+              {% else %}
+                <h4>Sign Up!</h4>
+                <hr>
+                <p>Sign up and recieve emails about specials, news, and fun!</p>
+                <input id="footer-signup-input" class="form-control" type="text" name="" placeholder="Your Email">
+                <a id="footer-signup-submit" class="btn" href="#">Sign Up!</a>
+                <hr class="d-md-none">
+              {% endif %}
             </div>
           </div>
         </div>

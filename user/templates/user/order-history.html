@@ -9,7 +9,7 @@
             <div class="col">
                 <div class="navbar navbar-expand items-bar">
                     <div class="collapse navbar-collapse">
-                        <p class="ml-4 mt-3 mb-3">My Siteuser Profile</p>
+                        <p class="ml-4 mt-3 mb-3">My Order History</p>
                     </div>
                 </div>
             </div>
@@ -26,11 +26,7 @@
                 <div>
                     <div class="card">
                         <p>Welcome back, {{ siteuser }}!</p>
-                        <form id="siteuser-profile-update-form" action="{% url 'siteuser_profile' %}" method="POST">
-                            {% csrf_token %}
-                            {{ form }}
-                            <button class="button-13">Update</button>
-                        </form>
+                        <p>Here's your order history, nerd.</p>
                     </div> 
                 </div>
             </div>
