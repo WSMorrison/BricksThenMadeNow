@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def siteuser_profile(request):
+    template = 'user/siteuser.html'
+    context = {}
+
+    return render(request, template, context)

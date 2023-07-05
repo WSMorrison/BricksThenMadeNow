@@ -4,10 +4,12 @@ from django.db.models import Sum
 from django.conf import settings
 from django_countries.fields import CountryField
 from product.models import Item, Sku
+from user.models import SiteUser
 
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    siteuser = models.ForeignKey(SiteUser, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders')
     date = models.DateTimeField(auto_now_add=True)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)

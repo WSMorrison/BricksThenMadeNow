@@ -631,8 +631,8 @@ Information on testing can be found in [the testing ReadMe](/TESTING.md)
 ### Other Thanks
 
 - The Code Institute assessment team; I can't imagine what kind of patience and knowledge it would take to look over these projects without losing it.
-- Finally, heartfelt appreciaton to my partner, Stevie, for infinite patience and encouragement. Also, no thanks to Lemon and Beckett for all their non-contributions throughout all five projects, though being fuzzy is it's own moral support.
-
+- Thanks to F. D. C. Lemon-Beckett for useful contributions to the discussion.
+- Finally, heartfelt appreciaton to my partner, Stevie, for infinite patience and encouragement. 
 <br>
 <hr>
 For educational purposes only.
