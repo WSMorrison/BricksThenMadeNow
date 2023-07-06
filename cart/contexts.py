@@ -53,7 +53,7 @@ def cart_contents(request):
         'item_count': item_count,
         'free_shipping': settings.FREE_SHIPPING,
         'shipping': shipping,
-        'to_get_free_shipping':to_get_free_shipping,
+        'to_get_free_shipping': to_get_free_shipping,
         'shipping_total': shipping_total,
         'total': total,
         'grand_total': grand_total,

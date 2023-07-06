@@ -69,8 +69,8 @@ form.addEventListener('submit', function(ev) {
                         line2: $.trim(form.street_address2.value),
                         city: $.trim(form.town_or_city.value),
                         state: $.trim(form.state.value),
-                        /*zip: $.trim(form.zipcode.value),*/
-                        country: $.trim(form.country.value),
+                        // zip: $.trim(form.zipcode.value),
+                        // country: $.trim(form.country.value),
                     }
                 }
             },
@@ -82,11 +82,12 @@ form.addEventListener('submit', function(ev) {
                     line2: $.trim(form.street_address2.value),
                     city: $.trim(form.town_or_city.value),
                     state: $.trim(form.state.value),
-                    /*zip: $.trim(form.zipcode.value),*/
+                    postal_code: $.trim(form.zipcode.value),
                     country: $.trim(form.country.value),
                 }
             },
         }).then(function(result) {
+            console.log(result)
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');
                 var html = `

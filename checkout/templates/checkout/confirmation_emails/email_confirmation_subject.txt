@@ -1,0 +1,1 @@
+Good news! Your Bricks Then Made Now order number {{ order.order_number}} is all set!

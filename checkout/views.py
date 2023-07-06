@@ -51,12 +51,14 @@ def checkout(request):
         order_form = Orderform(form_data)
 
         if order_form.is_valid():
+            print('Order form is valid')
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_cart = json.dumps(cart)
             order.save()
 
+            # The problem is heeeerrrrreeee!!!!!!!!!!!!!!!!!!!
             for item_id, item_data in cart.items():
                 try:
                     sku = Sku.objects.get(id=item_id)
@@ -67,6 +69,8 @@ def checkout(request):
                         sku=sku,
                         quantity=item_data,
                     )
+                    print('order line item from the view:')
+                    print(order_line_item)
                     order_line_item.save()
                 except Sku.DoesNotExist:
                     messages.error(request, ('An error has occured.'))
@@ -74,6 +78,7 @@ def checkout(request):
                     return redirect(reverse('view_cart'))
 
             request.session['save_info'] = 'save-info' in request.POST
+            print('save info')
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'An error has occured.')
@@ -91,6 +96,8 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
+        print('intent is')
+        print(intent)
 
         if request.user.is_authenticated:
             try:
@@ -106,8 +113,6 @@ def checkout(request):
                     'zipcode': siteuser_address_fill.siteuser_zipcode,
                     'country': siteuser_address_fill.siteuser_country,
                 })
-                print('farts')
-                print(siteuser_address_fill.siteuser_state)
             except SiteUser.DoesNotExist:
                 order_form = Orderform()
         else:
@@ -133,6 +138,7 @@ def checkout_success(request, order_number):
     messages.success(request, f'Thanks for your order #{order_number}. Get ready to build!')
     cart = request.session.get('cart')
     user = request.user.id
+    print('View Success')
 
     siteuser_profile = SiteUser.objects.get(user=request.user)
     order.siteuser = siteuser_profile
@@ -145,7 +151,7 @@ def checkout_success(request, order_number):
             'siteuser_street_address2': order.street_address2,
             'siteuser_town_or_city': order.town_or_city,
             'siteuser_state': order.state,
-            'siteuser_zipcode': order.zipcode,
+            # 'siteuser_zipcode': order.zipcode,
             'siteuser_country': order.country,
         }
         siteuser_address_form = SiteUserform(siteuser_address, instance=siteuser_profile)

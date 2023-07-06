@@ -1,0 +1,13 @@
+Great news, {{ order.full_name}}!
+
+Your Bricks Then Made Now Order is all set!
+
+{{ order.date }}
+Order #{{ order.order_number }}
+{{ order.grand_total }}
+
+If you have any questions, you can view your order on our site or you can contact us, and we will be happy to help.
+
+Thank you, and geat ready to build!
+
+Bricks Then Made Now
