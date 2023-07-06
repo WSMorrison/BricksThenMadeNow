@@ -8,6 +8,8 @@ import stripe
 from cart.contexts import cart_contents
 from django.contrib.auth.models import User
 from product.models import Sku, Item
+from user.forms import SiteUserform
+from user.models import SiteUser
 from .forms import Orderform
 from .models import Order, LineItem
 
@@ -89,7 +91,27 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-        order_form = Orderform()
+
+        if request.user.is_authenticated:
+            try:
+                siteuser_address_fill = SiteUser.objects.get(user=request.user)
+                order_form = Orderform(initial={
+                    'full_name': siteuser_address_fill.user.get_full_name(),
+                    'email': siteuser_address_fill.user.email,
+                    'phone_number': siteuser_address_fill.siteuser_phone_number,
+                    'street_address1': siteuser_address_fill.siteuser_street_address1,
+                    'street_address2': siteuser_address_fill.siteuser_street_address2,
+                    'town_or_city': siteuser_address_fill.siteuser_town_or_city,
+                    'state': siteuser_address_fill.siteuser_state,
+                    'zipcode': siteuser_address_fill.siteuser_zipcode,
+                    'country': siteuser_address_fill.siteuser_country,
+                })
+                print('farts')
+                print(siteuser_address_fill.siteuser_state)
+            except SiteUser.DoesNotExist:
+                order_form = Orderform()
+        else:
+            order_form = Orderform()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
@@ -111,6 +133,24 @@ def checkout_success(request, order_number):
     messages.success(request, f'Thanks for your order #{order_number}. Get ready to build!')
     cart = request.session.get('cart')
     user = request.user.id
+
+    siteuser_profile = SiteUser.objects.get(user=request.user)
+    order.siteuser = siteuser_profile
+    order.save()
+
+    if save_info:
+        siteuser_address = {
+            'siteuser_phone_number': order.phone_number,
+            'siteuser_street_address1': order.street_address1,
+            'siteuser_street_address2': order.street_address2,
+            'siteuser_town_or_city': order.town_or_city,
+            'siteuser_state': order.state,
+            'siteuser_zipcode': order.zipcode,
+            'siteuser_country': order.country,
+        }
+        siteuser_address_form = SiteUserform(siteuser_address, instance=siteuser_profile)
+        if siteuser_address_form.is_valid():
+            siteuser_address_form.save()
 
     for item_id, item_data in cart.items():
         sku_id = Sku.objects.get(id=item_id)

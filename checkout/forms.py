@@ -21,12 +21,12 @@ class Orderform(forms.ModelForm):
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
-            'country': 'Country',
-            'zipcode': 'ZIP',
-            'town_or_city': 'Town or City',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
+            'town_or_city': 'Town or City',
             'state': 'State',
+            'zipcode': 'ZIP',
+            'country': 'Country',
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
