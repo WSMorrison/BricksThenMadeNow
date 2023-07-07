@@ -361,6 +361,22 @@ footer {
 }
 
 /* Service area */
+
+.messages-container {
+    position: fixed;
+    top: 8rem;
+    right: 1rem;
+    z-index: 9999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
 /* .button-13 code is slightly modified but borrowed from Amazon via CSS Scan, see readme for details.  */
 .button-13 {
   background-color: rgb(var(--button-color));

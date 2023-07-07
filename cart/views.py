@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+from product.models import Sku
 
 # Create your views here.
 def view_cart(request):
@@ -9,6 +11,7 @@ def view_cart(request):
 # View to add skus to customer's shopping cart
 def add_to_cart(request, sku_id):
 
+    sku = Sku.objects.get(pk=sku_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
@@ -17,6 +20,7 @@ def add_to_cart(request, sku_id):
         cart[sku_id] += quantity
     else:
         cart[sku_id] = quantity
+        messages.success(request, f'Added {sku.sku_number} successfully.')
 
     request.session['cart'] = cart
     print(request.session['cart'])

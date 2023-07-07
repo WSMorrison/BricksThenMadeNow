@@ -190,7 +190,7 @@ def edit_sku(request, sku_id, item_id):
             return redirect(reverse('item_detail', args=[item_id]))
         else:
             message.error(request, 'Sku update FAILED.')
-    
+
     else:
         form = SkuForm(instance=sku)
 
