@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'checkout',
     'user',
     'infopages',
+    'storages',
 ]
 
 MIDDLEWARE = [
