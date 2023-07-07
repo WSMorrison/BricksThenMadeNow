@@ -200,9 +200,30 @@
                             </div>
                         {% endif %}
 
-                        <a class="button-13" href="{% url 'items' %}">
-                            <p class="text-uppercase">Back</p>
-                        </a>
+                        <a class="button-13" href="{% url 'items' %}">Back</a>
+                        {% if user.is_superuser %}
+                        <div class="container p-0 info-bar shadow">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="navbar navbar-expand items-bar">
+                                        <div class="collapse navbar-collapse">
+                                            <h3>Edit</h3>
+                                            <a class="button-13" href="{% url 'edit_item' item.id %}">Item</a>
+                                            {% if sku_inst %}
+                                                <a class="button-13" href="{% url 'edit_sku' sku_inst.id item.id %}">InstSet</a>
+                                            {% endif %}
+                                            {% if sku_mdst %}
+                                                <a class="button-13" href="{% url 'edit_sku' sku_mdst.id item.id %}">ModernSet</a>
+                                            {% endif %}
+                                            {% if sku_flst %}
+                                                <a class="button-13" href="{% url 'edit_sku' sku_flst.id item.id %}">FullSet</a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>

@@ -141,3 +141,64 @@ def new_sku(request):
     context = {'form': form,}
 
     return render(request, template, context)
+
+# Operates page that staff users can use to edit items in the database.
+@login_required
+def edit_item(request, item_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'You\'re not allowed to be here.')
+        return redirect(reverse('index'))
+
+    item = get_object_or_404(Item, pk=item_id)
+    edit = True
+    if request.method == 'POST':
+        form = ItemForm(request.POST, request.FILES, instance=item)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Item record updated.')
+            return redirect(reverse('item_detail', args=[item_id]))
+        else:
+            message.error(request, 'Item update FAILED.')
+    
+    else:
+        form = ItemForm(instance=item)
+
+    template = 'product/new-item.html'
+    context = {
+        'form': form,
+        'item': item,
+        'edit': edit,
+    }
+
+    return render(request, template, context)
+
+
+# Operates page that staff users can use to edit items in the database.
+@login_required
+def edit_sku(request, sku_id, item_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'You\'re not allowed to be here.')
+        return redirect(reverse('index'))
+
+    sku = get_object_or_404(Sku, pk=sku_id)
+    edit = True
+    if request.method == 'POST':
+        form = SkuForm(request.POST, request.FILES, instance=sku)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Sku record updated.')
+            return redirect(reverse('item_detail', args=[item_id]))
+        else:
+            message.error(request, 'Sku update FAILED.')
+    
+    else:
+        form = SkuForm(instance=sku)
+
+    template = 'product/new-sku.html'
+    context = {
+        'form': form,
+        'sku': sku,
+        'edit': edit,
+    }
+
+    return render(request, template, context)
