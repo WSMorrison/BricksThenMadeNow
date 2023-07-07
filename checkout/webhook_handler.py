@@ -11,7 +11,6 @@ import time
 
 class StripeWH_Handler:
 
-    print('WHHandler start')
     def __init__(self, request):
         self.request = request
 
@@ -32,7 +31,6 @@ class StripeWH_Handler:
             settings.DEFAULT_FROM_EMAIL,
             [cust_email],
         )
-        print('Im just an emailin fool')
 
     def handle_event(self, event):
         return HttpResponse(
@@ -40,7 +38,6 @@ class StripeWH_Handler:
             status=200)
 
     def handle_payment_intent_succeeded(self, event):
-        print('WHhandler handle payment intent succeeded')
         intent = event.data.object
         pid = intent.id
         cart = intent.metadata.cart
@@ -62,7 +59,6 @@ class StripeWH_Handler:
         attempt = 1
         while attempt <= 5:
             try:
-                # The problem is HERE
                 order = Order.objects.get(
                     full_name__iexact=shipping_details.name,
                     email__iexact=billing_details.email,
@@ -77,24 +73,19 @@ class StripeWH_Handler:
                     original_cart=cart,
                     stripe_pid=pid,
                 )
-                print('Order exists is true line 78')
                 order_exists = True
                 break
             except Order.DoesNotExist:
-                print('That aint exist')
                 attempt += 1
                 time.sleep(1)
         if order_exists:
             self._send_confirmation_email(order)
-            print('There should have just been an email by handler.')
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
         else:
-            print('WHHandler doing it by itself.')
             order = None
             try:
-                print('trying some stuff')
                 order = Order.objects.create(
                     full_name=shipping_details.name,
                     email=billing_details.email,
@@ -110,8 +101,7 @@ class StripeWH_Handler:
                 )
                 for item_id, item_data in json.loads(cart).items():
                     sku = Sku.objects.get(id=item_id)
-                    item = sku.sku_item
-                    print(sku, order, item_data, item_id)
+                    item = sku.sku_item                    
                     order_line_item = LineItem(
                         order=order,
                         item=item,
@@ -120,7 +110,6 @@ class StripeWH_Handler:
                     )
                     order_line_item.save()
             except Exception as e:
-                print('some stuff failed')
                 print(e)
                 if order:
                     order.delete()
@@ -129,7 +118,6 @@ class StripeWH_Handler:
                     status=500)
 
         self._send_confirmation_email(order)
-        print('There should have just been an email by webhook.')
         return HttpResponse(
             content=f'Payment Succeeded webhook received: {event["type"]}',
             status=200)

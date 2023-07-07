@@ -37,6 +37,7 @@ def checkout(request):
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
+        print('cart', cart)
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -58,19 +59,18 @@ def checkout(request):
             order.original_cart = json.dumps(cart)
             order.save()
 
-            # The problem is heeeerrrrreeee!!!!!!!!!!!!!!!!!!!
+            # !!!!!!!!!!!!!!! There is still a problem here where the model is returning NONE for lineitem_total out of the model !!!!!!!!!!!!!
             for item_id, item_data in cart.items():
                 try:
                     sku = Sku.objects.get(id=item_id)
                     item = sku.sku_item
+                    print(sku, order, item_data, item_id)
                     order_line_item = LineItem(
                         order=order,
                         item=item,
                         sku=sku,
                         quantity=item_data,
-                    )
-                    print('order line item from the view:')
-                    print(order_line_item)
+                        )
                     order_line_item.save()
                 except Sku.DoesNotExist:
                     messages.error(request, ('An error has occured.'))
