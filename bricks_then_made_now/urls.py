@@ -28,3 +28,6 @@ urlpatterns = [
     path('infopages/', include('infopages.urls')),
     path('siteuser_profile/', include('user.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = "bricks_then_made_now.views.error_404_page"
+handler500 = "bricks_then_made_now.views.error_500_page"
