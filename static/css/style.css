@@ -147,6 +147,20 @@ body {
     background-color: rgb(var(--background-color-dark));
 }
 
+#admin-item-edit {
+    background-color: rgb(var(--title-contrast), .20);
+    margin-top: -1.5rem;
+}
+
+#admin-item-delete {
+    background-color: rgb(var(--title-contrast), .60);
+    margin-top: -1.5rem;
+}
+
+.admin-item-container {
+    display: flex;
+}
+
 footer {
     margin-top: 1.5rem;
 }

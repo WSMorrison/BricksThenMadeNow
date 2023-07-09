@@ -23,6 +23,8 @@
 
 {% block content %}
 
+    
+
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -202,33 +204,60 @@
 
                         <a class="button-13" href="{% url 'items' %}">Back</a>
                         {% if user.is_superuser %}
-                        <div class="container p-0 info-bar shadow">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="navbar navbar-expand items-bar">
-                                        <div class="collapse navbar-collapse">
-                                            <h3>Edit</h3>
-                                            <a class="button-13" href="{% url 'edit_item' item.id %}">Item</a>
-                                            {% if sku_inst %}
-                                                <a class="button-13" href="{% url 'edit_sku' sku_inst.id %}">InstSet</a>
-                                            {% endif %}
-                                            {% if sku_mdst %}
-                                                <a class="button-13" href="{% url 'edit_sku' sku_mdst.id %}">ModernSet</a>
-                                            {% endif %}
-                                            {% if sku_flst %}
-                                                <a class="button-13" href="{% url 'edit_sku' sku_flst.id %}">FullSet</a>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div id="admin-item-edit" class="container p-0 info-bar mt-5">
+        <div class="row">
+            <div class="col">
+                <div class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse">
+                        <h3 class="mr-4 ml-4">Edit</h3>
+                        <div class="item-admin-container">
+                        <a class="button-13 m-3" href="{% url 'edit_item' item.id %}">Item</a>
+                        {% if sku_inst %}
+                            <a class="button-13" href="{% url 'edit_sku' sku_inst.id %}">InstSet</a>
                         {% endif %}
+                        {% if sku_mdst %}
+                            <a class="button-13 m-3" href="{% url 'edit_sku' sku_mdst.id %}">ModernSet</a>
+                        {% endif %}
+                        {% if sku_flst %}
+                            <a class="button-13" href="{% url 'edit_sku' sku_flst.id %}">FullSet</a>
+                        {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div id="admin-item-delete" class="container p-0 info-bar shadow">
+        <div class="row">
+            <div class="col">
+                <div class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse">
+                        <h3 class="ml-4 my-2">Delete</h3>
+                        <div class="item-admin-container">
+                        <a class="button-13 m-3" href="{% url 'delete_item' item.id %}">Item</a>
+                        {% if sku_inst %}
+                            <a class="button-13" href="{% url 'delete_sku' sku_inst.id %}">InstSet</a>
+                        {% endif %}
+                        {% if sku_mdst %}
+                            <a class="button-13 m-3" href="{% url 'delete_sku' sku_mdst.id %}">ModernSet</a>
+                        {% endif %}
+                        {% if sku_flst %}
+                            <a class="button-13" href="{% url 'delete_sku' sku_flst.id %}">FullSet</a>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
 
 {% endblock %}
 

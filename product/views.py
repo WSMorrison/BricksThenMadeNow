@@ -204,3 +204,65 @@ def edit_sku(request, sku_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_item(request, item_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'You\'re not allowed to be here.')
+        return redirect(reverse('index'))
+
+    template = 'product/confirm-delete-item.html'
+    context = {
+        'item_id': item_id,
+    }
+
+    return render(request, template, context)
+    
+
+@login_required
+def delete_sku(request, sku_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'You\'re not allowed to be here.')
+        return redirect(reverse('index'))
+
+    template = 'product/confirm-delete-sku.html'
+    context = {
+        'sku_id': sku_id,
+    }
+
+    return render(request, template, context)
+
+@login_required
+def confirm_delete_item(request, item_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'You\'re not allowed to be here.')
+        return redirect(reverse('index'))
+
+    item = get_object_or_404(Item, pk=item_id)
+    item.delete()
+    messages.info(request, 'Successfully deleted item.')
+
+    items = Item.objects.all()
+    context = {
+        'items': items,
+    }
+
+    return render(request,'product/items.html', context)
+
+@login_required
+def confirm_delete_sku(request, sku_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'You\'re not allowed to be here.')
+        return redirect(reverse('index'))
+
+    sku = get_object_or_404(Sku, pk=sku_id)
+    sku.delete()
+    messages.info(request, 'Successfully deleted sku.')
+
+    items = Item.objects.all()
+    context = {
+        'items': items,
+    }
+
+    return render(request,'product/items.html', context)
