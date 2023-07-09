@@ -210,13 +210,13 @@
                                             <h3>Edit</h3>
                                             <a class="button-13" href="{% url 'edit_item' item.id %}">Item</a>
                                             {% if sku_inst %}
-                                                <a class="button-13" href="{% url 'edit_sku' sku_inst.id item.id %}">InstSet</a>
+                                                <a class="button-13" href="{% url 'edit_sku' sku_inst.id %}">InstSet</a>
                                             {% endif %}
                                             {% if sku_mdst %}
-                                                <a class="button-13" href="{% url 'edit_sku' sku_mdst.id item.id %}">ModernSet</a>
+                                                <a class="button-13" href="{% url 'edit_sku' sku_mdst.id %}">ModernSet</a>
                                             {% endif %}
                                             {% if sku_flst %}
-                                                <a class="button-13" href="{% url 'edit_sku' sku_flst.id item.id %}">FullSet</a>
+                                                <a class="button-13" href="{% url 'edit_sku' sku_flst.id %}">FullSet</a>
                                             {% endif %}
                                         </div>
                                     </div>

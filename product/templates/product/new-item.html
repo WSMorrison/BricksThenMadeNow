@@ -22,7 +22,11 @@
 
         <div class="row">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'new_item' %}" enctype="multipart/form-data">
+                {% if edit %}
+                    <form method="Post" action="{% url 'edit_item' item.id %}" enctype="multipart/form-data">
+                {% else %}
+                    <form method="POST" action="{% url 'new_item' %}" enctype="multipart/form-data">
+                {% endif %}
                     {% csrf_token %}
                     {% for field in form %}
                         <p>{{ field.label }}</p>
@@ -32,8 +36,12 @@
                         {% endif %}
                     {% endfor %}
                     <div class="text-right">
-                        <a class="btn" href="{% url 'items' %}">Cancel</a>
-                        <button class="btn" type="submit">Add New Item</button>
+                        <a class="button-13" href="{% url 'items' %}">Cancel</a>
+                        {% if edit %}
+                            <button class="button-13" type="submit">Update</button>
+                        {% else %}
+                            <button class="button-13" type="submit">Add Item</button>
+                        {% endif %}
                     </div>
                 </form>
             </div>            

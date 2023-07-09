@@ -29,6 +29,7 @@ class ItemAdmin(admin.ModelAdmin):
 
 class SkuAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
         'sku_item',
         'sku_number',
         'sku_type',

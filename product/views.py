@@ -175,12 +175,14 @@ def edit_item(request, item_id):
 
 # Operates page that staff users can use to edit items in the database.
 @login_required
-def edit_sku(request, sku_id, item_id):
+def edit_sku(request, sku_id):
     if not request.user.is_superuser:
         messages.error(request, 'You\'re not allowed to be here.')
         return redirect(reverse('index'))
 
     sku = get_object_or_404(Sku, pk=sku_id)
+    item = sku.sku_item
+    item_id = item.id
     edit = True
     if request.method == 'POST':
         form = SkuForm(request.POST, request.FILES, instance=sku)
