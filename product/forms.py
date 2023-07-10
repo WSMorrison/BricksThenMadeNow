@@ -19,14 +19,14 @@ class ItemForm(forms.ModelForm):
                                   validators=[RegexValidator('[+-/%#@]',
                                   inverse_match=True)],
                                   widget=forms.TextInput(attrs={
-                                    'placeholder': 'XX: year created - 0 - YYYY Lego ref number'
+                                    'placeholder': 'XX0YYYY'
                                   }))
 
     
     item_instructions_url = forms.CharField(label='Downloadable .pdf link',
                                             validators=[pdf_url_ok],
                                             widget=forms.URLInput(attrs={
-                                            'placeholder': 'https://...pdf'
+                                            'placeholder': 'https:// ... .pdf'
                                             })
                                             )
 

@@ -188,6 +188,11 @@ footer {
     color: rgb(var(--text-color-muted));
 }
 
+.strong-words {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
 .items-bar {
     background-color: rgb(var(--title-very-contrast));
 }
@@ -222,6 +227,16 @@ footer {
 
 .flst-urgent i {
     color: rgb(var(--title-very-contrast));
+}
+
+.optional-pictures {
+    background-color: rgba(var(--background-color-med), .8);
+    box-shadow: inset 0 0 15px rgb(var(--background-color-dark));
+}
+
+.item-instrctions-instructions {
+    font-size: 1.3rem;
+    color: rgb(var(--text-color-muted));
 }
 
 .buy-box {
