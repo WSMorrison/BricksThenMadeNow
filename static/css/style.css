@@ -178,6 +178,10 @@ footer {
     margin-left: 0;
 }
 
+.link {
+    color: rgb(var(--title-color))
+}
+
 .nav-link {
     color: rgb(var(--text-color));
 }

@@ -206,6 +206,7 @@ def edit_sku(request, sku_id):
     return render(request, template, context)
 
 
+# Double checks that user intends Item deletion.
 @login_required
 def delete_item(request, item_id):
     if not request.user.is_superuser:
@@ -218,8 +219,9 @@ def delete_item(request, item_id):
     }
 
     return render(request, template, context)
-    
 
+
+# Double checks that user intends Sku deletion.
 @login_required
 def delete_sku(request, sku_id):
     if not request.user.is_superuser:
@@ -233,6 +235,8 @@ def delete_sku(request, sku_id):
 
     return render(request, template, context)
 
+
+# Performs the item deletion.
 @login_required
 def confirm_delete_item(request, item_id):
     if not request.user.is_superuser:
@@ -250,6 +254,8 @@ def confirm_delete_item(request, item_id):
 
     return render(request,'product/items.html', context)
 
+
+# Performs the sku deletion.
 @login_required
 def confirm_delete_sku(request, sku_id):
     if not request.user.is_superuser:

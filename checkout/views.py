@@ -14,6 +14,7 @@ from .forms import Orderform
 from .models import Order, LineItem
 
 
+# Holds checkout data for transmission to Stripe.
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -30,6 +31,8 @@ def cache_checkout_data(request):
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
 
+
+# Manages the checkout integration with Stripe.
 @login_required
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -130,6 +133,7 @@ def checkout(request):
     return render(request, template, context)
 
 
+# Waits for payment and order save to confirm that checkout was successful.
 def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)

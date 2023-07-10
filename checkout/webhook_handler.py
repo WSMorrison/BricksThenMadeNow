@@ -9,6 +9,7 @@ import json
 import time
 
 
+# Handles Stripe webhook integration and takes action when listener hears an event.
 class StripeWH_Handler:
 
     def __init__(self, request):

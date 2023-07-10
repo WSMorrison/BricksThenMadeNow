@@ -4,6 +4,7 @@ from .models import SiteUser
 from .forms import SiteUserform
 
 
+# Allows siteuser to view their profile information.
 def siteuser_profile(request):
     siteuser = get_object_or_404(SiteUser, user=request.user)
 
@@ -24,6 +25,7 @@ def siteuser_profile(request):
     return render(request, template, context)
 
 
+# Allows siteuser to view their order history.
 def siteuser_order_history(request):
     siteuser = get_object_or_404(SiteUser, user=request.user)
     order_history = siteuser.orders.all()

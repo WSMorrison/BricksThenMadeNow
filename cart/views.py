@@ -2,13 +2,13 @@ from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib import messages
 from product.models import Sku
 
-# Create your views here.
+# View cart.
 def view_cart(request):
 
     return render(request, 'cart/cart.html')
 
 
-# View to add skus to customer's shopping cart
+# View to add skus to customer's shopping cart.
 def add_to_cart(request, sku_id):
 
     sku = Sku.objects.get(pk=sku_id)
@@ -28,7 +28,7 @@ def add_to_cart(request, sku_id):
     return redirect(redirect_url)
 
 
-# View to adjust the quantities in the shopping cart
+# View to adjust the quantities in the shopping cart.
 def adjust_cart(request, sku_id):
 
     quantity = int(request.POST.get('quantity'))
@@ -45,7 +45,7 @@ def adjust_cart(request, sku_id):
     return redirect(reverse('view_cart'))
 
 
-# View to remove items from the shopping cart
+# View to remove items from the shopping cart.
 def remove_cart(request, sku_id):
 
     cart = request.session.get('cart', {})

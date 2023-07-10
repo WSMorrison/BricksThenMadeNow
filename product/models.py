@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 
 
+# Inventory validation function.
 def validate_inventory(value):
     if value >= 0:
         return value
@@ -10,6 +11,7 @@ def validate_inventory(value):
         raise ValidationError('Inventory must be 0, or a positive number.')
 
 
+# Theme model.
 class Theme(models.Model):
     name = models.CharField(max_length=10)
 
@@ -17,6 +19,7 @@ class Theme(models.Model):
         return self.name
 
 
+# Item model - includes description, pictures, parts count, etc.
 class Item(models.Model):
     item_number = models.CharField(max_length=7, unique=True)
     item_name = models.CharField(max_length=40)
@@ -38,6 +41,7 @@ class Item(models.Model):
         return self.item_name
 
 
+# Sku model - includes the pricing and inventory, this is what is actually added to cart.
 class Sku(models.Model):
     sku_type_choices = [
         ('inst', 'Instructions Only'),
