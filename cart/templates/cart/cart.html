@@ -30,7 +30,16 @@
                         {% if cart_items %}
                             {% for item in cart_items %}
                                 <div class="col-12 p-2">
-                                    <h3 class="item-name">{{ item.added_item }}</h3>
+                                    <h3 class="item-name">
+                                    {{ item.added_item }}
+                                    {% if item.added_sku.sku_type == 'inst' %}
+                                        Instructions
+                                    {% elif item.added_sku.sku_type == 'mdst' %}
+                                        ModernSet
+                                    {% elif item.added_sku.sku_type == 'flst' %}
+                                        FullSet
+                                    {% endif %}
+                                    </h3>
                                     <p class="item-sku-number">{{item.added_number}}:{{item.added_sku.sku_number}}</p>
                                     <p>Price: ${{ item.added_sku.sku_price }}  Qty: {{ item.quantity }}</p>
                                     <form class="form update-form" method="POST" action="{% url 'adjust_cart' item.sku_id %}">
@@ -58,9 +67,9 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <a class="update-link">Update</a>
-                                    <a class="remove-item" id="remove_{{ item.sku_id }}">Remove</a>
-                                    <p class="cart-total">Extended Price: ${{ item.extended_price }}</p>
+                                    <a class="mt-4 button-13 update-link">Update</a>
+                                    <a class="mt-4 button-13 urgent-button remove-item" id="remove_{{ item.sku_id }}">Remove</a>
+                                    <p class="mt-4 cart-total">Extended Price: ${{ item.extended_price }}</p>
                                 </div>
                                 <hr>
                             {% endfor %}

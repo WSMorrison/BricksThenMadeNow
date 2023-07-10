@@ -5,6 +5,13 @@ from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
 
 
+#Custom validators
+def pdf_url_ok(value):
+    if value.endswith('.pdf') is False:
+        if value.startswith('https://') is False:
+            raise forms.ValidationError('File must be secure .pdf')
+
+
 # New Item form
 class ItemForm(forms.ModelForm):
 
@@ -15,10 +22,18 @@ class ItemForm(forms.ModelForm):
                                     'placeholder': 'XX: year created - 0 - YYYY Lego ref number'
                                   }))
 
+    
+    item_instructions_url = forms.CharField(label='Downloadable .pdf link',
+                                            validators=[pdf_url_ok],
+                                            widget=forms.URLInput(attrs={
+                                            'placeholder': 'https://...pdf'
+                                            })
+                                            )
+
     class Meta:
         model = Item
         fields = '__all__'
-        labels = {'item_name': 'Item name; use the original Lego set name:',
+        labels = {'item_name': 'Item name; use the original Lego set name:',    
                   'item_theme': 'Choose theme:',
                   'item_description': 'Brief item description; remember SEO keywords:',
                   'item_old_url': 'Image hosted link:',

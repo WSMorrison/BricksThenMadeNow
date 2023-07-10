@@ -25,61 +25,61 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div>
-
-                    <!-- Cart section -->
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h5 class="mb-0">
-                            <button class="btn btn-link no-dec">
-                                <p class="checkout-form-heading">Cart</p>
-                            </button>
-                            </h5>
-                        </div>
-                        <div id="collapseOne" >
-                            <div class="card-body">
-                                {% if cart_items %}
-                                    {% for item in cart_items %}
-                                        <div class="col-12 p-2">
-                                            <h3 class="item-name">{{ item.added_item }}</h3>
-                                            <p class="item-sku-number">{{item.added_number}}:{{item.added_sku.sku_number}}</p>
-                                            <p>Price: ${{ item.added_sku.sku_price }}  Qty: {{ item.quantity }}</p>
-                                            <p class="cart-total">Extended Price: ${{ item.extended_price }}</p>
+                <div class="row">
+                    <div class="col-12 col-lg-4">
+                        <!-- Cart section -->
+                        <div class="card shadow">
+                            <div class="card-header">
+                                <h5 class="mb-0 checkout-form-heading">Cart</h5>
+                            </div>
+                                <div class="card-body">
+                                    {% if cart_items %}
+                                        {% for item in cart_items %}
+                                            <div class="col-12 p-2">
+                                                <h3>{{ item.added_item }}
+                                                {% if item.added_sku.sku_type == 'inst' %}
+                                                    Instructions
+                                                {% elif item.added_sku.sku_type == 'mdst' %}
+                                                    ModernSet
+                                                {% elif item.added_sku.sku_type == 'flst' %}
+                                                    FullSet
+                                                {% endif %}
+                                                </h3>
+                                                <p>Qty: {{ item.quantity }}</p>
+                                                <p class="cart-total">Extended Price: ${{ item.extended_price }}</p>
+                                            </div>
+                                            <hr>
+                                        {% endfor %}
+                                        <div class="cart-totals-box p-2">
+                                            <p>Total items to ship: {{ shipping_total }}</p>
+                                            {% if shipping == 0 %}
+                                                <p class="cart-total">Shipping cost: $0.00</p>
+                                            {% else %}
+                                                <p class="cart-total">Shipping cost: ${{ shipping }}</p>
+                                            {% endif %}
+                                            <p class="cart-total">Grand total: ${{ grand_total }}</p>
                                         </div>
-                                        <hr>
-                                    {% endfor %}
-                                    <div class="cart-totals-box p-2">
-                                        <p>Total items to ship: {{ shipping_total }}</p>
-                                        {% if shipping == 0 %}
-                                            <p class="cart-total">Shipping cost: $0.00</p>
-                                        {% else %}
-                                            <p class="cart-total">Shipping cost: ${{ shipping }}</p>
-                                        {% endif %}
-                                        <p class="cart-total">Grand total: ${{ grand_total }}</p>
-                                    </div>
-                                {% else %}
-                                    <p>Cart is empty! Nothing to buy here.</p>
-                                    <a class="button-13"  href="{% url 'items' %}">
-                                        <span class="icon">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </span>
-                                        <span class="text-uppercase">Back</span>
-                                    </a>
-                                {% endif %}
+                                    {% else %}
+                                        <p>Cart is empty! Nothing to buy here.</p>
+                                        <a class="button-13"  href="{% url 'items' %}">
+                                            <span class="icon">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </span>
+                                            <span class="text-uppercase">Back</span>
+                                        </a>
+                                    {% endif %}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Details section -->
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h5 class="mb-0">
-                            <button class="btn btn-link no-dec collapsed" >
-                                <p class="checkout-form-heading">Shipping</p>
-                            </button>
-                            </h5>
-                        </div>
-                        <div id="collapseTwo" >
+                    <!--div class="col-lg-1"></div-->
+
+                    <div class="col-12 col-lg-8">
+                        <!-- Details section -->
+                        <div class="card shadow">
+                            <div class="card-header">
+                                <h5 class="mb-0 checkout-form-heading">Shipping</h5>
+                            </div>
                             <div class="card-body">
                                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                                 {% csrf_token %}
@@ -98,53 +98,46 @@
                                         <span class="form-input">{{ order_form.zipcode }}</span>
                                         <div class="form-input">{{ order_form.country}}</div>
                                     </div>
-                                <!-- form continues -->
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- Payment section -->
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <h5 class="mb-0">
-                            <button class="btn btn-link no-dec collapsed" >
-                                <p class="checkout-form-heading">Payment</p>
-                            </button>
-                            </h5>
-                        </div>
-                        <div >
-                            <div class="card-body">
-                                <!-- form continues -->
-                                <div id="card-element">
-
+                            <!-- Payment section -->
+                            <div class="card shadow">
+                                <div class="card-header">
+                                    <h5 class="mb-0 checkout-form-heading">Payment</h5>
                                 </div>
-                                <div class="mb-3 text-danger" id="card-errors" role="alert">
+                                <div >
+                                    <div class="card-body">
+                                        <div id="card-element" class="card-element">
 
-                                </div>
-                            </div>
-                            <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
-                            <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
-                            <input type="hidden" value="{{ client_secret }}" name="client_secret">
-                            <div class="card-body">
-                                <hr>
-                                <div class="row">
-                                        <div class="col-6 d-flex justify-content-center"> 
-                                            <a class="button-13"  href="{% url 'items' %}">
-                                                <p class="m-auto">Shop</p>
-                                            </a>
                                         </div>
-                                        <!--SUBMIT BUTTON IS HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-                                        <div class="col-6 d-flex justify-content-center">
-                                            <button id="submit-button" class="button-13 urgent-button">
-                                                <p class="m-auto">Process</p>
-                                            </button>
+                                        <div class="mb-3 text-danger" id="card-errors" role="alert">
+
                                         </div>
-                                    </form>
+                                    </div>
+                                    <label class="form-check-label ml-4" for="id-save-info">Save this delivery information to my profile</label>
+                                    <input id="id-save-info" class="form-check-input ml-2 mr-0 checkbox-not-blue" type="checkbox" name="save-info" checked>
+                                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                                    <div class="card-body">
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-6 d-flex justify-content-center"> 
+                                                <a class="button-13"  href="{% url 'items' %}">
+                                                    <p class="m-auto">Shop</p>
+                                                </a>
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-center">
+                                                <button id="submit-button" class="button-13 urgent-button">
+                                                    <p class="m-auto">Process</p>
+                                                </button>
+                                            </div>
+                                        </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

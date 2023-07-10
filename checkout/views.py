@@ -37,7 +37,6 @@ def checkout(request):
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
-        print('cart', cart)
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -64,7 +63,6 @@ def checkout(request):
                 try:
                     sku = Sku.objects.get(id=item_id)
                     item = sku.sku_item
-                    print(sku, order, item_data, item_id)
                     order_line_item = LineItem(
                         order=order,
                         item=item,
@@ -151,7 +149,7 @@ def checkout_success(request, order_number):
             'siteuser_street_address2': order.street_address2,
             'siteuser_town_or_city': order.town_or_city,
             'siteuser_state': order.state,
-            # 'siteuser_zipcode': order.zipcode,
+            'siteuser_zipcode': order.zipcode,
             'siteuser_country': order.country,
         }
         siteuser_address_form = SiteUserform(siteuser_address, instance=siteuser_profile)
