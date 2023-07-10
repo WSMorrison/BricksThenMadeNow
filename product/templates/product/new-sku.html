@@ -2,46 +2,66 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
+    <div class="container p-0 info-bar shadow">
         <div class="row">
-            <div class="col strong-words">Add Sku</div>
+            <div class="col">
+                <div class="navbar navbar-expand items-bar">
+                    <div class="collapse navbar-collapse">
+                        <p class="ml-4 mt-3 mb-3 strong-words">Add Sku</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
 
 {% block content %}
+
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
-                <hr>
-                <hr>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 col-md-6">
-                {% if edit %}
-                    <form method="Post" action="{% url 'edit_sku' sku.id %}" enctype="multipart/form-data">
-                {% else %}
-                    <form method="POST" action="{% url 'new_sku' %}" enctype="multipart/form-data">
-                {% endif %}
-                    {% csrf_token %}
-                    {% for field in form %}
-                        <p>{{ field.label }}</p>
-                        {{ field }}
-                    {% endfor %}
-                    <div class="text-right">
-                        <a class="btn" href="{% url 'items' %}">Cancel</a>
-                        {% if edit %}
-                            <button class="button-13" type="submit">Update</button>
-                        {% else %}
-                            <button class="button-13" type="submit">Add Sku</button>
-                        {% endif %}
+            <div class="col-12 col-lg-6">
+                <div class="card shadow">
+                    <div class="card-body"
+                    {% if edit %}
+                        <form method="Post" action="{% url 'edit_item' item.id %}" enctype="multipart/form-data">
+                    {% else %}
+                        <form method="POST" action="{% url 'new_item' %}" enctype="multipart/form-data">
+                    {% endif %}
+                        {% csrf_token %}
+                        <div class="form-input">{{ form.sku_item }}</div>
+                        <p>Choose item.</p>
+                        <hr>
+                        <div class="form-input">{{ form.sku_number }}</div>
+                        <p class="mb-0">1033 - Instructions</p>
+                        <p class="mb-0">1066 - ModernSet</p>
+                        <p>1099 - FullSet</p>
+                        <hr>
+                        <div class="form-input">{{ form.sku_type }}</div>
+                        <p>Choose Sku type.</p>
+                        <hr>
+                        <div class="form-input">{{ form.sku_price }}</div>
+                        <p>Sku price.</p>
+                        <hr>
+                        <span class="form-input">{{ form.sku_physical }}</span><span class="ml-2">Physical item?</span>
+                        <hr>
+                        <div class="form-input">{{ form.sku_inventory }}</div>
+                        <p>Inventory.</p>
+                        <hr>   
+                        <div class="text-right">
+                            <a class="button-13" href="{% url 'items' %}">Cancel</a>
+                            {% if edit %}
+                                <button class="button-13" type="submit">Update</button>
+                            {% else %}
+                                <button class="button-13 urgent-button" type="submit">Add Item</button>
+                            {% endif %}
+                        </div>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>            
         </div>
     </div>
+
 {% endblock %}
 
 {% block postloadjs %}
