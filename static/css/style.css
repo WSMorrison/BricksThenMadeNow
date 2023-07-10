@@ -128,17 +128,6 @@ body {
     background-color: rgb(var(--title-very-contrast));
 }
 
-#splash {
-    background: url('../media/splash-sm.jpg') center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: calc(100vw * .55);
-    max-height: 34.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: normal;
-}
-
 .info-bar {
     margin-bottom: 1.5rem;
 }
@@ -374,21 +363,16 @@ footer {
     height: 100%;
 }
 
-/* Service area */
+/* Toasts area */
 
-.messages-container {
-    position: fixed;
-    top: 8rem;
-    right: 1rem;
-    z-index: 9999999999;
-}
-
-.custom-toast {
-    overflow: visible;
-}
-
-.toast-capper {
-    height: 2px;
+#message {
+        background-color: rgb(var(--background-color-dark));
+        position: absolute;
+        top: 10rem;
+        right: 10rem;
+        height: 20rem;
+        width: 20rem;
+        z-index: 9999;
 }
 
 /* .button-13 code is slightly modified but borrowed from Amazon via CSS Scan, see readme for details.  */

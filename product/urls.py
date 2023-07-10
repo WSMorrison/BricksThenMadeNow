@@ -13,4 +13,5 @@ urlpatterns = [
      path('delete-sku/<sku_id>/', views.delete_sku, name='delete_sku'),
      path('confirm-delete-item/<item_id>/', views.confirm_delete_item, name='confirm_delete_item'),
      path('confirm-delete-sku/<sku_id>/', views.confirm_delete_sku, name='confirm_delete_sku'),
+     path('error/', views.errorpage, name='errorpage'),
 ]

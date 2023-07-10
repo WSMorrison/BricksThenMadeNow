@@ -266,3 +266,6 @@ def confirm_delete_sku(request, sku_id):
     }
 
     return render(request,'product/items.html', context)
+
+def errorpage(request):
+    return render(request, 'errorpage.html')
