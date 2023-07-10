@@ -366,13 +366,12 @@ footer {
 /* Toasts area */
 
 #message {
-        background-color: rgb(var(--background-color-dark));
-        position: absolute;
-        top: 10rem;
-        right: 10rem;
-        height: 20rem;
-        width: 20rem;
-        z-index: 9999;
+    position: absolute;
+    top: -1.5rem;
+    right: -1.5rem;
+    height: 20rem;
+    width: 20rem;
+    z-index: 9999;
 }
 
 /* .button-13 code is slightly modified but borrowed from Amazon via CSS Scan, see readme for details.  */

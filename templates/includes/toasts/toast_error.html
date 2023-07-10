@@ -1,5 +1,10 @@
 <div>
-    <div>
-        {{ message }}        
-    </div>
-</div>
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
+        <div class="toast-header">
+          <strong>Error</strong>
+        </div>
+        <div class="toast-body">
+          <p class="toast-message">{{ message }}</p>
+        </div>
+      </div>
+  </div>
