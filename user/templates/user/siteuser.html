@@ -22,19 +22,33 @@
 
     <section class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 col-lg-6">
                 <div>
+                <h3 class="strong-words">Welcome back, {{ siteuser }}</h3>
                     <div class="card">
-                        <h3>Welcome back, {{ siteuser }}!</h3>
-                        <form id="siteuser-profile-update-form" action="{% url 'siteuser_profile' %}" method="POST">
-                            {% csrf_token %}
-                            {{ form }}
-                            <button class="button-13">Update</button>
-                        </form>
+                        <div class="card-body">
+                            <form id="siteuser-profile-update-form" action="{% url 'siteuser_profile' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="form-box">
+                                    <div class="item-name"><p>Contact</p></div>
+                                    <div class="form-input">{{ form.siteuser_phone_number }}</div>
+                                </div>
+                                <div class="form-box">
+                                    <div class="item-name"><p>Shipping Address</p></div>
+                                    <div class="form-input">{{ form.siteuser_street_address1 }}</div>
+                                    <div class="form-input">{{ form.siteuser_street_address2 }}</div>
+                                    <span class="form-input">{{ form.siteuser_town_or_city }}</span>
+                                    <span class="form-input">{{ form.siteuser_state }}</span>
+                                    <span class="form-input">{{ form.siteuser_zipcode }}</span>
+                                    <div class="form-input">{{ form.siteuser_country}}</div>
+                                </div>
+                                <button class="button-13 urgent-button">Update</button>
+                            </form>
+                        </div>
                     </div> 
                 </div>
             </div>
         </div>
-    </section>    
+</section>  
 
 {% endblock %}

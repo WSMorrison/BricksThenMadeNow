@@ -470,6 +470,12 @@ footer {
     height: 100%;
 }
 
+/* User info style rules */
+.order-history-order-items {
+    display: flex;
+    justify-content: space-between
+}
+
 /* Toasts area */
 
 #message {

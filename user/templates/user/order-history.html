@@ -22,38 +22,46 @@
 
     <section class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 col-lg-6">
                 <div>
                 <h3 class="strong-words">Welcome back, {{ siteuser }}</h3>
                     <div class="card">
                         <div class="card-body">
-                            <h3>Your Order History:</h3></p>
-                            {% for order in order_history %}
-                                <div class="card my-4">
-                                    <div class="card-body">
-                                        <p>Order number:</p>
-                                        <h4>{{ order.order_number }}</h4>
-                                        <p>{{ order.date }}</p>
-                                        <div class="card optional-pictures mb-4">
-                                            <div class="card-body">
-                                                {% for item in order.lineitems.all %}
-                                                    <span>{{ item.sku.sku_item }}: </span><span>
-                                                        {% if item.sku.sku_type == 'inst' %}
-                                                            Instructions
-                                                        {% elif item.sku.sku_type == 'mdst' %}
-                                                            ModernSet
-                                                        {% elif item.sku.sku_type == 'flst' %}
-                                                            FullSet
-                                                        {% endif %}
-                                                    </span><span class="align-self-end"> Qty: {{ item.quantity }}</span><br>
-                                                {% endfor %}
+                            {% if order_history %}
+                                <h3>Your Order History:</h3></p>
+                                {% for order in order_history %}
+                                    <div class="card my-4">
+                                        <div class="card-body">
+                                            <p>Order number:</p>
+                                            <h4>{{ order.order_number }}</h4>
+                                            <p>{{ order.date }}</p>
+                                            <div class="card optional-pictures mb-4">
+                                                <div class="card-body">
+                                                    {% for item in order.lineitems.all %}
+                                                        <div class="order-history-order-items">
+                                                            <span><span>{{ item.sku.sku_item }}: </span><span>
+                                                                {% if item.sku.sku_type == 'inst' %}
+                                                                    Instructions
+                                                                {% elif item.sku.sku_type == 'mdst' %}
+                                                                    ModernSet
+                                                                {% elif item.sku.sku_type == 'flst' %}
+                                                                    FullSet
+                                                                {% endif %}
+                                                            </span></span><span><span class=""> Qty: {{ item.quantity }}</span></span>
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
                                             </div>
+                                            <p>Shipping: ${{ order.shipping_cost}}</p>
+                                            <p>Order total: ${{ order.grand_total }}</p>
                                         </div>
-                                        <p>Shipping: ${{ order.shipping_cost}}</p>
-                                        <p>Order total: ${{ order.grand_total }}</p>
                                     </div>
-                                </div>
-                            {% endfor %}
+                                    <hr>
+                                {% endfor %}
+                            {% else %}
+                                <h3>You haven't bought anything yet!</h3>
+                                <a class="button-13"  href="{% url 'items' %}" aria-label="Link to items page.">Let's go!</a>
+                            {% endif %}
                         </div>
                     </div> 
                 </div>
