@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Mina&family=Vina+Sans&family=Staatliches");
 
+/* Color root */
 :root {
     --text-color: 33, 37, 41;
     --text-color-muted: 124, 127, 129;
@@ -19,6 +20,7 @@
     --text-border-color-disabled: 82,82,82;
 }
 
+/* REMOVE! */
 .test-area{
     text-color: #212529;
     text-color-muted: #7c7f81;
@@ -31,6 +33,7 @@
     button-color: #feffff;
 }
 
+/* Header, titlebar, splash, navbar styling rules */
 html {
     color: rgb(var(--text-color));
     font-size: 62.5%;
@@ -150,6 +153,69 @@ body {
     display: flex;
 }
 
+.strong-words {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+/* Index card styling rules */
+.index-title {
+    font-family: 'Vina Sans', sans-serif;
+    color: rgb(var(--background-color-light));
+}
+
+.index-card {
+    height: 27rem;
+    width: 35rem;
+}
+
+.index-card-light {
+    background-color: rgb(var(--title-very-contrast), .85);
+    height: 27rem;
+    width: 35rem;
+    overflow: hidden;
+}
+
+.index-card-dark {
+    background-color: rgb(var(--title-color), .85);
+    height: 27rem;
+    width: 35rem;
+    overflow: hidden;
+}
+
+#index-city {
+    font-size: 23rem;
+    margin-top: -6rem;
+}
+
+#index-space {
+    font-size: 17rem;
+    margin-top: -4rem;
+}
+
+#index-castle {
+    font-size: 14rem;
+    margin-top: -3rem;
+}
+
+#index-train {
+    font-size: 17rem;
+    margin-top: -4rem;
+}
+
+#index-moc {
+    font-size: 25rem;
+    margin-top: -7rem;
+}
+
+.img-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+/* Footer styling rules */
 footer {
     margin-top: 1.5rem;
 }
@@ -192,11 +258,7 @@ footer {
     color: rgb(var(--text-color-muted));
 }
 
-.strong-words {
-    font-weight: 600;
-    font-size: 2rem;
-}
-
+/* All-items or theme-items views styling rules */
 .items-bar {
     background-color: rgb(var(--title-very-contrast));
 }
@@ -225,6 +287,7 @@ footer {
     margin-left: 0rem;
 }
 
+/* Item detail view styling rules */
 #item-detail {
     width: 100%;
 }
@@ -299,6 +362,7 @@ footer {
     text-align: right;
 }
 
+/* Checkout view styling rules */
 .cart-total {
     text-align: right;
 }
@@ -509,6 +573,54 @@ input[type=number] {
 }
 
 /* Media queries */
+@media only screen and (min-width: 1200px) {
+
+    .index-card {
+        height: 27rem;
+        width: 35rem;
+    }
+
+    .index-card-light {
+        background-color: rgb(var(--title-very-contrast), .85);
+        height: 27rem;
+        width: 35rem;
+        overflow: hidden;
+    }
+    
+    .index-card-dark {
+        background-color: rgb(var(--title-color), .85);
+        height: 27rem;
+        width: 35rem;
+        overflow: hidden;
+    }
+    
+    #index-city {
+        font-size: 23rem;
+        margin-top: -6rem;
+    }
+    
+    #index-space {
+        font-size: 17rem;
+        margin-top: -4rem;
+    }
+    
+    #index-castle {
+        font-size: 14rem;
+        margin-top: -3rem;
+    }
+    
+    #index-train {
+        font-size: 17rem;
+        margin-top: -4rem;
+    }
+    
+    #index-moc {
+        font-size: 25rem;
+        margin-top: -7rem;
+    }
+
+}
+
 @media only screen and (min-width: 992px) {
 
     #search-area {
@@ -517,6 +629,54 @@ input[type=number] {
     
     #cart-icon {
         font-size: 3rem;
+    }
+    
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+    .index-card {
+        height: 21rem;
+        width: 29rem;
+    }
+    
+    .index-card-light {
+        background-color: rgb(var(--title-very-contrast), .85);
+        height: 21rem;
+        width: 29rem;
+        overflow: hidden;
+    }
+    
+    .index-card-dark {
+        background-color: rgb(var(--title-color), .85);
+        height: 21rem;
+        width: 29rem;
+        overflow: hidden;
+    }
+
+    #index-city {
+        font-size: 18.5rem;
+        margin-top: -6rem;
+    }
+    
+    #index-space {
+        font-size: 14rem;
+        margin-top: -4rem;
+    }
+    
+    #index-castle {
+        font-size: 12rem;
+        margin-top: -3rem;
+    }
+    
+    #index-train {
+        font-size: 14rem;
+        margin-top: -4rem;
+    }
+    
+    #index-moc {
+        font-size: 20rem;
+        margin-top: -6rem;
     }
 
 }
@@ -577,29 +737,13 @@ input[type=number] {
         width: 45rem;
     }
     
-    #id_full_name {
-        width: 100%
-    }
-    
     .form-input {
         padding-top: .5rem;
         padding-bottom: .5rem;
     }
     
-    #id_email {
-        width: 100%;
-    }
-    
     #id_phone_number {
         width: 14rem;
-    }
-    
-    #id_street_address1 {
-        width: 100%;
-    }
-    
-    #id_street_address2 {
-        width: 100%;
     }
     
     #id_town_or_city {
