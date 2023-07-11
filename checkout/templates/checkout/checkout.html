@@ -6,23 +6,23 @@
 
 {% block page_header %}
 
-    <div class="container p-0 info-bar shadow">
+    <header class="container p-0 info-bar shadow">
         <div class="row">
             <div class="col">
                 <div class="navbar navbar-expand items-bar">
                     <div class="collapse navbar-collapse">
-                        <p class="ml-4 mt-3 mb-3 strong-words">Checkout</p>
+                        <h2 class="ml-4 mt-3 mb-3 strong-words">Checkout</h2>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
 {% endblock %}
 
 {% block content %}
 
-    <div class="container">
+    <section class="container">
         <div class="row">
             <div class="col-12">
                 <div class="row">
@@ -61,7 +61,7 @@
                                         </div>
                                     {% else %}
                                         <p>Cart is empty! Nothing to buy here.</p>
-                                        <a class="button-13"  href="{% url 'items' %}">
+                                        <a class="button-13"  href="{% url 'items' %}" aria-label="Link to items page.">
                                             <span class="icon">
                                                 <i class="fas fa-chevron-left"></i>
                                             </span>
@@ -121,12 +121,12 @@
                                         <hr>
                                         <div class="row">
                                             <div class="col-6 d-flex justify-content-center"> 
-                                                <a class="button-13"  href="{% url 'items' %}">
+                                                <a class="button-13"  href="{% url 'items' %}" aria-label="Link to items page.">
                                                     <p class="m-auto">Shop</p>
                                                 </a>
                                             </div>
                                             <div class="col-6 d-flex justify-content-center">
-                                                <button id="submit-button" class="button-13 urgent-button">
+                                                <button id="submit-button" class="button-13 urgent-button" aria-label="Button to process order, customer will be charged.">
                                                     <p class="m-auto">Process</p>
                                                 </button>
                                             </div>
@@ -141,7 +141,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <div id="submission-overlay">
         <h1 class="submission-spinner">

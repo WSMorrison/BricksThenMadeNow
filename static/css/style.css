@@ -229,7 +229,7 @@ body {
 
 /* Footer styling rules */
 footer {
-    margin-top: 1.5rem;
+    margin-top: 5rem;
 }
 
 #footer-container {
@@ -261,7 +261,7 @@ footer {
 }
 
 .nav-link {
-    color: rgb(var(--text-color));
+    color: rgb(var(--text-color)) !important;
 }
 
 .educational-purposes {

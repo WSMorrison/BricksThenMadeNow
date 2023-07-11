@@ -2,12 +2,12 @@
   <footer>
     <div id="footer-container" class="container shadow">
       <div class="row">
-        <div class="col-12 col-md-4">
+        <section class="col-12 col-md-4">
           <div class="footer-box">
             <div id="signup-box input-group form-horizontal">
               {% if user.is_authenticated %}
-                <a class="nav-link" href="{% url 'siteuser_profile' %}">My Account</a>
-                <a class="nav-link" href="{% url 'siteuser_order_history' %}">My Order History</a>
+                <a class="nav-link" href="{% url 'siteuser_profile' %}" aria-label="Link to user account details.">My Account</a>
+                <a class="nav-link" href="{% url 'siteuser_order_history' %}" aria-label="Link to user order history.">My Order History</a>
               {% else %}
                 <h4>Sign Up!</h4>
                 <hr>
@@ -21,8 +21,8 @@
               {% endif %}
             </div>
           </div>
-        </div>
-        <div class="col-6 col-md-4">
+        </section>
+        <section class="col-6 col-md-4">
           <div class="footer-box">
             <div>
               <h4>Find BTMN</h4>
@@ -32,18 +32,18 @@
               <a class="nav-link" href="#" target="_blank" rel="noopener" aria-label="Link to email"><i class="fa-regular fa-envelope"></i></a>
             </div>
           </div>
-        </div>
-        <div class="col-6 col-md-4">
+        </section>
+        <section class="col-6 col-md-4">
           <div class="footer-box">
             <div>
               <h4>Support</h4>
               <hr>
-              <a class="nav-link" href="{% url 'shipping' %}">Shipping</a>
-              <a class="nav-link" href="{% url 'faq' %}">FAQ</a>
-              <a class="nav-link" href="{% url 'terms' %}">TOS</a>
+              <a class="nav-link" href="{% url 'shipping' %}" aria-label="Link to shipping information.">Shipping</a>
+              <a class="nav-link" href="{% url 'faq' %}" aria-label="Link to Bricks Then Made Now about page.">FAQ</a>
+              <a class="nav-link" href="{% url 'terms' %}" aria-label="Link to Bricks Then Made Now Terms of Service.">TOS</a>
             </div>
           </div>
-        </div>
+        </section>
       </div>
       <div class="educational-purposes">
       <p>Educational purposes only.</p><p>No items are for sale, no items will be shipped.</p>

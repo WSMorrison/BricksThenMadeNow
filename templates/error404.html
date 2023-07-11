@@ -4,7 +4,7 @@
 
 {% block page_header %}
 
-    <div class="container p-0 info-bar shadow">
+    <header class="container p-0 info-bar shadow">
         <div class="row">
             <div class="col">
                 <div class="navbar navbar-expand items-bar">
@@ -14,31 +14,31 @@
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
 {% endblock %}
 
 {% block content %}
 
-    <div class="container">
+    <section class="container">
         <div class="row">
             <div class="col-12">
                 <div id="item-detail" class="card shadow">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12 col-lg-3">
-                                <img class="d-block w-10 shadow" src="{% static 'media/nedry404.png' %}" alt="Lego Dennis Nedry .gif mocks you for making a computer error.">
+                                <img class="d-block w-10 shadow" src="{% static 'media/nedry404.png' %}" alt="Lego Dennis Nedry mocks you for making a computer error.">
                             </div>
                             <div class="col-12 col-lg-9">
                                 <h3 class="strong-words">Error 404</h3>
                                 <p>Uh Uh Uh, you didn't say the magic word!</p>
-                                <a class="button-13" href="{% url 'home' %}">Safety</a>
+                                <a class="button-13" href="{% url 'home' %}" aria-label="Link back to index page.">Safety</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     
 {% endblock %}

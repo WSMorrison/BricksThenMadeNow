@@ -6,23 +6,23 @@
 
 {% block page_header %}
 
-    <div class="container p-0 info-bar shadow">
+    <header class="container p-0 info-bar shadow">
         <div class="row">
             <div class="col">
                 <div class="navbar navbar-expand items-bar">
                     <div class="collapse navbar-collapse">
-                        <p class="ml-4 mt-3 mb-3 strong-words">Shopping Cart</p>
+                        <h2 class="ml-4 mt-3 mb-3 strong-words">Shopping Cart</h2>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
 {% endblock %}
 
 {% block content %}
 
-    <div class="container">
+    <section class="container">
         <div class="row">
             <div class="col-12">
                 <div id="item-detail" class="card shadow">
@@ -67,8 +67,8 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <a class="mt-4 button-13 update-link">Update</a>
-                                    <a class="mt-4 button-13 urgent-button remove-item" id="remove_{{ item.sku_id }}">Remove</a>
+                                    <a class="mt-4 button-13 update-link" aria-label="Update item quantity.">Update</a>
+                                    <a class="mt-4 button-13 urgent-button remove-item" id="remove_{{ item.sku_id }}" aria-label="Remove item from cart.">Remove</a>
                                     <p class="mt-4 cart-total">Extended Price: ${{ item.extended_price }}</p>
                                 </div>
                                 <hr>
@@ -85,19 +85,19 @@
                             <hr>
                             <div class="row">
                                 <div class="col-6 d-flex justify-content-center"> 
-                                    <a class="button-13"  href="{% url 'items' %}">
+                                    <a class="button-13"  href="{% url 'items' %}" aria-label="Link to items page.">
                                         <p class="m-auto">Shop</p>
                                     </a>
                                 </div>
                                 <div class="col-6 d-flex justify-content-center">
-                                    <a class="button-13 urgent-button"  href="{% url 'checkout' %}">
+                                    <a class="button-13 urgent-button"  href="{% url 'checkout' %}" aria-label="Link to checkout page.">
                                         <p class="m-auto">Checkout</p>
                                     </a>
                                 </div>
                             </div>
                         {% else %}
                             <p>Cart is empty! Check out all our cool stuff.</p>
-                            <a class="button-13"  href="{% url 'items' %}">
+                            <a class="button-13"  href="{% url 'items' %}" aria-label="Link to items page.">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
@@ -108,7 +108,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     
 {% endblock %}
 

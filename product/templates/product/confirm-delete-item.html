@@ -2,25 +2,25 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
+    <header class="container header-container">
         <div class="row">
-            <div class="col strong-words">Delete Item</div>
+            <h2 class="col strong-words">Delete Item</h2>
         </div>
-    </div>
+    </header>
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <section class="container">
         <div class="row">
             <div class="col-12 col-md-6">
-                <p>Are you sure you want to delete this item?</p>
+                <h4>Are you sure you want to delete this item?</h4>
                 <p>All associated skus will also be deleted.</p>
                 <p>This cannot be undone.</p>
-                <a class="button-13" href="{% url 'confirm_delete_item' item_id %}">Yes</a>
-                <a class="button-13" href="{% url 'items' %}">No</a>
+                <a class="button-13" href="{% url 'confirm_delete_item' item_id %}" aria-label="Delete item.">Yes</a>
+                <a class="button-13" href="{% url 'items' %}" aria-label="Escape link does not delete item, returns to items page.">No</a>
             </div>
         </div>
-    </div>
+    </section>
 {% endblock %}
 
 {% block postloadjs %}

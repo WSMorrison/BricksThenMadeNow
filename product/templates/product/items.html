@@ -7,7 +7,7 @@
 
 {% block page_header %}
 
-    <div class="container p-0 info-bar shadow">
+    <header class="container p-0 info-bar shadow">
         <div class="row">
             <div class="col">
                 <div class="navbar navbar-expand navbar-light items-bar">
@@ -15,9 +15,9 @@
                         <span class="navbar-nav mr-auto">
                             <div class="ml-4">
                             {% if current_theme %}
-                                <p class="m-2 strong-words">{{ current_theme }}</p>
+                                <h2 class="m-2 strong-words">{{ current_theme }}</h2>
                             {% else %}
-                                <p class="m-2 strong-words">All</p>
+                                <h2 class="m-2 strong-words">All</h2>
                             {% endif %}
                             </div>
                         </span>
@@ -44,13 +44,13 @@
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
 {% endblock %}
 
 {% block content %}
 
-    <div class="container">
+    <section class="container">
         <div class="row">
             {% for item in items %}
                 <div class="col-12 col-lg-6">
@@ -61,7 +61,7 @@
                                     {% if item.item_render %}
                                         <img class="img-fluid" src="{{ item.item_render.url }}" alt="{{ item.item_name }}">
                                     {% else %}
-                                        <img class="img-fluid" src="{% static 'media/no-image.png' %}">
+                                        <img class="img-fluid" src="{% static 'media/no-image.png' %}" alt="No image available">
                                     {% endif %}
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                                     <h3 class="item-name">{{ item.item_name }}</h3>
                                     <p class="item-copy">Item: {{ item.item_number }}</p>
                                     <p class="item-copy">Parts count: {{ item.item_part_count }}</p>
-                                    <a class="button-13 urgent-button" href="{% url 'item_detail' item.id %}">View</a>
+                                    <a class="button-13 urgent-button" href="{% url 'item_detail' item.id %}" aria-label="Link to view item deails.">View</a>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                 </div>
             {% endfor %}
         </div>
-    </div>
+    </section>
 
 {% endblock %}
 

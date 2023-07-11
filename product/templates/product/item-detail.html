@@ -7,25 +7,23 @@
 
 {% block page_header %}
 
-<div class="container p-0 info-bar shadow">
-    <div class="row">
-        <div class="col">
-            <div class="navbar navbar-expand items-bar">
-                <div class="collapse navbar-collapse">
-                    <p class="ml-4 mt-3 mb-3 strong-words">{{ item.item_theme }} > {{ item.item_name }}</p>
+    <header class="container p-0 info-bar shadow">
+        <div class="row">
+            <div class="col">
+                <div class="navbar navbar-expand items-bar">
+                    <div class="collapse navbar-collapse">
+                        <h2 class="ml-4 mt-3 mb-3 strong-words">{{ item.item_theme }} > {{ item.item_name }}</h2>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </header>
 
 {% endblock %}
 
 {% block content %}
 
-    
-
-    <div class="container">
+    <section class="container">
         <div class="row">
             <div class="col-12">
                 <div id="item-detail" class="card shadow">
@@ -36,7 +34,7 @@
                     {% endif %}
                     <div class="card-body">
                         <h3 class="item-name">{{ item.item_name }}</h3>
-                        <h4>Item: {{ item.item_number }}</h4>
+                        <p>Item: {{ item.item_number }}</p>
                         <p class="card-text mt-3">{{ item.item_description }}</p>
                         <p>Part count: {{ item.item_part_count }}</p>
                         <hr>
@@ -47,7 +45,7 @@
                                 {% csrf_token %}
                                     <div class="row">
                                         <div class="col-12 mb-4">
-                                            <p class="buy-copy">Buy the instructions download!</p>
+                                            <h4 class="buy-copy">Buy the instructions download!</h4>
                                             <p class="item-sku-number">{{ item.item_number }}:{{ sku_inst.sku_number }}</p>
                                             <div class="includes-box">
                                                 <p class="buy-copy-sm">Includes:</p>
@@ -85,7 +83,7 @@
                             </div>
                         {% else %}
                             <div class="buy-box">
-                                <p>Instructions Coming Soon!</p>
+                                <h4 class="buy-copy">Instructions Coming Soon!</h4>
                                 <hr>
                             </div>
                         {% endif %}
@@ -96,7 +94,7 @@
                                 {% csrf_token %}
                                     <div class="row">
                                         <div class="col-12 mb-4">
-                                            <p class="buy-copy">Buy the BTMN ModernSet!</p>
+                                            <h4 class="buy-copy">Buy the BTMN ModernSet!</h4>
                                             <p class="item-sku-number">{{ item.item_number }}:{{ sku_mdst.sku_number }}</p>
                                             <div class="includes-box">
                                                 <p class="buy-copy-sm">Includes:</p>
@@ -142,7 +140,7 @@
                             </div>
                         {% else %}
                             <div class="buy-box">
-                                <p>ModernSet Coming Soon!</p>
+                                <h4 class="buy-copy">ModernSet Coming Soon!</h4>
                                 <hr>
                             </div>
                         {% endif %}
@@ -154,7 +152,7 @@
                                     <div class="row">
                                         <div class="col-12 mb-4 flst-urgent">
                                             <p class="buy-copy font-italic ml-2"><i class="fa-solid fa-star-half"></i>Limited</p>
-                                            <p class="buy-copy">Buy the BTMN FullSet!</p>
+                                            <h4 class="buy-copy">Buy the BTMN FullSet!</h4>
                                             <p class="item-sku-number">{{ item.item_number }}:{{ sku_flst.sku_number }}</p>
                                             <div class="includes-box">
                                                 <p class="buy-copy-sm">Includes:</p>
@@ -204,58 +202,58 @@
 
                         <a class="button-13" href="{% url 'items' %}">Back</a>
                         {% if user.is_superuser %}
-    <div id="admin-item-edit" class="container p-0 info-bar mt-5">
-        <div class="row">
-            <div class="col">
-                <div class="navbar navbar-expand">
-                    <div class="collapse navbar-collapse">
-                        <h3 class="mr-4 ml-4">Edit</h3>
-                        <div class="item-admin-container">
-                        <a class="button-13 m-3" href="{% url 'edit_item' item.id %}">Item</a>
-                        {% if sku_inst %}
-                            <a class="button-13" href="{% url 'edit_sku' sku_inst.id %}">InstSet</a>
-                        {% endif %}
-                        {% if sku_mdst %}
-                            <a class="button-13 m-3" href="{% url 'edit_sku' sku_mdst.id %}">ModernSet</a>
-                        {% endif %}
-                        {% if sku_flst %}
-                            <a class="button-13" href="{% url 'edit_sku' sku_flst.id %}">FullSet</a>
-                        {% endif %}
+                        <div id="admin-item-edit" class="container p-0 info-bar mt-5">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="navbar navbar-expand">
+                                        <div class="collapse navbar-collapse">
+                                            <h4 class="mr-4 ml-4">Edit</h4>
+                                            <div class="item-admin-container">
+                                            <a class="button-13 m-3" href="{% url 'edit_item' item.id %}">Item</a>
+                                            {% if sku_inst %}
+                                                <a class="button-13" href="{% url 'edit_sku' sku_inst.id %}">InstSet</a>
+                                            {% endif %}
+                                            {% if sku_mdst %}
+                                                <a class="button-13 m-3" href="{% url 'edit_sku' sku_mdst.id %}">ModernSet</a>
+                                            {% endif %}
+                                            {% if sku_flst %}
+                                                <a class="button-13" href="{% url 'edit_sku' sku_flst.id %}">FullSet</a>
+                                            {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="admin-item-delete" class="container p-0 info-bar shadow">
-        <div class="row">
-            <div class="col">
-                <div class="navbar navbar-expand">
-                    <div class="collapse navbar-collapse">
-                        <h3 class="ml-4 my-2">Delete</h3>
-                        <div class="item-admin-container">
-                        <a class="button-13 m-3" href="{% url 'delete_item' item.id %}">Item</a>
-                        {% if sku_inst %}
-                            <a class="button-13" href="{% url 'delete_sku' sku_inst.id %}">InstSet</a>
-                        {% endif %}
-                        {% if sku_mdst %}
-                            <a class="button-13 m-3" href="{% url 'delete_sku' sku_mdst.id %}">ModernSet</a>
-                        {% endif %}
-                        {% if sku_flst %}
-                            <a class="button-13" href="{% url 'delete_sku' sku_flst.id %}">FullSet</a>
-                        {% endif %}
+                        <div id="admin-item-delete" class="container p-0 info-bar shadow">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="navbar navbar-expand">
+                                        <div class="collapse navbar-collapse">
+                                            <h4 class="ml-4 my-2">Delete</h4>
+                                            <div class="item-admin-container">
+                                            <a class="button-13 m-3" href="{% url 'delete_item' item.id %}">Item</a>
+                                            {% if sku_inst %}
+                                                <a class="button-13" href="{% url 'delete_sku' sku_inst.id %}">InstSet</a>
+                                            {% endif %}
+                                            {% if sku_mdst %}
+                                                <a class="button-13 m-3" href="{% url 'delete_sku' sku_mdst.id %}">ModernSet</a>
+                                            {% endif %}
+                                            {% if sku_flst %}
+                                                <a class="button-13" href="{% url 'delete_sku' sku_flst.id %}">FullSet</a>
+                                            {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section>
 
     
 

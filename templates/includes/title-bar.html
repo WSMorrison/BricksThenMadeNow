@@ -1,10 +1,10 @@
 <!--Title bar including search form and cart-->
-<div id="title-bar-container" class="container shadow">
+  <header id="title-bar-container" class="container shadow">
     <div class="row no-gutters">
       <div id="title" class="col-12 col-lg-6">
         <div>
-          <a href="{% url 'home' %}">
-            <p id="title-then">Bricks Then</p><p id="title-mid">/</p><p id="title-now">Made Now</p>
+          <a href="{% url 'home' %}" aria-label="Bricks Then Made Now link to index page.">
+            <h1 id="title-then">Bricks Then</h1><h1 id="title-mid">/</h1><h1 id="title-now">Made Now</h1>
           </a>
         </div>
       </div>
@@ -25,9 +25,9 @@
               <div class="col-10 col-lg-1"></div>
               <div class="col-1 col-lg-6">
                 {% if total %}
-                <i id="cart-icon" class="fa-solid fa-cart-arrow-down"></i>
+                <i id="cart-icon" class="fa-solid fa-cart-arrow-down" aria-label="Shopping cart contains items."></i>
                 {% else %}
-                <i id="cart-icon" class="fa-solid fa-cart-shopping d-inline"></i>
+                <i id="cart-icon" class="fa-solid fa-cart-shopping d-inline" aria-label="Shopping cart is empty."></i>
                 {% endif %}
               </div>
               <div class="col-1 col-lg-6">
@@ -43,7 +43,6 @@
           </div>
         </a>
       </div>
-
     </div>
-  </div>
+  </header>
 

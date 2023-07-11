@@ -4,32 +4,32 @@
 
 {% block page_header %}
 
-    <div class="container p-0 info-bar shadow">
+    <header class="container p-0 info-bar shadow">
         <div class="row">
             <div class="col">
                 <div class="navbar navbar-expand items-bar">
                     <div class="collapse navbar-collapse">
-                        <p class="ml-4 mt-3 mb-3 strong words">Checkout Success!</p>
+                        <h2 class="ml-4 mt-3 mb-3 strong-words">Checkout Success!</h2>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
 {% endblock %}
 
 {% block content %}
 
-    <div class="container">
+    <seciton class="container">
         <div class="row">
             <div class="col-12">
-                    <h3>Thanks!</h3>
+                    <h3 class="strong-words">Thanks!</h3>
                     <p>Your order {{ order_number }} was successful.</p>
                     <p>All included digital downloads are ready for download.</p>
                     <p>Any shipped items will be on their way soon.</p>
             </div>
         </div>
-    </div>
+    </section>
 
 {% endblock %}
 

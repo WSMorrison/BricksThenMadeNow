@@ -4,7 +4,7 @@
 
 {% block page_header %}
 
-    <div class="container p-0 info-bar shadow">
+    <header class="container p-0 info-bar shadow">
         <div class="row">
             <div class="col">
                 <div class="navbar navbar-expand items-bar">
@@ -14,18 +14,18 @@
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
 {% endblock %}
 
 {% block content %}
 
-    <div class="container">
+    <section class="container">
         <div class="row">
             <div class="col-12">
                 <div>
                     <div class="card">
-                        <p>Welcome back, {{ siteuser }}!</p>
+                        <h3>Welcome back, {{ siteuser }}!</h3>
                         <form id="siteuser-profile-update-form" action="{% url 'siteuser_profile' %}" method="POST">
                             {% csrf_token %}
                             {{ form }}
@@ -35,6 +35,6 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </section>    
 
 {% endblock %}
