@@ -31,7 +31,7 @@ def siteuser_profile(request):
 @login_required
 def siteuser_order_history(request):
     siteuser = get_object_or_404(SiteUser, user=request.user)
-    order_history = siteuser.orders.all()
+    order_history = siteuser.orders.all().order_by('-date')
 
     template = 'user/order-history.html'
     context = {
