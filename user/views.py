@@ -37,3 +37,15 @@ def siteuser_order_history(request):
     }
 
     return render(request, template, context)
+
+
+'''
+def new_email_signup(request, new_email):
+
+    template = 'account/signup.html'
+    context = {
+        'new_email': new_email,
+    }
+
+    return render(request, template, context)
+'''

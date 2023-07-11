@@ -12,8 +12,11 @@
                 <h4>Sign Up!</h4>
                 <hr>
                 <p>Sign up and recieve emails about specials, news, and fun!</p>
-                <input id="footer-signup-input" class="form-control" type="text" name="" placeholder="Your Email">
-                <a id="footer-signup-submit" class="btn" href="#">Sign Up!</a>
+                <form id="new_email_form" method="POST" action="#">
+                  {% csrf_token %}
+                  <input id="footer-signup-input" class="form-control" type="text" name="new_email" placeholder="Your Email">
+                </form>
+                <button id="footer-signup-submit" form="new_email_form" type="submit">Sign Up!</button>
                 <hr class="d-md-none">
               {% endif %}
             </div>
