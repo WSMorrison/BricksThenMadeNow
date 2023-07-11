@@ -86,8 +86,13 @@
                     </div>
                     <div class="col-12 col-lg-4 mt-4">
                         <div class="index-card card shadow-lg">
-                            <div class="card-body">
-                                Account and admin
+                            <div class="index-card-admin card-body">
+                                <a class="nav-link" href="{% url 'siteuser_profile' %}">
+                                    <img class="img-top img-fluid" src="{% static 'media/index-admin.png' %}">
+                                </a>
+                                <div>
+                                    <h4 id="index-admin" class="index-title">ACCOUNT</h4>
+                                </div>
                             </div>
                         </div>
                     </div>

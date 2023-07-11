@@ -183,6 +183,13 @@ body {
     overflow: hidden;
 }
 
+.index-card-admin {
+    background-color: rgba(var(--text-color-muted), .85);
+    height: 27rem;
+    width: 35rem;
+    overflow: hidden;
+}
+
 #index-city {
     font-size: 23rem;
     margin-top: -6rem;
@@ -206,6 +213,11 @@ body {
 #index-moc {
     font-size: 25rem;
     margin-top: -7rem;
+}
+
+#index-admin {
+    font-size: 11.7rem;
+    margin-top: -2.5rem;
 }
 
 .img-top {
@@ -654,6 +666,13 @@ input[type=number] {
         overflow: hidden;
     }
 
+    .index-card-admin {
+        background-color: rgba(var(--text-color-muted), .85);
+        height: 21rem;
+        width: 29rem;
+        overflow: hidden;
+    }
+
     #index-city {
         font-size: 18.5rem;
         margin-top: -6rem;
@@ -677,6 +696,12 @@ input[type=number] {
     #index-moc {
         font-size: 20rem;
         margin-top: -6rem;
+    }
+
+    
+    #index-admin {
+        font-size: 9.5rem;
+        margin-top: -2.5rem;
     }
 
 }

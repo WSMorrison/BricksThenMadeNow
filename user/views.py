@@ -1,10 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import SiteUser
 from .forms import SiteUserform
 
 
 # Allows siteuser to view their profile information.
+@login_required
 def siteuser_profile(request):
     siteuser = get_object_or_404(SiteUser, user=request.user)
 
@@ -26,6 +28,7 @@ def siteuser_profile(request):
 
 
 # Allows siteuser to view their order history.
+@login_required
 def siteuser_order_history(request):
     siteuser = get_object_or_404(SiteUser, user=request.user)
     order_history = siteuser.orders.all()
