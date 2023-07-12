@@ -13,10 +13,13 @@ def siteuser_profile(request):
     user = siteuser.user
 
     if request.method == 'POST':
-        form = SiteUserform(request.POST, instance=siteuser)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Your information was updated.')
+        site_form = SiteUserform(request.POST, instance=siteuser)
+        daa_form = DAAUserform(request.POST, instance=user)
+        if site_form.is_valid():
+            if daa_form.is_valid():
+                site_form.save()
+                daa_form.save()
+                messages.success(request, 'Your information was updated.')
 
     siteuser_form = SiteUserform(instance=siteuser)
     daauser_form = DAAUserform(instance=user)
