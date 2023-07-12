@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_header %}
+
+    <header class="container p-0 info-bar shadow">
+        <div class="row">
+            <div class="col">
+                <div class="navbar navbar-expand items-bar">
+                    <div class="collapse navbar-collapse">
+                        <h2 class="ml-4 mt-3 mb-3 strong-words">Checkout Unsuccessful.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+{% endblock %}
+
+{% block content %}
+
+    <seciton class="container">
+        <div class="row">
+            <div class="col-12">
+                    <h3 class="strong-words">Sorry!</h3>
+                    <p>Your order was unsuccessful.</p>
+                    <p>You have not been charged, and your order was not placed.</p>
+                    <p>Please return to your shopping cart to try again.</p>
+                    <p>If the problem persists, please contact us.</p>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+
+{% endblock %}

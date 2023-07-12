@@ -8,7 +8,7 @@ from .forms import ItemForm, SkuForm
 
 # Operates the index page with all items.
 def all_items(request):
-    items = Item.objects.all()
+    items = Item.objects.all().order_by('item_number')
     query = None
     themes = None
     sort = None

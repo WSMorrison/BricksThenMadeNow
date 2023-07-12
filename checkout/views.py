@@ -76,13 +76,14 @@ def checkout(request):
                 except Sku.DoesNotExist:
                     messages.error(request, ('An error has occured.'))
                     order.delete()
-                    return redirect(reverse('view_cart'))
+                    return render(request, 'checkout_fail')
 
             request.session['save_info'] = 'save-info' in request.POST
             print('save info')
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'An error has occured.')
+            return render(request, 'checkout_fail')
 
     else:
         cart = request.session.get('cart', {})
@@ -122,6 +123,7 @@ def checkout(request):
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
+        return render(request, 'checkout_fail')
 
     template = 'checkout/checkout.html'
     context = {
@@ -178,3 +180,10 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+
+# Handles checkout failures
+def checkout_fail(request):
+    template = 'checkout/checkout_fail.html'
+
+    return render(request, template)
