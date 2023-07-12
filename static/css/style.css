@@ -170,21 +170,21 @@ body {
 }
 
 .index-card-light {
-    background-color: rgb(var(--title-very-contrast), .85);
+    background-color: rgb(var(--title-very-contrast), 0.85);
     height: 27rem;
     width: 35rem;
     overflow: hidden;
 }
 
 .index-card-dark {
-    background-color: rgb(var(--title-color), .85);
+    background-color: rgb(var(--title-color), 0.85);
     height: 27rem;
     width: 35rem;
     overflow: hidden;
 }
 
 .index-card-admin {
-    background-color: rgba(var(--text-color-muted), .85);
+    background-color: rgba(var(--text-color-muted), 0.85);
     height: 27rem;
     width: 35rem;
     overflow: hidden;
@@ -309,7 +309,7 @@ footer {
 }
 
 .optional-pictures {
-    background-color: rgba(var(--background-color-med), .8);
+    background-color: rgba(var(--background-color-med), 0.8);
     box-shadow: inset 0 0 15px rgb(var(--background-color-dark));
 }
 
@@ -321,6 +321,40 @@ footer {
 .image-small-box {
     display: flex;
     flex-direction: column;
+}
+
+.small-image-card {
+    height: 100%;
+    border: none;
+}
+
+.small-image-none {
+    background-color: rgba(var(--background-color-med), 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.then {
+    font-family: 'Vina Sans', sans-serif;
+    font-size: 4rem;
+    color: rgb(var(--title-contrast));
+    display: inline;
+}
+
+.mid {
+    font-family: 'Mina', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgb(var(--title-very-contrast));
+    display: inline;
+}
+
+.now {
+    font-family: 'Staatliches', sans-serif;
+    font-size: 4rem;
+    color: rgb(var(--title-color));
+    display: inline;
 }
 
 .buy-box {
@@ -367,7 +401,7 @@ footer {
 
 .input-quantity {
     border: 1px solid #d5d9d9;
-    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
     box-sizing: border-box;
     color: rgb(var(--text-color));
     display: inline-block;
@@ -497,7 +531,7 @@ footer {
   background-color: rgb(var(--button-color));
   border: 1px solid #d5d9d9;
   border-radius: 8px;
-  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
   box-sizing: border-box;
   color: rgb(var(--text-color));
   cursor: pointer;
@@ -523,7 +557,7 @@ footer {
 
 .button-13:focus {
   border-color: rgb(var(--background-color-dark));
-  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
   outline: 0;
   text-decoration: none;
 }
@@ -538,7 +572,7 @@ footer {
     border: 1px solid #d5d9d9;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
     box-sizing: border-box;
     color: rgb(var(--text-color));
     cursor: pointer;
@@ -561,7 +595,7 @@ footer {
     border: 1px solid #d5d9d9;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
     box-sizing: border-box;
     color: rgb(var(--text-color));
     cursor: pointer;
@@ -664,21 +698,21 @@ input[type=number] {
     }
     
     .index-card-light {
-        background-color: rgb(var(--title-very-contrast), .85);
+        background-color: rgb(var(--title-very-contrast), 0.85);
         height: 21rem;
         width: 29rem;
         overflow: hidden;
     }
     
     .index-card-dark {
-        background-color: rgb(var(--title-color), .85);
+        background-color: rgb(var(--title-color), 0.85);
         height: 21rem;
         width: 29rem;
         overflow: hidden;
     }
 
     .index-card-admin {
-        background-color: rgba(var(--text-color-muted), .85);
+        background-color: rgba(var(--text-color-muted), 0.85);
         height: 21rem;
         width: 29rem;
         overflow: hidden;

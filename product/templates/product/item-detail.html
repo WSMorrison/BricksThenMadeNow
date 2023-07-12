@@ -45,6 +45,12 @@
                                 <div class="ml-1 mt-1">
                                     <img class="img-fluid" src="{{ item.item_detail.url }}" alt="{{ item.item_name }}">
                                 </div>
+                                {% else %}
+                                <div class="card small-image-card">
+                                    <div class="card-body small-image-none m-2">
+                                        <p class="then mb-4">BT</p><p class="mid mt-2">/</p><p class="now">MN</p>
+                                    </div>
+                                </div>
                             {% endif %}
                         </div>
                     </div>
