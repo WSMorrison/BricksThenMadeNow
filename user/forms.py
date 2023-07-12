@@ -1,5 +1,33 @@
 from django import forms
+from django.contrib.auth.models import User
 from .models import SiteUser
+
+
+class DAAUserform(forms.ModelForm):
+
+    class Meta:
+        model = User
+        fields = {'first_name',
+                  'last_name',
+                  'email',
+                  }
+
+    def __init__(self, *args, **kwargs):
+
+        super().__init__(*args, **kwargs)
+        placeholders = {'first_name': 'First Name',
+                        'last_name': 'Last Name',
+                        'email': 'Email',
+                        }
+
+        for field in self.fields:
+            if self.fields[field].required:
+                placeholder = f'{placeholders[field]} *'
+            else:
+                placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+            self.fields[field].label = False
 
 class SiteUserform(forms.ModelForm):
     class Meta:

@@ -1,14 +1,16 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from .models import SiteUser
-from .forms import SiteUserform
+from .forms import DAAUserform, SiteUserform
 
 
 # Allows siteuser to view their profile information.
 @login_required
 def siteuser_profile(request):
     siteuser = get_object_or_404(SiteUser, user=request.user)
+    user = siteuser.user
 
     if request.method == 'POST':
         form = SiteUserform(request.POST, instance=siteuser)
@@ -16,12 +18,14 @@ def siteuser_profile(request):
             form.save()
             messages.success(request, 'Your information was updated.')
 
-    form = SiteUserform(instance=siteuser)
+    siteuser_form = SiteUserform(instance=siteuser)
+    daauser_form = DAAUserform(instance=user)
 
     template = 'user/siteuser.html'
     context = {
         'siteuser': siteuser,
-        'form': form,
+        'siteuser_form': siteuser_form,
+        'daauser_form': daauser_form,
     }
 
     return render(request, template, context)

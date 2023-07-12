@@ -31,16 +31,19 @@
                                 {% csrf_token %}
                                 <div class="form-box">
                                     <div class="item-name"><p>Contact</p></div>
-                                    <div class="form-input">{{ form.siteuser_phone_number }}</div>
+                                    <div class="form-input">{{ daauser_form.first_name }}</div>
+                                    <div class="form-input">{{ daauser_form.last_name }}</div>
+                                    <div class="form-input">{{ user.email }}</div>
+                                    <div class="form-input">{{ siteuser_form.siteuser_phone_number }}</div>
                                 </div>
                                 <div class="form-box">
                                     <div class="item-name"><p>Shipping Address</p></div>
-                                    <div class="form-input">{{ form.siteuser_street_address1 }}</div>
-                                    <div class="form-input">{{ form.siteuser_street_address2 }}</div>
-                                    <span class="form-input">{{ form.siteuser_town_or_city }}</span>
-                                    <span class="form-input">{{ form.siteuser_state }}</span>
-                                    <span class="form-input">{{ form.siteuser_zipcode }}</span>
-                                    <div class="form-input">{{ form.siteuser_country}}</div>
+                                    <div class="form-input">{{ siteuser_form.siteuser_street_address1 }}</div>
+                                    <div class="form-input">{{ siteuser_form.siteuser_street_address2 }}</div>
+                                    <span id="id_town_or_city"  class="form-input">{{ siteuser_form.siteuser_town_or_city }}</span>
+                                    <span id="id_state" class="form-input">{{ siteuser_form.siteuser_state }}</span>
+                                    <span id="id_zipcode" class="form-input">{{ siteuser_form.siteuser_zipcode }}</span>
+                                    <div class="form-input">{{ siteuser_form.siteuser_country}}</div>
                                 </div>
                                 <button class="button-13 urgent-button">Update</button>
                             </form>
