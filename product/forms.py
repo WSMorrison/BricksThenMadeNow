@@ -11,13 +11,6 @@ def pdf_url_ok(value):
         if value.startswith('https://') is False:
             raise forms.ValidationError('File must be secure .pdf.')
 
-
-def sku_number_ok(value):
-    if value != 1033:
-        if value !=1066:
-            if value !=1099:
-                raise forms.ValidationError('Must be valid Sku type.')
-
 def inventory_ok(value):
     if value < 0:
         raise forms.ValidationError('Must be positive inventory.')
@@ -47,8 +40,6 @@ class ItemForm(forms.ModelForm):
 
 # New Sku form
 class SkuForm(forms.ModelForm):
-
-    sku_number = forms.CharField(validators=[sku_number_ok])
 
     class Meta:
         model = Sku

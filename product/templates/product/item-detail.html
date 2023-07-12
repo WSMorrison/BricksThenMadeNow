@@ -27,11 +27,32 @@
         <div class="row">
             <div class="col-12">
                 <div id="item-detail" class="card shadow">
-                    {% if item.item_render %}
-                        <img class="card-img-top" src="{{ item.item_render.url }}" alt="{{ item.item_name }}">
-                    {% else %}
-                        <img class="card-img-top" src="{% static 'media/no-image.png' %}" alt="No item image.">
-                    {% endif %}
+                    <div class="row no-gutters">
+                        <div class="col-8">
+                            {% if item.item_render %}
+                                <img class="card-img-top" src="{{ item.item_render.url }}" alt="{{ item.item_name }}">
+                            {% else %}
+                                <img class="card-img-top" src="{% static 'media/no-image.png' %}" alt="No item image.">
+                            {% endif %}
+                        </div>
+                        <div class="col-4 image-small-box">
+                            {% if item.item_old %}
+                                <div class="ml-1 mb-1">
+                                    <img class="img-fluid" src="{{ item.item_old.url }}" alt="{{ item.item_name }}">
+                                </div>
+                            {% endif %}
+                            {% if item.item_modern %}
+                                <div class="ml-1">
+                                    <img class="img-fluid" src="{{ item.item_modern.url }}" alt="{{ item.item_name }}">
+                                </div>
+                            {% endif %}
+                            {% if item.item_detail %}
+                                <div class="ml-1 mt-1">
+                                    <img class="img-fluid" src="{{ item.item_detail.url }}" alt="{{ item.item_name }}">
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
                     <div class="card-body">
                         <h3 class="item-name">{{ item.item_name }}</h3>
                         <p>Item: {{ item.item_number }}</p>

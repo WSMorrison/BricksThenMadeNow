@@ -313,9 +313,14 @@ footer {
     box-shadow: inset 0 0 15px rgb(var(--background-color-dark));
 }
 
-.item-instrctions-instructions {
+.item-instructions-instructions {
     font-size: 1.3rem;
     color: rgb(var(--text-color-muted));
+}
+
+.image-small-box {
+    display: flex;
+    flex-direction: column;
 }
 
 .buy-box {

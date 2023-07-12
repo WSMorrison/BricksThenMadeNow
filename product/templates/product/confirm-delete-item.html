@@ -16,7 +16,7 @@
                 <h4>Are you sure you want to delete this item?</h4>
                 <p>All associated skus will also be deleted.</p>
                 <p>This cannot be undone.</p>
-                <a class="button-13" href="{% url 'confirm_delete_item' item_id %}" aria-label="Delete item.">Yes</a>
+                <a class="button-13 urgent-button" href="{% url 'confirm_delete_item' item_id %}" aria-label="Delete item.">Yes</a>
                 <a class="button-13" href="{% url 'items' %}" aria-label="Escape link does not delete item, returns to items page.">No</a>
             </div>
         </div>

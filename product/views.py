@@ -128,11 +128,12 @@ def new_sku(request):
     if request.method == 'POST':
         form = SkuForm(request.POST, request.FILES)
         if form.is_valid():
+            print('worked but didn')
             sku = form.save()
             messages.success(request, 'Sku added, thank you.')
-            print(sku.sku_type)
             return redirect(reverse('items'))
         else:
+            print('invalid form')
             messages.error(request, 'Something went wrong, please check the form fields.')
     else:
         form = SkuForm()
