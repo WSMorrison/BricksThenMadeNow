@@ -27,16 +27,9 @@
                                     {{ current_sort }}
                                 </a>
                                 <div class="dropdown-menu border-0" aria-labelledby="all-items-link">
-                                    <!--<select id="sort-selector" class="custom-select custom-select-sm">
-                                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort:</option>
-                                        <option value="partcount_asc" {% if current_sorting == 'partcount_asc' %}selected{% endif %}>Part Count +</option>
-                                        <option value="partcount_desc" {% if current_sorting == 'partcount_desc' %}selected{% endif %}>Part Count -</option>
-                                    </select>-->
                                     <a href="{% url 'items' %}" class="dropdown-item">Nevermind</a>
-                                    <a href="{% url 'items' %}?sort=item_part_count&direction=asc" class="dropdown-item">Part Count +</a>
-                                    <a href="{% url 'items' %}?sort=item_part_count&direction=desc" class="dropdown-item">Part Count -</a>
-                                    <a href="#" class="dropdown-item">Starting Price +</a>
-                                    <a href="#" class="dropdown-item">Starting Price -</a>
+                                    <a href="{% url 'items' %}?theme={{ current_theme }}&sort=item_part_count&direction=asc" class="dropdown-item">Part Count +</a>
+                                    <a href="{% url 'items' %}?theme={{ current_theme }}&sort=item_part_count&direction=desc" class="dropdown-item">Part Count -</a>
                                 </div>
                             </div>
                         </span>
@@ -83,6 +76,7 @@
 {% endblock %}
 
 {% block postloadjs %}
+
     <!--{{ block.super }}
 
     <script type="text/javascript">
