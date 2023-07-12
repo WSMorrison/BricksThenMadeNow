@@ -9,7 +9,7 @@
             <div class="col">
                 <div class="navbar navbar-expand items-bar">
                     <div class="collapse navbar-collapse">
-                        <p class="ml-4 mt-3 mb-3">My Siteuser Profile</p>
+                        <h2 class="ml-4 mt-3 mb-3">My Siteuser Profile</h2>
                     </div>
                 </div>
             </div>
@@ -30,14 +30,19 @@
                             <form id="siteuser-profile-update-form" action="{% url 'siteuser_profile' %}" method="POST">
                                 {% csrf_token %}
                                 <div class="form-box">
-                                    <div class="item-name"><p>Contact</p></div>
+                                    <h3 class="strong-words">Change Your Details</h3>
+                                    <div class="item-name">
+                                        <h3>Contact</h3>
+                                    </div>
                                     <div class="form-input">{{ daauser_form.first_name }}</div>
                                     <div class="form-input">{{ daauser_form.last_name }}</div>
-                                    <div class="form-input">{{ user.email }}</div>
+                                    <div class="form-input">{{ request.user.email }}</div>
                                     <div class="form-input">{{ siteuser_form.siteuser_phone_number }}</div>
                                 </div>
                                 <div class="form-box">
-                                    <div class="item-name"><p>Shipping Address</p></div>
+                                    <div class="item-name">
+                                        <h3>Shipping Address</h3>
+                                    </div>
                                     <div class="form-input">{{ siteuser_form.siteuser_street_address1 }}</div>
                                     <div class="form-input">{{ siteuser_form.siteuser_street_address2 }}</div>
                                     <span id="id_town_or_city"  class="form-input">{{ siteuser_form.siteuser_town_or_city }}</span>

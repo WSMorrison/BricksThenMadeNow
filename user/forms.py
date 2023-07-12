@@ -9,7 +9,6 @@ class DAAUserform(forms.ModelForm):
         model = User
         fields = {'first_name',
                   'last_name',
-                  'email',
                   }
 
     def __init__(self, *args, **kwargs):
@@ -17,7 +16,6 @@ class DAAUserform(forms.ModelForm):
         super().__init__(*args, **kwargs)
         placeholders = {'first_name': 'First Name',
                         'last_name': 'Last Name',
-                        'email': 'Email',
                         }
 
         for field in self.fields:
