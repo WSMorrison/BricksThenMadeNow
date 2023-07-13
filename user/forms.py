@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import SiteUser
+from .models import SiteUser, NewsletterUser
 
 
 class DAAUserform(forms.ModelForm):
@@ -60,3 +60,9 @@ class SiteUserform(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
+
+class NewsletterUserform(forms.ModelForm):
+
+    class Meta:
+        model = NewsletterUser
+        fields = '__all__'

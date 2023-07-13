@@ -1,9 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import SiteUser
-from .forms import DAAUserform, SiteUserform
+from .forms import DAAUserform, SiteUserform, NewsletterUserform
 
 
 # Allows siteuser to view their profile information.
@@ -49,13 +52,40 @@ def siteuser_order_history(request):
     return render(request, template, context)
 
 
-'''
-def new_email_signup(request, new_email):
+def newsletter_signup(request):
 
-    template = 'account/signup.html'
+    def _send_confirmation_email(email):
+        print(email)
+        cust_email = email
+        subject = render_to_string(
+            'user/newsletter_emails/newsletter_confirmation_subject.txt',
+        )
+        body = render_to_string(
+            'user/newsletter_emails/newsletter_confirmation_body.txt',
+        )
+
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email],
+            )
+
+    form = NewsletterUserform
+
+    if request.method == 'POST':
+        form = NewsletterUserform(request.POST)
+        if form.is_valid():
+            email = form.instance.newsletter_email
+            form.save()
+            messages.success(request, 'Our mailing list was updated.')
+            _send_confirmation_email(email)
+
+            return redirect(reverse('home'))
+
+    template = 'user/newsletter-signup.html'
     context = {
-        'new_email': new_email,
+        'form': form,
     }
 
     return render(request, template, context)
-'''

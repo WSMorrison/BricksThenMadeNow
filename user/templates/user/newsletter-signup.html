@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <header class="container p-0 info-bar shadow">
+        <div class="row">
+            <div class="col">
+                <div class="navbar navbar-expand items-bar">
+                    <div class="collapse navbar-collapse">
+                        <h2 class="ml-4 mt-3 mb-3 strong-words">Newsletter signup</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+
+    <section class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <form method="POST" action="{% url 'newsletter_signup' %}">
+                            {% csrf_token %}
+                            <h4>Your information</h4>
+                            <div class="form-input">{{ form.newsletter_name }}</div>
+                            <p>Your name</p>
+                            <div class="form-input">{{ form.newsletter_email }}</div>
+                            <p>Your email</p>
+                            <hr>
+                            <h4>Your interests</h4>
+                            <span class="form-input checkbox-not-blue">{{ form.newsletter_city }}</span><span class="ml-2">City</span>
+                            <span class="form-input checkbox-not-blue">{{ form.newsletter_space }}</span><span class="ml-2">Space</span>
+                            <span class="form-input checkbox-not-blue">{{ form.newsletter_castle }}</span><span class="ml-2">Castle</span>
+                            <span class="form-input checkbox-not-blue">{{ form.newsletter_train }}</span><span class="ml-2">Train</span>
+                            <hr>
+                            <button class="button-13 urgent-button" type="submit">Signup!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block postloadjs %}
+
+{% endblock %}

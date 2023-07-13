@@ -247,13 +247,18 @@ footer {
     width: 75%;
 }
 
-#footer-signup-input {
+.newsletter-input {
     font-size: 1.5rem;
 }
 
 #footer-signup-submit {
     font-size: 1.5rem;
     margin-left: 0;
+}
+
+.smol {
+    font-size: 1rem;
+    color: rgb(var(--text-color-muted));
 }
 
 .link {

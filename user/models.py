@@ -25,3 +25,12 @@ def update_user(sender, instance, created, **kwargs):
     if created:
         SiteUser.objects.create(user=instance)
     instance.siteuser.save()
+
+
+class NewsletterUser(models.Model):
+    newsletter_name = models.CharField(max_length=50, null=False, blank=False)
+    newsletter_email = models.EmailField(max_length=100, null=False, blank=False)
+    newsletter_city = models.BooleanField(default=True)
+    newsletter_space = models.BooleanField(default=True)
+    newsletter_castle = models.BooleanField(default=True)
+    newsletter_train = models.BooleanField(default=True)
