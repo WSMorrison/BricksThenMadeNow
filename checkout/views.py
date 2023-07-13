@@ -62,7 +62,8 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_cart = json.dumps(cart)
             order.shipping_cost = cart_values['shipping']
-            print('Attempt 1', order)
+            print('*****************Line 65 View********************')
+            print(order.order_number)
             order.save()
 
             for item_id, item_data in cart.items():
@@ -101,8 +102,6 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-        print('intent is')
-        print(intent)
 
         if request.user.is_authenticated:
             try:
@@ -149,7 +148,6 @@ def checkout_success(request, order_number):
 
     siteuser_profile = SiteUser.objects.get(user=request.user)
     order.siteuser = siteuser_profile
-    print('Attempt2', order)
     order.save()
 
     if save_info:
@@ -170,10 +168,8 @@ def checkout_success(request, order_number):
         sku_id = Sku.objects.get(id=item_id)
         item_bought = sku_id.sku_item
         item_bought.item_user_owned.add(user)
-
         sku_id.sku_inventory -= item_data
         sku_id.save()
-
 
     if 'cart' in request.session:
         del request.session['cart']

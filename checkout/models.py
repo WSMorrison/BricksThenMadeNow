@@ -12,7 +12,8 @@ from cart.contexts import cart_contents
 # Order model including customer information.
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    siteuser = models.ForeignKey(SiteUser, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders')
+    siteuser = models.ForeignKey(SiteUser, on_delete=models.SET_NULL,
+                                 null=True, blank=True, related_name='orders')
     date = models.DateTimeField(auto_now_add=True)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -36,15 +37,6 @@ class Order(models.Model):
         cart_values = cart_contents(request)
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.shipping_cost = cart_values['shipping']
-
-        #if self.order_total < settings.FREE_SHIPPING:
-        #    self.shipping_cost = settings.SMALL_PACKAGE
-        #else:
-        #    self.shipping_cost = 0
-
-        cart = cart_contents
-        # self.shipping_cost = cart.shipping
-
         self.grand_total = self.order_total + self.shipping_cost
         self.save()
 
