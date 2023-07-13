@@ -3,8 +3,10 @@ from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 from django_countries.fields import CountryField
+from django.http import HttpRequest
 from product.models import Item, Sku
 from user.models import SiteUser
+from cart.contexts import cart_contents
 
 
 # Order model including customer information.
@@ -31,8 +33,18 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
+        cart_values = cart_contents(request)
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        self.shipping_cost = 2
+        self.shipping_cost = cart_values['shipping']
+
+        #if self.order_total < settings.FREE_SHIPPING:
+        #    self.shipping_cost = settings.SMALL_PACKAGE
+        #else:
+        #    self.shipping_cost = 0
+
+        cart = cart_contents
+        # self.shipping_cost = cart.shipping
+
         self.grand_total = self.order_total + self.shipping_cost
         self.save()
 

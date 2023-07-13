@@ -1,10 +1,9 @@
-from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from product.models import Sku, Item
 
 # Context that generates the dictionary holding bag contents.
-def cart_contents(request):
+def cart_contents(request, order_instance=None):
 
     items = Item.objects.all()
     cart_items = []
@@ -44,6 +43,7 @@ def cart_contents(request):
     else:
         shipping = 0
         to_get_free_shipping = 0
+    print('shipping is', shipping)
 
     total = float(("{:.2f}".format(total)))
     grand_total = float("{:.2f}".format(total + shipping))

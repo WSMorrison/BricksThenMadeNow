@@ -44,6 +44,8 @@ class StripeWH_Handler:
         cart = intent.metadata.cart
         save_info = intent.metadata.save_info
 
+        print(intent)
+
         stripe_charge = stripe.Charge.retrieve(
            intent.latest_charge
         )

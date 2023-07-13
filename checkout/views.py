@@ -12,6 +12,7 @@ from user.forms import SiteUserform
 from user.models import SiteUser
 from .forms import Orderform
 from .models import Order, LineItem
+from cart.contexts import cart_contents
 
 
 # Holds checkout data for transmission to Stripe.
@@ -54,14 +55,16 @@ def checkout(request):
         order_form = Orderform(form_data)
 
         if order_form.is_valid():
+            cart_values = cart_contents(request)
             print('Order form is valid')
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_cart = json.dumps(cart)
+            order.shipping_cost = cart_values['shipping']
+            print('Attempt 1', order)
             order.save()
 
-            # !!!!!!!!!!!!!!! There is still a problem here where the model is returning NONE for lineitem_total out of the model !!!!!!!!!!!!!
             for item_id, item_data in cart.items():
                 try:
                     sku = Sku.objects.get(id=item_id)
@@ -146,6 +149,7 @@ def checkout_success(request, order_number):
 
     siteuser_profile = SiteUser.objects.get(user=request.user)
     order.siteuser = siteuser_profile
+    print('Attempt2', order)
     order.save()
 
     if save_info:
