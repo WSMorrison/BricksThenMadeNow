@@ -6,7 +6,7 @@ Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to ot
 
 [AmIResponsive](https://ui.dev/amiresponsive)
 
-### The side, deployed to Heroku, can be found here: [Bricks Then Made Now](#)
+### The site, deployed to Heroku, can be found here: [Bricks Then Made Now](#)
 #### The repository in GitHub can be found here: [WSMorrison/bricksthenmadenow](#)
 
 <br>

@@ -6,7 +6,7 @@ Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to ot
 
 [AmIResponsive](https://ui.dev/amiresponsive)
 
-### The side, deployed to Heroku, can be found here: [Bricks Then Made Now](#)
+### The site, deployed to Heroku, can be found here: [Bricks Then Made Now](#)
 #### The repository in GitHub can be found here: [WSMorrison/bricksthenmadenow](#)
 
 <br>
@@ -39,7 +39,8 @@ Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to ot
   - [Accessibility](#accessibility)
 - [Technologies Used](#technologies-used)
   - [Languages Used](#languages-used)
-  - [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
+  - [Frameworks & Libraries Used](#frameworks--libraries-used)
+  - [Programs Used](#programs-used)
 - [Local Development and Deployment](#local-development-and-deployment)
   - [Note On Commit History](#note-on-commit-history)
   - [Local Development](#local-development)
@@ -50,8 +51,10 @@ Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to ot
   - [Systematic Manual Testing](#systematic-manual-testing)
   - [Representative User Manual Testing](#representative-user-manual-testing)
 - [Credits](#credits)
+  - [Help and Support](#help-and-support)
   - [Code Used](#code-used)
   - [Media](#media)
+  - [Other Thanks](#other-thanks)
 
 <br>
 <hr>
@@ -97,31 +100,19 @@ Typography example
 
 ### Imagery
 
-Imagery example, for example:
-
-The splash image is by [Trevor Yale Ryan](https://www.tyrphoto.com/), and was originally published on the [Speedhunters](http://www.speedhunters.com/2020/01/slippers-and-sunsets-the-osixhi-meet/). It will serve as a placeholder until an appropriate new image can be taken at a local event.
+The imagery on the website was intentionally kept simple. This is to highlight the products available. It was decided that the overall look of the site should keep with the computer generated renders of the Lego sets. This meant the colors and the graphics were kept simple and flat, with few highlights but highlights where necessary. There was consideration about using the splash image that mixes a real image of an old set with a rendered image of a modern equivalent, but ultimately this was decided to go well with the item detail pages that display an image of the old sets next to renders the modern equivalents for sale. This maintains a visual throughline that also appeals to a customer's nostalgia.
 
 <br>
 <hr>
-<br>
-<br>
 
 ## Planning
 <hr>
 <br>
 
-A project of even such a small scope as this requires careful planning before any development can begin.
+A project of even such a small scope as this requires careful planning before any development can begin. Care was taken to plan the models for future implementations, without harming existing databases as the site's needs may grow. For example, there is an imagefield in the item model that is currently unused on the site, but gives space for future implementations.
 
 <hr>
-<br>
 
-<br>
-<hr>
-<br>
-
-### Wireframes
-<hr>
-<br>
 
 ### Models
 <hr>
@@ -129,9 +120,13 @@ A project of even such a small scope as this requires careful planning before an
 
 Custom models had to be developed to hold the appropriate information the website's database. Care had to be taken to plan the way the models would interact, since there are two instances of having one model extended by another. This was necessary to have a few different purchasable SKUs related to a single item, and to have a unique siteuser model that uses the Django authorization functionality as its base.
 
-**Item model**
+Three models are custom and new for the project, the [Item model](#item-model), the [Sku model](#sku-model), and the [NewsletterUser model](#newsletteruser-model). The other models are modified, but are still essentially boilerplate eCommerce object models.
+
+#### Item model
 
 This model contains information about the items listed for sale on the site. The item model will only include information that is common to all three SKUs related to a particular item, including the item number, item name, related themes, the description, images, and the partcount. It will be extended with the SKU model which will hold information about each individual SKU that are part of the item.
+
+This model is custom.
 
 | Key                        | Field        | Form                 |
 |----------------------------|--------------|----------------------|
@@ -151,9 +146,11 @@ This model contains information about the items listed for sale on the site. The
 | item_partcount             | Integerfield | Integer              |
 | item_user_owned            | ManyToMany   | Many to many         |
 
-**SKU model**
+#### SKU model
 
 The SKU model containst he rest of the information about what the customer can buy. It extends the item model, which describes the Bricks Then Made Now set, and adds the price, an inventory field, and fields that indicate whether its a SKU for a physical, shippable item or a SKU for a digital instructions download that will not need to be shipped and have shipping fees included. The SKU model will also include an included instructions field that will contain the SKU for the digital instructions that will be included with a digital purchase, so that they will be unlocked for the customer with all purchases.
+
+This model is custom.
 
 | Key                        | Field        | Form                  |
 |----------------------------|--------------|-----------------------|
@@ -164,60 +161,76 @@ The SKU model containst he rest of the information about what the customer can b
 | sku_physical               | Boolean      | Checkbox              |
 | sku_inventory              | Integerfield | Integer               |
 
-**Order model**
+#### Order model
 
 The order model contains all the information about the order, including a python generated order number, an order date set to the date the order was created, and links the order to a site user. It will also hold the payment information from Stripe.
+
+This model is not custom. It is essentially a modified version of the CI equivalent.
 
 | Key              | Field        | Form                             |
 |------------------|--------------|----------------------------------|
 | order_number     | Charfield    | Generated                        |
-| order_date       | Datefield    | Generated, current date          |
-| order_siteuser   | Foreignkey   | One to many                      |
-| order_name       | Charfield    | Text                             |
-| order_address_1  | Charfield    | Text                             |
-| order_address_2  | Charfield    | Text                             |
-| order_city       | Charfield    | Text                             |
-| order_county     | Charfield    | Text                             |
-| order_state      | Charfield    | Text                             |
-| order_postcode   | Charfield    | Text                             |
-| order_country    | Charfield    | Text                             |
+| siteuser         | Foreignkey   | One to many                      |
+| date             | Datefield    | Generated, current date          |
+| full_name        | Charfield    | Text                             |
+| phone_number     | Charfield    | Text                             |
+| street_address_1 | Charfield    | Text                             |
+| street_address_2 | Charfield    | Text                             |
+| town_or_city     | Charfield    | Text                             |
+| state            | Charfield    | Text                             |
+| zipcode          | Charfield    | Text                             |
+| country          | Charfield    | Text                             |
 | order_total      | Decimalfield | Generated, decimal to two places |
-| order_shipping   | Decimalfield | Generated, decimal to two places |
-| order_grandtotal | Decimalfield | Generated, decimal to two places |
-| order_bag        | Textfield    | Text                             |
+| shipping_cost    | Decimalfield | Generated, decimal to two places |
+| grand-total      | Decimalfield | Generated, decimal to two places |
+| original_Cart    | Textfield    | Text                             |
 | order_stripe_pid | Charfield    | Taken from Stripe                |
 
-**Line item model**
+#### Line item model
 
 This small model is used to control the information about individual items in an order.
 
+This model is not custom. It is essentially a modified version of the CI equivalent.
+
 | Key              | Field        | Form                             |
 |------------------|--------------|----------------------------------|
-| li_order_number  | Foreignkey   | Order number                     |
-| li_product       | Foreignkey   | Item Sku                         |
-| li_quantity      | Integerfield | Integer                          |
-| li_total         | Decimalfield | Decimal to two places            |
+| order            | Foreignkey   | Order                            |
+| item             | Foreignkey   | Item                             |
+| sku              | Foreignkey   | Sku                              |
+| quantity         | Integerfield | Integer                          |
+| lineitem_total   | Decimalfield | Decimal to two places            |
 
-**SiteUser model**
+#### SiteUser model
 
 The SiteUser model extends the Django AllAuth user model, holding information that can auto populate the shipping and billing forms during checkout, as well as give the user the correct permissions as a site user or site administrator and hold information about what items a user owns so they can access their digital downloads.
 
-| Key               | Field        | Form                                    |
-|-------------------|--------------|-----------------------------------------|
-| user              | Foreignkey   | One to one                              |
-| user_name         | Charfield    | Text                                    |
-| user_email        | Emailfield   | Email                                   |
-| user_phone        | Charfield    | Text                                    |
-| user_address_1    | Charfield    | Text                                    |
-| user_address_2    | Charfield    | Text                                    |
-| user_city         | Charfield    | Text                                    |
-| user_county       | Charfield    | Text                                    |
-| user_state        | Charfield    | Text                                    |
-| user_postcode     | Charfield    | Text                                    |
-| user_country      | Charfield    | Text                                    |
-| user_permissions  | Integerfield | Integer                                 |
-| user_orders       | List         | List or order numbers                   |
-| user_instructions | List         | List of user owned digital instructions |
+This model is not custom. It is essentially a modified version of the CI equivalent.
+
+| Key                      | Field        | Form                                    |
+|--------------------------|--------------|-----------------------------------------|
+| user                     | Foreignkey   | One to one                              |
+| siteuser_phone_number    | Charfield    | Text                                    |
+| siteuser_street_address1 | Charfield    | Text                                    |
+| siteuser_street_address2 | Charfield    | Text                                    |
+| siteuser_town_or_city    | Charfield    | Text                                    |
+| siteuser_state           | Charfield    | Text                                    |
+| siteuser_zipcode         | Charfield    | Text                                    |
+| siteuser_country         | Charfield    | Text                                    |
+
+#### NewsletterUser model
+
+The NewsletterUser is a separate model that stores information about customers who wish to receive newlsetters. It includes their name, email address, and what they are interested in receiving information about.
+
+This model is custom.
+
+| Key               | Field        | Form     |
+|-------------------|--------------|----------|
+| newsletter_name   | CharField    | Text     |
+| newsletter_email  | EmailField   | Email    |
+| newsletter_city   | BooleanField | Checkbox |
+| newsletter_space  | BooleanField | Checkbox |
+| newsletter_castle | BooleanField | Checkbox |
+| newsletter_train  | BooleanField | Checkbox |
 
 <br>
 <hr>
@@ -441,7 +454,6 @@ Agile examples
 
 ## Features
 <hr>
-<br>
 
 ### General Features on All Pages
 
@@ -499,9 +511,42 @@ Accessibility examples
 
 ## Search Engine Optmization
 <hr>
-<br>
 
-Search Engine Optimization was planned for and implemented when the site was deployed. The first set of 
+Search Engine Optimization was planned for and implemented when the site was deployed.
+
+During planning, several short-tail keywords and long-tail phrases were focused on for copy throughout the website. Some examples are below:
+
+**Keywords:**
+
+| Short-tail keywords |               | Long-tail phrases             |
+|---------------------|---------------|-------------------------------|
+| **Lego related**    | **General**   | **Lego related**              |
+| Lego                | playset       | buy vintage lego sets         |
+| AFOL                | creative play | vintage lego sets for sale    |
+| MOC                 | playability   | Lego MOC                      |
+| vintage             | play          | buy updated Lego sets         |
+| vintage Lego        | stable        | buy modern Lego sets          |
+| custom              | iconic        | buy vintage Lego sets         |
+| custom Lego         | kids          | buy Lego instructions         |
+| Lego MOC            | toys          | buy custom Lego instructions  |
+| genuine             | nostalgia     | where can I find custom Lego  |
+| genuine Lego        | nostalgic     | Where can I buy custom Lego   |
+| real                | memories      | custom Lego gifts             |
+| real Lego           |               | Lego for adults               |
+| bricks              |               | AFOL Lego sets                |
+| Lego bricks         |               | adult Lego sets               |
+| elements            |               | |
+| Lego elements       | | |
+| printed elements    | | |
+| Lego [kit number]   | | |
+| classic city        | | |
+| Lego classic city   | | |
+| classic castle      | | |
+| Lego classic castle | | |
+| minifig             | | |
+| Lego minifig        | | |
+| instructions        | | |
+| Lego instructions   | | |
 
 <br>
 <hr>
@@ -510,24 +555,32 @@ Search Engine Optimization was planned for and implemented when the site was dep
 
 ## Technologies Used
 <hr>
-<br>
 
 ### Languages Used
 
-This project uses HTML, CSS, [Python](https://www.python.org/) and Javascript programming languages. 
+This project uses four programming languages. 
+- HTML
+- CSS
+- [Python](https://www.python.org/)
+- Javascript
 
-### Frameworks, Libraries & Programs Used
+### Frameworks & Libraries Used
 
-- [Balsamiq](https://balsamiq.cloud/)
 - [Bootstrap](https://getbootstrap.com/)
-- [Bulk Resize Photos](https://bulkresizephotos.com/en)
-- [Cloudinary](https://cloudinary.com/)
 - Code Institute Gitpod Full Template - Available on request.
-- [Color Contrast Checker](https://coolors.co/contrast-checker/)
-- [Color Shates Online Generator](https://gradients.app/en/shades/)
 - [Django](https://www.djangoproject.com/)
   - [Allauth](https://django-allauth.readthedocs.io/en/latest/)
 - [Django Countries](https://github.com/SmileyChris/django-countries)
+- [Pillow](https://pillow.readthedocs.io/en/stable/index.html)
+
+### Programs Used
+
+- [Balsamiq](https://balsamiq.cloud/)
+- [Bulk Resize Photos](https://bulkresizephotos.com/en)
+- [Cloudinary](https://cloudinary.com/)
+- [Color Contrast Checker](https://coolors.co/contrast-checker/)
+- [Color Shates Online Generator](https://gradients.app/en/shades/)
+- [Elephant SQL](https://www.elephantsql.com/)
 - [Favicon.io](https://favicon.io/)
 - [GitHub](https://github.com/)
 - [GitHub Issues](https://github.com/features/issues)
@@ -535,27 +588,25 @@ This project uses HTML, CSS, [Python](https://www.python.org/) and Javascript pr
 - [GitPod](https://gitpod.io/)
 - [Gnu Image Manipulation Program](https://www.gimp.org/)
 - [Google Fonts](https://fonts.google.com/)
+- [Gmail](https://mail.google.com/)
+- [Heroku](https://www.heroku.com)
+- [I(LOVE)PDF](https://www.ilovepdf.com/compress_pdf)
 - [LucidChart](https://lucid.app/lucidchart/) 
 - [MiniWebtool Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/)
-- [Pillow]https://pillow.readthedocs.io/en/stable/index.html
+- [PostgreSQL](https://www.postgresql.org/)
 - [SQLite](https://sqlite.org/index.html)
 - [Stud.io](https://www.bricklink.com/v3/studio/download.page)
 - [Tables Generator - Markdown](https://www.tablesgenerator.com/markdown_tables)
 - [TinyPNG](https://tinypng.com/)
-
 
 <!--Frameworks unused so far (Copy Past above as used)
 
 - [AmIResponsive](https://ui.dev/amiresponsive)
 - [Bootswatch](https://bootswatch.com/)
 - [Code Institute Python linter](https://pep8ci.herokuapp.com/)
-  - [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
-- [Elephant SQL](https://www.elephantsql.com/)
 - [Google Maps](https://www.google.com/maps/@53.281599,-6.2396888,14z)
-- [Heroku](https://www.heroku.com)
 - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/)
 - [Markup, the native Android photo editing tool](https://www.android.com/)
-- [PostgreSQL](https://www.postgresql.org/)
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 - [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input)
 
@@ -568,7 +619,6 @@ This project uses HTML, CSS, [Python](https://www.python.org/) and Javascript pr
 
 ## Local Development and Deployment
 <hr>
-<br>
 
 ### Local Development
 
@@ -589,7 +639,6 @@ Information on how to fork or clone the repository can be found in [the developm
 
 ## Testing
 <hr>
-<br>
 
 Information on testing can be found in [the testing ReadMe](/TESTING.md)
 
@@ -600,7 +649,6 @@ Information on testing can be found in [the testing ReadMe](/TESTING.md)
 
 ## Credits
 <hr>
-<br>
 
 ### Help and Support
 
@@ -610,7 +658,6 @@ Information on testing can be found in [the testing ReadMe](/TESTING.md)
 - All of my Code Institute UCD July 2022 cohort, who have been available to answer questions through Slack.
 - Code Institute tutors accessed through the Code Institute LMS have been helpful with understanding various concepts during instruction.
 - An explanation about how to have Django/Pillow upladed image files go to a specific folder was found [here.](https://youtu.be/O5YkEFLXcRg) The [Django documentation](https://docs.djangoproject.com/en/4.2/topics/files/) could have been a lot clearer about WHERE the example code goes, which is a frustrating aspect throughout working with Django.
-
 - Big thanks to [Lego](https://www.lego.com/en-ie) for having a toy that allows a tremendous amount of aftermarket and web based support, and for just being pretty rad.
 - A tremendous amount of Lego research was done on [Bricklink](https://www.bricklink.com/v2/main.page) and [Brickset.](https://brickset.com/sets/6301-1/Town-Mini-Figures)
 
@@ -624,12 +671,15 @@ Information on testing can be found in [the testing ReadMe](/TESTING.md)
 - Favicon is "Four Brick, Lego, Blue, Toy, Four" as provided by [ClipArtMax.](https://www.clipartmax.com/middle/m2i8d3Z5H7i8G6i8_four-brick-lego-blue-toy-four-api-icon/)
 - Fonts are [Vina Sans](https://fonts.google.com/specimen/Vina+Sans) and [Staatliches](https://fonts.google.com/specimen/Staatliches) for the Bricks Then Made Now logo and [Mina](https://fonts.google.com/specimen/Mina) for the text, the code provided by [Google Fonts](https://fonts.google.com)
 - The original image used as the basis for the splash image is from [Brickset.](https://brickset.com/sets/6301-1/Town-Mini-Figures)
-- All computer generated renders are done in [Stud.io.](https://www.bricklink.com/v3/studio/download.page)
+- The rest of the images used for the "Old set" in the item listings are also from [Brickset](https://brickset.com/), from each set's Brickset listing. Some images were modified to fit the screen.
+- All computer generated Lego renders are done in [Stud.io.](https://www.bricklink.com/v3/studio/download.page)
 - "Scooty Puff Jr" model is named for a [Futurama](https://www.imdb.com/title/tt0149460/) gag, and is based on a simple design by [troublesbricking](https://www.instagram.com/troublesbricking/).
+- The "No image available" placeholder image is from [Stock Adobe](https://stock.adobe.com/)
 - Terms of service is sampled from [www.websitepolicies.com](https://www.websitepolicies.com/blog/sample-terms-service-template).
 
 ### Other Thanks
 
+- The Code Institute tutors. This must be mind-numbing.
 - The Code Institute assessment team; I can't imagine what kind of patience and knowledge it would take to look over these projects without losing it.
 - Thanks to F. D. C. Lemon-Beckett for useful contributions to the discussion.
 - Finally, heartfelt appreciaton to my partner, Stevie, for infinite patience and encouragement. 

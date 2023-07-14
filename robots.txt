@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /templates/allauth/
+Disallow: /templates/error404.html
+Disallow: /templates/error500.html
+Disallow: /product/templates/product/errorpage.html
+Sitemap: https://bricks-then-made-now-5bd876713bd4.herokuapp.com/sitemap.xml

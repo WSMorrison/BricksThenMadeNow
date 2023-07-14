@@ -30,7 +30,7 @@ def update_user(sender, instance, created, **kwargs):
 class NewsletterUser(models.Model):
     newsletter_name = models.CharField(max_length=50, null=False, blank=False)
     newsletter_email = models.EmailField(max_length=100, null=False, blank=False)
-    newsletter_city = models.BooleanField(default=True)
-    newsletter_space = models.BooleanField(default=True)
-    newsletter_castle = models.BooleanField(default=True)
-    newsletter_train = models.BooleanField(default=True)
+    newsletter_city = models.BooleanField(default=False)
+    newsletter_space = models.BooleanField(default=False)
+    newsletter_castle = models.BooleanField(default=False)
+    newsletter_train = models.BooleanField(default=False)
