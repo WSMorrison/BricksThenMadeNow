@@ -7,8 +7,8 @@ def errorpage(request):
 
 
 # Directs browser to the shipping information page.
-def shipping(request):
-    return render(request, 'infopages/shipping.html')
+def privacy(request):
+    return render(request, 'infopages/privacy.html')
 
 
 # Directs browser to the Bricks Then Made Now information page.
