@@ -141,7 +141,7 @@ def checkout_success(request, order_number):
     cart = request.session.get('cart')
     user = request.user.id
 
-    siteuser_profile = SiteUser.objects.get(user=request.user)
+    siteuser_profile = SiteUser.objects.get(user=user)
     order.siteuser = siteuser_profile
     order.save()
 
