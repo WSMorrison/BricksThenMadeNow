@@ -553,6 +553,57 @@ During planning, several short-tail keywords and long-tail phrases were focused 
 <br>
 <br>
 
+## Marketing
+<hr>
+
+As with any business, marketing is paramount for success. A business such as Bricks Then Made Now will be well served by old-fashioned marketing like trade shows, conventions, or other physical and in person forms of marketing. Word of mouth is powerful, as is seeing the products in the plastic. However, the reach of such marketing is limited and without a large, expensive staff will grow the business slowly.
+
+Therefore web marketing will be an important way to grow a web-based business. Fortunately, online spaces have begun to serve the hobbyist community in ways similar to in-person trade shows and conventions. It's almost as easy to to create the relationships online as it is pressing the flesh, and that is a strong advantage for eCommerce. Social media is a particularly powerful tool, so Bricks Then Made Now will position itself to enter the online community that way.
+
+### Facebook
+
+<details>
+<summary>Facebook</summary>
+<br>
+
+![Facebook](/assets/readme-images/bricks-then-made-now-facebook-mockup.png)
+
+The Facebook page will be a great way for users, fans, and potential customers will to keep up with Bricks Then Made Now. It can be a great way for Bricks Then Made Now to show off not only newly available products, but keep customers informed about upcoming releases. This will help develop excitement. Lego is all about the experience building, and the ability to hide surprises and easter eggs in the build, which would be far too much detail to show on even a website with a huge scope. By keeping customers involved with the development process, they would get to see what they can expect, knowing that these are even just teasers to what will ultimately be available. 
+
+The profile picture and the headline picture would mirror other social media and the main website, helping maintain a common theme through all the online presences.
+
+The feed would showupcoming or current products. It could also show products in-play by customers. Potential customers can also give feedback and engage with each other, hopefully appreciating each other's opinions and Bricks Then Made Now's offerings.
+
+The About section could show the Bricks Then Made Now contact information, and the website so that people can find the information they need to find.
+
+There can be many hosted pictures in the Photos section, where customers can peruse not just products in their official renders, but in progress images and detail images that will help them make decisions and help Bricks Then Made Now build excitement for the brand and products.
+
+It could also show potential customers how well liked the products are, and feature people who like, follow, and even contribute to the site in the Liked-by section.
+
+</details>
+<br>
+
+<details>
+<summary>instagram</summary>
+<br>
+
+![Instagram](/assets/readme-images/bricks-then-made-now-instagram.png)
+
+Instagram will have a similar role in the marketing plan. The unique Instagram layout will make it excellent for showing the old set, the recreation, and them together. Each post could also have copy that discusses each. 
+
+The profile picture would mimic Facebook's. 
+
+The feed is an information packed section, discussing the old kit in significant detail. Why it's cool and why it's important, and why it was chosen to be redeveloped with modern elements and techniques. The second post in each row would be devoted to the modern set. It would explain why certain choices were made, and in which ways the design was updated. The third post in the row would compare the two models, comparing the part count and pricing and pointing out the differences and improvements.
+
+Of course, the about blurb would indicate the website the customer could go to.
+
+The real benefit of Instagram are the hashtags, where it can relate the products and models to others builds, and other communities. This would allow people to discover the models and the website just by being curious about the vintage sets that are being redeveloped, and also help spread the word of mouth in a digital analog to the trade shows and conventions. By following and being followed by other influentual accounts, and by collaborating with other accounts, Bricks Then Made Now can help not only build a following but build the Lego AFOL and MOC community.
+
+The Instagram presence is real and live now, [here.](https://www.instagram.com/bricksthenmadenow/)
+
+</details>
+
+
 ## Technologies Used
 <hr>
 
