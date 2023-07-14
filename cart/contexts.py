@@ -5,7 +5,6 @@ from product.models import Sku, Item
 # Context that generates the dictionary holding bag contents.
 def cart_contents(request, order_instance=None):
 
-    items = Item.objects.all()
     cart_items = []
     total = 0
     shipping_total = 0
@@ -32,19 +31,9 @@ def cart_contents(request, order_instance=None):
         })
         item_instructions.append(added_number)
 
-    if total < settings.FREE_SHIPPING:
-        if shipping_total == 0:
-            shipping = 0
-        elif 0 < shipping_total <= 3:
-            shipping = float("{:.2f}".format(settings.SMALL_PACKAGE))
-        else:
-            shipping = float("{:.2f}".format(settings.LARGE_PACKAGE))
-        to_get_free_shipping = settings.FREE_SHIPPING - total
-    else:
-        shipping = 0
-        to_get_free_shipping = 0
-
+    shipping = float("{:.2f}".format(settings.GLOBAL_SHIPPING_COST))
     total = float(("{:.2f}".format(total)))
+    
     grand_total = float("{:.2f}".format(total + shipping))
 
     context = {

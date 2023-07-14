@@ -18,6 +18,7 @@ from cart.contexts import cart_contents
 # Holds checkout data for transmission to Stripe.
 @require_POST
 def cache_checkout_data(request):
+    print('cache_checkout_data')
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -36,10 +37,12 @@ def cache_checkout_data(request):
 # Manages the checkout integration with Stripe.
 @login_required
 def checkout(request):
+    print('checkout')
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
+        print('checkout request.method')
         cart = request.session.get('cart', {})
         form_data = {
             'full_name': request.POST['full_name'],
@@ -54,7 +57,11 @@ def checkout(request):
         }
         order_form = Orderform(form_data)
 
+        if order_form:
+            print('order_form exists')
+
         if order_form.is_valid():
+            print('checkout if order form is valid')
             cart_values = cart_contents(request)
             print('Order form is valid')
             order = order_form.save(commit=False)
@@ -62,12 +69,13 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_cart = json.dumps(cart)
             order.shipping_cost = cart_values['shipping']
-            print('*****************Line 65 View********************')
             print(order.order_number)
             order.save()
 
             for item_id, item_data in cart.items():
+                print('checkout for item id in cart items IN CHECKOUT')
                 try:
+                    print('checkout for item in cart tiems try')
                     sku = Sku.objects.get(id=item_id)
                     item = sku.sku_item
                     order_line_item = LineItem(
@@ -78,6 +86,7 @@ def checkout(request):
                         )
                     order_line_item.save()
                 except Sku.DoesNotExist:
+                    print('checkout for items in cart except')
                     messages.error(request, ('An error has occured.'))
                     order.delete()
                     return render(request, 'checkout_fail')
@@ -86,25 +95,35 @@ def checkout(request):
             print('save info')
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
+            print('else order form is valid')
             messages.error(request, 'An error has occured.')
             return render(request, 'checkout_fail')
 
     else:
+        print('else request method is post')
         cart = request.session.get('cart', {})
         if not cart:
+            print('if not cart')
             messages.error(request, "Your cart is empty!")
             return redirect(reverse('items'))
         current_cart = cart_contents(request)
+        print('current cart', current_cart)
         total = current_cart['grand_total']
+        print('total', total)
         stripe_total = round(total * 100)
+        print('stripe total', stripe_total)
         stripe.api_key = stripe_secret_key
+        print('stripe api key', stripe.api_key)
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
+        print('intent', intent)
 
         if request.user.is_authenticated:
+            print('if user.is authenticated')
             try:
+                print('if user.is authenticated try')
                 siteuser_address_fill = SiteUser.objects.get(user=request.user)
                 order_form = Orderform(initial={
                     'full_name': siteuser_address_fill.user.get_full_name(),
@@ -117,6 +136,7 @@ def checkout(request):
                     'zipcode': siteuser_address_fill.siteuser_zipcode,
                     'country': siteuser_address_fill.siteuser_country,
                 })
+                print('orderform', order_form)
             except SiteUser.DoesNotExist:
                 order_form = Orderform()
         else:
@@ -139,18 +159,23 @@ def checkout(request):
 
 # Waits for payment and order save to confirm that checkout was successful.
 def checkout_success(request, order_number):
+    print('checkout success')
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Thanks for your order #{order_number}. Get ready to build!')
     cart = request.session.get('cart')
     user = request.user.id
-    print('View Success')
+    print('cart', cart)
+    print('user', user)
 
     siteuser_profile = SiteUser.objects.get(user=request.user)
     order.siteuser = siteuser_profile
+    print('order.siteuser', order.siteuser)
     order.save()
+    print('order saved THIS SHOULD HAPPEN ONLY ONCE')
 
     if save_info:
+        print('if save info')
         siteuser_address = {
             'siteuser_phone_number': order.phone_number,
             'siteuser_street_address1': order.street_address1,
@@ -162,9 +187,11 @@ def checkout_success(request, order_number):
         }
         siteuser_address_form = SiteUserform(siteuser_address, instance=siteuser_profile)
         if siteuser_address_form.is_valid():
+            print('if siteuser address is valid')
             siteuser_address_form.save()
 
     for item_id, item_data in cart.items():
+        print('for item id in cart items DURING SUCCESS')
         sku_id = Sku.objects.get(id=item_id)
         item_bought = sku_id.sku_item
         item_bought.item_user_owned.add(user)
@@ -178,6 +205,8 @@ def checkout_success(request, order_number):
     context = {
         'order': order,
     }
+
+    print('success conditionals end')
 
     return render(request, template, context)
 

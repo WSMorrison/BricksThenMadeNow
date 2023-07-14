@@ -55,7 +55,6 @@ def siteuser_order_history(request):
 def newsletter_signup(request):
 
     def _send_confirmation_email(email):
-        print(email)
         cust_email = email
         subject = render_to_string(
             'user/newsletter_emails/newsletter_confirmation_subject.txt',

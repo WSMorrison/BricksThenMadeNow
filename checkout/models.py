@@ -34,10 +34,9 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
-        cart_values = cart_contents(request)
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        self.shipping_cost = cart_values['shipping']
-        self.grand_total = self.order_total + self.shipping_cost
+        self.order_total = float("{:.2f}".format(self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0))
+        self.shipping_cost = float("{:.2f}".format(settings.GLOBAL_SHIPPING_COST))
+        self.grand_total = float("{:.2f}".format(order_total_calc + self.shipping_cost))
         self.save()
 
     def save(self, *args, **kwargs):
