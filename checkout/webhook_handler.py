@@ -18,6 +18,7 @@ class StripeWH_Handler:
 
     def _send_confirmation_email(self, order):
         cust_email = order.email
+        print(cust_email)
         subject = render_to_string(
             'checkout/confirmation_emails/email_confirmation_subject.txt',
             {'order': order}

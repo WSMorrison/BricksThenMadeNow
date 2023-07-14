@@ -139,9 +139,9 @@ def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Thanks for your order #{order_number}. Get ready to build!')
     cart = request.session.get('cart')
-    user = request.user.id
+    siteuser = request.user
 
-    siteuser_profile = SiteUser.objects.get(user=user)
+    siteuser_profile = SiteUser.objects.get(user=siteuser)
     order.siteuser = siteuser_profile
     order.save()
 
@@ -162,7 +162,7 @@ def checkout_success(request, order_number):
     for item_id, item_data in cart.items():
         sku_id = Sku.objects.get(id=item_id)
         item_bought = sku_id.sku_item
-        item_bought.item_user_owned.add(user)
+        item_bought.item_user_owned.add(siteuser)
         sku_id.sku_inventory -= item_data
         sku_id.save()
 
