@@ -9,207 +9,207 @@
 
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/cart/</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=City</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=Space</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=Castle</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=Train</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=MOC</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/accounts/login/</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/infopages/shipping/</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/accounts/login/?next=/siteuser_profile/profile/</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/siteuser_profile/newsletter_signup/</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/infopages/privacy/</loc>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/infopages/faq/</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/infopages/terms/</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/2</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/2/</loc>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/5</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/5/</loc>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/10</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/10/</loc>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/8</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/8/</loc>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/12</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/12/</loc>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/9</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/9/</loc>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/1</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/1/</loc>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/3</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/3/</loc>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/7</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/7/</loc>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/6</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/6/</loc>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/4</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/4/</loc>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/11</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/11/</loc>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/22</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/22/</loc>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=City&amp;sort=item_part_count&amp;direction=asc</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=City&amp;sort=item_part_count&amp;direction=desc</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=Space&amp;sort=item_part_count&amp;direction=asc</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=Space&amp;sort=item_part_count&amp;direction=desc</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=Castle&amp;sort=item_part_count&amp;direction=asc</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=Castle&amp;sort=item_part_count&amp;direction=desc</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=Train&amp;sort=item_part_count&amp;direction=asc</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=Train&amp;sort=item_part_count&amp;direction=desc</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=MOC&amp;sort=item_part_count&amp;direction=asc</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/listitems/?theme=MOC&amp;sort=item_part_count&amp;direction=desc</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/accounts/password/reset/</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/accounts/signup/</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/accounts/signup/?next=%2Fsiteuser_profile%2Fprofile%2F</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://bricks-then-made-now-5bd876713bd4.herokuapp.com/accounts/login/?next=%2Fsiteuser_profile%2Fprofile%2F</loc>
-  <lastmod>2023-07-14T17:43:21+00:00</lastmod>
+  <lastmod>2023-07-14T18:50:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 
