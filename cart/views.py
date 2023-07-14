@@ -23,7 +23,6 @@ def add_to_cart(request, sku_id):
         messages.success(request, f'Added {sku.sku_number} successfully.')
 
     request.session['cart'] = cart
-    print(request.session['cart'])
 
     return redirect(redirect_url)
 
@@ -40,7 +39,6 @@ def adjust_cart(request, sku_id):
         cart.pop(sku_id)
 
     request.session['cart'] = cart
-    print(request.session['cart'])
 
     return redirect(reverse('view_cart'))
 
@@ -52,6 +50,5 @@ def remove_cart(request, sku_id):
     cart.pop(sku_id)
 
     request.session['cart'] = cart
-    print(request.session['cart'])
-
+    
     return HttpResponse(status=200)

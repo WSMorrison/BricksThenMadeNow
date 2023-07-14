@@ -36,7 +36,7 @@ class Order(models.Model):
     def update_total(self):
         self.order_total = float("{:.2f}".format(self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0))
         self.shipping_cost = float("{:.2f}".format(settings.GLOBAL_SHIPPING_COST))
-        self.grand_total = float("{:.2f}".format(order_total_calc + self.shipping_cost))
+        self.grand_total = float("{:.2f}".format(self.order_total + self.shipping_cost))
         self.save()
 
     def save(self, *args, **kwargs):
