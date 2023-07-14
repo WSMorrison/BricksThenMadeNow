@@ -598,6 +598,7 @@ This project uses four programming languages.
 - [Stud.io](https://www.bricklink.com/v3/studio/download.page)
 - [Tables Generator - Markdown](https://www.tablesgenerator.com/markdown_tables)
 - [TinyPNG](https://tinypng.com/)
+- [XML-Sitemaps](https://www.xml-sitemaps.com/)
 
 <!--Frameworks unused so far (Copy Past above as used)
 
