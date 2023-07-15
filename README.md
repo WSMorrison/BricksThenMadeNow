@@ -547,6 +547,7 @@ During planning, several short-tail keywords and long-tail phrases were focused 
 | Lego minifig        | | |
 | instructions        | | |
 | Lego instructions   | | |
+| clutch power        | | |
 
 <br>
 <hr>
@@ -583,6 +584,8 @@ It could also show potential customers how well liked the products are, and feat
 </details>
 <br>
 
+### Instagram
+
 <details>
 <summary>instagram</summary>
 <br>
@@ -603,6 +606,101 @@ The Instagram presence is real and live now, [here.](https://www.instagram.com/b
 
 </details>
 
+<br>
+<hr>
+<br>
+<br>
+
+## E-Commerce Business Model
+<hr>
+
+Bricks Then Made Now is meant to appeal to broad base of Lego enthusiasts. From kids to adults, the appeal of the smartly colored, well designed and eminently playable sets is universal. The modernization of old sets will appeal to adults where nostagia is high. They also focus on themes that are universal; helicopters, motorcycles, space exploration.
+
+The pricing of sets being sold will be based primarily on the price per part as available, with the intention of keeping it near a target of between $0.12 and $0.15 per part. This is slightly higher than Lego's own price per part, but custom sets from a boutique seller can charge a premium, and this is much lower than other custom Lego set eCommerce platforms.
+
+Shipping will be advertised as free, though shipping will just be calculated into the cost of all physical sets.
+
+### Customers
+
+Bricks Then Made Now intend to sell to adult followers of Lego, but also to adults wishing to give their kids a similar, but modern experience, like their own.
+
+- Recreations of sets from the 1970s, '80s, and '90s is focused on users who represent the 35-44 and 45-54 age ranges.
+  - The sets will appeal to serious AFOL. 
+    - Lego has never left their attention.
+    - They may have "always wanted" a particular vintage set. In this case, the FullSet will be what they want, the ModernSet would be a bonus.
+    - They may no longer have a bin of Lego to pull from to build consistent colorway MOCs, the ModernSet will be a main driver.
+    - They may no longer have the old sets, and wish to share the iconic vintage sets of their youth from their childhood with their own children.
+    - Their kids may be dissatisfied with the complexity of the vintage sets compared to contemporary Lego, the ModernSet will solve that.
+    - The Fullset conveniently packages both sets in one, so that the customer can have both experiences.
+    - These users may be dissatisfied with trying to find the vintage sets on eBay, or not willing to use Bricklink or other second hand Lego sellers.
+  - The sets will appeal to casual Lego follower. 
+    - The user may have children who are just beginning to play with Lego of their own.
+    - They may be reminded of the old sets while in the Lego aisle at Target, and wonder where their old sets went, or why sets are so complex now.
+    - They may have memories of Lego, or have memories of the Lego pack-in catalogs full of sets they never had as kids.
+    - These casual users may want to remember the past, but not be serious enough to use or even know about BrickLink or other second hand, bulk Lego sellers.
+- The iconic designs will appeal to any Lego enthusiast of any age.
+  - The sets are designed with high play value.
+  - The designs have been built in the real world.
+    - This ensures that the builds go together properly.
+    - The builds are stable and function properly - they will not fall apart during play, but can be disassembled when desired.
+    - The real world look and style matches the appeal of the renders and photographed models.
+    - The playability is maintained; it is not too difficult to put a minifig in a drivers' seat, and they fit where intended. In the end, these are play sets.
+- The blending of old and new Lego designs, bricks, elements, and techniques will appeal to families wishing to play together.
+  - Many adults are engaging with their children - and children engaging with their parents or caretakers - with games and toys.
+  - Many vintage toys, particularly video games, may seem rudimentary and uninteresting to modern kids.
+  - Lego bricks have remained standard since their inception in the 1960s.
+  - Bricks Then Made Now intends to take advantage of that longevity by appealing to nostalgic adults and intereested children alike.
+  - Kids may be dissatisfied with the complexity of the vintage sets compared to contemporary Lego. A modern recreation can help kids share the joy with parents or caretakers.
+
+The choice has been made intentionally to use only genuine, high quality used Lego bricks and elements. While Lego has lost court cases allowing other companies to manufacture very similar bricks and elements, leading to a great many low quality imitators, there is no substitute for the clutch power and quality materials Lego uses. Lego can be procured in many ways. Estate sales, local bulk resalers, eBay, BrickLink and Lego Pick a Brick are all ways to get Lego bricks and elements. However, all these methods require considerable time commitments, and unless a user of those services is buying a great deal of Lego, pricing can be prohibitive and make it very difficult to get just the right bricks for a specific build. 
+
+### Pricing
+
+Bricks Then Made Now offers three levels of product to tailor the experience to the user.
+
+- Instructions
+  - Just the instructions and parts list.
+    - A Lego hobbyist with a lot of brick, or particular purchasing savvy, can buy just the instructions and build with their own Lego. This also allows users to build in whatever colorway they like.
+    - The instructions are also priced relatively low, encouraging a user to make a first purchase with BTMN. Referring to the site for downloads will allow BTMN to market new models to the customer.
+- ModernSet
+  - The instructions and all the necessary bricks to build the modern model.
+    - The hard work has been done. Instead of scouring eBay, Bricklink, and the local Lego reseller's tubs of bricks, a user can get just what they need to build what they want.
+    - The general target for serious buyers with new Lego sets is about $0.11 per brick, excluding minifigures. 
+      - Current Lego sets hover around that, with a range of $0.06 to $0.19 depending on the size, complexity and printing.
+      - Vintage Lego sets can vary wildly; the inclusion of parts that are no longer available (most usually in no longer available colors) can make a complete set scarce.
+      - Bricks purchased in bulk can be had regularly for less than $0.15 per brick, with some outliers.
+        - Bricks Then Made Now tries to build its sets with as many common parts as possible to keep physical item costs down.
+        - However, some builds will require scarce parts; 2206357 Stunt 'Copter n' Truck for example, requires an uncommon beam and old style Technic skis, and specific printed doors.
+        - Bulk purchasing will help keep the costs spread out across many models.
+        - This becomes the real benefit for customers to use Bricks Then Made Now.
+- FullSet
+  - A limited availabilty package of the downloadable instructions, all the bricks included in the ModernSet, plus the vintage set it was based on.
+    - A user customer will not have to build the modern model as a rainbow warrior, or hunt everywhere for just the right parts.
+    - The user will also be able to collect the vintage set.
+      - Vintage sets can be hard to build with all vintage bricks.
+        - Many parts are no longer available in particular colors, or were only available in that color or printing in the one set.
+        - Some parts are no longer made at all.
+        - Some colors have changed - famously, Lego changed their grays in 2004. This can make it difficult to recreate or purchase a complete old set. A good example is Lego 6357 Stunt 'Copter N' Truck, even the BTMN office model didn't have all the gray parts in Light Gray instead of Light Bluish Gray until recently.
+  - Some FullSets can be collectable in other ways.
+    - 230CSMP Classic Space Plinth, for example, is a MOC and not based on a vintage set. A VERY limited availibility set could be offered as a FullSet, with all of the officially available Classic Space minifigs. These minifigs are very hard to source a group of - Purple, for example, has to be made from parts from several sets, some of which were uncommon and expensive even when new. And as a special collectable aspect, Bricks Then Made Now could work within the community, and collaborate with a company like Brick Sticker Shop to make a custom sticker sheet to decorate the plinth with custom desings, collector information, or with stickers so that a customer can make fully[custom color space minifigs](https://www.brickstickershop.com/Custom-Sticker-Classic-Space-Torsos) on their own, if they choose.
+  - FullSets are necessarily a limited item, and this makes sense from a marketing standpoint as well. It can help drum up interest in sets, and pre-orders could be an option to making sure that more customers could get the FullSet since the in-stock numbers would likely remain low. 
+
+Pricing for each set would need to not only be profitable but consistent. Many users are knowledgeable enough to understand why some sets are more expensive than others. For example, the 230CSMP Cassic Space Plinth is 122 very common bricks and elements while 2206357 Stunt 'Copter N' Truck includes uncommon parts like printed doors, a boom, and technic skis. Consideration has been made to try and keep the sets within the $0.12 to $0.15 per part range. Of course, the pot can be sweetened by including minifigs, which can be a great added value for customrs without much added expense for Bricks Then Made Now.
+
+- Instructions are priced very low for small sets or set recolors. 230SPJr is only 8 parts, and the instructions are just there for downloading by anyone to purchases the ModernSet, or 2306530 Sport Coupe is essentially a recolor of an existing Lego set - the instructions are widely available including on Lego's official website - so the "instructions" are just a handy parts list. These instructions are intentionally inexpensive. Otherwise, instructions generally start at $2.99, and increase by $1.00 for every 100 parts in the set.
+  - Since instructions are downloadable on the website, BTMN uses the instructions as a way to overcome a major objection with online stores. Most customers don't want to register an account. However, an account is necessary for customers to return and download isntructions without repurchasing them.
+  - By giving away a free set of instructions, BTMN can encourage a user to sign up an account, which will make them more likely to return and purchase from the store.
+- ModernSets are priced based on the cost of the parts required. Some sets will have a higher price per part than others, but all efforts are made to keep the sets under $0.15 per part, however that is a guideline more than a rule. Once the price per part target is met, the set is compared to sets available from Lego, and a determination is made wether the set can be priced higher, or if adjustments need to be made to price it lower to keep it in line with Lego's official offerings. This is primarily to meet customer expectations, Bricks Then Made Now cannot compete with Lego's global infrastructure and doesn't intend to anyway. Lego generally sticks with themes (truck and trailer, crane, sports car) as they develop sets, but rarely do they do direct modernizations of sets in nostalgic colorways.
+- FullSets are priced based on the ModernSet and what a customer may expect to find a vintage set for elsewhere, because a complete vintage set can be difficult to find. Bricks Then Made Now has an advantage by being able to buy bricks and elements in bulk, but will encounter pricing for individual parts that effect the ultimate price for the fullset similarly to competitors. For example, Lego 889 Radar Truck adds a full $15.00 to the price of the 2300899:1099 FullSet over the 2300899:1066 Modernset even though it is only 29 parts. The scarcity of some of the parts in light gray - instead of light bluish gray - makes it more dear.
+
+### Shipping
+
+While Bricks Then Made Now is not competing with businesses like Amazon, the expectation has been set by the behemoth wholesaler that even small boutique shops offer free shipping. In line with that, Bricks Then Made Now calculated shipping into the cost of all physical items, and advertises as offering free shipping on all items, even though we all know that it's just rolled into the cost of the item anyway.
+
+<br>
+<hr>
+<br>
+<br>
 
 ## Technologies Used
 <hr>
