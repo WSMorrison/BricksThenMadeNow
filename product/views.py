@@ -97,7 +97,7 @@ def item_detail(request, item_id):
 
 # Operates page that staff users can use to add new items to the database.
 @login_required
-def new_item(request, **args, **kwargs):
+def new_item(request):
     if not request.user.is_superuser:
         messages.error(request, 'You\'re not allowed to be here.')
         return redirect(reverse('index'))
@@ -120,7 +120,7 @@ def new_item(request, **args, **kwargs):
 
 # Operates page that staff users can use to add new items to the database.
 @login_required
-def new_sku(request, **args, **kwargs):
+def new_sku(request):
     if not request.user.is_superuser:
         messages.error(request, 'You\'re not allowed to be here.')
         return redirect(reverse('index'))
