@@ -511,14 +511,17 @@ Flowchart was built with [LucidChart.](https://lucid.app/lucidchart/)
 <hr>
 <br>
 
+Progress on this project was tracked using agile technologies. GitHub's built in issues and Kanban board were used for their accessibility and their integration with GitPod, as well as integration with the repository.
+
+During the planning stages, User Stories were developed and written as individual issues. Afterward, these stories were translated into individual tasks. This gave the project necessary redundancy making sure that everything that needed to get done got done. 
+
+Epic stories were developed to further organize the tasks. Each task was assigned at least one label, as well. The labels were developed to indicate which language each task was most associated with, if tasks were related to Stripe integration or deployment, if tasks were MVP, bugs, or enhancement, or if they were part of further project planning. There was also a quickwin label for tasks that should be relatively small fixes so that tasks could be selected based on time and focus available. 
+
 Agile techniques and technologies were used during the initial planning stages and then throughout the entire development process.
 
-GitHub's built in Issues and Projects functionalities were used. During initial planning, several User Stories were made as issues, and a couple Epic User Stories were made to track the bulk of them. This made it easy to track what was done, what needed to get done, and what was in the middle of doing. Of course, as with any project, several new issues were created to handle changing user stories, new functionalities, and to handle bugs as they were encountered. To orgainze these issues more, the issues were labeled as MVP, for Minimum Viable Product issues that must be completed for project submission, Styling, Documentation, Bugs, Testing, and Epic. This made it simple to filter the issues and see what needed to be done and prioritize issues based on development time available, similar to the agile technique of Timeboxing. An aditional label was crated, Quickwin, for feature implementation or bug fixes that were thought to require low time commitments, so that when development time was limited on any given day it was easy to find something that needed doing, or for when frustrations with larger issues were running high, some quantifyable progress could be made to provide momentum and avoid task burnout.
+There are several Enhancement labels still on the board in the Todo column, most of which are artifacts of the initial planning stages. These were made into future implementations after consultation with mentors and instructors when project scope was discussed.
 
-There are several Enhancement labels still on the board in the Todo column, most of which are relics of the initial planning stages. These were made into future implementations after consultation with mentors and instructors when project scope was discussed.
-
-The HardParkers project hosted in GitHub can be found here. The Issues in the HardParkers repository can be found here.
-
+The Bricks Then Made Now repository hosted in GitHub can be found [here](https://github.com/WSMorrison/BricksThenMadeNow). The Issues in the Bricks Then Made Now repository can be found [here.](https://github.com/WSMorrison/BricksThenMadeNow/issues). The Bricks Then Made Now project and Kanban board can be found [here.](https://github.com/users/WSMorrison/projects/6)
 
 <br>
 <hr>
