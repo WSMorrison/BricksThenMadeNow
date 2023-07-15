@@ -520,15 +520,23 @@ The Bricks Then Made Now repository hosted in GitHub can be found [here](https:/
 
 ### General Features on All Pages
 
-Features examples
+The page has several main pages and some supporting confirmation and information pages. Because of the page construction, a base with a header and footer and so navigation supplements included, there are a few features that are common to almost all pages.
 
 <details>
-<summary>General page features</summary>
+<summary>General page features, using the index as an example.</summary>
 <br>
 
-![General features](#)
+![General features](/assets/readme-images/features/large-1-index.png)
 
-Examples
+- At the top of the page, there is a title bar.
+  - The title is clickable and will always bring the user to the index page.
+  - The search bar will search all item numbers, names, and descriptions.
+  - The shopping cart icon will change when items are added to the cart, and a running total will indicate to the customer what their cart consists of.
+- The nav bar with the themes and the login links remains on all pages for quick navigation.
+- The footer foots all pages.
+  - On the left is a button that will take the customer to a form where they can sign up for promotional emails.
+  - In the center are a series of links to find Bricks Then Made Now social media or a contact information.
+  - On the right are a series of links to informative pages, including a privacy polict, an about page, and a Terms of Service.
 
 </details>
 
@@ -536,15 +544,54 @@ Examples
 
 ### Features of Individual Pages
 
-Features Examples
+Each page necessarily has its own set of features.
 
 <details>
 <summary>Index page features</summary>
 <br>
 
-![Index page](/assets/readme-images/AllUpcPage.png)
+![Index page](/assets/readme-images/features/large-1-index.png)
 
-Examples
+- The index page has all the general page features.
+- The splash, title image is prominantly positioned near the top.
+- Below the splash image is a carouselle that promotes the page.
+- Prominently in the middle of the page is a grid of the themes, plus a square to take the user to their account information.
+
+</details>
+
+<details>
+<summary>Items page features</summary>
+<br>
+
+![Items page](/assets/readme-images/features/large-2-items.png)
+
+- The items page has all the general page features.
+- The splash image and carouselle do not appear on this, or any further pages.
+- Below the nav bar is a secondary nav bar in yellow.
+  - Text indicates which theme the customer is currently navigated to.
+  - On the right, a sort-by dropdown allows the customer to sort by part count. The part count is directly related to price, so it defacto does both functions.
+- The items page shows a grid of the items related to the selected theme. It will show all items if the current theme selected is "all."
+- Each item is represented by an image, the item name, the item number, the part count, and there is a button to access the item detail page.
+
+</details>
+
+<details>
+<summary>Item detail page features</summary>
+<br>
+
+![Item detail page](/assets/readme-images/features/large-3-item-detail.png)
+
+- The item detail page has all the general page features.
+- The yellow bar displays text showing the theme and item name that the user is navigated to.
+- There are more images of the item where applicable, including a picture of the original Lego set, and a detail image showing a different, significant view. If there are not three images, a placeholder fills the space.
+- In addition to the item name, number, and part count, an item description is displayed.
+- Below the item details, the three Skus are displayed, where applicable.
+  - The Instructions Sku displays with the number, and price. 
+  - The ModernSet Sku displays with the number, what is included, the inventory, and the price, with a quantity selector. The quantity selector will not allow a user to order more than are in inventory.
+  - The FullSet Sku dispalys with the number, what is included, the inventory and the price, with a quantity selector. The quantity selector will not allow the user to order more than are in inventory.
+  - If there is no Instructions or ModernSet Sku, a coming soon notice is displayed.
+  - If there is not FullSet Sku, nothing is displayed.
+- There is a back button that takes the user back to the items list.
 
 </details>
 
@@ -563,10 +610,15 @@ Future implementations example
 
 ### Accessibility
 
-Colors were checked for contrast during development using Coolers' [Color Contrast Checker](https://coolors.co/contrast-checker/0067b2-d2d5da)
+Care was taken to make sure the page met accessibility guidelines. Accessibility is important so that everyone is welcome and included on Bricks Then Made Now. 
 
-Accessibility examples
+- All images have alt text, and all links and buttons have aria labels.
+- Semantic web structure was maintained, making sure to use headers, footers, body, sections and divs appropriately to organize the page not just visually but for screen readers as well.
+- Colors and images were carefully selected to make sure that contrast was great enough so that anyone could read the website. Colors were checked for contrast during development using Coolers' [Color Contrast Checker](https://coolors.co/contrast-checker/0067b2-d2d5da)
 
+![Google Lighthouse scores](/assets/readme-images/lighthouse-score.png)
+
+Accessibility, Best Practices and SEO scores calculated by [Google Lighthouse.](https://developer.chrome.com/docs/lighthouse/overview/)
 <hr>
 
 ## Search Engine Optmization
@@ -784,6 +836,7 @@ This project uses four programming languages.
 
 ### Programs Used
 
+- [AmIResponsive](https://ui.dev/amiresponsive)
 - [Balsamiq](https://balsamiq.cloud/)
 - [Bulk Resize Photos](https://bulkresizephotos.com/en)
 - [Cloudinary](https://cloudinary.com/)
@@ -798,6 +851,7 @@ This project uses four programming languages.
 - [GitPod](https://gitpod.io/)
 - [Gnu Image Manipulation Program](https://www.gimp.org/)
 - [Google Fonts](https://fonts.google.com/)
+- [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [Gmail](https://mail.google.com/)
 - [Heroku](https://www.heroku.com)
 - [I(LOVE)PDF](https://www.ilovepdf.com/compress_pdf)
@@ -813,11 +867,7 @@ This project uses four programming languages.
 
 <!--Frameworks unused so far (Copy Past above as used)
 
-- [AmIResponsive](https://ui.dev/amiresponsive)
-- [Bootswatch](https://bootswatch.com/)
 - [Code Institute Python linter](https://pep8ci.herokuapp.com/)
-- [Google Maps](https://www.google.com/maps/@53.281599,-6.2396888,14z)
-- [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/)
 - [Markup, the native Android photo editing tool](https://www.android.com/)
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 - [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input)
@@ -864,7 +914,7 @@ Information on testing can be found in [the testing ReadMe](/TESTING.md)
 - All of my Code Institute UCD July 2022 cohort, who have been available to answer questions through Slack.
 - Code Institute tutors accessed through the Code Institute LMS have been helpful with understanding various concepts during instruction.
 - An explanation about how to have Django/Pillow upladed image files go to a specific folder was found [here.](https://youtu.be/O5YkEFLXcRg) The [Django documentation](https://docs.djangoproject.com/en/4.2/topics/files/) could have been a lot clearer about WHERE the example code goes, which is a frustrating aspect throughout working with Django.
-- Big thanks to [Lego](https://www.lego.com/en-ie) for having a toy that allows a tremendous amount of aftermarket and web based support, and for just being pretty rad.
+- Big thanks to [Lego](https://www.lego.com/) for having a toy that allows a tremendous amount of aftermarket and web based support, and for just being pretty rad.
 - A tremendous amount of Lego research was done on [Bricklink](https://www.bricklink.com/v2/main.page) and [Brickset.](https://brickset.com/sets/6301-1/Town-Mini-Figures)
 
 ### Code Used
