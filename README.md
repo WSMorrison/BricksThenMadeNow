@@ -542,7 +542,7 @@ The page has several main pages and some supporting confirmation and information
 
 <br>
 
-### Features of Individual Pages
+### Features of Individual Large Screen Pages
 
 Each page necessarily has its own set of features.
 
@@ -628,7 +628,7 @@ Items coming soon item detail detail.
 </details>
 
 <details>
-<summary>Items page features</summary>
+<summary>Checkout page features</summary>
 <br>
 
 ![Checkout page](/assets/readme-images/features/large-6-checkout.png)
@@ -643,7 +643,7 @@ Items coming soon item detail detail.
 </details>
 
 <details>
-<summary>Items page features</summary>
+<summary>Checkout overlay</summary>
 <br>
 
 ![Checkout is happening page](/assets/readme-images/features/large-7-dont-touch.png)
@@ -653,7 +653,7 @@ Items coming soon item detail detail.
 </details>
 
 <details>
-<summary>Items page features</summary>
+<summary>Success page features</summary>
 <br>
 
 ![Success page](/assets/readme-images/features/large-8-success.png)
@@ -666,7 +666,7 @@ Items coming soon item detail detail.
 </details>
 
 <details>
-<summary>Items page features</summary>
+<summary>Order history page features</summary>
 <br>
 
 ![Order history page](/assets/readme-images/features/large-9-order-history.png)
@@ -679,10 +679,10 @@ Items coming soon item detail detail.
 </details>
 
 <details>
-<summary>Items page features</summary>
+<summary>Error404 page features</summary>
 <br>
 
-![Checkout page](/assets/readme-images/features/large-10-error404.png)
+![Error404 page](/assets/readme-images/features/large-10-error404.png)
 
 - The error 404 page has all the general page features.
 - The yellow bar indicates that the user is navigated to a dangerous place!
@@ -692,6 +692,114 @@ Items coming soon item detail detail.
 </details>
 
 <br>
+
+### Features of Individual Small Screen Pages
+
+Mobile screens are identical in function, but are organized slightly differently. A limited selection of mobile screens are shown below.
+
+<details>
+<summary>Index page features</summary>
+<br>
+
+![Index page](/assets/readme-images/features/mobile-1-index.png)
+
+- The index page has all the general page features, similarly laid out.
+  - The title bar is stacked.
+- The splash, title image is prominantly positioned near the top.
+- Below the splash image is a carouselle that promotes the page.
+- Prominently in the middle of the page is a stack of the themes, plus a square to take the user to their account information.
+- The footer is reorganized, so that the newsletter signup is above both the social media and the information pages sections of the footer.
+
+</details>
+
+<details>
+<summary>Index page features</summary>
+<br>
+
+![Items page](/assets/readme-images/features/mobile-2-index.png)
+
+- The items page has all the general page features.
+- The splash is not shown, and will not be shown for any other mobile pages.
+- The yellow bar indicates that the user is navigated to a particular theme.
+  - On the right is the sort drop down, which works identically to the large screen version.
+- The items in the theme are stacked.
+- Each item has an image, item name, item number, part count and button to view.
+
+</details>
+
+<details>
+<summary>Item detail page features</summary>
+<br>
+
+![Item detail page](/assets/readme-images/features/mobile-3-item-detail.png)
+
+- The item detail page has all the general page features.
+- The yellow bar displays text showing the theme and item name that the user is navigated to.
+- There are more images of the item where applicable, including a picture of the original Lego set, and a detail image showing a different, significant view. If there are not three images, a placeholder fills the space.
+- In addition to the item name, number, and part count, an item description is displayed.
+- Below the item details, the three Skus are displayed, where applicable.
+  - The Instructions Sku displays with the number, and price. 
+  - The ModernSet Sku displays with the number, what is included, the inventory, and the price, with a quantity selector. The quantity selector will not allow a user to order more than are in inventory.
+  - The FullSet Sku dispalys with the number, what is included, the inventory and the price, with a quantity selector. The quantity selector will not allow the user to order more than are in inventory.
+  - If there is no Instructions or ModernSet Sku, a coming soon notice is displayed.
+  - If there is not FullSet Sku, nothing is displayed.
+- There is a back button that takes the user back to the items list.
+
+The additional features, such as the "In Cart" button, "Sold Out" buttons and staff edit and delete bars are similar in form to the large screen, but of course oriented slightly differently.
+
+</details>
+
+<details>
+<summary>Cart page features</summary>
+<br>
+
+![Cart page](/assets/readme-images/features/mobile-5-cart.png)
+
+- The cart page has all the general page features.
+- The yellow bar indicates that the user is navigated to the shopping cart.
+- The cart shows all the items in the cart.
+  - The customer can change the quantity or remove the item from ther cart.
+  - The extended price is shown for each item, adjusted by its quantity.
+- The page shows the total number of items to ship. For example, three Instructions and five ModernSets will show five items to ship, even though eight items are in the cart.
+- There are buttons to return to shopping and going to checkout.
+
+</details>
+
+<details>
+<summary>Checkout page features</summary>
+<br>
+
+![Checkout page](/assets/readme-images/features/mobile-6-checkout.png)
+
+- The checkout page has all the general page features.
+- The yellow bar indicates that the user is navigated to checkout.
+- There is a small cart displaying above the checkout forms.
+- Below, there is a checkout form showing the shipping information information and payment form.
+- There is a checkbox that will add the shipping information to the SiteUser account.
+- There are buttons to return to shopping and process the payment.
+
+</details>
+
+<details>
+<summary>Cehckout overlay features</summary>
+<br>
+
+![Checkout is happening page](/assets/readme-images/features/mobile-7-dont-touch.png)
+
+</details>
+
+<details>
+<summary>Success page features</summary>
+<br>
+
+![Success page](/assets/readme-images/features/mobile-8-success.png)
+
+- The success page has all the general page features.
+- The yellow bar indicates that the user is navigated to the checkout success page.
+- There is a message thanking the customer and telling them that their order was successful.
+
+</details>
+
 
 ### Defensive Design
 
