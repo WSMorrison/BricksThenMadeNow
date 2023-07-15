@@ -11,8 +11,6 @@ Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to ot
 
 <br>
 <hr>
-<br>
-<br>
 
 ## Contents
 
@@ -58,23 +56,62 @@ Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to ot
 
 <br>
 <hr>
-<br>
-<br>
 
 ## User Experience
 
 <hr>
 
-Portfolio Project 5 example
+Portfolio Project 5 is the culmination of the Code Institute "Diploma in Software Development (E-commerce Applications)" course. It is meant to showcase the student's ability to use all the major languages and frameworks covered in the course. By building an operational e-commerce platform, the student can show their proficiency in HTML, CSS, Javascript, Python, Django, Bootstrap, and others. 
 
 ### User Stories
 
-User Stories example
+- Customer can view available projects.
+  When accessing the items page, a customer is able to see a list of all available items. The list can be sorted by theme, searched by either the item number, item name, or description. The results of a list sorted by theme can be sorted by part count.
+
+- Customer can view detailed descriptions.
+  The customer can click on an item and view a more detailed description. The detail page includes a description, additional images, pricing for the Instructions, ModernSet, and Fullset, and the current inventory of each and if each is currently available.
+
+- Customer can decide what package is right for them.
+  The customer can view the pricing, the availability and what's included in each of the Skus, based on the Item description and the availability indicated on the item detail page. Questions they may have about what is included in the items is further explained on the about and FAQ page which is accessible from all pages of the site.
+
+- Customer can add items to cart.
+  Crucial to any e-commerce platform, users can become customers by adding items to a cart and making a purchase. On the item detail page, there are three add to cart buttons, which would add either the Instructions, the ModernSet, or the FullSet to the cart based on which they want. Adding either the ModernSet or the FullSet to the cart would disable the button to add the instructions, to prevent a customer from double purchasing.
+
+- Customer can see a running cart total.
+  In order for a customer to keep an eye on their spending, the cart in the top right corner will indicated if there are items in it and how much they would be charged to process the order.
+
+- Customer can make a purchase.
+  A customer can view their cart, decide that they are ready to buy, and with Stripe integration can pay for their purchase securely and quickly. The order will be committed to the database.
+
+- Customer can search or filter items.
+  From any of the pages, the user can use the search bar at the very top of the page. Not only will the search bar search the item names and descriptions, but it would search the item number as well, since the item number is based on the Lego item number of the vintage set. From a theme page, the customer can also filter All items, or the items of any theme (City, Space, Castle, Train, or MOC) by part count. This is also a defacto price sorting, since the prices are largely based on parts counts.
+
+- Customer can sign up for email marketing.
+  In the footer of all pages for unlogged in users is a button that will take the user to a form to sign up for marketing emails. The form will take the user name, email, and there are four checkboxes for the user to indicate their interests. Per GDPR rules, all these checkboxes are default unchecked and the customer has to opt in.
+
+- Customer can register an account.
+  The customer can register for an account. The account is useful for the user to save their information. The account is also necessary for a customer, because when they purchase any set, they gain access to downloadable instructions. By having an account, they can sign in and access those instructions without making additional payments.
+
+- Customer can log in and log out.
+  As part of having an account, the customer will be able to sign in and sign out of their account.
+
+- Customer can view past orders.
+  A customer will be able to view orders that they have made in the past. In the footer when a customer is logged in is a link to a separate page showing their order history.
+
+- Customer can view social media.
+  There will be a social media presence on both Facebook and Instagram
+
+- Staff can create or update items.
+  When a staff member is signed in, the nav bar will have options for the staff member to create a new item or sku. Each of the pages will include a form that will update the database with a new item or sku as appropriate. The item detail page will have bars at the bottom where the staff member can edit either the Item, or any of the associated Skus. The staff member will also be able to delete any of these, and there will be a confirmation page before the items are removed from the database.
+
+- Staff can encourage sign up.
+  Staff can encourage user sign up and customer conversion by setting a give away set of instructions. Currently, 2201489 Mobile Crane Car is the free instructions and will be downloadable by any logged in
+
+
+
 
 <br>
 <hr>
-<br>
-<br>
 
 ## Design
 <hr>
@@ -352,8 +389,6 @@ The site will also have a custom 404 page, which is also quite simple and will f
 
 </details>
 <hr>
-<br>
-<br>
 
 #### Mobile Wireframes
 <br>
@@ -476,13 +511,17 @@ Flowchart was built with [LucidChart.](https://lucid.app/lucidchart/)
 <hr>
 <br>
 
-Agile examples
+Agile techniques and technologies were used during the initial planning stages and then throughout the entire development process.
+
+GitHub's built in Issues and Projects functionalities were used. During initial planning, several User Stories were made as issues, and a couple Epic User Stories were made to track the bulk of them. This made it easy to track what was done, what needed to get done, and what was in the middle of doing. Of course, as with any project, several new issues were created to handle changing user stories, new functionalities, and to handle bugs as they were encountered. To orgainze these issues more, the issues were labeled as MVP, for Minimum Viable Product issues that must be completed for project submission, Styling, Documentation, Bugs, Testing, and Epic. This made it simple to filter the issues and see what needed to be done and prioritize issues based on development time available, similar to the agile technique of Timeboxing. An aditional label was crated, Quickwin, for feature implementation or bug fixes that were thought to require low time commitments, so that when development time was limited on any given day it was easy to find something that needed doing, or for when frustrations with larger issues were running high, some quantifyable progress could be made to provide momentum and avoid task burnout.
+
+There are several Enhancement labels still on the board in the Todo column, most of which are relics of the initial planning stages. These were made into future implementations after consultation with mentors and instructors when project scope was discussed.
+
+The HardParkers project hosted in GitHub can be found here. The Issues in the HardParkers repository can be found here.
 
 
 <br>
 <hr>
-<br>
-<br>
 
 ## Features
 <hr>
@@ -538,8 +577,6 @@ Accessibility examples
 
 <br>
 <hr>
-<br>
-<br>
 
 ## Search Engine Optmization
 <hr>
@@ -583,8 +620,6 @@ During planning, several short-tail keywords and long-tail phrases were focused 
 
 <br>
 <hr>
-<br>
-<br>
 
 ## Marketing
 <hr>
@@ -646,8 +681,6 @@ Also, various unconventional marketing techniques could be used. While new, Bric
 
 <br>
 <hr>
-<br>
-<br>
 
 ## E-Commerce Business Model
 <hr>
@@ -737,8 +770,6 @@ While Bricks Then Made Now is not competing with businesses like Amazon, the exp
 
 <br>
 <hr>
-<br>
-<br>
 
 ## Technologies Used
 <hr>
@@ -804,8 +835,6 @@ This project uses four programming languages.
 
 <br>
 <hr>
-<br>
-<br>
 
 ## Local Development and Deployment
 <hr>
@@ -824,8 +853,6 @@ Information on how to fork or clone the repository can be found in [the developm
 
 <br>
 <hr>
-<br>
-<br>
 
 ## Testing
 <hr>
@@ -834,8 +861,6 @@ Information on testing can be found in [the testing ReadMe](/TESTING.md)
 
 <br>
 <hr>
-<br>
-<br>
 
 ## Credits
 <hr>
