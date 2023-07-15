@@ -593,6 +593,102 @@ Each page necessarily has its own set of features.
   - If there is not FullSet Sku, nothing is displayed.
 - There is a back button that takes the user back to the items list.
 
+![Instructions in cart detail](/assets/readme-images/features/large-4-item-detail-in-cart.png)
+
+- If a customer adds any available Sku to their cart, the instructions are shown as in-cart because the instructions download is available with any purchase.
+
+![Item detail sold out detail](/assets/readme-images/features/large-12-sold-out.png)
+
+Items are sold out item detail detail, including the download button after a purchase has been made. A twofer!
+
+![Item detail coming soon detail](/assets/readme-images/features/large-13-coming-soon.png)
+
+Items coming soon item detail detail.
+
+![Staff user item and sku control bars detail](/assets/readme-images/features/large-11-staff-item-controls.png)
+
+- Logged in staff users can delete and edit items and skus directly from the item detail page.
+
+</details>
+
+<details>
+<summary>Cart page features</summary>
+<br>
+
+![Cart page](/assets/readme-images/features/large-5-cart.png)
+
+- The cart page has all the general page features.
+- The yellow bar indicates that the user is navigated to the shopping cart.
+- The cart shows all the items in the cart.
+  - The customer can change the quantity or remove the item from ther cart.
+  - The extended price is shown for each item, adjusted by its quantity.
+- The page shows the total number of items to ship. For example, three Instructions and five ModernSets will show five items to ship, even though eight items are in the cart.
+- There are buttons to return to shopping and going to checkout.
+
+</details>
+
+<details>
+<summary>Items page features</summary>
+<br>
+
+![Checkout page](/assets/readme-images/features/large-6-checkout.png)
+
+- The checkout page has all the general page features.
+- The yellow bar indicates that the user is navigated to checkout.
+- There is a small cart displaying to the left, to remind the customer what the heck they're spending all this money on. Toys. Oh boy, toys. Great. Maybe we should grow up.
+- To the right, there is a checkout form showing the shipping information information and payment form.
+- There is a checkbox that will add the shipping information to the SiteUser account.
+- There are buttons to return to shopping and process the payment.
+
+</details>
+
+<details>
+<summary>Items page features</summary>
+<br>
+
+![Checkout is happening page](/assets/readme-images/features/large-7-dont-touch.png)
+
+- There are no features.
+
+</details>
+
+<details>
+<summary>Items page features</summary>
+<br>
+
+![Success page](/assets/readme-images/features/large-8-success.png)
+
+- The success page has all the general page features.
+- The yellow bar indicates that the user is navigated to the checkout success page.
+- There is a message thanking the customer and telling them that their order was successful.
+- The return to shopping button was intentionally left off. If the customer is going to make another order, perhaps as a gift, they know how to do it. If they're all done, it's pretty condescending to have the page suggest they continue shopping, isn't it?
+
+</details>
+
+<details>
+<summary>Items page features</summary>
+<br>
+
+![Order history page](/assets/readme-images/features/large-9-order-history.png)
+
+- The order history page has all the general page features.
+- The yellow bar indicates that the user is navigated to the order history page.
+- The order history shows a list of orders made by the logged in account.
+- There is only one order here, but be assured, if this customer had made more orders, they would be there.
+
+</details>
+
+<details>
+<summary>Items page features</summary>
+<br>
+
+![Checkout page](/assets/readme-images/features/large-10-error404.png)
+
+- The error 404 page has all the general page features.
+- The yellow bar indicates that the user is navigated to a dangerous place!
+- The Lego version of the iconic Dennis Nedry mocking .gif mocks the user and tells them what a bad thing they did.
+- There is a button to return the customer to the items page.
+
 </details>
 
 <br>
@@ -930,6 +1026,7 @@ Information on testing can be found in [the testing ReadMe](/TESTING.md)
 - The rest of the images used for the "Old set" in the item listings are also from [Brickset](https://brickset.com/), from each set's Brickset listing. Some images were modified to fit the screen.
 - All computer generated Lego renders are done in [Stud.io.](https://www.bricklink.com/v3/studio/download.page)
 - "Scooty Puff Jr" model is named for a [Futurama](https://www.imdb.com/title/tt0149460/) gag, and is based on a simple design by [troublesbricking.](https://www.instagram.com/troublesbricking/).
+- The Lego Dennis Nedry mocking .gif image is from Lego set 75932 Jurassic Park Veloceraptor Chase, the image is from [Bricklink](https://www.bricklink.com/v2/catalog/catalogitem.page?P=75932stk01&C=0#T=C&C=0)
 - The "No image available" placeholder image is from [Stock Adobe.](https://stock.adobe.com/)
 - Terms of service is sampled from [www.websitepolicies.com.](https://www.websitepolicies.com/blog/sample-terms-service-template)
 - The Privacy Policy was generated by [Privacy Policy Generator.](https://www.privacypolicygenerator.info/)
