@@ -125,7 +125,6 @@ A project of even such a small scope as this requires careful planning before an
 
 <hr>
 
-
 ### Models
 <hr>
 <br>
@@ -252,14 +251,16 @@ This model is custom.
 <hr>
 <br>
 
-Wireframes were made to describe how the site would look on both large and mobile screens.
+Wireframes were made to describe how the site would look on both large and mobile screens before work began on the actual code. Many changes were made between planning and implementation. Most notably, the index page and the items page are different, but the items page features many of the planned implementations that the index page was initially meant to have. Other changes include the orientation of images on the detail pages and some of the form formatting.
 
 #### Large Screen Wireframes
 <br>
 
-![Index page on large screens.](/assets/readme-images/large-1-index.jpg)
+![Index page on large screens.](/assets/readme-images/wireframes/large-1-index.jpg)
 
-This wireframe of the index page shows the planned organization of the page. The site title, search bar and cart ling will remain at the very top of the screen, with a nav bar just below it. Below that is the splash image, with a planned carousel for specials or site news. The center of the page is dominated with a paginated list of all items, that the user can sort by price, or using the nav bar, can filter by theme. The bottom of the page has a footer that is visually distinct like the header. It will hold a form for users to sign up for the mailing list, feature related social media, and links to supporting documents like an FAQ and the T&Cs that suppor the site. Many of the header and footer aspects will carry through the rest of the site, but the splash image and carousel will be only visible on the index page.
+This wireframe of the index page shows the planned organization of the page. The site title, search bar and cart link will remain at the very top of the screen, with a nav bar just below it. Below that is the splash image, with a planned carousel for specials or site news. The center of the page is dominated with a list of all items that the user can sort by price, or using the nav bar, can filter by theme. The bottom of the page has a footer that is visually distinct like the header. It will hold a form for users to sign up for the mailing list, feature related social media, and links to supporting documents like an FAQ and the T&Cs that suppor the site. Many of the header and footer aspects will carry through the rest of the site, but the splash image and carousel will be only visible on the index page. 
+
+Some changes were ultimately made to the index page, most notably, the index page has a block of graphic links to each theme, instead of a list of items. The list of items shows up on the item page, which is more similar to the index page's initial plan.
 
 Other large screen wireframes can be seen below:
 
@@ -268,10 +269,22 @@ Other large screen wireframes can be seen below:
 <br>
 
 <details>
+<summary>Large screen product items page.</summary>
+<br>
+
+![Product detail page, large screen](/assets/readme-images/wireframes/large-1-index.jpg)
+
+The items page ended up almost exactly as the index page was planned, so it is included here. 
+
+The site title, search bar and cart link will remain at the very top of the screen, with a nav bar just below it. Below that is the splash image, with a planned carousel for specials or site news. The center of the page is dominated with a list of all items that the user can sort by price, or using the nav bar, can filter by theme. The bottom of the page has a footer that is visually distinct like the header. It will hold a form for users to sign up for the mailing list, feature related social media, and links to supporting documents like an FAQ and the T&Cs that suppor the site. Many of the header and footer aspects will carry through the rest of the site, but the splash image and carousel will be only visible on the index page.
+
+</details>
+
+<details>
 <summary>Large screen product detail page.</summary>
 <br>
 
-![Product detail page, large screen](/assets/readme-images/large-2-detail.jpg)
+![Product detail page, large screen](/assets/readme-images/wireframes/large-2-detail.jpg)
 
 The detail page will feature a large image displayed, with smaller images that can be selected below. The item description and other details will be featured to the right of the image, with space for buttons for the three different packages available related to each item.
 
@@ -281,7 +294,7 @@ The detail page will feature a large image displayed, with smaller images that c
 <summary>Large screen shopping cart page.</summary>
 <br>
 
-![Shopping cart page, large screen](/assets/readme-images/large-3-cart.jpg)
+![Shopping cart page, large screen](/assets/readme-images/wireframes/large-3-cart.jpg)
 
 The shopping cart page will list the items the customer has added, with a small image. It will also show selected details, including the price. There will be a quantity selector for physical items, and an extended price. Note, the quantity is set to one and is not selectable for the instructions only digital download. The page will also show the subtotal, shipping cost, and grand total. These will be lined up with the extended totals for consistency, and the checkout button will be directly below to encourage the customer to buy with a clear call to action.
 
@@ -291,7 +304,7 @@ The shopping cart page will list the items the customer has added, with a small 
 <summary>Large screen create item page.</summary>
 <br>
 
-![Create item page, large screen](/assets/readme-images/large-4-create-item.jpg)
+![Create item page, large screen](/assets/readme-images/wireframes/large-4-create-item.jpg)
 
 The form to add an item will have it's own page, with a simple form for staff to fill with each field in the item model.
 
@@ -301,7 +314,7 @@ The form to add an item will have it's own page, with a simple form for staff to
 <summary>Large screen create SKU page.</summary>
 <br>
 
-![Create SKU page, large screen](/assets/readme-images/large-5-create-sku.jpg)
+![Create SKU page, large screen](/assets/readme-images/wireframes/large-5-create-sku.jpg)
 
 The form to add an item's indivdual SKUs will have another page, which will allow the user to add an individual SKU suffix to the item number. The related item number will be chosen from a dropdown menue, as will the SKU suffix. The staff will be able to add information specific to each SKU including price, whether the SKU represents a phyical item, how many are inventory for sale, and what digital instructions would be included with the physical items.
 
@@ -311,7 +324,7 @@ The form to add an item's indivdual SKUs will have another page, which will allo
 <summary>Large checkout success page.</summary>
 <br>
 
-![Checkout success page, large screen](/assets/readme-images/large-6-success.jpg)
+![Checkout success page, large screen](/assets/readme-images/wireframes/large-6-success.jpg)
 
 The success page is a simple page indicating that the purchase was successful, with a button to return the user to the index page.
 
@@ -321,7 +334,7 @@ The success page is a simple page indicating that the purchase was successful, w
 <summary>Large screen information item pages</summary>
 <br>
 
-![Information pages, large screen](/assets/readme-images/large-7-infopages.jpg)
+![Information pages, large screen](/assets/readme-images/wireframes/large-7-infopages.jpg)
 
 The pages for the FAQ, shipping information, Terms and Conditions, Terms of Service (if applicable) will all be very similar; just extending the base, index template.
 
@@ -331,7 +344,7 @@ The pages for the FAQ, shipping information, Terms and Conditions, Terms of Serv
 <summary>Large screen error 404 item page</summary>
 <br>
 
-![Error 404 page, large screen](/assets/readme-images/large-8-404.jpg)
+![Error 404 page, large screen](/assets/readme-images/wireframes/large-8-404.jpg)
 
 The site will also have a custom 404 page, which is also quite simple and will feature a button to return the user to the index page.
 
@@ -345,9 +358,11 @@ The site will also have a custom 404 page, which is also quite simple and will f
 #### Mobile Wireframes
 <br>
 
-![Index page on mobile screens.](/assets/readme-images/mobile-1-index.jpg)
+![Index page on mobile screens.](/assets/readme-images/wireframes/mobile-1-index.jpg)
 
-The mobile index page will be similar in structure to the large screen page, except the paginated list of items will be stacked instead of stacks of rows. It will contain the same information, as well as the the sort and filter functionalities as the large screen page.
+The mobile index page will be similar in structure to the large screen page, except the list of items will be stacked instead of stacks of rows. It will contain the same information, as well as the the sort and filter functionalities as the large screen page. 
+
+Similarly to the larger screen pages, this function became an items page, while the index page holds a block of themed links.
 
 Other large screen wireframes can be seen below:
 
@@ -356,10 +371,22 @@ Other large screen wireframes can be seen below:
 <br>
 
 <details>
+<summary>Mobile product items page.</summary>
+<br>
+
+![Product detail page, mobile](/assets/readme-images/wireframes/mobile-1-index.jpg)
+
+Just as before with larger screens, the items page became what the index page was initially intended to be. 
+
+The mobile index page will be similar in structure to the large screen page, except the list of items will be stacked instead of stacks of rows. It will contain the same information, as well as the the sort and filter functionalities as the large screen page. 
+
+</details>
+
+<details>
 <summary>Mobile product detail page.</summary>
 <br>
 
-![Product detail page, mobile](/assets/readme-images/mobile-2-detail.jpg)
+![Product detail page, mobile](/assets/readme-images/wireframes/mobile-2-detail.jpg)
 
 Continuing with the similar structure and equal functionality, the detail page will be slightly differently organzied, with the three small images below both the larger image and the description. The purchase options will be below the entirety of the description and images, to allow as much room as possible for the add to cart buttons to make it easy for customers to add items to the cart. Note that again, the splash image and news carousel will be omitted, but the navbar and shopping cart will remain at the top of the page.
 
@@ -369,7 +396,7 @@ Continuing with the similar structure and equal functionality, the detail page w
 <summary>Mobile shopping cart page.</summary>
 <br>
 
-![Shopping cart page, mobile](/assets/readme-images/mobile-3-cart.jpg)
+![Shopping cart page, mobile](/assets/readme-images/wireframes/mobile-3-cart.jpg)
 
 The shopping cart page will maintain the structure of keeping the totals to the right, in line, and lined up with the checkout button.
 
@@ -379,7 +406,7 @@ The shopping cart page will maintain the structure of keeping the totals to the 
 <summary>Mobile create item page.</summary>
 <br>
 
-![Create item page, mobile](/assets/readme-images/mobile-4-create-item.jpg)
+![Create item page, mobile](/assets/readme-images/wireframes/mobile-4-create-item.jpg)
 
 Though it's unlikely the site staff will be adding items from a mobile device, there will be a mobile friendly version of the form.
 
@@ -389,7 +416,7 @@ Though it's unlikely the site staff will be adding items from a mobile device, t
 <summary>Mobile create SKU page.</summary>
 <br>
 
-![Create SKU page, mobile](/assets/readme-images/mobile-5-create-sku.jpg)
+![Create SKU page, mobile](/assets/readme-images/wireframes/mobile-5-create-sku.jpg)
 
 Though it's unlikely the site staff will be adding items from a mobile device, there will be a mobile friendly version of the form.
 
@@ -399,7 +426,7 @@ Though it's unlikely the site staff will be adding items from a mobile device, t
 <summary>Mobile checkout success page.</summary>
 <br>
 
-![Checkout success page, mobile](/assets/readme-images/mobile-6-success.jpg)
+![Checkout success page, mobile](/assets/readme-images/wireframes/mobile-6-success.jpg)
 
 The success page is a simple page indicating that the purchase was successful, with a button to return the user to the index page.
 
@@ -409,7 +436,7 @@ The success page is a simple page indicating that the purchase was successful, w
 <summary>Mobile information item pages.</summary>
 <br>
 
-![Information pages, mobile](/assets/readme-images/mobile-7-infopages.jpg)
+![Information pages, mobile](/assets/readme-images/wireframes/mobile-7-infopages.jpg)
 
 The pages for the FAQ, shipping information, Terms and Conditions, Terms of Service (if applicable) will all be very similar; just extending the base, index template.
 
@@ -419,7 +446,7 @@ The pages for the FAQ, shipping information, Terms and Conditions, Terms of Serv
 <summary>Mobile error 404 item page.</summary>
 <br>
 
-![Error 404 page, mobile](/assets/readme-images/mobile-8-404.jpg)
+![Error 404 page, mobile](/assets/readme-images/wireframes/mobile-8-404.jpg)
 
 The site will also have a custom 404 page, which is also quite simple and will feature a button to return the user to the index page.
 
@@ -439,14 +466,7 @@ Wireframes were built in [Balsamiq's online application.](https://balsamiq.cloud
 
 A flowchart was developed to track a user or staff member's movement through the site. Their actions ultimately effect the database that stores not only information about the items available, but information about what a customer has purchased. This is important, because some of the purchases are of digital goods which remain available for download on the site when the customer is logged in.
 
-<details>
-<summary>Bricks Then Made Now development flowchart.</summary>
-<br>
-
-![HardParkers Flowchart](/assets/readme-images/flowchart.jpg)
-
-</details>
-<br>
+![Bricks Then Made Now Flowchart](/assets/readme-images/flowchart.jpg)
 
 Flowchart was built with [LucidChart.](https://lucid.app/lucidchart/) 
 <hr>
