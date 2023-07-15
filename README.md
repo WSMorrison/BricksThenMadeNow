@@ -2,12 +2,12 @@
 
 Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to other Lego fans. The site will appeal to adult followers of Lego (AFOL), by reimagining vintage Lego from the 1970s, '80s, and '90s with modern elements and contemporary design techniques.
 
-![Front page of Bricks Then Made Now as input to AmIResponsive.](#)
+![Front page of Bricks Then Made Now as input to AmIResponsive.](/assets/readme-images/am-i-responsive.png)
 
 [AmIResponsive](https://ui.dev/amiresponsive)
 
-### The site, deployed to Heroku, can be found here: [Bricks Then Made Now](#)
-#### The repository in GitHub can be found here: [WSMorrison/bricksthenmadenow](#)
+### The site, deployed to Heroku, can be found here: [Bricks Then Made Now](https://bricks-then-made-now-5bd876713bd4.herokuapp.com/)
+#### The repository in GitHub can be found here: [WSMorrison/bricksthenmadenow](https://github.com/WSMorrison/BricksThenMadeNow)
 
 <br>
 <hr>
@@ -82,25 +82,37 @@ User Stories example
 
 ### Colour Scheme
 
-Color scheme example
+Bricks Then Made now uses a simple, direct color scheme. The text is dark grays, nearly black, on a grouping of background colors that ar similar light gray, nearly white. The title is composed of colors similar to the ones Lego uses on their website, promotional materials and packaging. These colors are carried through the site, also being used on buttons, overlays, and image placeholders.
 
-The Color scheme was developed with help from [Color Shades Online Generator](https://gradients.app/en/shades)
+![Background colors](/assets/readme-images/colors-background.jpg)<br>
+The background colors are simple, and light gray. They are just intended to help organize the page into sections, so the customer can see clearly what they are looking at.
 
-![Example Bootswatch Spacelab colorscheme](/assets/readme-images/BootswatchSpacelab.png)
+![Text colors](/assets/readme-images/colors-text.jpg)<br>
+The text colors are nearly black. The main color is essentially black, while muted is a dark gray different enough to indicated a difference in content.
 
-[Bootswatch Spacelab](https://bootswatch.com/spacelab/)
+![Accent colors](/assets/readme-images/colors-accent.jpg)<br>
+The accent colors are similar to those used by Lego. They are used in the title, for design reasons. The yellow color is used in selected buttons, like the buttons that add items to cart or process payment, to indicated urgency and call the user to action. It is also used in the payment handling overlay. The blue color is used on image place holders, and also used to replace the native blue color used by links. The red is only used around the item and sku deletion buttons on the item detail page, when staff is logged in. The yellow is also used similarly for the edit buttons. When these colors are used for anything other than text, the are used at a level of transparancy to limit their intensity.
+
+The Color scheme was developed with help from [Color Contrast Checker](https://coolors.co/contrast-checker/), [Color Shades Online Generator](https://gradients.app/en/shades/), and [Coolers.](https://coolors.co/)
 
 ### Typography
 
-Typography example
+![Font example](/assets/readme-images/text-fonts.png)
 
-![Bebas Neue font from Google Fonts](/assets/readme-images/BebasNeue.png)
+The typography was chosen primarily for clarity. Mina is the basic font used for the majority of the text on the page. It is a clear but distinct font. Vina and Staatliches are used for the title. Vina, with the strange formatting and mixing of upper and lower case characters seems more vintage, to evoke the old sets; while Staatliches is slick and modern, evoking the smooth computer renders and contemporary styling of the modern sets.
 
-[Bebas Neue, Google Fonts](https://fonts.google.com/specimen/Bebas+Neue)
+[Vina, Google Fonts](https://fonts.google.com/specimen/Vina+Sans)<br>
+[Mina, Google Fonts](https://fonts.google.com/specimen/Mina)<br>
+[Staatliches, Google Fonts](https://fonts.google.com/specimen/Staatliches)<br>
 
 ### Imagery
 
 The imagery on the website was intentionally kept simple. This is to highlight the products available. It was decided that the overall look of the site should keep with the computer generated renders of the Lego sets. This meant the colors and the graphics were kept simple and flat, with few highlights but highlights where necessary. There was consideration about using the splash image that mixes a real image of an old set with a rendered image of a modern equivalent, but ultimately this was decided to go well with the item detail pages that display an image of the old sets next to renders the modern equivalents for sale. This maintains a visual throughline that also appeals to a customer's nostalgia.
+
+![Bricks Then Made Now index](/assets/readme-images/imagery.png)<br>
+The index page showing the mix of photos of vintage Lego, and renders of modern Lego. 
+
+The photograph is from [Brickset](https://brickset.com/), and the renders were made in [Stud.io](https://www.bricklink.com/v3/studio/download.page)
 
 <br>
 <hr>
@@ -606,6 +618,12 @@ The Instagram presence is real and live now, [here.](https://www.instagram.com/b
 
 </details>
 
+Small business like this can be well served by marketing across many platforms. Not only would the site have a presence on Facebook and Instagram, but it would also advertise on these platforms. This would allow ads to be targeted at appropriate users who are engaging with other Lego content, or who are within the age ranged Bricks Then Made Now intends to sell to. Google ads, and specifically YouTube ads targeting videos of Lego, related content, and even general hobby content would be helpful in engaging new customers. 
+
+Bricks Then Made Now would also be able to market by engaging with online content creators on social media. Having AFOL on Instagram, TikTok, YouTube, Facebook, Twitter, and Threads use or highlight BTMN models would help generate interest, viewers, clicks and sales. There could also be colaboration between BTMN and these creators. BTMN could also collaborate with existing business in the Lego space, for example collaborating with [Brick Sticker Shop](https://www.brickstickershop.com/) could be beneficial for both. Through selling custom sticker sets linked to BTMN instructions, pack-ins of customer stickers in ModernSets, or pack-ins of restoration sticker sets with FullSets, Brick Sticker Shop could build on BTMN success, and with custom or restoration stickers available on Bricks Then Made Now, a mew product line could be added and the fidelity of existing produt lines could be improved.
+
+Also, various unconventional marketing techniques could be used. While new, Bricks Then Made Now could have an eBay store, where they could sell defects, prototypes and incomplete models at a discount. Bricks Then Made Now could be a seller as well as a buyer on Bricklink, allowing excess brick to be sold off so that costs weren't being sunk into dead stock. Both of these would be revenue streams, but would have the added marketing effect of getting Bricks Then Made Now in front of customers who are already willing to spend money, and are doing so on other, established platforms. This is a common practice among small, boutique, hobby focused shops and would be very helpful for Bricks Then Made Now.
+
 <br>
 <hr>
 <br>
@@ -729,6 +747,7 @@ This project uses four programming languages.
 - [Cloudinary](https://cloudinary.com/)
 - [Color Contrast Checker](https://coolors.co/contrast-checker/)
 - [Color Shates Online Generator](https://gradients.app/en/shades/)
+- [Coolers](https://coolors.co/)
 - [Elephant SQL](https://www.elephantsql.com/)
 - [Favicon.io](https://favicon.io/)
 - [GitHub](https://github.com/)
