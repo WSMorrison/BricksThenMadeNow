@@ -84,7 +84,7 @@ Portfolio Project 5 is the culmination of the Code Institute "Diploma in Softwar
   A customer can view their cart, decide that they are ready to buy, and with Stripe integration can pay for their purchase securely and quickly. The order will be committed to the database.
 
 - Customer can search or filter items.<br>
-  From any of the pages, the user can use the search bar at the very top of the page. Not only will the search bar search the item names and descriptions, but it would search the item number as well, since the item number is based on the Lego item number of the vintage set. From a theme page, the customer can also filter All items, or the items of any theme (City, Space, Castle, Train, or MOC) by part count. This is also a defacto price sorting, since the prices are largely based on parts counts.
+  From any of the pages, the user can use the search bar at the very top of the page. Not only will the search bar search the item names and descriptions, but it would search the item number as well, since the item number is based on the Lego item number of the vintage set. From a theme page, the customer can also filter All items, or the items of any theme (City, Space, Castle, Train, or MOC) by part count. This is also a defacto price sorting, since the prices are largely based on parts counts but there are up to three differently prices Skus per Item.
 
 - Customer can sign up for email marketing.<br>
   In the footer of all pages for unlogged in users is a button that will take the user to a form to sign up for marketing emails. The form will take the user name, email, and there are four checkboxes for the user to indicate their interests. Per GDPR rules, all these checkboxes are default unchecked and the customer has to opt in.
@@ -107,10 +107,6 @@ Portfolio Project 5 is the culmination of the Code Institute "Diploma in Softwar
 - Staff can encourage sign up.<br>
   Staff can encourage user sign up and customer conversion by setting a give away set of instructions. Currently, 2201489 Mobile Crane Car is the free instructions and will be downloadable by any logged in
 
-
-
-
-<br>
 <hr>
 
 ## Design
@@ -150,8 +146,6 @@ The imagery on the website was intentionally kept simple. This is to highlight t
 The index page showing the mix of photos of vintage Lego, and renders of modern Lego. 
 
 The photograph is from [Brickset](https://brickset.com/), and the renders were made in [Stud.io](https://www.bricklink.com/v3/studio/download.page)
-
-<br>
 <hr>
 
 ## Planning
@@ -282,7 +276,6 @@ This model is custom.
 
 <br>
 <hr>
-<br>
 
 ### Wireframes
 <hr>
@@ -493,7 +486,6 @@ The site will also have a custom 404 page, which is also quite simple and will f
 
 Wireframes were built in [Balsamiq's online application.](https://balsamiq.cloud/)
 <hr>
-<br>
 
 ### Flowchart
 <hr>
@@ -505,7 +497,6 @@ A flowchart was developed to track a user or staff member's movement through the
 
 Flowchart was built with [LucidChart.](https://lucid.app/lucidchart/) 
 <hr>
-<br>
 
 ### User Stories and Agile Technologies
 <hr>
@@ -522,8 +513,6 @@ Agile techniques and technologies were used during the initial planning stages a
 There are several Enhancement labels still on the board in the Todo column, most of which are artifacts of the initial planning stages. These were made into future implementations after consultation with mentors and instructors when project scope was discussed.
 
 The Bricks Then Made Now repository hosted in GitHub can be found [here](https://github.com/WSMorrison/BricksThenMadeNow). The Issues in the Bricks Then Made Now repository can be found [here.](https://github.com/WSMorrison/BricksThenMadeNow/issues). The Bricks Then Made Now project and Kanban board can be found [here.](https://github.com/users/WSMorrison/projects/6)
-
-<br>
 <hr>
 
 ## Features
@@ -578,7 +567,6 @@ Colors were checked for contrast during development using Coolers' [Color Contra
 
 Accessibility examples
 
-<br>
 <hr>
 
 ## Search Engine Optmization
