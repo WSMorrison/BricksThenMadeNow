@@ -158,6 +158,11 @@ body {
     font-size: 2rem;
 }
 
+.centering {
+    display: flex;
+    justify-content: center;
+}
+
 /* Index card styling rules */
 .index-title {
     font-family: 'Vina Sans', sans-serif;
@@ -463,7 +468,7 @@ footer {
     text-decoration: none;
 }
 
-/* Checkout form */
+/* Checkout form styling rules */
 .form-box {
     width: 100%;
 }
@@ -549,8 +554,12 @@ footer {
     justify-content: space-between
 }
 
-/* Toasts area */
+/* Product creation and deletion and edition styling rules */
+.urgent-words {
+    color: rgb(var(--title-contrast));
+}
 
+/* Toasts styling rules */
 #message {
     position: absolute;
     top: -1.5rem;

@@ -6,28 +6,15 @@
           <div class="footer-box">
             <div id="signup-box input-group form-horizontal">
               {% if user.is_authenticated %}
+                <h4>Your Account</h4>
+                <hr>
                 <a class="nav-link" href="{% url 'siteuser_profile' %}" aria-label="Link to user account details.">My Account</a>
                 <a class="nav-link" href="{% url 'siteuser_order_history' %}" aria-label="Link to user order history.">My Order History</a>
               {% else %}
-
                 <h4>Sign Up!</h4>
                 <hr>
                 <p>Sign up and recieve emails<br>about specials, news, and fun!</p>
-
                 <a class="button-13" href="{% url 'newsletter_signup' %}" aria-label="Link to newsletter signup">Signup!</a>
-
-                <!---<form id="new_email_form" method="POST" action="#">
-                  {% csrf_token %}
-                  <input id="newsletter-email" class="newsletter-input" type="email" placeholder="Your Email" required>
-                  <input id="newsletter-name" class="newsletter-input" type="text" placeholder="Your Name" required>
-                  <p>Send me updates about:</p>
-                  <input id="newsletter-city" class="form-check-input ml-2 mr-0 checkbox-not-blue inline" type="checkbox" name="city" checked>
-                  <input id="newsletter-space" class="form-check-input ml-2 mr-0 checkbox-not-blue inline" type="checkbox" name="space" checked>
-                  <input id="newsletter-castle" class="form-check-input ml-2 mr-0 checkbox-not-blue inline" type="checkbox" name="castle" checked>
-                  <input id="newsletter-train" class="form-check-input ml-2 mr-0 checkbox-not-blue inline" type="checkbox" name="train" checked>
-                </form>
-                <button id="newletter-submit" class="button-13 mt-2 new_email_form" type="submit">Sign Up!</button-->
-
                 <p class="smol mt-3 mb-0">This signs you up for our letter. Use the link<br>at the top of the page to sign up for an account.</p>
                 <hr class="d-md-none">
               {% endif %}
@@ -50,9 +37,9 @@
             <div>
               <h4>Support</h4>
               <hr>
-              <a class="nav-link" href="{% url 'privacy' %}" aria-label="Link to shipping information.">Privacy Policy</a>
               <a class="nav-link" href="{% url 'faq' %}" aria-label="Link to Bricks Then Made Now about page.">FAQ</a>
               <a class="nav-link" href="{% url 'terms' %}" aria-label="Link to Bricks Then Made Now Terms of Service.">TOS</a>
+              <a class="nav-link" href="{% url 'privacy' %}" aria-label="Link to shipping information.">Privacy Policy</a>
             </div>
           </div>
         </section>

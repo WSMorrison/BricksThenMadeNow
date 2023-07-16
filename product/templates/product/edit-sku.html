@@ -25,6 +25,7 @@
                             <form method="POST" action="{% url 'edit_sku' sku.id %}" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="form-input strong-words">Sku item: {{ sku.sku_item }}</div>
+                            <div class="form-input d-none">{{ form.sku_item }}</div>
                             <p>Sku item cannot be edited</p>
                             <hr>
                             <div class="form-input">{{ form.sku_number }}</div>
@@ -35,6 +36,7 @@
                             <p>Numbers may be set differently<br>for revisions or specials.</p>
                             <hr>
                             <div class="form-input strong-words">Sku type: {{ sku.sku_type }}</div>
+                            <div class="form-input d-none">{{ form.sku_type }}</div>
                             <p>Sku type cannot be edited.</p>
                             <hr>
                             <div class="form-input">{{ form.sku_price }}</div>

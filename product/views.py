@@ -165,7 +165,7 @@ def edit_item(request, item_id):
             messages.success(request, 'Item record updated.')
             return redirect(reverse('item_detail', args=[item_id]))
         else:
-            message.error(request, 'Item update FAILED.')
+            messages.error(request, 'Item update FAILED.')
     
     else:
         form = ItemForm(instance=item)
@@ -196,7 +196,7 @@ def edit_sku(request, sku_id):
             messages.success(request, 'Sku record updated.')
             return redirect(reverse('item_detail', args=[item_id]))
         else:
-            message.error(request, 'Sku update FAILED.')
+            messages.error(request, 'Sku update FAILED.')
 
     else:
         form = SkuForm(instance=sku)
