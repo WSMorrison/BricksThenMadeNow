@@ -16,12 +16,6 @@ def add_to_cart(request, sku_id):
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
 
-    if sku_id in list(cart.keys()):
-        cart[sku_id] += quantity
-    else:
-        cart[sku_id] = quantity
-        messages.success(request, f'Added {sku.sku_number} successfully.')
-
     item_added = sku.sku_item
     try:
         danger_sku = Sku.objects.get(sku_item=item_added, sku_type='inst')
@@ -35,6 +29,12 @@ def add_to_cart(request, sku_id):
         cart[str(danger_sku.id)] = 0
         print('Instructions removed.')
         messages.success(request, "Instructions removed from cart.")
+
+    if sku_id in list(cart.keys()):
+        cart[sku_id] += quantity
+    else:
+        cart[sku_id] = quantity
+        messages.success(request, f'Added {sku.sku_number} successfully.')
 
     request.session['cart'] = cart
 
