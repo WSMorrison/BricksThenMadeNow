@@ -51,11 +51,13 @@
                         <div class="item-card row">
                             <div class="col-12 col-sm-6">
                                 <div class="h-100">
-                                    {% if item.item_render %}
-                                        <img class="img-fluid" src="{{ item.item_render.url }}" alt="{{ item.item_name }}">
-                                    {% else %}
-                                        <img class="img-fluid" src="{% static 'media/no-image.png' %}" alt="No image available">
-                                    {% endif %}
+                                    <a href="{% url 'item_detail' item.id %}" aria-label="Link to view item deails.">
+                                        {% if item.item_render %}
+                                            <img class="img-fluid" src="{{ item.item_render.url }}" alt="{{ item.item_name }}">
+                                        {% else %}
+                                            <img class="img-fluid" src="{% static 'media/no-image.png' %}" alt="No image available">
+                                        {% endif %}
+                                    </a>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 wide">
