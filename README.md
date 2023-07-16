@@ -811,7 +811,18 @@ The additional features, such as the "In Cart" button, "Sold Out" buttons and st
 
 ### Defensive Design
 
-Defensive design examples
+As with any web application, defensive code is necessary to make sure the page can continue working even during real world usage. Customers and staff both can cause issues with the database by passing bad information. With an e-commerce platform, the issue could be worse than an error 404 or 500, but could cause issues that would charge customers for things they don't receive or ship them items they didn't pay for. Because of this, it is particularly import to consider defensive design throughout the website to ensure that things work not only properly, but smoothly. 
+
+Many defensive features are native to Django forms, like stripping whitespace from CharFields and TextFields and making sure a URL or email address at least follows the standard formats.
+
+When a customer signs up, they are challenged in a handful of ways.
+- The email address cannot be blank, and must include an @ symbol with valid characters before and after, and must match with two inputs.
+- The username cannot be blank or include trailing or trailing whitespate, and must be at least four valid characters long.
+- The password must be at least 8 valid characters long, is not allowed to be all letters or all numbers, mustn't be too similar to the user name, and must match twice, and may not be "too common."
+
+Once logged in, there are challenges in the account details form if the customer wishes to fill that form out.
+
+
 
 
 <br>

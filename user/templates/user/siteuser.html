@@ -23,7 +23,6 @@
     <section class="container">
         <div class="row centering">
             <div class="col-12 col-lg-6">
-                <div>
                 <h3 class="strong-words">Welcome back, {{ siteuser }}</h3>
                     <div class="card shadow">
                         <div class="card-body">
@@ -45,9 +44,9 @@
                                     </div>
                                     <div class="form-input">{{ siteuser_form.siteuser_street_address1 }}</div>
                                     <div class="form-input">{{ siteuser_form.siteuser_street_address2 }}</div>
-                                    <span id="id_town_or_city"  class="form-input">{{ siteuser_form.siteuser_town_or_city }}</span>
-                                    <span id="id_state" class="form-input">{{ siteuser_form.siteuser_state }}</span>
-                                    <span id="id_zipcode" class="form-input">{{ siteuser_form.siteuser_zipcode }}</span>
+                                    <span id="id_town_or_city">{{ siteuser_form.siteuser_town_or_city }}</span>
+                                    <span id="id_state">{{ siteuser_form.siteuser_state }}</span>
+                                    <span id="id_zipcode">{{ siteuser_form.siteuser_zipcode }}</span>
                                     <div class="form-input">{{ siteuser_form.siteuser_country}}</div>
                                 </div>
                                 <button class="button-13 urgent-button">Update</button>
@@ -57,6 +56,6 @@
                 </div>
             </div>
         </div>
-</section>  
+    </section>  
 
 {% endblock %}

@@ -3,16 +3,35 @@
 {% load i18n %}
 {% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
 
-{% block content %}
+{% block page_header %}
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h1>{% trans "Verify Your E-mail Address" %}</h1>
-
-            <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. If you do not see the verification e-mail in your main inbox, check your spam folder. Please contact us if you do not receive the verification e-mail within a few minutes.{% endblocktrans %}</p>
+    <div class="container p-0 info-bar shadow">
+        <div class="row">
+            <div class="col">
+                <div class="navbar navbar-expand items-bar">
+                    <div class="collapse navbar-collapse">
+                        <p class="ml-4 mt-3 mb-3 strong-words">Confirmation Email Sent</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+        <div class="col-12 col-md-6 mx-auto">
+            <div id="item-detail" class="card shadow">
+                <div class="card-body">
+                    <h1>{% trans "Verify Your E-mail Address" %}</h1>
+                    <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. If you do not see the verification e-mail in your main inbox, check your spam folder. Please contact us if you do not receive the verification e-mail within a few minutes.{% endblocktrans %}</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
 
 {% endblock %}

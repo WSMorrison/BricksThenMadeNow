@@ -500,16 +500,19 @@ footer {
 
 #id_town_or_city {
     width: 50%;
+    display: inline;
 }
 
 #id_state {
     width: 40%;
     margin-left: 1rem;
+    display: inline;
 }
 
 #id_zipcode {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     width: 50%;
+    display: inline;
 }
 
 #id_country {
@@ -861,16 +864,19 @@ input[type=number] {
     
     #id_town_or_city {
         width: 50%;
+        display: inline;
     }
     
     #id_state {
         width: 15%;
         margin-left: 1rem;
+        display: inline;
     }
     
     #id_zipcode {
         width: 28%;
         margin-left: 1rem;
+        display: inline;
     }
     
     #id_country {
