@@ -19,7 +19,7 @@ Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to ot
 - [User Experience](#user-experience)
   - [User Stories](#user-stories)
 - [Design](#design)
-  - [Colour Scheme](#colour-scheme)
+  - [Color Scheme](#colour-scheme)
   - [Typography](#typography)
   - [Imagery](#imagery)
 - [Planning](#planning)
@@ -31,16 +31,24 @@ Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to ot
   - [User Stories and Agile Technologies](#user-stories-and-agile-technologies)
 - [Features](#features)
   - [General Features on All Pages](#general-features-on-all-pages)
-  - [Features of Individual Pages](#features-of-individual-pages)
+  - [Features of Individual Large Screen Pages](#features-of-individual-large-screen-pages)
+  - [Features of Individual Small Screen Pages](#features-of-individual-small-screen-pages)
   - [Defensive Design](#defensive-design)
   - [Future Implementations](#future-implementations)
   - [Accessibility](#accessibility)
+- [Search Engine Optimization](#search-engine-optmization)
+- [Marketing](#marketing)
+  -[Facebook](#facebook)
+  -[Instagram](#instagram)
+- [E-Commerce Business Model](#e-commerce-business-model)
+  - [Customers](#customers)
+  - [Pricing](#pricing)
+  - [Shipping](#shipping)
 - [Technologies Used](#technologies-used)
   - [Languages Used](#languages-used)
   - [Frameworks & Libraries Used](#frameworks--libraries-used)
   - [Programs Used](#programs-used)
 - [Local Development and Deployment](#local-development-and-deployment)
-  - [Note On Commit History](#note-on-commit-history)
   - [Local Development](#local-development)
   - [Deployment](#deployment)
   - [How to Fork or Clone](#how-to-fork-or-clone)
@@ -113,7 +121,7 @@ Portfolio Project 5 is the culmination of the Code Institute "Diploma in Softwar
 <hr>
 <br>
 
-### Colour Scheme
+### Color Scheme
 
 Bricks Then Made now uses a simple, direct color scheme. The text is dark grays, nearly black, on a grouping of background colors that ar similar light gray, nearly white. The title is composed of colors similar to the ones Lego uses on their website, promotional materials and packaging. These colors are carried through the site, also being used on buttons, overlays, and image placeholders.
 
