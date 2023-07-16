@@ -91,6 +91,9 @@ Portfolio Project 5 is the culmination of the Code Institute "Diploma in Softwar
 - Customer can make a purchase.<br>
   A customer can view their cart, decide that they are ready to buy, and with Stripe integration can pay for their purchase securely and quickly. The order will be committed to the database.
 
+- Customer can download instructions after purchase.<br>
+  A customer can click a button on the item detail page of any item they have purchased, and download a PDF of the set instructions. Of course, if they purchase a physical product, there will be paper instructions sent. But if they don't, or if they can't wait or if they lose them, the isntructions will be available on the website any time they log in.
+
 - Customer can search or filter items.<br>
   From any of the pages, the user can use the search bar at the very top of the page. Not only will the search bar search the item names and descriptions, but it would search the item number as well, since the item number is based on the Lego item number of the vintage set. From a theme page, the customer can also filter All items, or the items of any theme (City, Space, Castle, Train, or MOC) by part count. This is also a defacto price sorting, since the prices are largely based on parts counts but there are up to three differently prices Skus per Item.
 
@@ -607,7 +610,7 @@ If a customer adds any available Sku to their cart, the instructions are shown a
 
 ![Item detail sold out detail](/assets/readme-images/features/large-12-sold-out.png)
 
-Items are sold out item detail detail, including the download button after a purchase has been made. A twofer!
+Items are sold out item detail detail. Also shown here is the download button, where a customer can download the instructions of the items they have purchased. This is actually the crux of the entire website, and is very important.
 
 ![Item detail coming soon detail](/assets/readme-images/features/large-13-coming-soon.png)
 
@@ -856,7 +859,15 @@ When editing items, some additional safeguards are necessary.
 
 ### Future Implementations
 
-Future implementations example
+As with any website, or any project, there are always future implemenations to be considered.
+
+- An additional navigable tab for sales or other kinds of specials, in addition to City, Space, Castle, Train and Moc would be a handy way for the business to list any specials or promotions going, or an ability to sell seconds and incomplete sets at appropriate discounts.
+- It would be handy for there to a database model that could include a shipping pricing, whichever free-to-download-set was currently linked to the Free-instructions with signup promotion. This model would be not just admin, but front end editable so that staff members wouldn't have to deal with settings or code.
+- An early iteration on the site allowed customers to be charged shipping as a flat rate based on the number of shippable items purchased. Passing this charge from the context to the Order Model proved beyond this development period's scope, and this will be implemented in the future.
+- Additionally, there is room in the item model for a fourth image, as well as URLs for the images. The additional image and the URLs to very large images would give the customer more detail about what they can expect from their purchase.
+- Since customers need to sign up for an account to download their instructions, it would be handy to have a wish list feature, especially as the product base grows.
+
+
 
 ### Accessibility
 
