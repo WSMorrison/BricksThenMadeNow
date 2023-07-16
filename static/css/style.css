@@ -170,21 +170,42 @@ body {
 }
 
 .index-card-light {
-    background-color: rgb(var(--title-very-contrast), 0.85);
+    background-color: rgba(var(--title-very-contrast), 0.75);
+    height: 27rem;
+    width: 35rem;
+    overflow: hidden;
+}
+
+.index-card-light:hover {
+    background-color: rgb(var(--title-very-contrast));
     height: 27rem;
     width: 35rem;
     overflow: hidden;
 }
 
 .index-card-dark {
-    background-color: rgb(var(--title-color), 0.85);
+    background-color: rgba(var(--title-color), 0.75);
+    height: 27rem;
+    width: 35rem;
+    overflow: hidden;
+}
+
+.index-card-dark:hover {
+    background-color: rgb(var(--title-color));
     height: 27rem;
     width: 35rem;
     overflow: hidden;
 }
 
 .index-card-admin {
-    background-color: rgba(var(--text-color-muted), 0.85);
+    background-color: rgba(var(--text-color-muted), 0.75);
+    height: 27rem;
+    width: 35rem;
+    overflow: hidden;
+}
+
+.index-card-admin:hover {
+    background-color: rgb(var(--text-color-muted));
     height: 27rem;
     width: 35rem;
     overflow: hidden;
@@ -302,6 +323,10 @@ footer {
     padding-left: 0;
     padding-right: 0;
     margin-left: 0rem;
+}
+
+.opacity-hover:hover {
+    opacity: 0.75;
 }
 
 /* Item detail view styling rules */

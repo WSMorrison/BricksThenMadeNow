@@ -53,9 +53,9 @@
                                 <div class="h-100">
                                     <a href="{% url 'item_detail' item.id %}" aria-label="Link to view item deails.">
                                         {% if item.item_render %}
-                                            <img class="img-fluid" src="{{ item.item_render.url }}" alt="{{ item.item_name }}">
+                                            <img class="opacity-hover img-fluid" src="{{ item.item_render.url }}" alt="{{ item.item_name }}">
                                         {% else %}
-                                            <img class="img-fluid" src="{% static 'media/no-image.png' %}" alt="No image available">
+                                            <img class="opacity-hover img-fluid" src="{% static 'media/no-image.png' %}" alt="No image available">
                                         {% endif %}
                                     </a>
                                 </div>
