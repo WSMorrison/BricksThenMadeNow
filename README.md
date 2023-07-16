@@ -934,7 +934,7 @@ Therefore web marketing will be an important way to grow a web-based business. F
 
 ### Facebook
 
-<details>
+<details open>
 <summary>Facebook</summary>
 <br>
 
@@ -958,7 +958,7 @@ It could also show potential customers how well liked the products are, and feat
 ### Instagram
 
 <details>
-<summary>instagram</summary>
+<summary>Instagram</summary>
 <br>
 
 ![Instagram](/assets/readme-images/bricks-then-made-now-instagram.png)
