@@ -128,9 +128,18 @@ def new_sku(request):
     if request.method == 'POST':
         form = SkuForm(request.POST, request.FILES)
         if form.is_valid():
-            sku = form.save()
-            messages.success(request, 'Sku added, thank you.')
-            return redirect(reverse('items'))
+            input_form = form.instance
+            input_sku = form.instance.sku_type
+            input_item = form.instance.sku_item
+            item_skus = Sku.objects.all().filter(sku_item=input_item)
+            danger_sku = item_skus.filter(sku_type=input_sku)
+            if danger_sku:
+                messages.error(request, 'Sku exists, check your inputs.')
+                form = SkuForm(instance=input_form)
+            else:
+                form.save()
+                messages.success(request, 'Sku added, thank you.')
+                return redirect(reverse('items'))
         else:
             messages.error(request, 'Something went wrong, please check the form fields.')
     else:

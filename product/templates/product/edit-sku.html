@@ -7,7 +7,7 @@
             <div class="col">
                 <div class="navbar navbar-expand items-bar">
                     <div class="collapse navbar-collapse">
-                        <h2 class="ml-4 mt-3 mb-3 strong-words">Add Sku</h2>
+                        <h2 class="ml-4 mt-3 mb-3 strong-words">Edit Sku</h2>
                     </div>
                 </div>
             </div>
@@ -24,17 +24,18 @@
                     <div class="card-body">
                             <form method="POST" action="{% url 'edit_sku' sku.id %}" enctype="multipart/form-data">
                             {% csrf_token %}
-                            <div class="form-input">{{ form.sku_item }}</div>
-                            <p>Choose item.</p>
+                            <div class="form-input strong-words">Sku item: {{ sku.sku_item }}</div>
+                            <p>Sku item cannot be edited</p>
                             <hr>
                             <div class="form-input">{{ form.sku_number }}</div>
+                            <p class="mb-0">Conventional numbering is:</p>
                             <p class="mb-0">1033 - Instructions</p>
                             <p class="mb-0">1066 - ModernSet</p>
                             <p class="mb-0">1099 - FullSet</p>
-                            <p>Increment for revisions.</p>
+                            <p>Numbers may be set differently<br>for revisions or specials.</p>
                             <hr>
-                            <div class="form-input">{{ form.sku_type }}</div>
-                            <p>Choose Sku type.</p>
+                            <div class="form-input strong-words">Sku type: {{ sku.sku_type }}</div>
+                            <p>Sku type cannot be edited.</p>
                             <hr>
                             <div class="form-input">{{ form.sku_price }}</div>
                             <p>Sku price.</p>
