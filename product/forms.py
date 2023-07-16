@@ -8,7 +8,7 @@ from django.core.exceptions import ValidationError
 #Custom validators
 def pdf_url_ok(value):
     if value.endswith('.pdf') is False:
-        if value.startswith('https://') is False:
+        if value.startswith('https://res.cloudinary.com/') is False:
             raise forms.ValidationError('File must be secure .pdf.')
 
 def inventory_ok(value):

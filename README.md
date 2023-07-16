@@ -603,7 +603,7 @@ Each page necessarily has its own set of features.
 
 ![Instructions in cart detail](/assets/readme-images/features/large-4-item-detail-in-cart.png)
 
-- If a customer adds any available Sku to their cart, the instructions are shown as in-cart because the instructions download is available with any purchase.
+If a customer adds any available Sku to their cart, the instructions are shown as in-cart because the instructions download is available with any purchase.
 
 ![Item detail sold out detail](/assets/readme-images/features/large-12-sold-out.png)
 
@@ -615,7 +615,8 @@ Items coming soon item detail detail.
 
 ![Staff user item and sku control bars detail](/assets/readme-images/features/large-11-staff-item-controls.png)
 
-- Logged in staff users can delete and edit items and skus directly from the item detail page.
+Logged in staff users can delete and edit items and skus directly from the item detail page.
+(Not shown) If there are any items in the cart, the item and sku edit and delete buttons are removed to prevent database errors.
 
 </details>
 
@@ -820,10 +821,36 @@ When a customer signs up, they are challenged in a handful of ways.
 - The username cannot be blank or include trailing or trailing whitespate, and must be at least four valid characters long.
 - The password must be at least 8 valid characters long, is not allowed to be all letters or all numbers, mustn't be too similar to the user name, and must match twice, and may not be "too common."
 
-Once logged in, there are challenges in the account details form if the customer wishes to fill that form out.
+Once logged in, the account details form does not offer challenges about being blank, but does strip leading and trailing whitespace. This is helpful in case a customer does not want to leave their information in the database.
 
+However, the details on the checkout form do challenge the user.
+- The usual django form defenses are in place.
+- If the customer accidentally puts their fields as all blank spaces, the order fails and they see an order failed page.
 
+Stripe integration has their own defensive code.
+- Code validates that card format is acceptable.
+- Validates that the expiry date is in the future.
+- Validates that zipcode is the correct format.
+- If the payment fails, the order fails and the customer sees an order failed page.
 
+There is also a front end functionality for logged in staff to be able to create, edit and delete Items. In addition to the built in Django form field validation, a handful of logic implementations had to be made to prevent issues when using the Add Item form.
+- The item number must be five digits. Otherwise, the number is left to the staff member's discretion. For example, MOC items like the 220SPJr will be numbered for "20'22'-checkdigit-'S'cooty'P'uff'Jr'" instead of the 2306534 numbered for "20'23'-checkdigit-'6534'" where 6534 was the original Lego set number for the original Beach Bandit.
+- Theme is selected by a choice box to prevent items not getting a theme listed.
+- The images are not checked because items can be added without an image.
+- The instructions .pdf field is checked to make sure the URL is not only a valid URL but starts with https://res.cloudinary.com/ and ends with .pdf. Knowing that staff is not likely to input malicious files, this is considered good enough validation to prevent errors and failures.
+
+The Add Sku form has some similar safeguards.
+- The related item comes from a choice box to make sure it is linked to a valid item.
+- The Sku number is limited to 5 digits, but is left to the staff member's discretion for the sake of flexibility. Suggestions are noted in the form.
+- The Sku type is a choice box to make sure the Sku type is valid. If the staff member accidentally tries to duplicate the Sku type for an item, the form is returned as invalid for adjustment.
+
+When editing items, some additional safeguards are necessary.
+- To make sure to not cause a database issue while working, the Edit Item and Edit Sku buttons are disabled unless the cart is empty.
+- The Edit Item form is identical to the Add Item form.
+- The Edit Sku form is slightly different.
+  - The Sku Item field is not editable.
+  - The Sku type field is not editable.
+  - If either of these need to be edited, the staff member will need to delete the Sku and start over. This will prevent a Sku froma accidentally getting reassigned incorrectly.
 
 <br>
 
