@@ -22,6 +22,20 @@ def add_to_cart(request, sku_id):
         cart[sku_id] = quantity
         messages.success(request, f'Added {sku.sku_number} successfully.')
 
+    item_added = sku.sku_item
+    try:
+        danger_sku = Sku.objects.get(sku_item=item_added, sku_type='inst')
+    except Employee.DoesNotExist:
+        danger_sku = None
+    print('danger_sku', danger_sku)
+    print('cartkeys', cart.keys())
+    print('dangerskuid', danger_sku.id)
+    if str(danger_sku.id) in list(cart.keys()):
+        print('get ready to delete')
+        cart[str(danger_sku.id)] = 0
+        print('Instructions removed.')
+        messages.success(request, "Instructions removed from cart.")
+
     request.session['cart'] = cart
 
     return redirect(redirect_url)
