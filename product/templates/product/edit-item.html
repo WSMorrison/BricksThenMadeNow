@@ -24,7 +24,7 @@
             <div class="col-12 col-lg-6">
                 <div class="card shadow">
                     <div class="card-body">
-                        <form method="POST" action="{% url 'new_item' %}" enctype="multipart/form-data">
+                        <form method="POST" action="{% url 'edit_item' item.id %}" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="form-input">{{ form.item_number }}</div>
                         <p>XX as the year created, 0, XXXX as the reference Lego set number (Use the 0 if five digits).</p>
@@ -65,7 +65,7 @@
                         <p>Parts Count.</p>
                         <div class="text-right">
                             <a class="button-13" href="{% url 'items' %}">Cancel</a>
-                            <button class="button-13 urgent-button" type="submit">Add Item</button>
+                            <button class="button-13 urgent-button" type="submit">Update</button>
                         </div>
                         </form>
                     </div>

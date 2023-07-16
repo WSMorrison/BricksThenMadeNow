@@ -149,7 +149,6 @@ def edit_item(request, item_id):
         return redirect(reverse('index'))
 
     item = get_object_or_404(Item, pk=item_id)
-    edit = True
     if request.method == 'POST':
         form = ItemForm(request.POST, request.FILES, instance=item)
         if form.is_valid():
@@ -162,11 +161,10 @@ def edit_item(request, item_id):
     else:
         form = ItemForm(instance=item)
 
-    template = 'product/new-item.html'
+    template = 'product/edit-item.html'
     context = {
         'form': form,
         'item': item,
-        'edit': edit,
     }
 
     return render(request, template, context)
@@ -182,7 +180,6 @@ def edit_sku(request, sku_id):
     sku = get_object_or_404(Sku, pk=sku_id)
     item = sku.sku_item
     item_id = item.id
-    edit = True
     if request.method == 'POST':
         form = SkuForm(request.POST, request.FILES, instance=sku)
         if form.is_valid():
@@ -195,11 +192,10 @@ def edit_sku(request, sku_id):
     else:
         form = SkuForm(instance=sku)
 
-    template = 'product/new-sku.html'
+    template = 'product/edit-sku.html'
     context = {
         'form': form,
         'sku': sku,
-        'edit': edit,
     }
 
     return render(request, template, context)

@@ -22,7 +22,7 @@
             <div class="col-12 col-lg-6">
                 <div class="card shadow">
                     <div class="card-body">
-                            <form method="POST" action="{% url 'new_sku' %}" enctype="multipart/form-data">
+                            <form method="POST" action="{% url 'edit_sku' sku.id %}" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="form-input">{{ form.sku_item }}</div>
                             <p>Choose item.</p>
@@ -46,7 +46,7 @@
                             <hr>   
                             <div class="text-right">
                             <a class="button-13" href="{% url 'items' %}">Cancel</a>
-                                <button class="button-13 urgent-button" type="submit">Add Sku</button>
+                            <button class="button-13 urgent-button" type="submit">Update</button>
                         </div>
                         </form>
                     </div>
