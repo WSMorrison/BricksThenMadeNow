@@ -1,5 +1,5 @@
     <!--Code for nav bar including login-->
-    <header id="nav-container" class="container shadow">
+    <div id="nav-container" class="container shadow">
         <div class="row">
             <div class="col">
                 <nav class="navbar navbar-expand navbar-light">
@@ -59,7 +59,7 @@
                 <nav class="navbar navbar-expand navbar-light">
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav ml-auto">
-                            <p class="nav-link mt-2 mr-2">Admin: </p>
+                            <li class="nav-link mt-2 mr-2">Admin: </li>
                             <li class="nav-item">
                                 <a class="nav-link mt-2" href="{% url 'new_item' %}" aria-label="Link for site staff to add items.">Add Item</a>
                             </li>
@@ -72,4 +72,4 @@
             </div>
         </div>
         {% endif %}
-    </header>
+    </div>

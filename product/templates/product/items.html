@@ -13,25 +13,25 @@
                 <div class="navbar navbar-expand navbar-light items-bar">
                     <div class="collapse navbar-collapse">
                         <span class="navbar-nav mr-auto">
-                            <div class="ml-4">
+                            <span class="ml-4">
                             {% if current_theme %}
-                                <h2 class="m-2 strong-words">{{ current_theme }}</h2>
+                                <span class="m-2 strong-words">{{ current_theme }}</span>
                             {% else %}
-                                <h2 class="m-2 strong-words">All</h2>
+                                <span class="m-2 strong-words">All</span>
                             {% endif %}
-                            </div>
+                            </span>
                         </span>
                         <span class="navbar-text">
-                            <div class="dropdown">
+                            <span class="dropdown">
                                 <a class="logo-font font-weight-bold nav-link text-black" href="#" id="all-items-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ current_sort }}
                                 </a>
-                                <div class="dropdown-menu border-0" aria-labelledby="all-items-link">
+                                <span class="dropdown-menu border-0" aria-labelledby="all-items-link">
                                     <a href="{% url 'items' %}" class="dropdown-item">Nevermind</a>
                                     <a href="{% url 'items' %}?theme={{ current_theme }}&sort=item_part_count&direction=asc" class="dropdown-item">Part Count +</a>
                                     <a href="{% url 'items' %}?theme={{ current_theme }}&sort=item_part_count&direction=desc" class="dropdown-item">Part Count -</a>
-                                </div>
-                            </div>
+                                </span>
+                            </span>
                         </span>
                     </div>
                 </div>
@@ -78,30 +78,5 @@
 {% endblock %}
 
 {% block postloadjs %}
-
-    <!--{{ block.super }}
-
-    <script type="text/javascript">
-        $('#sort-selector').change(function(){
-            var selector =$(this);
-            var currentUrl = new URL(window.location);
-
-            var selectedVal = selector.val();
-            if(selectedVal !='reset'){
-                var sort = selectedVal.split('_')[0];
-                var direction = selectedVal.split('_')[1];
-
-                currentUrl.searchParams.set('sort', sort);
-                currentUrl.searchParams.set('direction', direction);
-
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete('sort');
-                currentUrl.searchParams.delete('direction');
-
-                window.location.replace(currentUrl);
-            }
-        })
-    </script>-->
 
 {% endblock %}

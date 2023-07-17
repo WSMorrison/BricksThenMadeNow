@@ -20,19 +20,6 @@
     --text-border-color-disabled: 82,82,82;
 }
 
-/* REMOVE! */
-.test-area{
-    text-color: #212529;
-    text-color-muted: #7c7f81;
-    title-color: #0067b2;
-    title-contrast: #da291c;
-    title-very-contrast: #ffcf00;
-    background-color-light: #fcfdff;
-    background-color-med: #edf1f8;
-    background-color-dark: #e0e3e9;
-    button-color: #feffff;
-}
-
 /* Header, titlebar, splash, navbar styling rules */
 html {
     color: rgb(var(--text-color));

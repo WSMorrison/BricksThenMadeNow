@@ -20,6 +20,7 @@
 
 <!-- Index -->
     <section class="container mt-5">
+        <h1 class="d-none">Themes</h1>
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-12 col-md-6 col-lg-12">
@@ -28,7 +29,7 @@
                         <div class="index-card card shadow-lg mt-4">
                             <div class="index-card-light card-body">
                                 <a class="nav-link" href="{% url 'items' %}?theme=City">
-                                    <img class="img-top img-fluid" src="{% static 'media/index-city.png' %}" aria-label="City themed minifig for a link to the City themed sets.">
+                                    <img class="img-top img-fluid" src="{% static 'media/index-city.png' %}" alt="City">
                                 </a>
                                 <div class="index-title-box">
                                     <h3 id="index-city" class="index-title">CITY</h3>
@@ -40,7 +41,7 @@
                         <div class="index-card card shadow-lg">
                             <div class="index-card-dark card-body">
                                 <a class="nav-link" href="{% url 'items' %}?theme=Space">
-                                    <img class="img-top img-fluid" src="{% static 'media/index-space.png' %}" aria-label="Space themed minifig for a link to the Space themed sets.">
+                                    <img class="img-top img-fluid" src="{% static 'media/index-space.png' %}" alt="Space">
                                 </a>
                                 <div>
                                     <h3 id="index-space" class="index-title">SPACE</h3>
@@ -52,7 +53,7 @@
                         <div class="index-card card shadow-lg">
                             <div class="index-card-light card-body">
                                 <a class="nav-link" href="{% url 'items' %}?theme=Castle">
-                                    <img class="img-top img-fluid" src="{% static 'media/index-castle.png' %}" aria-label="Castle themed minifig for a link to the Castle themed sets.">
+                                    <img class="img-top img-fluid" src="{% static 'media/index-castle.png' %}" alt="Castle">
                                 </a>
                                 <div>
                                     <h3 id="index-castle" class="index-title">CASTLE</h3>
@@ -64,7 +65,7 @@
                         <div class="index-card card shadow-lg">
                             <div class="index-card-dark card-body">
                                 <a class="nav-link" href="{% url 'items' %}?theme=Train">
-                                    <img class="img-top img-fluid" src="{% static 'media/index-train.png' %}" alt="Train themed minifig for a link to the Train themed sets.">
+                                    <img class="img-top img-fluid" src="{% static 'media/index-train.png' %}" alt="Train">
                                 </a>
                                 <div>
                                     <h3 id="index-train" class="index-title">TRAIN</h3>
@@ -76,7 +77,7 @@
                         <div class="index-card card shadow-lg">
                             <div class="index-card-light card-body">
                                 <a class="nav-link" href="{% url 'items' %}?theme=MOC">
-                                    <img class="img-top img-fluid" src="{% static 'media/index-moc.png' %}" alt="Custom assembled minifig for a link to the My Own Creation themed sets.">
+                                    <img class="img-top img-fluid" src="{% static 'media/index-moc.png' %}" alt="My Own Creation">
                                 </a>
                                 <div>
                                     <h3 id="index-moc" class="index-title">MOC</h3>
@@ -88,7 +89,7 @@
                         <div class="index-card card shadow-lg">
                             <div class="index-card-admin card-body">
                                 <a class="nav-link" href="{% url 'siteuser_profile' %}">
-                                    <img class="img-top img-fluid" src="{% static 'media/index-admin.png' %}" alt="Minifig seated at a computer for a link to user accounts.">
+                                    <img class="img-top img-fluid" src="{% static 'media/index-admin.png' %}" alt="Your account">
                                 </a>
                                 <div>
                                     <h3 id="index-admin" class="index-title">ACCOUNT</h3>

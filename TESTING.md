@@ -2,12 +2,13 @@
 
 Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to other Lego fans. The site will appeal to adult followers of Lego (AFOL), by reimagining vintage Lego from the 1970s, '80s, and '90s with modern elements and contemporary design techniques.
 
-![Front page of Bricks Then Made Now as input to AmIResponsive.](#)
+![Front page of Bricks Then Made Now as input to AmIResponsive.](/assets/readme-images/am-i-responsive.png)
 
 [AmIResponsive](https://ui.dev/amiresponsive)
 
-### The site, deployed to Heroku, can be found here: [Bricks Then Made Now](#)
-#### The repository in GitHub can be found here: [WSMorrison/bricksthenmadenow](#)
+### The site, deployed to Heroku, can be found here: [Bricks Then Made Now](https://bricks-then-made-now-5bd876713bd4.herokuapp.com/)
+#### The repository in GitHub can be found here: [WSMorrison/bricksthenmadenow](https://github.com/WSMorrison/BricksThenMadeNow)
+
 
 <br>
 <hr>
@@ -38,34 +39,44 @@ Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to ot
 
 ## Responsiveness
 
-The page was checked for responsiveness by using [AmIResponsive.](https://ui.dev/amiresponsive)
+The website was built for responsive use. Most customers will engage the site on a mobile site, and staff members will likely use a computer. However, all aspects of the site work on both small and larger devices.
 
-![Front page of Bricks Then Made Now as input to AmIResponsive.](#)
+![Front page of Bricks Then Made Now as input to AmIResponsive.](/assets/readme-images/am-i-responsive.png)
+
+The front page, showing how some of the arrangement changes based on different screen sizes.
+
+![Items page tested for responsiveness.](/assets/readme-images/testing/items-responsive.png)
+
+The items page looking at the City theme, showing how some of the arrangement changes based on different screen sizes.
+
+![Item detail tested for responsiveness.](/assets/readme-images/testing/item-detail-responsive.png)
+
+An item detail page, showing how some of the arrangement changes based on different screen sizes.
+
+[AmIResponsive](https://ui.dev/amiresponsive)
 
 ## Accessibility
 
-Care was taken to make sure the website was accessible.
+Care was taken to make sure the page met accessibility guidelines. Accessibility is important so that everyone is welcome and included on Bricks Then Made Now. 
 
-  - The page is developed to use high contrast text, simple interface and easy to follow buttons. 
-  - Aria labels are on any button that is not labelled.
-  - The tabs are all marked current so that the nav bar indicates where the user is currently navigated. 
-  - The HTML follows a clear semantic flow.
+- All images have alt text, and all links and buttons have aria labels.
+- Semantic web structure was maintained, making sure to use headers, footers, body, sections and divs appropriately to organize the page not just visually but for screen readers as well.
+- Colors and images were carefully selected to make sure that contrast was great enough so that anyone could read the website. Colors were checked for contrast during development using Coolers' [Color Contrast Checker](https://coolors.co/contrast-checker/0067b2-d2d5da)
 
-Accessibility was checked by using Google Chrome [Lighthouse.](https://chrome.google.com/webstore/detail/lighthouse/)
+![Google Lighthouse scores](/assets/readme-images/lighthouse-score.png)
 
-![Lighthouse score for page](#)
+The accessibility was scored at 96% based on the the footer background and text contrast. It wasn't possible to make any real change to the score while still indicating that the footer section was different than the rest. Other accessibility aspects were detected and fixed, bringing the score to 96%.
 
-The accessibility score is less than 100% because
+Accessibility, Best Practices and SEO scores calculated by [Google Lighthouse.](https://developer.chrome.com/docs/lighthouse/overview/)
 
 ## Code Validation
 
 The HTML for the website was put through the [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input). Each page of the site was tested by opening the page, viewing page source, and copying and pasting the source code into the validator. This avoided any issues with the template tags upsetting the validator to the point that it did not check the rest of the code. Any errors found were fixed. As credit to Django's automated page generation through template tags, the only errors were in the hand written code of the base.html; a stray closing italic tag in the footer, and an attempt at a responsive break in the blockquote to try to influence the line break that did not have any effect. Both were fixed, and each page was returned without errors.
 
-![W3C Markup validator representative return](#)
+![W3C CSS validator return](/assets/readme-images/testing/w3c-css-validation.png)
 
 The CSS was put through the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/).
 
-![W3C CSS validator representative return](#)
 
 The Python code was checked with the [Code Institute Python linter](https://pep8ci.herokuapp.com/).py, and views.py. Each was returned without errors.
 

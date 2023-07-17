@@ -19,7 +19,7 @@ Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to ot
 - [User Experience](#user-experience)
   - [User Stories](#user-stories)
 - [Design](#design)
-  - [Color Scheme](#colour-scheme)
+  - [Color Scheme](#color-scheme)
   - [Typography](#typography)
   - [Imagery](#imagery)
 - [Planning](#planning)
@@ -38,8 +38,8 @@ Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to ot
   - [Accessibility](#accessibility)
 - [Search Engine Optimization](#search-engine-optmization)
 - [Marketing](#marketing)
-  -[Facebook](#facebook)
-  -[Instagram](#instagram)
+  - [Facebook](#facebook)
+  - [Instagram](#instagram)
 - [E-Commerce Business Model](#e-commerce-business-model)
   - [Customers](#customers)
   - [Pricing](#pricing)
@@ -1159,7 +1159,17 @@ Information on how to fork or clone the repository can be found in [the developm
 ## Testing
 <hr>
 
-Information on testing can be found in [the testing ReadMe](/TESTING.md)
+### Code Validation
+
+Information on code validation can be found in [the testing ReadMe](/TESTING.md)
+
+### Systematic Manual Testing
+
+Information on systematic manual testing can be found in [the testing ReadMe](/TESTING.md)
+
+### Representative User Manual Testing
+
+Information on representative user manual testing can be found in [the testing ReadMe](/TESTING.md)
 
 <br>
 <hr>

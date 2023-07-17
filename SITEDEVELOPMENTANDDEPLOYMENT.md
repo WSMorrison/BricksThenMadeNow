@@ -2,12 +2,13 @@
 
 Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to other Lego fans. The site will appeal to adult followers of Lego (AFOL), by reimagining vintage Lego from the 1970s, '80s, and '90s with modern elements and contemporary design techniques.
 
-![Front page of Bricks Then Made Now as input to AmIResponsive.](#)
+![Front page of Bricks Then Made Now as input to AmIResponsive.](/assets/readme-images/am-i-responsive.png)
 
 [AmIResponsive](https://ui.dev/amiresponsive)
 
-### The site, deployed to Heroku, can be found here: [Bricks Then Made Now](#)
-#### The repository in GitHub can be found here: [WSMorrison/bricksthenmadenow](#)
+### The site, deployed to Heroku, can be found here: [Bricks Then Made Now](https://bricks-then-made-now-5bd876713bd4.herokuapp.com/)
+#### The repository in GitHub can be found here: [WSMorrison/bricksthenmadenow](https://github.com/WSMorrison/BricksThenMadeNow)
+
 
 <br>
 <hr>
