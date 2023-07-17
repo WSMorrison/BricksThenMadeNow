@@ -53,10 +53,10 @@
                                         <p>Price: ${{ item.added_sku.sku_price }}  Qty: {{ item.quantity }}</p>
                                     </div>
                                 </div>
-                                
+
                                 <form class="form update-form {% if item.added_sku.sku_type == 'inst' %} d-none {% endif %}" method="POST" action="{% url 'adjust_cart' item.sku_id %}">
                                     {% csrf_token %}
-                                    <p class="form-label mb-0 mr-2">Qty: </p>
+                                    <p class="form-label mb-0 mr-2 mt-4">Qty: </p>
                                     <div class="form-group w-50">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
