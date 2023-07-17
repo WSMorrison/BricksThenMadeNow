@@ -94,15 +94,10 @@ The Python code was checked with the [Code Institute Python linter](https://pep8
 
 The following tables will describe the systematic manual testing done to ensure that the app is working properly.
 
-<hr>
+The following features were tested on each page as indicated:
 
-### Unlogged-in User
-
-<hr>
-
-The following features were tested as an unlogged-in user:
-
-#### Index page (Unlogged-in User):
+### Index page
+#### Index page (All Users):
 
 | Element      | Action   | Expected Result                                                                                                                                                                                                                                                     | Outcome |
 |--------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
@@ -127,7 +122,34 @@ The following features were tested as an unlogged-in user:
 | Find BTMN    | Interact | Icons indicate link on hover; clicking on Instagram icon takes user to correct Instagram page, Facebook icon takes customer to Facebook page, and envelope icon opens email app on customer machine with an email started to bricksthenmadenow@gmail.com.                          | Pass    |
 | Support      | Interact | FAQ, Terms of Service, and Privacy links indicate link on hover and take user to correct information page                                                                                                                                                           | Pass    |
 
-#### Index page (Unlogged-in User):
+#### Index page (Logged-in User):
+
+The index page differs for logged-in users in the following ways:
+
+| Element         | Action   | Expected Result                                                                                                                                                                                                                                                                     | Outcome |
+|-----------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| Nav bar         | Display  | Bar displays, showing selectable themes, log out link.                                                                                                                                                                                                                              | Pass    |
+| Logout link     | Interact | Indicates link on hover, opens correct log out page.                                                                                                                                                                                                                                | Pass    |
+| Footer          | Display  | Displays a user account section, find section, and support section. User account section includes links to user information and order history pages. Find section has icons and links to social media and an in information page. Support section shows links to information pages. | Pass    |
+| Account section | Interact | Buttons indicate link on hover. When clicked, links open the correct pages on the website.                                                                                                                                                                                          | Pass    |
+
+#### Index page (Logged-in Super User):
+
+The index page differs for logged in Super Users in the following ways:
+
+| Element         | Action   | Expected Result                                                                                                                                                                                                                                                                     | Outcome |
+|-----------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| Nav bar         | Display  | Bar displays, showing selectable themes, log out link.                                                                                                                                                                                                                              | Pass    |
+| Logout link     | Interact | Indicates link on hover, opens correct log out page.                                                                                                                                                                                                                                | Pass    |
+| Admin bar       | Display  | Admin bar displays below nav bar. It shows that it is the admin bar and has two links, one to create a new Item and one to create a new Sku                                                                                                                                         | Pass    |
+| New Item link   | Interact | Indicates as a link on hover. Opens correct page for Super User to create a new Item object in the database.                                                                                                                                                                        | Pass    |
+| New Sku link    | Interact | Indicates as a link on hover. Opens correct pave for Super User to create a new Sku object in the database.                                                                                                                                                                         | Pass    |
+| Footer          | Display  | Displays a user account section, find section, and support section. User account section includes links to user information and order history pages. Find section has icons and links to social media and an in information page. Support section shows links to information pages. | Pass    |
+| Account section | Interact | Buttons indicate link on hover. When clicked, links open the correct pages on the website.                                                                                                                                                                                          | Pass    |
+
+### Items page
+
+#### Items page (All Users):
 
 | Element     | Action   | Expected Result                                                                                                                                                                                                          | Outcome |
 |-------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
@@ -138,7 +160,7 @@ The following features were tested as an unlogged-in user:
 | Nav bar     | Display  | Bar dispalys, shows selectable themes, log in link                                                                                                                                                                       | Pass    |
 | Theme links | Interact | Indicate links on hover, open correct list of items.                                                                                                                                                                     | Pass    |
 | Login link  | Interact | Indicates link on hover, opens correct login page.                                                                                                                                                                       | Pass    |
-| Info bar    | Display  | Indicates currently selected them or "All" if none  selected. Sort by: link is accessible, opens a drop down menu and will sort appropriately from any theme selection or none.                                          | Pass    |
+| Info bar    | Display  | Indicates currently selected theme or "All" if none  selected. Sort by: link is accessible, opens a drop down menu and will sort appropriately from any theme selection or none.                                          | Pass    |
 | Item tiles  | Display  | Items dispaly on tiles in an clean organized manner,  responsively to screen size. Images display when available, placeholder image when not. Displays item  name, item number, and appropriate parts count to each item | Pass    |
 | Item tiles  | Interact | Indicate links on hover over image or button. Click takes user to the correct item detail page.                                                                                                                          | Pass    |
 | Footer       | Display  | Displays a sign up section, find section, and support section. Sign up section has information and a button to a newsletter signup form. Find section has icons as links to social media and an information page. Support section shows links to information pages. | Pass    |
@@ -146,7 +168,33 @@ The following features were tested as an unlogged-in user:
 | Find BTMN    | Interact | Icons indicate link on hover; clicking on Instagram icon takes user to correct Instagram page, Facebook icon takes customer to Facebook page, and envelope icon opens email app on customer machine with an email started to bricksthenmadenow@gmail.com.                                 | Pass    |
 | Support      | Interact | FAQ, Terms of Service, and Privacy links indicate link on hover and take user to correct information page                                                                                                                                                           | Pass    |
 
-### Item detail page (Unlogged-in User)
+#### Item page (Logged-in User)
+
+The item page differs for logged-in users in the following ways:
+
+| Element         | Action   | Expected Result                                                                                                                                                                                                                                                                     | Outcome |
+|-----------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| Nav bar         | Display  | Bar displays, showing selectable themes, log out link.                                                                                                                                                                                                                              | Pass    |
+| Logout link     | Interact | Indicates link on hover, opens correct log out page.                                                                                                                                                                                                                                | Pass    |
+| Footer          | Display  | Displays a user account section, find section, and support section. User account section includes links to user information and order history pages. Find section has icons and links to social media and an in information page. Support section shows links to information pages. | Pass    |
+| Account section | Interact | Buttons indicate link on hover. When clicked, links open the correct pages on the website.                                                                                                                                                                                          | Pass    |
+
+#### Item page (Logged-in Super User)
+
+The item page differs for logged in Super Users in the following ways:
+
+| Element         | Action   | Expected Result                                                                                                                                                                                                                                                                     | Outcome |
+|-----------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| Nav bar         | Display  | Bar displays, showing selectable themes, log out link.                                                                                                                                                                                                                              | Pass    |
+| Logout link     | Interact | Indicates link on hover, opens correct log out page.                                                                                                                                                                                                                                | Pass    |
+| Admin bar       | Display  | Admin bar displays below nav bar. It shows that it is the admin bar and has two links, one to create a new Item and one to create a new Sku                                                                                                                                         | Pass    |
+| New Item link   | Interact | Indicates as a link on hover. Opens correct page for Super User to create a new Item object in the database.                                                                                                                                                                        | Pass    |
+| New Sku link    | Interact | Indicates as a link on hover. Opens correct pave for Super User to create a new Sku object in the database.                                                                                                                                                                         | Pass    |
+| Footer          | Display  | Displays a user account section, find section, and support section. User account section includes links to user information and order history pages. Find section has icons and links to social media and an in information page. Support section shows links to information pages. | Pass    |
+| Account section | Interact | Buttons indicate link on hover. When clicked, links open the correct pages on the website.                                                                                                                                                                                          | Pass    |
+
+### Item detail page
+#### Item detail page (All Users)
 
 | Element     | Action   | Expected Result                                                                                                                                                                                                          | Outcome |
 |-------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
@@ -174,7 +222,49 @@ The following features were tested as an unlogged-in user:
 | Find BTMN    | Interact | Icons indicate link on hover; clicking on Instagram icon takes user to correct Instagram page, Facebook icon takes customer to Facebook page, and envelope icon opens email app on customer machine with an email started to bricksthenmadenow@gmail.com.                                | Pass    |
 | Support      | Interact | FAQ, Terms of Service, and Privacy links indicate link on hover and take user to correct information page                                                                                                                                                           | Pass    |
 
-### Cart Page (Unlogged-in User)
+#### Item detail page (Logged-in User)
+
+The item detal page differs for logged-in users in the following ways:
+
+| Element         | Action   | Expected Result                                                                                                                                                                                                                                                                     | Outcome |
+|-----------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| Nav bar         | Display  | Bar displays, showing selectable themes, log out link.                                                                                                                                                                                                                              | Pass    |
+| Logout link     | Interact | Indicates link on hover, opens correct log out page.                                                                                                                                                                                                                                | Pass    |
+| Footer          | Display  | Displays a user account section, find section, and support section. User account section includes links to user information and order history pages. Find section has icons and links to social media and an in information page. Support section shows links to information pages. | Pass    |
+| Account section | Interact | Buttons indicate link on hover. When clicked, links open the correct pages on the website.                                                                                                                                                                                          | Pass    |
+
+#### Item detail page (Logged-in Super User)
+
+| Element          | Action   | Expected Result                                                                                                                                                                                                                                                                                           | Outcome |
+|------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| Nav bar          | Display  | Bar displays, showing selectable themes, log out link.                                                                                                                                                                                                                                                    | Pass    |
+| Logout link      | Interact | Indicates link on hover, opens correct log out page.                                                                                                                                                                                                                                                      | Pass    |
+| Admin bar        | Display  | Admin bar displays below nav bar. It shows that it is the admin bar and has two links, one to create a new Item and one to create a new Sku                                                                                                                                                               | Pass    |
+| New Item link    | Interact | Indicates as a link on hover. Opens correct page for Super User to create a new Item object in the database.                                                                                                                                                                                              | Pass    |
+| New Sku link     | Interact | Indicates as a link on hover. Opens correct page for Super User to create a new Sku object in the database.                                                                                                                                                                                               | Pass    |
+| Item detail cart | Display  | In addition to the above features, the item detail card displays an Edit and Delete bar at the bottom of the item detail card                                                                                                                                                                             | Pass    |
+| Edit bar         | Display  | The edit bar displays a button for the Item. If available, it shows a button for the Instructions, the ModernSet  and the FullSet. If these are not available, the buttons are not displayed at all. This bar is light red for  contrast and to indicate to the Super User that this requires intention.  | Pass    |
+| Edit bar         | Interact | Buttons indicate as links on hover. The buttons open the correct pages when clicked, matched to function and item or Sku appropriately.                                                                                                                                                                   | Pass    |
+| Delete bar       | Display  | The delete bar displays a button for the Item. If available, it shows a button for the Instructions, the ModernSet, and the FullSet. If these are not available, the buttons are not dipslayed at all. This bar is dark red for  contrast and to indicate to the Super User that this requires intention. | Pass    |
+| Delete bar       | Interact | Buttons indicate as link on hover. The buttons open the correct pages when clicked, confirmation pages matched to the item or Sku appropriately.                                                                                                                                                          | Pass    |
+| Footer           | Display  | Displays a user account section, find section, and support section. User account section includes links to user information and order history pages. Find section has icons and links to social media and an in information page. Support section shows links to information pages.                       | Pass    |
+| Account section  | Interact | Buttons indicate link on hover. When clicked, links open the correct pages on the website.                                                                                                                                                                                                                | Pass    |
+
+#### Item detail page (Special features)
+
+| Element                      | Condition                                                                               | Action   | Expected Result                                                                                                | Outcome |
+|------------------------------|-----------------------------------------------------------------------------------------|----------|----------------------------------------------------------------------------------------------------------------|---------|
+| Instructions purchase button | Customer has any sku of associated item in cart.                                        | Display  | Button says "In Cart" and is disabled.                                                                         | Pass    |
+| Instructions purchase button | Customer has any sku of associated item in cart.                                        | Interact | None                                                                                                           | Pass    |
+| Instructions purchase button | Customer is logged in and has purchased any sku of  the associated item before.         | Display  | Button says "Download."                                                                                        | Pass    |
+| Instructions purchase button | Customer is logged in and has purchased any sku of  the associated item before.         | Interact | Button indicates link on hover, and when clicked initiates download of instructions .pdf.                      | Pass    |
+| Special                      | Customer has instructions in cart, and adds any sku  of the assicated item to the cart. | Interact | Instructions purchase button remains as "In cart" and the the instructions in the cart are set to  quantity 0. | Pass    |
+| Staff Edit bar | If any items are in the cart | Display | The buttons are removed and replaced with text reminding staff member to remove items from cart before editing items. | Pass |
+| Staff Delete bar | If any items are in the cart | Display | The buttons are removed and replaced with text reminding staff member to remove items from cart before deleting items. | Pass |
+
+### Cart Page 
+
+#### Cart Page (Unlogged-in User)
 
 | Element     | Action   | Expected Result                                                                                                                                                                                                          | Outcome |
 |-------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
@@ -282,6 +372,34 @@ The following features were tested as an unlogged-in user:
 | Nav bar     | Display  | Bar dispalys, shows selectable themes, log in link                                                                                                                                                                       | Pass    |
 | Theme links | Interact | Indicate links on hover, open correct list of items.                                                                                                                                                                     | Pass    |
 | Login link  | Interact | Indicates link on hover, opens correct login page.                                                                                                                                                                       | Pass    |
+| Info bar   | Display  | Indicates user is on the Terms of Service page                                                                                                                                                                                                                                                                        | Pass |
+| Info bar   | Interact | None                                                                                                                                                                                                                                                                                                                  | Pass |
+| Terms card | Display  | Displays the text of Terms of Service including embedded links. At the bottom of the card is a reminder that this is not a real webstore and is for educational purposes only.                                                                                                                                        | Pass |
+| Terms card | Interact | Embedded in the text are links to bricks-then-made-now5bd876713bd4.herokuapp.com,  WebsitePolicies.com that open to the correct link in a new tab without transferring  information. There is also a link that opens the users email on their machine with an email addressed to bricksthenmadenow@gmail.com started. | Pass |
+| Footer       | Display  | Displays a sign up section, find section, and support section. Sign up section has information and a button to a newsletter signup form. Find section has icons as links to social media and an information page. Support section shows links to information pages. | Pass    |
+| Sign up      | Interact | Button indicates link on hover, click takes user to correct page with sign up form.                                                                                                                                                                                 | Pass    |
+| Find BTMN    | Interact | Icons indicate link on hover; clicking on Instagram icon takes user to correct Instagram page, Facebook icon takes customer to Facebook page, and envelope icon opens email app on customer machine with an email started to bricksthenmadenow@gmail.com.                                  | Pass    |
+| Support      | Interact | FAQ, Terms of Service, and Privacy links indicate link on hover and take user to correct information page                                                                                                                                                           | Pass    |
+
+### Privacy Policy page, All Users
+
+| Element     | Action   | Expected Result                                                                                                                                                                                                          | Outcome |
+|-------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| Title Bar   | Display  | Show title, search bar, cart icon                                                                                                                                                                                        | Pass    |
+| Title       | Interact | Indicates link on hover, click takes user to index page                                                                                                                                                                  | Pass    |
+| Search bar  | Interact | Indicates input on hover, accepts input, search icon  indicates link on hover, click searches properly,  outcome appropriate for search                                                                                  | Pass    |
+| Cart icon   | Interact | Indicates link on hover, reacts to items in cart with a slightly different icon, dollar amount show running total.                                                                                                       | Pass    |
+| Nav bar     | Display  | Bar dispalys, shows selectable themes, log in link                                                                                                                                                                       | Pass    |
+| Theme links | Interact | Indicate links on hover, open correct list of items.                                                                                                                                                                     | Pass    |
+| Login link  | Interact | Indicates link on hover, opens correct login page.                                                                                                                                                                       | Pass    |
+| Info bar            | Display  | Indicates that user is navigated to Privacy Policy page.                                                        | Pass |
+| Info bar            | Interact | None.                                                                                                           | Pass |
+| Privacy policy card | Display  | Displays the text of the privacy policy. Displays a link to the Privacy Policy Generator used.                  | Pass |
+| Privacy policy card | Intarct  | Link indicates link on hover. Link opens new tab without sharing information with the  correct, linked website. | Pass |
+| Footer | Display | Displays a sign up section, find section, and support section. Sign up section has information and a button to a newsletter signup form. Find section has icons as links to social media and an information page. Support section shows links to information pages. | Pass |
+| Sign up | Interact | Button indicates link on hover, click takes user to correct page with sign up form. | Pass |
+| Find BTMN | Interact | Icons indicate link on hover; clicking on Instagram icon takes user to correct Instagram page, Facebook icon takes customer to Facebook page, and envelope icon opens email app on customer machine with an email started to bricksthenmadenow@gmail.com. | Pass |
+| Support | Interact | FAQ, Terms of Service, and Privacy links indicate link on hover and take user to correct information page | Pass |
 
 
 
