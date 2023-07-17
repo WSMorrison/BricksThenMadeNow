@@ -557,6 +557,11 @@ footer {
     justify-content: space-between
 }
 
+#user-town-or-city {
+    width: 10%;
+    color: pink;
+}
+
 /* Product creation and deletion and edition styling rules */
 .urgent-words {
     color: rgb(var(--title-contrast));
@@ -567,8 +572,8 @@ footer {
     position: absolute;
     top: -1.5rem;
     right: -1.5rem;
-    height: 20rem;
-    width: 20rem;
+    height: 40rem;
+    width: 40rem;
     z-index: 9999;
 }
 

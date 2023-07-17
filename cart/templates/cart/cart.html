@@ -29,49 +29,62 @@
                     <div class="card-body">
                         {% if cart_items %}
                             {% for item in cart_items %}
-                                <div class="col-12 p-2">
-                                    <h3 class="item-name">
-                                    {{ item.added_item }}
-                                    {% if item.added_sku.sku_type == 'inst' %}
-                                        Instructions
-                                    {% elif item.added_sku.sku_type == 'mdst' %}
-                                        ModernSet
-                                    {% elif item.added_sku.sku_type == 'flst' %}
-                                        FullSet
-                                    {% endif %}
-                                    </h3>
-                                    <p class="item-sku-number">{{item.added_number}}:{{item.added_sku.sku_number}}</p>
-                                    <p>Price: ${{ item.added_sku.sku_price }}  Qty: {{ item.quantity }}</p>
-                                    <form class="form update-form {% if item.added_sku.sku_type == 'inst' %} d-none {% endif %}" method="POST" action="{% url 'adjust_cart' item.sku_id %}">
-                                        {% csrf_token %}
-                                        <p class="form-label mb-0 mr-2">Qty: </p>
-                                        <div class="form-group w-50">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <button class="decrement-qty left-button-13" 
-                                                        data-item_id="{{ item.sku_id }}" id="decrement-qty_{{ item.sku_id }}">
-                                                        <span class="icon">
-                                                            <i class="fas fa-minus"></i>
-                                                        </span>
-                                                    </button>
-                                                </div>
-                                                <input class="qty_input form-control input-quantity" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.sku_id }}" id="id_qty_{{ item.sku_id }}">
-                                                <div class="input-group-append">
-                                                    <button class="increment-qty right-button-13"
-                                                        data-item_id="{{ item.sku_id }}" id="increment-qty_{{ item.sku_id }}">
-                                                        <span class="icon">
-                                                            <i class="fas fa-plus"></i>
-                                                        </span>
-                                                    </button>
-                                                </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col-sm-3 col-12">
+                                        {% if item.added_item.item_render %}
+                                            <img class="card-img-top cart-image" src="{{ item.added_item.item_render.url }}" alt="{{ item.item_name }}">
+                                        {% else %}
+                                            <img class="card-img-top cart-image" src="{% static 'media/no-image.png' %}" alt="No item image.">
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-sm-9 col-12 p-2 m-4 m-sm-0">
+                                        <h3 class="item-name">
+                                        {{ item.added_item }}
+                                        {% if item.added_sku.sku_type == 'inst' %}
+                                            Instructions
+                                        {% elif item.added_sku.sku_type == 'mdst' %}
+                                            ModernSet
+                                        {% elif item.added_sku.sku_type == 'flst' %}
+                                            FullSet
+                                        {% endif %}
+                                        </h3>
+                                        <p class="item-sku-number">{{item.added_number}}:{{item.added_sku.sku_number}}</p>
+                                        <p>Price: ${{ item.added_sku.sku_price }}  Qty: {{ item.quantity }}</p>
+                                    </div>
+                                </div>
+                                
+                                <form class="form update-form {% if item.added_sku.sku_type == 'inst' %} d-none {% endif %}" method="POST" action="{% url 'adjust_cart' item.sku_id %}">
+                                    {% csrf_token %}
+                                    <p class="form-label mb-0 mr-2">Qty: </p>
+                                    <div class="form-group w-50">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="decrement-qty left-button-13" 
+                                                    data-item_id="{{ item.sku_id }}" id="decrement-qty_{{ item.sku_id }}">
+                                                    <span class="icon">
+                                                        <i class="fas fa-minus"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <input class="qty_input form-control input-quantity" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.sku_id }}" id="id_qty_{{ item.sku_id }}">
+                                            <div class="input-group-append">
+                                                <button class="increment-qty right-button-13"
+                                                    data-item_id="{{ item.sku_id }}" id="increment-qty_{{ item.sku_id }}">
+                                                    <span class="icon">
+                                                        <i class="fas fa-plus"></i>
+                                                    </span>
+                                                </button>
                                             </div>
                                         </div>
-                                    </form>
-                                    <a class="mt-4 button-13 update-link {% if item.added_sku.sku_type == 'inst' %} d-none {% endif %}" aria-label="Update item quantity.">Update</a>
-                                    <a class="mt-4 button-13 urgent-button remove-item {% if item.added_sku.sku_type == 'inst' %} button-skip {% endif %}" id="remove_{{ item.sku_id }}" aria-label="Remove item from cart.">Remove</a>
-                                    <p class="mt-4 cart-total">Extended Price: ${{ item.extended_price }}</p>
-                                </div>
+                                    </div>
+                                </form>
+                                <a class="mt-4 button-13 update-link {% if item.added_sku.sku_type == 'inst' %} d-none {% endif %}" aria-label="Update item quantity.">Update</a>
+                                <a class="mt-4 button-13 urgent-button remove-item {% if item.added_sku.sku_type == 'inst' %} button-skip {% endif %}" id="remove_{{ item.sku_id }}" aria-label="Remove item from cart.">Remove</a>
+                                <p class="mt-4 mr-4 cart-total">Extended Price: ${{ item.extended_price }}</p>
+
                                 <hr>
+                            </div>
                             {% endfor %}
                             <div class="cart-totals-box p-2">
                                 <p>Total items to ship: {{ shipping_total }}</p>

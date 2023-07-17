@@ -22,7 +22,7 @@
 
     <section class="container">
         <div class="row centering">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-8">
                 <h3 class="strong-words">Welcome back, {{ siteuser }}</h3>
                     <div class="card shadow">
                         <div class="card-body">
@@ -38,7 +38,7 @@
                                     <div class="form-input">{{ request.user.email }}</div>
                                     <div class="form-input">{{ siteuser_form.siteuser_phone_number }}</div>
                                 </div>
-                                <div class="">
+                                <div class="form-box">
                                     <div class="item-name">
                                         <h3>Shipping Address</h3>
                                     </div>
@@ -46,7 +46,7 @@
                                     <div class="form-input">{{ siteuser_form.siteuser_street_address2 }}</div>
                                     <div class="mt-2">
                                         <span class="form-input">{{ siteuser_form.siteuser_town_or_city }}</span>
-                                        <span class="form-input">{{ siteuser_form.siteuser_state }}</span>
+                                        <span class="form-input ml-2">{{ siteuser_form.siteuser_state }}</span>
                                     </div>
                                     <div class="form-input mt-2">{{ siteuser_form.siteuser_zipcode }}</div>
                                     <div class="form-input">{{ siteuser_form.siteuser_country}}</div>
