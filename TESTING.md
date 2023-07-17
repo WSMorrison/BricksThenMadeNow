@@ -662,10 +662,20 @@ The uneditable fields are to help prevent errors in copy and errors in the datab
 
 In addition to formal manual testing, the site was shown to friends who would be representative as users for this website. Most of these testers are active in the Lego community, or at least Lego community adjacent. Regardless, even non-Lego testers understand how to use the internet and e-commerce and were therefore able to give relevant and valuable feedback. The following testing was completed by representative testers.
 
-- Representative User testers were able to visit the site, view event lists and event details.
-- Navigation was clear and easy to follow.
-- Users were able to sign up for user accounts.
-- 
+- Representative User testers were able to visit the site, view the Items, view the Skus and get information about all the items for sale.
+- Testers were able to sign up for accounts, and confirm their email address.
+- Testers were able to add items to their cart, in various quantities.
+- Testers were happy to see that they could not accidentally pay for instructions included with other items.
+- Testers were able to complete the checkout successfully.
+- Testers were able to sign up for newsletters and received emails confirming.
+
+Feedback from tester lead to improvements.
+- The item images on the item pages were changed to be a link to the item detail page, instead of just the button.
+- The text was clarified on the Item and Sku descriptions to make it more clear what was included in each purchase. 
+
+Some suggestions have not yet been implemented.
+- Some testers would like for there to be larger pictures. There is opportunity for larger pictures in the Item models, but larger pictures do not exist. 
+- Some testers would really like the products. The products don't exist is saleable quantities.
 
 <br>
 <hr>
@@ -680,15 +690,28 @@ Several bugs were found during development, and most were fixed.
 
 The following bugs were fixed during development:
 
-1. When using the Sku creation form in new-sku.html, the newly created Skus were sending infomration and were not being added to the item-detail.html when viewing item details. Troubleshooting found that using get_object_or_404 would for some reason work with the admin panel created Skus, but weren't the correct choice for use on a queryset. Since the view was already try/excepting finding the Skus, object.get is perfectly functional. The correct Sku details are being correctly displayed on the correct Item object detail page.
-2.  
+- When using the Sku creation form in new-sku.html, the newly created Skus were sending infomration and were not being added to the item-detail.html when viewing item details. Troubleshooting found that using get_object_or_404 would for some reason work with the admin panel created Skus, but weren't the correct choice for use on a queryset. Since the view was already try/excepting finding the Skus, object.get is perfectly functional. The correct Sku details are being correctly displayed on the correct Item object detail page.
+- Bad checkout data was crashing the site when an order process was attempted. Troubleshooting found that a postcode was being passed that the Stripe integration was not looking form, causing a data mismatch with an error 500. Removed the postcode from that particular field, so it would not be passed to Stripe.
+- The zipcode was not getting passed correctly through the form in checkout/stripe_element.js. The problem was simillar as above, Stripe wasn't looking for that information in that process, whichw as causing an error 500. The zipcode was changed to only be be passed when asked.
+- Customers can increment the quantity of instructions in the cart, which can lead them to pay for more than one set of instructions. The buttons are rendered but made display-none, so that there isn't a problem with form submission but the customer cannot change the value.
+- Email button in the footer does nothing. Code was changed so that it opens an email application on the customer computer, and starts a preaddressed email.
+- Carousel links did not work in Heroku but did work in Gitpod. Troubleshooting found that the links were working, but the Gitpod usage was logged in, and that allowed the links to actually do something meaningful. If the user was logged in, they were just redirected to the index page, making it seem like nothing was happening. The links were changed to thake a logged-in customer to their customer information, and an unlogged-in customer to a sign-up page.
+- Sorting is not sorting items in a particular theme, but returning a list of all items sorted. Troubleshooting found that the current theme was not being passed to the view that made the sort happen. Afterward, it was discovered that if no theme was selected, an error 404 occured. So the whole sort code was wrapped in an if statement checking if a theme was currently selected before passing it.
+- Newly added Skus were not appearing on the Item detail page when created in the front end. Troubleshooting found that the view was asking get_object_or_404 when it should have been using a try statement. The code was corrected and the Skus are being properly displayed.
+- Ordering caused duplicate orders to be sent to the database, with different totals, while Stripe was processing information correctly. Troubleshooting found that calculating the shipping in the context was giving a value where trying to calculate it in the view or model wasn't working, causing a data mismatch. The error didn't throw an error 505 but instead just had Stripe keep tryint to push the order through until a second one was pushed through on the top of the incomplete one made previously. The shipping was reorganized and the order work properly now.
+- New Sku and New Item were not working, but instead throwing an error 500. Troubleshooting found that the URLs were trying to send "new_item" to "item_detail," so "item_detail" was getting arguments it didn't like, and throwing a fit. Urls were reorganized and cleaned up. Item and Sku creation working as intended.
+- New item, new sku, edit item, edit sku not working. Troubleshooting that semantic revisions removed an important > from a form tag. Fixed the code. Database control working as intended.
+- Checkout fail page not rendering. Troubleshooting found that the template should be "checkout/checkout_fail.html" not "checkout_fail.html." The unhappy path is working.
+- Edit Sku form is not working. Troubleshooting found that having just removed the fields that shouldn't be edited caused the form to attempt a submit while invalid. The solution was to add the form fields back into the page but with d-none so they could not be edited. Everything working as intended.
+- After writing code that set the instructions quantity to zero if any sku associated to the same item was added to the cart, the cart would just add quantity 0 instructions any time instructions were added. Troubleshooting found that it was just an order of operations issue - buy doing the check before the add, the instructions would be added with quantity 1 and left alone unless they should be set to 0 by another Sku.
+- Super Users adding Skus could inadvertantly add duplicate Skus. Code was added to prevent duplicates by checking for the Sku that was being added before saving the new one.
 
 #### Unfixed Bugs:
 
 The following bugs have not yet been fixed:
 
-1. Sorting dropdown menu does not sort a currently selected Theme or search result.
-2.  
+- Toasts seem to be working intermittently, and all Javascript components seem to be quite small. Troubleshooting has yet to crack this stubborn issue.
+- Using the Heroku deployed site, emails are working for new account signup, and new newsletter signups and being actually sent by Gmail SMTP. However, when an order is placed, the email is not sent. When in the Gitpod IDE, the email is logged to the console as is the way, but the problem has not been resolved in Heroku.
 
 <hr>
 For educational purposes only.
