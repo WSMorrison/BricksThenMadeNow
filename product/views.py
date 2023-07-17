@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -74,7 +75,7 @@ def item_detail(request, item_id):
 
     try:
         sku_inst = skus.get(sku_item=item, sku_type='inst')
-    except Excpetion as e:
+    except Exception as e:
         sku_inst = None
         messages.error(request, f'No instructions: {e}')
         return HttpResponse(status=500)
