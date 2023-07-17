@@ -38,15 +38,17 @@
                                     <div class="form-input">{{ request.user.email }}</div>
                                     <div class="form-input">{{ siteuser_form.siteuser_phone_number }}</div>
                                 </div>
-                                <div class="form-box">
+                                <div class="">
                                     <div class="item-name">
                                         <h3>Shipping Address</h3>
                                     </div>
                                     <div class="form-input">{{ siteuser_form.siteuser_street_address1 }}</div>
                                     <div class="form-input">{{ siteuser_form.siteuser_street_address2 }}</div>
-                                    <span id="id_town_or_city">{{ siteuser_form.siteuser_town_or_city }}</span>
-                                    <span id="id_state">{{ siteuser_form.siteuser_state }}</span>
-                                    <span id="id_zipcode">{{ siteuser_form.siteuser_zipcode }}</span>
+                                    <div class="mt-2">
+                                        <span class="form-input">{{ siteuser_form.siteuser_town_or_city }}</span>
+                                        <span class="form-input">{{ siteuser_form.siteuser_state }}</span>
+                                    </div>
+                                    <div class="form-input mt-2">{{ siteuser_form.siteuser_zipcode }}</div>
                                     <div class="form-input">{{ siteuser_form.siteuser_country}}</div>
                                 </div>
                                 <button class="button-13 urgent-button">Update</button>
