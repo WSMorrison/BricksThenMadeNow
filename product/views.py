@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -62,7 +61,7 @@ def all_items(request):
                'current_sort': current_sort
                }
 
-    return render(request, 'product/items.html', context)
+    return render(request, 'product/item-list.html', context)
 
 
 # Operates page that views details about a specific item.

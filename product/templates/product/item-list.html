@@ -26,11 +26,19 @@
                                 <a class="logo-font font-weight-bold nav-link text-black" href="#" id="all-items-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ current_sort }}
                                 </a>
-                                <span class="dropdown-menu border-0" aria-labelledby="all-items-link">
-                                    <a href="{% url 'items' %}" class="dropdown-item">Nevermind</a>
-                                    <a href="{% url 'items' %}?theme={{ current_theme }}&sort=item_part_count&direction=asc" class="dropdown-item">Part Count +</a>
-                                    <a href="{% url 'items' %}?theme={{ current_theme }}&sort=item_part_count&direction=desc" class="dropdown-item">Part Count -</a>
-                                </span>
+                                {% if current_theme %}
+                                    <span class="dropdown-menu border-0" aria-labelledby="all-items-link">
+                                        <a href="{% url 'items' %}" class="dropdown-item">Nevermind</a>
+                                        <a href="{% url 'items' %}?theme={{ current_theme }}&sort=item_part_count&direction=asc" class="dropdown-item">Part Count +</a>
+                                        <a href="{% url 'items' %}?theme={{ current_theme }}&sort=item_part_count&direction=desc" class="dropdown-item">Part Count -</a>
+                                    </span>
+                                {% else %}
+                                    <span class="dropdown-menu border-0" aria-labelledby="all-items-link">
+                                        <a href="{% url 'items' %}" class="dropdown-item">Nevermind</a>
+                                        <a href="{% url 'items' %}?sort=item_part_count&direction=asc" class="dropdown-item">Part Count +</a>
+                                        <a href="{% url 'items' %}?sort=item_part_count&direction=desc" class="dropdown-item">Part Count -</a>
+                                    </span>
+                                {% endif %}
                             </span>
                         </span>
                     </div>
