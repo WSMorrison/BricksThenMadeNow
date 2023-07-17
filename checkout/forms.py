@@ -16,7 +16,8 @@ class Orderform(forms.ModelForm):
                   'town_or_city',
                   'zipcode',
                   'country',
-                  'state',}
+                  'state',
+                  }
 
     def __init__(self, *args, **kwargs):
 

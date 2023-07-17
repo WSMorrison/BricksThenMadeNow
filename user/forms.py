@@ -27,6 +27,7 @@ class DAAUserform(forms.ModelForm):
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
 
+
 class SiteUserform(forms.ModelForm):
     class Meta:
         model = SiteUser
@@ -60,6 +61,7 @@ class SiteUserform(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
+
 
 class NewsletterUserform(forms.ModelForm):
 

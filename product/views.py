@@ -27,12 +27,11 @@ def all_items(request):
         if 'searchterm' in request.GET:
             query = request.GET['searchterm']
             if not query:
-                messages.error(request,'Please enter a search term.')
+                messages.error(request, 'Please enter a search term.')
                 return redirect(reverse('items'))
-            queries = Q(item_name__icontains=query
-                        ) | Q(item_description__icontains=query
-                        ) | Q(item_number__icontains=query
-                        )
+            queries = Q(item_name__icontains=query) | Q(
+                        item_description__icontains=query) | Q(
+                        item_number__icontains=query)
             items = items.filter(queries)
 
         if 'sort' in request.GET:
@@ -58,11 +57,11 @@ def all_items(request):
         current_sort = "Sort by:"
 
     context = {'items': items,
-               'current_theme': current_theme, 
+               'current_theme': current_theme,
                'current_sort': current_sort
                }
 
-    return render(request,'product/items.html', context)
+    return render(request, 'product/items.html', context)
 
 
 # Operates page that views details about a specific item.
@@ -75,16 +74,22 @@ def item_detail(request, item_id):
 
     try:
         sku_inst = skus.get(sku_item=item, sku_type='inst')
-    except:
+    except Excpetion as e:
         sku_inst = None
+        messages.error(request, f'No instructions: {e}')
+        return HttpResponse(status=500)
     try:
         sku_mdst = skus.get(sku_item=item, sku_type='mdst')
-    except:
+    except Exception as e:
         sku_mdst = None
+        messages.error(request, f'No Modernset: {e}')
+        return HttpResponse(status=500)
     try:
         sku_flst = skus.get(sku_item=item, sku_type='flst')
-    except:
+    except Exception as e:
         sku_flst = None
+        messages.error(request, f'No FullSet: {e}')
+        return HttpResponse(status=500)
 
     context = {'item': item,
                'sku_inst': sku_inst,
@@ -109,14 +114,15 @@ def new_item(request):
             messages.success(request, 'Item added, thank you.')
             return redirect(reverse('item_detail', args=[item.id]))
         else:
-            messages.error(request, 'Something went wrong, please check the form fields.')
+            messages.error(request, 'Please check the form fields.')
     else:
         form = ItemForm()
 
     template = 'product/new-item.html'
-    context = {'form': form,}
+    context = {'form': form, }
 
     return render(request, template, context)
+
 
 # Operates page that staff users can use to add new items to the database.
 @login_required
@@ -141,14 +147,15 @@ def new_sku(request):
                 messages.success(request, 'Sku added, thank you.')
                 return redirect(reverse('items'))
         else:
-            messages.error(request, 'Something went wrong, please check the form fields.')
+            messages.error(request, 'Please check the form fields.')
     else:
         form = SkuForm()
 
     template = 'product/new-sku.html'
-    context = {'form': form,}
+    context = {'form': form, }
 
     return render(request, template, context)
+
 
 # Operates page that staff users can use to edit items in the database.
 @login_required
@@ -166,7 +173,7 @@ def edit_item(request, item_id):
             return redirect(reverse('item_detail', args=[item_id]))
         else:
             messages.error(request, 'Item update FAILED.')
-    
+
     else:
         form = ItemForm(instance=item)
 
@@ -256,7 +263,7 @@ def confirm_delete_item(request, item_id):
         'items': items,
     }
 
-    return render(request,'product/items.html', context)
+    return render(request, 'product/items.html', context)
 
 
 # Performs the sku deletion.
@@ -275,7 +282,9 @@ def confirm_delete_sku(request, sku_id):
         'items': items,
     }
 
-    return render(request,'product/items.html', context)
+    return render(request, 'product/items.html', context)
 
+
+# Handles error page.
 def errorpage(request):
     return render(request, 'errorpage.html')

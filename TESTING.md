@@ -71,16 +71,19 @@ Accessibility, Best Practices and SEO scores calculated by [Google Lighthouse.](
 
 ## Code Validation
 
+Code was validated by using online validators and linters. Any errors were solved, until the code returned no errors.
+
+![HTML validation representative return](/assets/readme-images/testing/w3c-html-valdiation.png)
+
 The HTML for the website was put through the [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input). Each page of the site was tested by opening the page, viewing page source, and copying and pasting the source code into the validator. This avoided any issues with the template tags upsetting the validator to the point that it did not check the rest of the code. Any errors found were fixed. As credit to Django's automated page generation through template tags, the only errors were in the hand written code of the base.html; a stray closing italic tag in the footer, and an attempt at a responsive break in the blockquote to try to influence the line break that did not have any effect. Both were fixed, and each page was returned without errors.
 
 ![W3C CSS validator return](/assets/readme-images/testing/w3c-css-validation.png)
 
 The CSS was put through the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/).
 
+![CI Python linter representative return](/assets/readme-images/testing/ci-python-linter-validation.png)
 
-The Python code was checked with the [Code Institute Python linter](https://pep8ci.herokuapp.com/).py, and views.py. Each was returned without errors.
-
-![CI Python linter representative return](#)
+The Python code was checked with the [Code Institute Python linter](https://pep8ci.herokuapp.com/).py, and views.py. Each either was returned without errors or errors were solved until there were none.
 
 <br>
 <hr>

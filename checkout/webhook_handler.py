@@ -10,7 +10,7 @@ from user.models import SiteUser
 from .models import Order, LineItem
 
 
-# Handles Stripe webhook integration and takes action when listener hears an event.
+# Handles Stripe webhook integration when listener hears an event.
 class StripeWH_Handler:
 
     def __init__(self, request):
@@ -100,7 +100,7 @@ class StripeWH_Handler:
         if order_exists:
             self._send_confirmation_email(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order in database',
+                content=f'Webhook received: {event["type"]} | Verified order in database',
                 status=200)
         else:
             order = None
@@ -121,7 +121,7 @@ class StripeWH_Handler:
 
                 for item_id, item_data in json.loads(cart).items():
                     sku = Sku.objects.get(id=item_id)
-                    item = sku.sku_item                    
+                    item = sku.sku_item
                     order_line_item = LineItem(
                         order=order,
                         item=item,

@@ -81,7 +81,7 @@ def newsletter_signup(request):
             _send_confirmation_email(email)
 
             return redirect(reverse('home'))
-        
+
         else:
             messages.error(request, 'Unsuccessful, check form.')
 

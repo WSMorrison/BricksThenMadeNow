@@ -5,11 +5,12 @@ from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
 
 
-#Custom validators
+# Custom validators
 def pdf_url_ok(value):
     if value.endswith('.pdf') is False:
         if value.startswith('https://res.cloudinary.com/') is False:
             raise forms.ValidationError('File must be secure .pdf.')
+
 
 def inventory_ok(value):
     if value < 0:
@@ -26,7 +27,6 @@ class ItemForm(forms.ModelForm):
                                     'placeholder': 'XX0YYYY'
                                   }))
 
-    
     item_instructions_url = forms.CharField(validators=[pdf_url_ok],
                                             widget=forms.URLInput(attrs={
                                             'placeholder': 'https:// ... .pdf'
