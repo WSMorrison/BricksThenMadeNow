@@ -33,6 +33,7 @@
                             <div class="form-input d-none">{{ form.sku_item }}</div>
                             <p>Sku item cannot be edited</p>
                             <hr>
+                            <p class="mb-0">Sku number</p>
                             <div class="form-input">{{ form.sku_number }}</div>
                             <p class="mb-0">Conventional numbering is:</p>
                             <p class="mb-0">1033 - Instructions</p>
@@ -44,13 +45,13 @@
                             <div class="form-input d-none">{{ form.sku_type }}</div>
                             <p>Sku type cannot be edited.</p>
                             <hr>
+                            <p class="mb-0">Sku price</p>
                             <div class="form-input">{{ form.sku_price }}</div>
-                            <p>Sku price.</p>
                             <hr>
                             <span class="form-input checkbox-not-blue">{{ form.sku_physical }}</span><span class="ml-2">Physical item?</span>
                             <hr>
+                            <p class="mb-0">Inventory</p>
                             <div class="form-input">{{ form.sku_inventory }}</div>
-                            <p>Inventory.</p>
                             <hr>   
                             <div class="text-right">
                             <a class="button-13" href="{% url 'items' %}">Cancel</a>

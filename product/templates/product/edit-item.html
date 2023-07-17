@@ -32,20 +32,24 @@
                     <div class="card-body">
                         <form method="POST" action="{% url 'edit_item' item.id %}" enctype="multipart/form-data">
                         {% csrf_token %}
+                        <p class="mb-0">Item number</p>
                         <div class="form-input">{{ form.item_number }}</div>
                         <p>XX as the year created, 0, XXXX as the reference Lego set number (Use the 0 if five digits).</p>
                         <hr>
+                        <p class="mb-0">Item name</p>
                         <div class="form-input">{{ form.item_name }}</div>
                         <p>Use the name of the original set.</p>
                         <hr>
                         <div class="form-input">{{ form.item_theme }}</div>
                         <p>Select theme.</p>
+                        <hr>
+                        <p class="mb-0">Item description</p>
                         <div class="form-input">{{ form.item_description }}</div>
                         <p>Item description. Remember to use SEO terms!</p>
                         <hr>
                         <p class="mb-0">Requred image:</p>
                         <div class="form-input">{{ form.item_render }}</div>
-                        <p>Rendered picture of modern set, required!</p>
+                        <p>Rendered picture of modern set, strongly suggested!</p>
                         <span class="form-input d-none">{{ form.item_render_url }}</span><span class="ml-2">URL coming soon</span>
                         <div class="card optional-pictures my-4">
                             <div class="card-body">
@@ -63,12 +67,13 @@
                                 <span class="form-input d-none">{{ form.item_detail_url }}</span><span class="ml-2">URL coming soon</span>
                             </div>
                         </div>
+                        <p class="mb-0">Instruction URL</p>
                         <div class="form-input">{{ form.item_instructions_url }}</div>
                         <p class="mb-0">Instructions .pdf, add formatting:</p>
                         <p class="item-instrctions-instructions">.../upload/<strong>fl_attachment:</strong>vreference/filename.pdf</p>
                         <hr>
+                        <p class="mb-0">Parts Count</p>
                         <div class="form-input">{{ form.item_part_count }}</div>
-                        <p>Parts Count.</p>
                         <div class="text-right">
                             <a class="button-13" href="{% url 'items' %}">Cancel</a>
                             <button class="button-13 urgent-button" type="submit">Update</button>
