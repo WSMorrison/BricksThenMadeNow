@@ -75,22 +75,18 @@ def item_detail(request, item_id):
 
     try:
         sku_inst = skus.get(sku_item=item, sku_type='inst')
-    except Exception as e:
+    except:
         sku_inst = None
-        messages.error(request, f'No instructions: {e}')
-        return HttpResponse(status=500)
+
     try:
         sku_mdst = skus.get(sku_item=item, sku_type='mdst')
-    except Exception as e:
+    except:
         sku_mdst = None
-        messages.error(request, f'No Modernset: {e}')
-        return HttpResponse(status=500)
+
     try:
         sku_flst = skus.get(sku_item=item, sku_type='flst')
-    except Exception as e:
+    except:
         sku_flst = None
-        messages.error(request, f'No FullSet: {e}')
-        return HttpResponse(status=500)
 
     context = {'item': item,
                'sku_inst': sku_inst,
