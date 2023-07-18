@@ -60,7 +60,7 @@ Once the repository was generated, the following steps were taken to install the
 <summary>Example of Django's little congratulatory rocket.</summary>
 <br>
 
-![Good job rocket](/assets/readme-images/DjangoSuccess.png)
+![Good job rocket](/assets/readme-images/django-success-rocket.png)
 
 </details> 
 
@@ -245,7 +245,7 @@ When the app is deployed successfully, click View App. There should be a congrat
 <summary>Example of Django's little congratulatory rocket.</summary>
 <br>
 
-![Good job rocket](/assets/readme-images/DjangoSuccess.png)
+![Good job rocket](/assets/readme-images/django-success-rocket.png)
 
 </details> 
 
