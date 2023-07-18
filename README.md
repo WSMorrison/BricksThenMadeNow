@@ -1,6 +1,6 @@
 # Bricks Then Made Now
 
-Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to other Lego fans. The site will appeal to adult followers of Lego (AFOL), by reimagining vintage Lego from the 1970s, '80s, and '90s with modern elements and contemporary design techniques.
+Bricks Then Made Now is an e-commerce site that sells fan made Lego designs to other Lego fans. The site will appeal to adult followers of Lego (AFOL), by reimagining vintage Lego from the 1970s, '80s, and '90s with modern elements and contemporary design techniques.
 
 ![Front page of Bricks Then Made Now as input to AmIResponsive.](/assets/readme-images/am-i-responsive.png)
 
@@ -73,29 +73,29 @@ Portfolio Project 5 is the culmination of the Code Institute "Diploma in Softwar
 
 ### User Stories
 
-- Customer can view available projects.<br>
-  When accessing the items page, a customer is able to see a list of all available items. The list can be sorted by theme, searched by either the item number, item name, or description. The results of a list sorted by theme can be sorted by part count.
+- Customer can view available products.<br>
+  When accessing the items page, a customer is able to see a list of all available products, or Items. The list can be sorted by Theme, searched by either the Item number, Item name, or description. The results of a list sorted by theme can be sorted by part count.
 
 - Customer can view detailed descriptions.<br>
-  The customer can click on an item and view a more detailed description. The detail page includes a description, additional images, pricing for the Instructions, ModernSet, and Fullset, and the current inventory of each and if each is currently available.
+  The customer can click on an Item and view a more detailed description. The detail page includes a description, additional images, pricing for each Sku: the Instructions, ModernSet, and Fullset, and the current inventory of each and if each is currently available.
 
 - Customer can decide what package is right for them.<br>
-  The customer can view the pricing, the availability and what's included in each of the Skus, based on the Item description and the availability indicated on the item detail page. Questions they may have about what is included in the items is further explained on the about and FAQ page which is accessible from all pages of the site.
+  The customer can view the pricing, the availability and what's included in each of the Skus, based on the Item description and the availability indicated on the item detail page. Questions they may have about what is included with the Items is further explained on the about and FAQ page which is accessible from all pages of the site.
 
-- Customer can add items to cart.<br>
-  Crucial to any e-commerce platform, users can become customers by adding items to a cart and making a purchase. On the item detail page, there are three add to cart buttons, which would add either the Instructions, the ModernSet, or the FullSet to the cart based on which they want. Adding either the ModernSet or the FullSet to the cart would disable the button to add the instructions, to prevent a customer from double purchasing.
+- Customer can add Items to cart.<br>
+  Crucial to any e-commerce platform, users can become customers by adding Items to a cart and making a purchase. On the item detail page, there are three add to cart buttons, which would add either the Instructions, the ModernSet, or the FullSet to the cart based on which they want. Adding either the ModernSet or the FullSet to the cart would disable the button to add the instructions, to prevent a customer from double purchasing. It would also set any Instructions Sku already in the cart to quantity 0, to prevent the customer for paying twice for the same thing.
 
 - Customer can see a running cart total.<br>
-  In order for a customer to keep an eye on their spending, the cart in the top right corner will indicated if there are items in it and how much they would be charged to process the order.
+  In order for a customer to keep an eye on their spending, the cart in the top right corner will indicated if there are Items in it and how much they would be charged to process the order.
 
 - Customer can make a purchase.<br>
-  A customer can view their cart, decide that they are ready to buy, and with Stripe integration can pay for their purchase securely and quickly. The order will be committed to the database.
+  A customer can view their cart, decide that they are ready to buy, and with Stripe integration can pay for their purchase securely and quickly. The order will be committed to the database, Stripe will receive a record of the purchase, and the customer will be sent a verification email in addition to the success page on the website.
 
 - Customer can download instructions after purchase.<br>
-  A customer can click a button on the item detail page of any item they have purchased, and download a PDF of the set instructions. Of course, if they purchase a physical product, there will be paper instructions sent. But if they don't, or if they can't wait or if they lose them, the isntructions will be available on the website any time they log in.
+  When logged in, a customer can click a button on the item detail page of any Item they have purchased, and download a PDF of the set instructions. Of course, if they purchase a physical product, there will be paper instructions sent. But if they don't, or if they can't wait or if they lose them, the instructions will be available on the website any time they log in.
 
-- Customer can search or filter items.<br>
-  From any of the pages, the user can use the search bar at the very top of the page. Not only will the search bar search the item names and descriptions, but it would search the item number as well, since the item number is based on the Lego item number of the vintage set. From a theme page, the customer can also filter All items, or the items of any theme (City, Space, Castle, Train, or MOC) by part count. This is also a defacto price sorting, since the prices are largely based on parts counts but there are up to three differently prices Skus per Item.
+- Customer can search or filter Items.<br>
+  From any of the pages, the user can use the search bar at the very top of the page. Not only will the search bar search the Item names and descriptions, but it would search the Item number as well, since the Item number is based on the Lego set number of the vintage set. From a theme page, the customer can also filter All Items, or the Items of any theme (City, Space, Castle, Train, or MOC) by part count. This is also a defacto price sorting. Since the prices are largely based on parts counts but there are up to three differently prices Skus per Item, conceivably the list could be sorted by price for each of the three Skus but this functionality did not seem necessary.
 
 - Customer can sign up for email marketing.<br>
   In the footer of all pages for unlogged in users is a button that will take the user to a form to sign up for marketing emails. The form will take the user name, email, and there are four checkboxes for the user to indicate their interests. Per GDPR rules, all these checkboxes are default unchecked and the customer has to opt in.
@@ -104,19 +104,19 @@ Portfolio Project 5 is the culmination of the Code Institute "Diploma in Softwar
   The customer can register for an account. The account is useful for the user to save their information. The account is also necessary for a customer, because when they purchase any set, they gain access to downloadable instructions. By having an account, they can sign in and access those instructions without making additional payments.
 
 - Customer can log in and log out.<br>
-  As part of having an account, the customer will be able to sign in and sign out of their account.
+  As part of having an account, the customer will be able to sign in and sign out of their account. Login status will be indicated by the Login/Logout link on the nav bar toward the top of the page, and various permissions across the site will be different. For example, the customer will be able to download instructions for sets they purchased, and the customer would not be challenged when moving between the cart to checkout pages.
 
 - Customer can view past orders.<br>
   A customer will be able to view orders that they have made in the past. In the footer when a customer is logged in is a link to a separate page showing their order history.
 
 - Customer can view social media.<br>
-  There will be a social media presence on both Facebook and Instagram
+  There will be a social media presence on both Facebook and Instagram so that customers can see and "get hype" for upcoming sets, releases, specials, or even existing items.
 
-- Staff can create or update items.<br>
-  When a staff member is signed in, the nav bar will have options for the staff member to create a new item or sku. Each of the pages will include a form that will update the database with a new item or sku as appropriate. The item detail page will have bars at the bottom where the staff member can edit either the Item, or any of the associated Skus. The staff member will also be able to delete any of these, and there will be a confirmation page before the items are removed from the database.
+- Staff can create or update Items.<br>
+  When a staff member is signed in, the nav bar will have options for the staff member to create a new Item or Sku. Each of the pages will include a form that will update the database with a new Item or Sku as appropriate. The Item detail page will have bars at the bottom where the staff member can edit either the Item, or any of the associated Skus. The staff member will also be able to delete any of these, and there will be a confirmation page before the Items are removed from the database. There will be defensive code to prevent database errors when making these changes.
 
 - Staff can encourage sign up.<br>
-  Staff can encourage user sign up and customer conversion by setting a give away set of instructions. Currently, 2201489 Mobile Crane Car is the free instructions and will be downloadable by any logged in
+  Staff can encourage user sign up and customer conversion by setting a give away set of instructions. Currently, 2201489 Mobile Crane Car is the free instructions and will be downloadable by any logged in user.
 
 <hr>
 
@@ -135,9 +135,9 @@ The background colors are simple, and light gray. They are just intended to help
 The text colors are nearly black. The main color is essentially black, while muted is a dark gray different enough to indicated a difference in content.
 
 ![Accent colors](/assets/readme-images/colors-accent.jpg)<br>
-The accent colors are similar to those used by Lego. They are used in the title, for design reasons. The yellow color is used in selected buttons, like the buttons that add items to cart or process payment, to indicated urgency and call the user to action. It is also used in the payment handling overlay. The blue color is used on image place holders, and also used to replace the native blue color used by links. The red is only used around the item and sku deletion buttons on the item detail page, when staff is logged in. The yellow is also used similarly for the edit buttons. When these colors are used for anything other than text, the are used at a level of transparancy to limit their intensity.
+The accent colors are similar to those used by Lego. They are used in the title, for design reasons. The info bar between the header and body of the site, where the customer can see their current navigation and where the sort dropdown is on the items page, is the yellow accent color. The yellow color is also used in selected buttons, like the buttons that add items to cart or process payment, to indicated urgency and call the user to action. It is also used in the payment handling overlay. The blue color is used on image place holders, and also used to replace the native blue color used by links. The red is only used around the Item and Sku deletion buttons on the item detail page, when staff is logged in. When these colors are used for anything other than text, the are used at a level of transparancy to limit their intensity, except on the info bar below the header and above the body, where maximum contrast ws desired.
 
-The Color scheme was developed with help from [Color Contrast Checker](https://coolors.co/contrast-checker/), [Color Shades Online Generator](https://gradients.app/en/shades/), and [Coolers.](https://coolors.co/)
+The Color scheme was developed with help from [Color Contrast Checker](https://coolors.co/contrast-checker/) and [Color Shades Online Generator](https://gradients.app/en/shades/), and [Coolers](https://coolors.co/) was used to prepare the swatches for the Readme.
 
 ### Typography
 
@@ -171,13 +171,23 @@ A project of even such a small scope as this requires careful planning before an
 <hr>
 <br>
 
-Custom models had to be developed to hold the appropriate information the website's database. Care had to be taken to plan the way the models would interact, since there are two instances of having one model extended by another. This was necessary to have a few different purchasable SKUs related to a single item, and to have a unique siteuser model that uses the Django authorization functionality as its base.
+Custom models had to be developed to hold the appropriate information the website's database. Care had to be taken to plan the way the models would interact, since there are two instances of having one model extended by another. This was necessary to have a few different purchasable Skus related to a single Item, and to have a unique siteuser model that uses the Django authorization functionality as its base.
 
-Three models are custom and new for the project, the [Item model](#item-model), the [Sku model](#sku-model), and the [NewsletterUser model](#newsletteruser-model). The other models are modified, but are still essentially boilerplate eCommerce object models.
+Three models are custom and new for the project, the [Item model](#item-model), the [Sku model](#sku-model), and the [NewsletterUser model](#newsletteruser-model). The other models are modified, but are still essentially boilerplate e-commerce object models.
+
+#### Theme model
+
+This proto-model is barely big enough to be considered a model; much like Pluto which is a planet despite what the scientists say. This model holds only one field, the Theme name, and is related to the Item model and is used to sort and organize the Items on the web site.
+
+This model is custom.
+
+| Key  | Field     | Form |
+|------|-----------|------|
+| Name | CharField | Text |
 
 #### Item model
 
-This model contains information about the items listed for sale on the site. The item model will only include information that is common to all three SKUs related to a particular item, including the item number, item name, related themes, the description, images, and the partcount. It will be extended with the SKU model which will hold information about each individual SKU that are part of the item.
+This model contains information about the Items listed for sale on the site. The Item model will only include information that is common to all three Skus related to a particular Item, including the Item number, Item name, related Themes, the description, images, and the partcount. It will be extended with the Sku model which will hold information about each individual Sku that are part of the Item.
 
 This model is custom.
 
@@ -199,9 +209,9 @@ This model is custom.
 | item_partcount             | Integerfield | Integer              |
 | item_user_owned            | ManyToMany   | Many to many         |
 
-#### SKU model
+#### Sku model
 
-The SKU model containst he rest of the information about what the customer can buy. It extends the item model, which describes the Bricks Then Made Now set, and adds the price, an inventory field, and fields that indicate whether its a SKU for a physical, shippable item or a SKU for a digital instructions download that will not need to be shipped and have shipping fees included. The SKU model will also include an included instructions field that will contain the SKU for the digital instructions that will be included with a digital purchase, so that they will be unlocked for the customer with all purchases.
+The Sku model contains the rest of the information about what the customer can buy. It extends the Item model, which describes the Bricks Then Made Now set, and adds the price, an inventory field, and fields that indicate whether it is a Sku for a physical, shippable Item or a Sku for a digital instructions download that will not need to be shipped and will not have shipping fees included. The Sku model will also include an instructions URL field that will contain the URL for the digital instructions that will be included with a digital purchase, so that they will be unlocked for the customer with all purchases.
 
 This model is custom.
 
@@ -299,7 +309,7 @@ Wireframes were made to describe how the site would look on both large and mobil
 
 ![Index page on large screens.](/assets/readme-images/wireframes/large-1-index.jpg)
 
-This wireframe of the index page shows the planned organization of the page. The site title, search bar and cart link will remain at the very top of the screen, with a nav bar just below it. Below that is the splash image, with a planned carousel for specials or site news. The center of the page is dominated with a list of all items that the user can sort by price, or using the nav bar, can filter by theme. The bottom of the page has a footer that is visually distinct like the header. It will hold a form for users to sign up for the mailing list, feature related social media, and links to supporting documents like an FAQ and the T&Cs that suppor the site. Many of the header and footer aspects will carry through the rest of the site, but the splash image and carousel will be only visible on the index page. 
+This wireframe of the index page shows the planned organization of the page. The site title, search bar and cart link will remain at the very top of the screen, with a nav bar just below it. Below that is the splash image, with a planned carousel for specials or site news. The center of the page is dominated with a list of all Items that the user can sort by price, or using the nav bar, can filter by theme. The bottom of the page has a footer that is visually distinct like the header. It will hold a form for users to sign up for the mailing list, feature related social media, and links to supporting documents like an FAQ and the T&Cs for the site. Many of the header and footer aspects will carry through the rest of the site, but the splash image and carousel will be only visible on the index page. 
 
 Some changes were ultimately made to the index page, most notably, the index page has a block of graphic links to each theme, instead of a list of items. The list of items shows up on the item page, which is more similar to the index page's initial plan.
 
@@ -317,7 +327,7 @@ Other large screen wireframes can be seen below:
 
 The items page ended up almost exactly as the index page was planned, so it is included here. 
 
-The site title, search bar and cart link will remain at the very top of the screen, with a nav bar just below it. Below that is the splash image, with a planned carousel for specials or site news. The center of the page is dominated with a list of all items that the user can sort by price, or using the nav bar, can filter by theme. The bottom of the page has a footer that is visually distinct like the header. It will hold a form for users to sign up for the mailing list, feature related social media, and links to supporting documents like an FAQ and the T&Cs that suppor the site. Many of the header and footer aspects will carry through the rest of the site, but the splash image and carousel will be only visible on the index page.
+The site title, search bar and cart link will remain at the very top of the screen, with a nav bar just below it. Below that is the splash image, with a planned carousel for specials or site news. The center of the page is dominated with a list of all items that the user can sort by price, or using the nav bar, can filter by theme. The bottom of the page has a footer that is visually distinct like the header. It will hold a form for users to sign up for the mailing list, feature related social media, and links to supporting documents like an FAQ and the T&Cs for the site. Many of the header and footer aspects will carry through the rest of the site, but the splash image and carousel will be only visible on the index page.
 
 </details>
 
@@ -337,7 +347,7 @@ The detail page will feature a large image displayed, with smaller images that c
 
 ![Shopping cart page, large screen](/assets/readme-images/wireframes/large-3-cart.jpg)
 
-The shopping cart page will list the items the customer has added, with a small image. It will also show selected details, including the price. There will be a quantity selector for physical items, and an extended price. Note, the quantity is set to one and is not selectable for the instructions only digital download. The page will also show the subtotal, shipping cost, and grand total. These will be lined up with the extended totals for consistency, and the checkout button will be directly below to encourage the customer to buy with a clear call to action.
+The shopping cart page will list the Items the customer has added, with a small image. It will also show selected details, including the price. There will be a quantity selector for physical Items, and an extended price. Note, the quantity is set to one and is not selectable for the instructions only digital download. The page will also show the subtotal, shipping cost, and grand total. These will be lined up with the extended totals for consistency, and the checkout button will be directly below to encourage the customer to buy with a clear call to action.
 
 </details>
 
@@ -347,7 +357,7 @@ The shopping cart page will list the items the customer has added, with a small 
 
 ![Create item page, large screen](/assets/readme-images/wireframes/large-4-create-item.jpg)
 
-The form to add an item will have it's own page, with a simple form for staff to fill with each field in the item model.
+The form to add an Item will have its own page, with a simple form for staff to fill with each field in the item model.
 
 </details>
 
@@ -357,7 +367,7 @@ The form to add an item will have it's own page, with a simple form for staff to
 
 ![Create SKU page, large screen](/assets/readme-images/wireframes/large-5-create-sku.jpg)
 
-The form to add an item's indivdual SKUs will have another page, which will allow the user to add an individual SKU suffix to the item number. The related item number will be chosen from a dropdown menue, as will the SKU suffix. The staff will be able to add information specific to each SKU including price, whether the SKU represents a phyical item, how many are inventory for sale, and what digital instructions would be included with the physical items.
+The form to add an Item's indivdual Skus will have another page, which will allow the user to add an individual Sku suffix to the Item number. The related Item number will be chosen from a dropdown menue, as will the Sku suffix. The staff will be able to add information specific to each Sku including price, whether the Sku represents a phyical Item, how many are inventory for sale, and what digital instructions would be included with the physical Items.
 
 </details>
 
@@ -399,7 +409,7 @@ The site will also have a custom 404 page, which is also quite simple and will f
 
 ![Index page on mobile screens.](/assets/readme-images/wireframes/mobile-1-index.jpg)
 
-The mobile index page will be similar in structure to the large screen page, except the list of items will be stacked instead of stacks of rows. It will contain the same information, as well as the the sort and filter functionalities as the large screen page. 
+The mobile index page will be similar in structure to the large screen page, except the list of Items will be stacked instead of in rows. It will contain the same information, as well as the the sort and filter functionalities as the large screen page. 
 
 Similarly to the larger screen pages, this function became an items page, while the index page holds a block of themed links.
 
@@ -417,7 +427,7 @@ Other large screen wireframes can be seen below:
 
 Just as before with larger screens, the items page became what the index page was initially intended to be. 
 
-The mobile index page will be similar in structure to the large screen page, except the list of items will be stacked instead of stacks of rows. It will contain the same information, as well as the the sort and filter functionalities as the large screen page. 
+The mobile index page will be similar in structure to the large screen page, except the list of items will be stacked instead of in rows. It will contain the same information, as well as the the sort and filter functionalities as the large screen page. 
 
 </details>
 
@@ -502,7 +512,7 @@ Wireframes were built in [Balsamiq's online application.](https://balsamiq.cloud
 <hr>
 <br>
 
-A flowchart was developed to track a user or staff member's movement through the site. Their actions ultimately effect the database that stores not only information about the items available, but information about what a customer has purchased. This is important, because some of the purchases are of digital goods which remain available for download on the site when the customer is logged in.
+A flowchart was developed to track a user or staff member's movement through the site. Their actions ultimately effect the database that stores not only information about the Items available, but information about what a customer has purchased. This is important, because some of the purchases are of digital goods which remain available for download on the site when the customer is logged in.
 
 ![Bricks Then Made Now Flowchart](/assets/readme-images/flowchart.jpg)
 
@@ -521,7 +531,7 @@ Epic stories were developed to further organize the tasks. Each task was assigne
 
 Agile techniques and technologies were used during the initial planning stages and then throughout the entire development process.
 
-There are several Enhancement labels still on the board in the Todo column, most of which are artifacts of the initial planning stages. These were made into future implementations after consultation with mentors and instructors when project scope was discussed.
+There are several Enhancement labels still on the board in an enhancement column, most of which are artifacts of the initial planning stages. These were made into future implementations after consultation with mentors and instructors when project scope was discussed. There are also some wontfix bugs in the enhancement column, bugs that did not effect the major functionalities of the website but would need to be addressed after the MVP deadline of the site.
 
 The Bricks Then Made Now repository hosted in GitHub can be found [here](https://github.com/WSMorrison/BricksThenMadeNow). The Issues in the Bricks Then Made Now repository can be found [here.](https://github.com/WSMorrison/BricksThenMadeNow/issues). The Bricks Then Made Now project and Kanban board can be found [here.](https://github.com/users/WSMorrison/projects/6)
 <hr>
@@ -531,7 +541,7 @@ The Bricks Then Made Now repository hosted in GitHub can be found [here](https:/
 
 ### General Features on All Pages
 
-The page has several main pages and some supporting confirmation and information pages. Because of the page construction, a base with a header and footer and so navigation supplements included, there are a few features that are common to almost all pages.
+The page has several main pages and some supporting confirmation and information pages. Because of the page construction, a base with a header and footer with some navigation elements included on each, there are a few features that are common to almost all pages.
 
 <details>
 <summary>General page features, using the index as an example.</summary>
@@ -541,13 +551,13 @@ The page has several main pages and some supporting confirmation and information
 
 - At the top of the page, there is a title bar.
   - The title is clickable and will always bring the user to the index page.
-  - The search bar will search all item numbers, names, and descriptions.
-  - The shopping cart icon will change when items are added to the cart, and a running total will indicate to the customer what their cart consists of.
+  - The search bar will search all Item numbers, names, and descriptions.
+  - The shopping cart icon will change when Items are added to the cart, and a running total will indicate to the customer what their cart consists of.
 - The nav bar with the themes and the login links remains on all pages for quick navigation.
 - The footer foots all pages.
   - On the left is a button that will take the customer to a form where they can sign up for promotional emails.
-  - In the center are a series of links to find Bricks Then Made Now social media or a contact information.
-  - On the right are a series of links to informative pages, including a privacy polict, an about page, and a Terms of Service.
+  - In the center are a series of links to find Bricks Then Made Now's social media presence, or contact information.
+  - On the right are a series of links to informative pages, including a privacy policy, an about page, and a Terms of Service.
 
 </details>
 
@@ -564,8 +574,8 @@ Each page necessarily has its own set of features.
 ![Index page](/assets/readme-images/features/large-1-index.png)
 
 - The index page has all the general page features.
-- The splash, title image is prominantly positioned near the top.
-- Below the splash image is a carouselle that promotes the page.
+- The splash image is prominantly positioned near the top.
+- Below the splash image is a carousel that promotes the page.
 - Prominently in the middle of the page is a grid of the themes, plus a square to take the user to their account information.
 
 </details>
@@ -577,12 +587,12 @@ Each page necessarily has its own set of features.
 ![Items page](/assets/readme-images/features/large-2-items.png)
 
 - The items page has all the general page features.
-- The splash image and carouselle do not appear on this, or any further pages.
-- Below the nav bar is a secondary nav bar in yellow.
-  - Text indicates which theme the customer is currently navigated to.
-  - On the right, a sort-by dropdown allows the customer to sort by part count. The part count is directly related to price, so it defacto does both functions.
-- The items page shows a grid of the items related to the selected theme. It will show all items if the current theme selected is "all."
-- Each item is represented by an image, the item name, the item number, the part count, and there is a button to access the item detail page.
+- The splash image and carousel do not appear on this, or any further pages.
+- Below the nav bar is an info bar in yellow.
+  - Text indicates which Theme the customer is currently navigated to.
+  - On the right, a sort-by dropdown allows the customer to sort by part count. The part count is directly related to price, so it essentially does both functions.
+- The items page shows a grid of the Items related to the selected theme. It will show all Items if the current Theme selected is none, which is displayed as "all."
+- Each Item is represented by an image, the Item name, the Item number, the part count, and there is a button to access the item detail page.
 
 </details>
 
@@ -593,10 +603,10 @@ Each page necessarily has its own set of features.
 ![Item detail page](/assets/readme-images/features/large-3-item-detail.png)
 
 - The item detail page has all the general page features.
-- The yellow bar displays text showing the theme and item name that the user is navigated to.
-- There are more images of the item where applicable, including a picture of the original Lego set, and a detail image showing a different, significant view. If there are not three images, a placeholder fills the space.
-- In addition to the item name, number, and part count, an item description is displayed.
-- Below the item details, the three Skus are displayed, where applicable.
+- The yellow bar displays text showing the theme and Item name that the user is navigated to.
+- There are more images of the Item where applicable, including a picture of the original Lego set, and a detail image showing a different, significant view. If there are not three images, the first image is replaced with a placeholder image indicating that the image is not available, and the subsequent images are replaced with an HTML placeholder that fills the space.
+- In addition to the Item name, number, and part count, an Item description is displayed.
+- Below the Item details, the three Skus are displayed, where applicable.
   - The Instructions Sku displays with the number, and price. 
   - The ModernSet Sku displays with the number, what is included, the inventory, and the price, with a quantity selector. The quantity selector will not allow a user to order more than are in inventory.
   - The FullSet Sku dispalys with the number, what is included, the inventory and the price, with a quantity selector. The quantity selector will not allow the user to order more than are in inventory.
@@ -614,12 +624,12 @@ Items are sold out item detail detail. Also shown here is the download button, w
 
 ![Item detail coming soon detail](/assets/readme-images/features/large-13-coming-soon.png)
 
-Items coming soon item detail detail.
+Items coming soon Item detail detail.
 
 ![Staff user item and sku control bars detail](/assets/readme-images/features/large-11-staff-item-controls.png)
 
-Logged in staff users can delete and edit items and skus directly from the item detail page.
-(Not shown) If there are any items in the cart, the item and sku edit and delete buttons are removed to prevent database errors.
+Logged in staff users can delete and edit Items and Skus directly from the Item detail page.
+(Not shown) If there are any Items in the cart, the Item and Sku edit and delete buttons are removed to prevent session errors.
 
 </details>
 
@@ -631,10 +641,10 @@ Logged in staff users can delete and edit items and skus directly from the item 
 
 - The cart page has all the general page features.
 - The yellow bar indicates that the user is navigated to the shopping cart.
-- The cart shows all the items in the cart.
-  - The customer can change the quantity or remove the item from ther cart.
-  - The extended price is shown for each item, adjusted by its quantity.
-- The page shows the total number of items to ship. For example, three Instructions and five ModernSets will show five items to ship, even though eight items are in the cart.
+- The cart shows all the Items in the cart.
+  - The customer can change the quantity or remove the Item from ther cart.
+  - The extended price is shown for each Item, adjusted by its quantity.
+- The page shows the total number of Items to ship. For example, three Instructions and five ModernSets will show five Items to ship, even though eight Items are in the cart.
 - There are buttons to return to shopping and going to checkout.
 
 </details>
@@ -718,8 +728,8 @@ Mobile screens are identical in function, but are organized slightly differently
 - The index page has all the general page features, similarly laid out.
   - The title bar is stacked.
 - The splash, title image is prominantly positioned near the top.
-- Below the splash image is a carouselle that promotes the page.
-- Prominently in the middle of the page is a stack of the themes, plus a square to take the user to their account information.
+- Below the splash image is a carousel that promotes the page.
+- Prominently in the middle of the page is a stack of the Themes, plus a square to take the user to their account information.
 - The footer is reorganized, so that the newsletter signup is above both the social media and the information pages sections of the footer.
 
 </details>
@@ -731,11 +741,11 @@ Mobile screens are identical in function, but are organized slightly differently
 ![Items page](/assets/readme-images/features/mobile-2-index.png)
 
 - The items page has all the general page features.
-- The splash is not shown, and will not be shown for any other mobile pages.
+- The splash image is not shown, and will not be shown for any other mobile pages.
 - The yellow bar indicates that the user is navigated to a particular theme.
   - On the right is the sort drop down, which works identically to the large screen version.
-- The items in the theme are stacked.
-- Each item has an image, item name, item number, part count and button to view.
+- The Items in the theme are stacked in a single column.
+- Each Item has an image, Item name, Item number, part count and button to view.
 
 </details>
 
@@ -747,9 +757,9 @@ Mobile screens are identical in function, but are organized slightly differently
 
 - The item detail page has all the general page features.
 - The yellow bar displays text showing the theme and item name that the user is navigated to.
-- There are more images of the item where applicable, including a picture of the original Lego set, and a detail image showing a different, significant view. If there are not three images, a placeholder fills the space.
-- In addition to the item name, number, and part count, an item description is displayed.
-- Below the item details, the three Skus are displayed, where applicable.
+- There are more images of the Item where applicable, including a picture of the original Lego set, and a detail image showing a different, significant view. If there are not three images, a placeholder image indicates that there is no render image, and for the other two, an HTML placeholder fills the space.
+- In addition to the Item name, number, and part count, an Item description is displayed.
+- Below the Item details, the three Skus are displayed, where applicable.
   - The Instructions Sku displays with the number, and price. 
   - The ModernSet Sku displays with the number, what is included, the inventory, and the price, with a quantity selector. The quantity selector will not allow a user to order more than are in inventory.
   - The FullSet Sku dispalys with the number, what is included, the inventory and the price, with a quantity selector. The quantity selector will not allow the user to order more than are in inventory.
@@ -769,10 +779,10 @@ The additional features, such as the "In Cart" button, "Sold Out" buttons and st
 
 - The cart page has all the general page features.
 - The yellow bar indicates that the user is navigated to the shopping cart.
-- The cart shows all the items in the cart.
-  - The customer can change the quantity or remove the item from ther cart.
-  - The extended price is shown for each item, adjusted by its quantity.
-- The page shows the total number of items to ship. For example, three Instructions and five ModernSets will show five items to ship, even though eight items are in the cart.
+- The cart shows all the Items in the cart.
+  - The customer can change the quantity or remove the Item from ther cart.
+  - The extended price is shown for each Item, adjusted by its quantity.
+- The page shows the total number of Items to ship. For example, three Instructions and five ModernSets will show five Items to ship, even though eight Items are in the cart.
 - There are buttons to return to shopping and going to checkout.
 
 </details>
@@ -815,13 +825,13 @@ The additional features, such as the "In Cart" button, "Sold Out" buttons and st
 
 ### Defensive Design
 
-As with any web application, defensive code is necessary to make sure the page can continue working even during real world usage. Customers and staff both can cause issues with the database by passing bad information. With an e-commerce platform, the issue could be worse than an error 404 or 500, but could cause issues that would charge customers for things they don't receive or ship them items they didn't pay for. Because of this, it is particularly import to consider defensive design throughout the website to ensure that things work not only properly, but smoothly. 
+As with any web application, defensive code is necessary to make sure the page can continue working even during real world usage. Customers and staff both can cause issues with the database by passing bad information. With an e-commerce platform, the issue could be worse than an error 404 or 500, and could cause issues that would charge customers for things they don't receive or ship them Items they didn't pay for. Because of this, it is particularly import to consider defensive design throughout the website to ensure that things work not only properly, but smoothly. 
 
 Many defensive features are native to Django forms, like stripping whitespace from CharFields and TextFields and making sure a URL or email address at least follows the standard formats.
 
 When a customer signs up, they are challenged in a handful of ways.
 - The email address cannot be blank, and must include an @ symbol with valid characters before and after, and must match with two inputs.
-- The username cannot be blank or include trailing or trailing whitespate, and must be at least four valid characters long.
+- The username cannot be blank or include leading or trailing whitespate, and must be at least four valid characters long.
 - The password must be at least 8 valid characters long, is not allowed to be all letters or all numbers, mustn't be too similar to the user name, and must match twice, and may not be "too common."
 
 Once logged in, the account details form does not offer challenges about being blank, but does strip leading and trailing whitespace. This is helpful in case a customer does not want to leave their information in the database.
@@ -836,19 +846,19 @@ Stripe integration has their own defensive code.
 - Validates that zipcode is the correct format.
 - If the payment fails, the order fails and the customer sees an order failed page.
 
-There is also a front end functionality for logged in staff to be able to create, edit and delete Items. In addition to the built in Django form field validation, a handful of logic implementations had to be made to prevent issues when using the Add Item form.
-- The item number must be five digits. Otherwise, the number is left to the staff member's discretion. For example, MOC items like the 220SPJr will be numbered for "20'22'-checkdigit-'S'cooty'P'uff'Jr'" instead of the 2306534 numbered for "20'23'-checkdigit-'6534'" where 6534 was the original Lego set number for the original Beach Bandit.
-- Theme is selected by a choice box to prevent items not getting a theme listed.
-- The images are not checked because items can be added without an image.
+There is also a front end functionality for logged in staff to be able to create, edit and delete Items. In addition to the built in Django form field validation, a handful of logic implementations had to be made to prevent issues when using the add Item form.
+- The Item number must be five digits. Otherwise, the number is left to the staff member's discretion. For example, MOC items like the **220SPJr** will be numbered for "20**22**-checkdigit-**S**cooty**P**uff**Jr**", not following the standard numbering conventions like the **2306534**, which numbered for "20**23**-checkdigit-**6534**" where 6534 was the original Lego set number for the original Beach Bandit.
+- Theme is selected by a choice box to prevent Items not getting a theme listed.
+- The images are not checked because Items can be added without an image.
 - The instructions .pdf field is checked to make sure the URL is not only a valid URL but starts with https://res.cloudinary.com/ and ends with .pdf. Knowing that staff is not likely to input malicious files, this is considered good enough validation to prevent errors and failures.
 
 The Add Sku form has some similar safeguards.
-- The related item comes from a choice box to make sure it is linked to a valid item.
+- The related Item comes from a choice box to make sure it is linked to a valid item.
 - The Sku number is limited to 5 digits, but is left to the staff member's discretion for the sake of flexibility. Suggestions are noted in the form.
-- The Sku type is a choice box to make sure the Sku type is valid. If the staff member accidentally tries to duplicate the Sku type for an item, the form is returned as invalid for adjustment.
+- The Sku type is a choice box to make sure the Sku type is valid. If the staff member accidentally tries to duplicate the Sku type for an Item, the form is returned as invalid for adjustment.
 
-When editing items, some additional safeguards are necessary.
-- To make sure to not cause a database issue while working, the Edit Item and Edit Sku buttons are disabled unless the cart is empty.
+When editing Items, some additional safeguards are necessary.
+- To make sure to not cause a session or database issue while working, the Edit Item and Edit Sku buttons are disabled unless the cart is empty.
 - The Edit Item form is identical to the Add Item form.
 - The Edit Sku form is slightly different.
   - The Sku Item field is not editable.
@@ -862,22 +872,23 @@ When editing items, some additional safeguards are necessary.
 As with any website, or any project, there are always future implemenations to be considered.
 
 - An additional navigable tab for sales or other kinds of specials, in addition to City, Space, Castle, Train and Moc would be a handy way for the business to list any specials or promotions going, or an ability to sell seconds and incomplete sets at appropriate discounts.
-- It would be handy for there to a database model that could include a shipping pricing, whichever free-to-download-set was currently linked to the Free-instructions with signup promotion. This model would be not just admin, but front end editable so that staff members wouldn't have to deal with settings or code.
-- An early iteration on the site allowed customers to be charged shipping as a flat rate based on the number of shippable items purchased. Passing this charge from the context to the Order Model proved beyond this development period's scope, and this will be implemented in the future.
-- Additionally, there is room in the item model for a fourth image, as well as URLs for the images. The additional image and the URLs to very large images would give the customer more detail about what they can expect from their purchase.
-- Since customers need to sign up for an account to download their instructions, it would be handy to have a wish list feature, especially as the product base grows.
-
-
+- It would be handy for there to a database model that could include a shipping pricing, whichever free-to-download-set was currently linked to the free-instructions-with-signup promotion. This model would be accessible only to staff members, and would be front end editable so that staff members wouldn't have to deal with settings or code.
+- An early iteration on the site allowed customers to be charged shipping as a flat rate based on the number of shippable items purchased. Calculating this shipping was very simple, but passing this charge from the context to the Order Model proved beyond this development period's scope, and this will be implemented in the future.
+- Additionally, there is room in the Item model for a fourth image, as well as URLs for the images. The additional image and the URLs to very large images would give the customer more detail about what they can expect from their purchase.
+- Since customers need to sign up for an account to download their instructions anyway, it would be handy to have a wish list feature, especially as the product base grows.
+- Also, as the product base grows, pagination would need to be added to the items pages. It was decided that this functionality was not necessary with a total of twelve items.
 
 ### Accessibility
 
-Care was taken to make sure the page met accessibility guidelines. Accessibility is important so that everyone is welcome and included on Bricks Then Made Now. 
+Care was taken to make sure the page met accessibility guidelines. Accessibility is important so that everyone is welcome and included on Bricks Then Made Now. Bricks Then Made now does its best to not only not discriminate, but be anti-discriminatory in its design. There could always be improvements, as with anything, but Bricks Then Made Now is working within the current skill level and MVP deadline.
 
 - All images have alt text, and all links and buttons have aria labels.
 - Semantic web structure was maintained, making sure to use headers, footers, body, sections and divs appropriately to organize the page not just visually but for screen readers as well.
 - Colors and images were carefully selected to make sure that contrast was great enough so that anyone could read the website. Colors were checked for contrast during development using Coolers' [Color Contrast Checker](https://coolors.co/contrast-checker/0067b2-d2d5da)
 
 ![Google Lighthouse scores](/assets/readme-images/lighthouse-score.png)
+
+The Accessibility score is not 100%, the reason being the footer background color did not provide enough contrast. After attempting many variations, none of which made any difference other than no background color at all, it was decided that it was more helpful to have a distinct footer than to get the score to 100%. Feedback on this is always welcome as Bricks Then Made Now wants to be as accessible as possible.
 
 Accessibility, Best Practices and SEO scores calculated by [Google Lighthouse.](https://developer.chrome.com/docs/lighthouse/overview/)
 <hr>
@@ -930,7 +941,7 @@ During planning, several short-tail keywords and long-tail phrases were focused 
 
 As with any business, marketing is paramount for success. A business such as Bricks Then Made Now will be well served by old-fashioned marketing like trade shows, conventions, or other physical and in person forms of marketing. Word of mouth is powerful, as is seeing the products in the plastic. However, the reach of such marketing is limited and without a large, expensive staff will grow the business slowly.
 
-Therefore web marketing will be an important way to grow a web-based business. Fortunately, online spaces have begun to serve the hobbyist community in ways similar to in-person trade shows and conventions. It's almost as easy to to create the relationships online as it is pressing the flesh, and that is a strong advantage for eCommerce. Social media is a particularly powerful tool, so Bricks Then Made Now will position itself to enter the online community that way.
+Therefore web marketing will be an important way to grow a web-based business. Fortunately, online spaces have begun to serve the hobbyist community in ways similar to in-person trade shows and conventions. It's almost as easy to to create the relationships online as it is pressing the flesh, and that is a strong advantage for e-commerce. Social media is a particularly powerful tool, so Bricks Then Made Now will position itself to enter the online community that way.
 
 ### Facebook
 
@@ -940,17 +951,17 @@ Therefore web marketing will be an important way to grow a web-based business. F
 
 ![Facebook](/assets/readme-images/bricks-then-made-now-facebook-mockup.png)
 
-The Facebook page will be a great way for users, fans, and potential customers will to keep up with Bricks Then Made Now. It can be a great way for Bricks Then Made Now to show off not only newly available products, but keep customers informed about upcoming releases. This will help develop excitement. Lego is all about the experience building, and the ability to hide surprises and easter eggs in the build, which would be far too much detail to show on even a website with a huge scope. By keeping customers involved with the development process, they would get to see what they can expect, knowing that these are even just teasers to what will ultimately be available. 
+The Facebook page will be a great way for users, fans, and potential customers will to keep up with Bricks Then Made Now. It can be a great way for Bricks Then Made Now to show off not only newly available products, but keep customers informed about upcoming releases. This will help develop excitement. Lego is all about the experience building, and the ability to hide surprises and easter eggs in the build, which would be far too much detail to show on even a website without being confusing. By keeping customers involved with the development process, they would get to see what they can expect, knowing that these are just teasers to what will ultimately be available. 
 
 The profile picture and the headline picture would mirror other social media and the main website, helping maintain a common theme through all the online presences.
 
-The feed would showupcoming or current products. It could also show products in-play by customers. Potential customers can also give feedback and engage with each other, hopefully appreciating each other's opinions and Bricks Then Made Now's offerings.
+The feed would show upcoming or current products. It could also show products in-play by customers. Potential customers can also give feedback and engage with each other, hopefully appreciating each other's opinions and appreciating Bricks Then Made Now's offerings.
 
 The About section could show the Bricks Then Made Now contact information, and the website so that people can find the information they need to find.
 
 There can be many hosted pictures in the Photos section, where customers can peruse not just products in their official renders, but in progress images and detail images that will help them make decisions and help Bricks Then Made Now build excitement for the brand and products.
 
-It could also show potential customers how well liked the products are, and feature people who like, follow, and even contribute to the site in the Liked-by section.
+It could also show potential customers how well liked the products are, and feature people who like, follow, and even contribute to the site in the liked-by section.
 
 </details>
 <br>
@@ -979,7 +990,7 @@ The Instagram presence is real and live now, [here.](https://www.instagram.com/b
 
 Small business like this can be well served by marketing across many platforms. Not only would the site have a presence on Facebook and Instagram, but it would also advertise on these platforms. This would allow ads to be targeted at appropriate users who are engaging with other Lego content, or who are within the age ranged Bricks Then Made Now intends to sell to. Google ads, and specifically YouTube ads targeting videos of Lego, related content, and even general hobby content would be helpful in engaging new customers. 
 
-Bricks Then Made Now would also be able to market by engaging with online content creators on social media. Having AFOL on Instagram, TikTok, YouTube, Facebook, Twitter, and Threads use or highlight BTMN models would help generate interest, viewers, clicks and sales. There could also be colaboration between BTMN and these creators. BTMN could also collaborate with existing business in the Lego space, for example collaborating with [Brick Sticker Shop](https://www.brickstickershop.com/) could be beneficial for both. Through selling custom sticker sets linked to BTMN instructions, pack-ins of customer stickers in ModernSets, or pack-ins of restoration sticker sets with FullSets, Brick Sticker Shop could build on BTMN success, and with custom or restoration stickers available on Bricks Then Made Now, a mew product line could be added and the fidelity of existing produt lines could be improved.
+Bricks Then Made Now would also be able to market by engaging with online content creators on social media. Having AFOL on Instagram, TikTok, YouTube, Facebook, Twitter, and Threads use or highlight BTMN models would help generate interest, viewers, clicks and sales. There could also be colaboration between BTMN and these creators. BTMN could also collaborate with existing business in the Lego space, for example collaborating with [Brick Sticker Shop](https://www.brickstickershop.com/) could be beneficial for both. Through selling custom sticker sets linked to BTMN instructions, pack-ins of customer stickers in ModernSets, or pack-ins of restoration sticker sets with FullSets, Brick Sticker Shop could build on BTMN success, and with custom or restoration stickers available on Bricks Then Made Now, a new product line could be added and the fidelity of existing produt lines could be improved.
 
 Also, various unconventional marketing techniques could be used. While new, Bricks Then Made Now could have an eBay store, where they could sell defects, prototypes and incomplete models at a discount. Bricks Then Made Now could be a seller as well as a buyer on Bricklink, allowing excess brick to be sold off so that costs weren't being sunk into dead stock. Both of these would be revenue streams, but would have the added marketing effect of getting Bricks Then Made Now in front of customers who are already willing to spend money, and are doing so on other, established platforms. This is a common practice among small, boutique, hobby focused shops and would be very helpful for Bricks Then Made Now.
 
@@ -989,24 +1000,24 @@ Also, various unconventional marketing techniques could be used. While new, Bric
 ## E-Commerce Business Model
 <hr>
 
-Bricks Then Made Now is meant to appeal to broad base of Lego enthusiasts. From kids to adults, the appeal of the smartly colored, well designed and eminently playable sets is universal. The modernization of old sets will appeal to adults where nostagia is high. They also focus on themes that are universal; helicopters, motorcycles, space exploration.
+Bricks Then Made Now is meant to appeal to broad base of Lego enthusiasts. From kids to adults, the appeal of the smartly colored, well designed and eminently playable sets is universal. The modernization of old sets will appeal to adults where nostagia is strong. They also focus on themes that are universal; helicopters, motorcycles, space exploration and more.
 
-The pricing of sets being sold will be based primarily on the price per part as available, with the intention of keeping it near a target of between $0.12 and $0.15 per part. This is slightly higher than Lego's own price per part, but custom sets from a boutique seller can charge a premium, and this is much lower than other custom Lego set eCommerce platforms.
+The pricing of sets being sold will be based primarily on the price per part as available, with the intention of keeping it near a target of between $0.12 and $0.15 per part. This is slightly higher than Lego's own price per part, but custom sets from a boutique seller can charge a premium, and this is much lower than other custom Lego set e-commerce platforms.
 
 Shipping will be advertised as free, though shipping will just be calculated into the cost of all physical sets.
 
 ### Customers
 
-Bricks Then Made Now intend to sell to adult followers of Lego, but also to adults wishing to give their kids a similar, but modern experience, like their own.
+Bricks Then Made Now intend to sell to adult followers of Lego, but also to adults wishing to give their kids an experience similar to their own, but modernized.
 
-- Recreations of sets from the 1970s, '80s, and '90s is focused on users who represent the 35-44 and 45-54 age ranges.
+- Recreations of sets from the 1970s, '80s, and '90s are focused on users who represent the 35-44 and 45-54 age ranges.
   - The sets will appeal to serious AFOL. 
     - Lego has never left their attention.
     - They may have "always wanted" a particular vintage set. In this case, the FullSet will be what they want, the ModernSet would be a bonus.
-    - They may no longer have a bin of Lego to pull from to build consistent colorway MOCs, the ModernSet will be a main driver.
-    - They may no longer have the old sets, and wish to share the iconic vintage sets of their youth from their childhood with their own children.
-    - Their kids may be dissatisfied with the complexity of the vintage sets compared to contemporary Lego, the ModernSet will solve that.
-    - The Fullset conveniently packages both sets in one, so that the customer can have both experiences.
+    - They may no longer have a bin of Lego to pull from to build consistent colorway MOCs, for this the ModernSet will be a main driver.
+    - They may no longer have the old sets, and wish to share the iconic vintage sets of their youth from their childhood with their own children, or just collect their memories in plastic.
+    - Their kids may be dissatisfied with the simplicity of the vintage sets compared to contemporary Lego, the ModernSet will solve that.
+    - The Fullset conveniently packages both the modern and vintage sets in one, so that the customer can have both experiences.
     - These users may be dissatisfied with trying to find the vintage sets on eBay, or not willing to use Bricklink or other second hand Lego sellers.
   - The sets will appeal to casual Lego follower. 
     - The user may have children who are just beginning to play with Lego of their own.
@@ -1023,9 +1034,8 @@ Bricks Then Made Now intend to sell to adult followers of Lego, but also to adul
 - The blending of old and new Lego designs, bricks, elements, and techniques will appeal to families wishing to play together.
   - Many adults are engaging with their children - and children engaging with their parents or caretakers - with games and toys.
   - Many vintage toys, particularly video games, may seem rudimentary and uninteresting to modern kids.
-  - Lego bricks have remained standard since their inception in the 1960s.
-  - Bricks Then Made Now intends to take advantage of that longevity by appealing to nostalgic adults and intereested children alike.
-  - Kids may be dissatisfied with the complexity of the vintage sets compared to contemporary Lego. A modern recreation can help kids share the joy with parents or caretakers.
+  - Lego bricks have remained standard since their inception in the 1960s. Bricks Then Made Now intends to take advantage of that longevity by appealing to nostalgic adults and intereested children alike.
+  - Kids may be dissatisfied with the simplicity of the vintage sets compared to contemporary Lego. A modern recreation can help kids share the joy with parents or caretakers.
 
 The choice has been made intentionally to use only genuine, high quality used Lego bricks and elements. While Lego has lost court cases allowing other companies to manufacture very similar bricks and elements, leading to a great many low quality imitators, there is no substitute for the clutch power and quality materials Lego uses. Lego can be procured in many ways. Estate sales, local bulk resalers, eBay, BrickLink and Lego Pick a Brick are all ways to get Lego bricks and elements. However, all these methods require considerable time commitments, and unless a user of those services is buying a great deal of Lego, pricing can be prohibitive and make it very difficult to get just the right bricks for a specific build. 
 
@@ -1035,7 +1045,7 @@ Bricks Then Made Now offers three levels of product to tailor the experience to 
 
 - Instructions
   - Just the instructions and parts list.
-    - A Lego hobbyist with a lot of brick, or particular purchasing savvy, can buy just the instructions and build with their own Lego. This also allows users to build in whatever colorway they like.
+    - A Lego hobbyist with a lot of brick, or particular secondary market savvy, can buy just the instructions and build with their own Lego. This also allows users to build in whatever colorway they like.
     - The instructions are also priced relatively low, encouraging a user to make a first purchase with BTMN. Referring to the site for downloads will allow BTMN to market new models to the customer.
 - ModernSet
   - The instructions and all the necessary bricks to build the modern model.
@@ -1052,7 +1062,7 @@ Bricks Then Made Now offers three levels of product to tailor the experience to 
   - A limited availabilty package of the downloadable instructions, all the bricks included in the ModernSet, plus the vintage set it was based on.
     - A user customer will not have to build the modern model as a rainbow warrior, or hunt everywhere for just the right parts.
     - The user will also be able to collect the vintage set.
-      - Vintage sets can be hard to build with all vintage bricks.
+      - Vintage sets can be hard to find with all vintage bricks.
         - Many parts are no longer available in particular colors, or were only available in that color or printing in the one set.
         - Some parts are no longer made at all.
         - Some colors have changed - famously, Lego changed their grays in 2004. This can make it difficult to recreate or purchase a complete old set. A good example is Lego 6357 Stunt 'Copter N' Truck, even the BTMN office model didn't have all the gray parts in Light Gray instead of Light Bluish Gray until recently.
@@ -1065,12 +1075,12 @@ Pricing for each set would need to not only be profitable but consistent. Many u
 - Instructions are priced very low for small sets or set recolors. 230SPJr is only 8 parts, and the instructions are just there for downloading by anyone to purchases the ModernSet, or 2306530 Sport Coupe is essentially a recolor of an existing Lego set - the instructions are widely available including on Lego's official website - so the "instructions" are just a handy parts list. These instructions are intentionally inexpensive. Otherwise, instructions generally start at $2.99, and increase by $1.00 for every 100 parts in the set.
   - Since instructions are downloadable on the website, BTMN uses the instructions as a way to overcome a major objection with online stores. Most customers don't want to register an account. However, an account is necessary for customers to return and download isntructions without repurchasing them.
   - By giving away a free set of instructions, BTMN can encourage a user to sign up an account, which will make them more likely to return and purchase from the store.
-- ModernSets are priced based on the cost of the parts required. Some sets will have a higher price per part than others, but all efforts are made to keep the sets under $0.15 per part, however that is a guideline more than a rule. Once the price per part target is met, the set is compared to sets available from Lego, and a determination is made wether the set can be priced higher, or if adjustments need to be made to price it lower to keep it in line with Lego's official offerings. This is primarily to meet customer expectations, Bricks Then Made Now cannot compete with Lego's global infrastructure and doesn't intend to anyway. Lego generally sticks with themes (truck and trailer, crane, sports car) as they develop sets, but rarely do they do direct modernizations of sets in nostalgic colorways.
-- FullSets are priced based on the ModernSet and what a customer may expect to find a vintage set for elsewhere, because a complete vintage set can be difficult to find. Bricks Then Made Now has an advantage by being able to buy bricks and elements in bulk, but will encounter pricing for individual parts that effect the ultimate price for the fullset similarly to competitors. For example, Lego 889 Radar Truck adds a full $15.00 to the price of the 2300899:1099 FullSet over the 2300899:1066 Modernset even though it is only 29 parts. The scarcity of some of the parts in light gray - instead of light bluish gray - makes it more dear.
+- ModernSets are priced based on the cost of the parts required. Some sets will have a higher price per part than others, but all efforts are made to keep the sets under $0.15 per part, however that is a guideline more than a rule. Once the price per part target is met, the set is compared to sets available from Lego, and a determination is made wether the set can be priced higher, or if adjustments need to be made to price it lower to keep it in line with Lego's official offerings. This is primarily to meet customer expectations, Bricks Then Made Now cannot compete with Lego's global infrastructure and doesn't intend to anyway. Lego generally sticks with themes (truck and trailer, crane, sports car) as they develop sets, but they rarely, if ever, do direct modernizations of sets in nostalgic colorways.
+- FullSets are priced based on the ModernSet and what a customer may expect to find a vintage set for elsewhere, because a complete vintage set can be difficult to find. Bricks Then Made Now has an advantage by being able to buy bricks and elements in bulk, but will encounter pricing for individual parts that effect the ultimate price for the fullset similarly to competitors. For example, Lego 889 Radar Truck adds a full $15.00 to the price of the 2300899:1099 FullSet over the 2300899:1066 ModernSet even though it is only 29 parts. The scarcity of some of the parts in light gray - instead of light bluish gray - makes it more dear.
 
 ### Shipping
 
-While Bricks Then Made Now is not competing with businesses like Amazon, the expectation has been set by the behemoth wholesaler that even small boutique shops offer free shipping. In line with that, Bricks Then Made Now calculated shipping into the cost of all physical items, and advertises as offering free shipping on all items, even though we all know that it's just rolled into the cost of the item anyway.
+While Bricks Then Made Now is not competing with businesses like Amazon, the expectation has been set by the behemoth wholesaler that even small boutique shops offer free shipping. In line with that, Bricks Then Made Now calculated shipping into the cost of all physical items, and advertises as offering free shipping on all Items, even though everyone knows that it's just rolled into the cost of the Item anyway.
 
 <br>
 <hr>
@@ -1101,6 +1111,7 @@ This project uses four programming languages.
 - [Balsamiq](https://balsamiq.cloud/)
 - [Bulk Resize Photos](https://bulkresizephotos.com/en)
 - [Cloudinary](https://cloudinary.com/)
+- [Code Institute Python linter](https://pep8ci.herokuapp.com/)
 - [Color Contrast Checker](https://coolors.co/contrast-checker/)
 - [Color Shates Online Generator](https://gradients.app/en/shades/)
 - [Coolers](https://coolors.co/)
@@ -1116,7 +1127,8 @@ This project uses four programming languages.
 - [Gmail](https://mail.google.com/)
 - [Heroku](https://www.heroku.com)
 - [I(LOVE)PDF](https://www.ilovepdf.com/compress_pdf)
-- [LucidChart](https://lucid.app/lucidchart/) 
+- [LucidChart](https://lucid.app/lucidchart/)
+- [Markup, the native Android photo editing tool](https://www.android.com/)
 - [MiniWebtool Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Privacy Policy Generator](https://www.privacypolicygenerator.info/)
@@ -1124,16 +1136,9 @@ This project uses four programming languages.
 - [Stud.io](https://www.bricklink.com/v3/studio/download.page)
 - [Tables Generator - Markdown](https://www.tablesgenerator.com/markdown_tables)
 - [TinyPNG](https://tinypng.com/)
-- [XML-Sitemaps](https://www.xml-sitemaps.com/)
-
-<!--Frameworks unused so far (Copy Past above as used)
-
-- [Code Institute Python linter](https://pep8ci.herokuapp.com/)
-- [Markup, the native Android photo editing tool](https://www.android.com/)
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 - [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input)
-
--->
+- [XML-Sitemaps](https://www.xml-sitemaps.com/)
 
 <br>
 <hr>
@@ -1183,7 +1188,7 @@ Information on representative user manual testing can be found in [the testing R
 - Code Institute instructor Simen Daehlin for almost everything else. [Simen Daehlin Github](https://github.com/Eventyret)
 - Code Institute mentor Jubrile Akolade provided guidance on where to focus time building the project and an almost infinite amount of other support.
 - All of my Code Institute UCD July 2022 cohort, who have been available to answer questions through Slack.
-- Code Institute tutors accessed through the Code Institute LMS have been helpful with understanding various concepts during instruction.
+- Code Institute tutors accessed through the Code Institute LMS have been helpful with understanding various concepts during instruction. Especially Jason who seemed to get the bulk of my questions. I owe him an apology for being such a bother.
 - An explanation about how to have Django/Pillow upladed image files go to a specific folder was found [here.](https://youtu.be/O5YkEFLXcRg) The [Django documentation](https://docs.djangoproject.com/en/4.2/topics/files/) could have been a lot clearer about WHERE the example code goes, which is a frustrating aspect throughout working with Django.
 - Big thanks to [Lego](https://www.lego.com/) for having a toy that allows a tremendous amount of aftermarket and web based support, and for just being pretty rad.
 - A tremendous amount of Lego research was done on [Bricklink](https://www.bricklink.com/v2/main.page) and [Brickset.](https://brickset.com/sets/6301-1/Town-Mini-Figures)
@@ -1209,7 +1214,7 @@ Information on representative user manual testing can be found in [the testing R
 ### Other Thanks
 
 - The Code Institute tutors. This must be mind-numbing.
-- The Code Institute assessment team; I can't imagine what kind of patience and knowledge it would take to look over these projects without losing it.
+- The Code Institute assessment team. I can't imagine what kind of patience and knowledge it would take to look over these projects without losing it.
 - Thanks to F. D. C. Lemon-Beckett for useful contributions to the discussion.
 - Finally, heartfelt appreciaton to my partner, Stevie, for infinite patience and encouragement. 
 <br>
