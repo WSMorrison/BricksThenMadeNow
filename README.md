@@ -543,7 +543,7 @@ The Bricks Then Made Now repository hosted in GitHub can be found [here](https:/
 
 The page has several main pages and some supporting confirmation and information pages. Because of the page construction, a base with a header and footer with some navigation elements included on each, there are a few features that are common to almost all pages.
 
-<details>
+<details open>
 <summary>General page features, using the index as an example.</summary>
 <br>
 
@@ -719,7 +719,7 @@ Logged in staff users can delete and edit Items and Skus directly from the Item 
 
 Mobile screens are identical in function, but are organized slightly differently. A limited selection of mobile screens are shown below.
 
-<details>
+<details open>
 <summary>Index page features</summary>
 <br>
 

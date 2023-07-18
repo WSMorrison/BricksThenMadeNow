@@ -1,6 +1,8 @@
-# Bricks Then Made Now
+# Bricks Then Made Now - Testing
 
 Bricks Then Made Now is an ecommerce site that sells fan made Lego designs to other Lego fans. The site will appeal to adult followers of Lego (AFOL), by reimagining vintage Lego from the 1970s, '80s, and '90s with modern elements and contemporary design techniques.
+
+This readme will cover the testing done to ensure the website works properly.
 
 ![Front page of Bricks Then Made Now as input to AmIResponsive.](/assets/readme-images/am-i-responsive.png)
 
