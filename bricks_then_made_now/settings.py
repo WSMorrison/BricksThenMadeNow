@@ -27,7 +27,8 @@ ALLOWED_HOSTS = ['localhost',
                  '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-eu100.gitpod.io',
                  '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-us100.gitpod.io',
                  '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-eu101.gitpod.io',
-                 '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-us101.gitpod.io',
+                 '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-us101.gitpod.io'
+                 '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-us118.gitpod.io',
                  'https://bricks-then-made-now-5bd876713bd4.herokuapp.com/',
                  '.herokuapp.com']
 
