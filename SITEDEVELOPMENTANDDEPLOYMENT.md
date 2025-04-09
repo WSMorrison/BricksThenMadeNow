@@ -265,7 +265,7 @@ When the app is deployed successfully, click View App. There should be a congrat
           4. Open a new project repository of your preferred code editor.
           5. In the terminal of your code editor, type <code>git clone</code> and paste the link from before.
           6. Press <kbd>Enter</kbd>
-    4. To continue the deployment, the above deployment steps will need to be followed.
+    4. To continue the deployment, the above deployment steps will need to be followed correctly.
 
 <br>
 <hr>
