@@ -19,7 +19,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = 0
+DEBUG = 1
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -27,7 +27,7 @@ ALLOWED_HOSTS = ['localhost',
                  '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-eu100.gitpod.io',
                  '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-us100.gitpod.io',
                  '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-eu101.gitpod.io',
-                 '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-us101.gitpod.io'
+                 '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-us101.gitpod.io',
                  '8000-wsmorrison-bricksthenma-ck3p1ur53a0.ws-us118.gitpod.io',
                  'https://bricks-then-made-now-5bd876713bd4.herokuapp.com/',
                  '.herokuapp.com']
