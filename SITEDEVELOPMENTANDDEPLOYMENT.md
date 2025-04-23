@@ -89,6 +89,40 @@ Open the env.py file:
     The secret key can be anything, but this project generated the secret key on [MiniWebtool.](https://miniwebtool.com/django-secret-key-generator/)
   4. Save the file <kbd>ctrl</kbd> + <kbd>s</kbd>
 
+>Update:
+>
+>Elephant SQL shuttered in early 2025. [Neon](https://neon.tech/) was selected to host the website because it has free hosting for Postgres, and is easy to use.
+>
+>Create a Neon account if there isn't an existing one, then log in to access the dashboard.
+>
+>  1. After signing up or logging in, select the "New Project" button.
+>  2. <code>bricks_then_made_now</code> was chosen as the name for this project.
+>  3. All the default settings were left, including Postgres version 17, database name neondb, cloud service provider AWS, and the default selected region.
+>  4. Click the "Create" button.
+>  5. On the project dashboard screen, the "Connect" button is clicked toward the top left.
+>  6. In the pop-up window, copy the neon url string. The url string can be copied without showing the password, using the "Copy snippet" button.
+>
+>In the work environment, open the env.py file in the root directory. 
+>
+>  1. Delete the Elphant SQL url string from the <code>os.environ["DATABASE_URL"]=</code> line.
+>  2. Add the Neon url string <code>os.environ["DATABASE_URL"]="<kbd>the url copied from Neon</kbd>"</code>
+>  3. Save changes.
+>
+>At the development environment command line, migrate the models to the SQL database by running the command <kbd>python3 manage.py migrate</kbd>.
+>
+>If the website is deployed, the database url will need to be updated in the deployment platform. The Bricks Then Made Now website is using Heroku.
+>
+>  1. Log into Heroku.
+>  2. Open the Bricks-Then-Made-Now dashboard.
+>  3. In the Bricks-Then-Made-Now dashboard, open the "Settings" tab.
+>  4. Select the "Reveal Config Vars"
+>  5. Update the DATABASE_URL value with <kbd>the url copied from Neon</kbd>.
+>  6. Save changes.
+>  7. If the website is being built from new, follow the deployment instructions but use the <kbd>the url copied from Neon</kbd> in place of the Elephant SQL url.
+>
+>If necessary, recreate the superuser. At the develpment environment command line, run the command <kbd>python3 manage.py createsuperuser</kbd> and follow the prompts.
+>
+
 The static files are stored in [Cloudinary.](https://cloudinary.com/) 
 
 Create a Cloudinary account if there isn't an existing one, then log in:
